@@ -180,7 +180,7 @@
             </div>
             <div class="about__media--video about__border fx-fade-up-var" style="--fx-dur:1.8s;--fx-y:120px;--fx-delay:.05s">
                <video class="about__video"  autoplay muted loop playsinline>
-                <source src="about-video.webm" type="video/webm">
+                <!-- <source src="about-video.webm" type="video/webm"> -->
                 <source src="img/videos/video-about-2-sin-audio.mp4" type="video/mp4">
               </video>
             </div>
@@ -475,7 +475,7 @@
       
 document.addEventListener('DOMContentLoaded',function(){
   var viewportWidth=document.documentElement.clientWidth;
-  console.log(viewportWidth)
+  //console.log(viewportWidth)
   var viewportHeight=window.innerHeight;
   var headerEl=document.querySelector('.header');
   var heroEl=document.getElementById('hero');
@@ -979,6 +979,7 @@ function updateHeroProgressVar(){
         var b=openItems[i].querySelector('.header__link--button');
         if(b)b.setAttribute('aria-expanded','false');
       }
+      document.activeElement&&document.activeElement.blur();
     }
 
     function toggleMenu(){
@@ -997,7 +998,7 @@ function updateHeroProgressVar(){
 
     if(panel){
       panel.addEventListener('click',function(e){
-        console.log('panel')
+        //console.log('panel')
         var a=e.target&&e.target.closest?e.target.closest('a'):null;
         if(a)closeMenu();
       });
@@ -1052,7 +1053,7 @@ window.addEventListener('scroll',function(){
 
   window.addEventListener('resize',function(){
     viewportWidth=document.documentElement.clientWidth;
-      console.log(viewportWidth)
+      //console.log(viewportWidth)
 
     viewportHeight=window.innerHeight;
     if(heroEl){
