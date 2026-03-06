@@ -25,7 +25,8 @@
 
   </head>
 <body>
-  <header class="header d_flex p_absolute header--compact-light">
+  <header class="header d_flex p_absolute">  <!-- header--compact-light -->
+     
     <div class="header__top">
       <div class="header__top-inner">
         <a class="header__logo" href="#hero" aria-label="Cake Atelier Copenhagen - Home">
@@ -187,12 +188,12 @@
           </article>
 
           <article class="about__me d_flex">
-            <div class="about__me-media about__border">
-              <img src="img/home/about/about-orne1-1028.webp" alt="About Us Image" class="margin-auto">
+            <div class="about__me-media about__border fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:70px;--fx-delay:.05s">
+              <img src="img/home/about/about-orne1-1028.webp" alt="About Us Image" class="margin-auto" width="316" height="475">
             </div>
             <div class="about__me-text">
-              <h2 class="about__title about__me-title  fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:30px;--fx-delay:.05s">Meet Ornella, the Heart Behind Cake Atelier</h2>
-              <p class="about__p  fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:30px;--fx-delay:.05s">What began as a journey of self-discovery blossomed into Cake Atelier CPH — a place where passion for art and love of baking come to life.</p>
+              <h2 class="about__title about__me-title  fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:70px;--fx-delay:.05s">Meet Ornella, the Heart Behind Cake Atelier</h2>
+              <p class="about__p  fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:90px;--fx-delay:.05s">What began as a journey of self-discovery blossomed into Cake Atelier CPH — a place where passion for art and love of baking come to life.</p>
               <a href="#flavors" class="btn btn--primary">This is our Story</a>
             </div>
           </article>
@@ -484,6 +485,9 @@ document.addEventListener('DOMContentLoaded',function(){
   var buttonWapp=document.getElementById('buttonWapp');
   var buttonTop=document.getElementById('buttonTop');
   var heroDots=document.getElementById('heroDots');
+  var mobileSubmenuEnabled=false;
+  var onHeaderSubmenuClick=null;
+
 
   var cakesWrap=document.querySelector('.cakes__wrap');
   var cakesStage=document.querySelector('.cakes__stage');
@@ -680,7 +684,7 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
   function smoothstep(t){return t*t*(3-2*t);}
 
   function setActive(id){
-    if(viewportWidth<992){return};
+    if(viewportWidth<992)return;
     if(id===state.activeId)return;
     if(state.activeId&&spyMap[state.activeId])spyMap[state.activeId].classList.remove('header__link--active');
     state.activeId=id;
@@ -688,7 +692,7 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
   }
 
   function clearActive(){
-    if(viewportWidth<992){return};
+    if(viewportWidth<992)return;
     if(!state.activeId)return;
     if(spyMap[state.activeId])spyMap[state.activeId].classList.remove('header__link--active');
     state.activeId=null;
@@ -853,105 +857,9 @@ function updateHeroProgressVar(){
   }
 
   //Toggle SUBMENUS del  header
-  // if(headerEl){
-  //   headerEl.addEventListener('click',function(e){
-  //     var btn=e.target.closest('.header__link--button');
-  //     if(!btn||!headerEl.contains(btn))return;
 
-  //     var li=btn.closest('.header__item--has-submenu');
-  //     if(!li)return;
 
-  //     var isOpen=li.classList.contains('header__item--open');
-
-  //     var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-  //     for(var i=0;i<openItems.length;i++){
-  //       if(openItems[i]!==li){
-  //         openItems[i].classList.remove('header__item--open');
-  //         var b=openItems[i].querySelector('.header__link--button');
-  //         if(b)b.setAttribute('aria-expanded','false');
-  //       }
-  //     }
-
-  //     // li.classList.toggle('header__item--open',!isOpen);
-  //     // btn.setAttribute('aria-expanded',isOpen?'false':'true');
-
-  //     if(isOpen){
-  //       li.classList.remove('header__item--open');
-  //       btn.setAttribute('aria-expanded','false');
-  //     }else{
-  //       li.classList.add('header__item--open');
-  //       btn.setAttribute('aria-expanded','true');
-  //     }
-
-  //     e.preventDefault();
-  //     e.stopPropagation();
-  //   });
-  // }
-
-//   if(headerEl){
-//     //ultima version tampoco fc
-//   // headerEl.addEventListener('click',function(e){
-//   //   var btn=e.target.closest('.header__link--button');
-//   //   if(!btn||!headerEl.contains(btn))return;
-
-//   //   var li=btn.closest('.header__item--has-submenu');
-//   //   if(!li)return;
-
-//   //   var isOpen=li.classList.contains('header__item--open');
-//   //   li.classList.toggle('header__item--open',!isOpen);
-//   //   btn.setAttribute('aria-expanded',isOpen?'false':'true');
-
-//   //   e.preventDefault(); // solo porque es el botón toggle
-//   // });
-//   //fin ultima version tampoco fc
-
-//   // headerEl.addEventListener('click',function(e){
-//   //   console.log('click')
-//   //   // Si no tocás el botón, pero tocás dentro del LI abierto, igual queremos cerrar/alternar
-//   //   var btn=e.target.closest('.header__link--button');
-//   //   var li=e.target.closest('.header__item--has-submenu');
-
-//   //   if(!li||!headerEl.contains(li))return;
-
-//   //   // Si el click NO vino del botón y el LI NO está abierto, no hagas nada
-//   //   var isOpen=li.classList.contains('header__item--open');
-//   //   if(!btn && !isOpen)return;
-
-//   //   // Cerrar otros abiertos
-//   //   var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-//   //   for(var i=0;i<openItems.length;i++){
-//   //     if(openItems[i]!==li){
-//   //       openItems[i].classList.remove('header__item--open');
-//   //       var b=openItems[i].querySelector('.header__link--button');
-//   //       if(b)b.setAttribute('aria-expanded','false');
-//   //     }
-//   //   }
-
-  
-//     // Toggle del actual
-//   //   if(isOpen){
-//   //     li.classList.remove('header__item--open');
-//   //     if(btn)btn.setAttribute('aria-expanded','false');
-//   //     else{
-//   //       var b2=li.querySelector('.header__link--button');
-//   //       if(b2)b2.setAttribute('aria-expanded','false');
-//   //     }
-//   //   }else{
-//   //     li.classList.add('header__item--open');
-//   //     if(btn)btn.setAttribute('aria-expanded','true');
-//   //     else{
-//   //       var b3=li.querySelector('.header__link--button');
-//   //       if(b3)b3.setAttribute('aria-expanded','true');
-//   //     }
-//   //   }
-
-//   //   e.preventDefault();
-//   //   e.stopPropagation();
-//   // },true); // <-- CAPTURE (clave)
-// }
-//   //Toggle SUBMENUS del  header
-
-  //Menu mobile optimizado
+  //Menu mobile 
   if(headerEl){
     var toggleEls=headerEl.getElementsByClassName('header__toggle');
     var toggle=(toggleEls&&toggleEls.length)?toggleEls[0]:null;
@@ -979,7 +887,7 @@ function updateHeroProgressVar(){
         var b=openItems[i].querySelector('.header__link--button');
         if(b)b.setAttribute('aria-expanded','false');
       }
-      document.activeElement&&document.activeElement.blur();
+      if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
     }
 
     function toggleMenu(){
@@ -1010,6 +918,84 @@ function updateHeroProgressVar(){
   }
   // Fin menu mobile
 
+  //submenus del header
+  // if(headerEl){
+  //   if(viewportWidth>=992)return;
+  //   console.log(viewportWidth);
+  //   headerEl.addEventListener('click',function(e){
+  //     var btn=e.target.closest('.header__link--button');
+  //     if(!btn||!headerEl.contains(btn))return;
+
+  //     var li=btn.closest('.header__item--has-submenu');
+  //     if(!li)return;
+
+  //     var open=!li.classList.contains('header__item--open');
+
+  //     var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
+  //     for(var i=0;i<openLis.length;i++){
+  //       openLis[i].classList.remove('header__item--open');
+  //       var b=openLis[i].querySelector('.header__link--button');
+  //       if(b)b.setAttribute('aria-expanded','false');
+  //     }
+
+  //     li.classList.toggle('header__item--open',open);
+  //     btn.setAttribute('aria-expanded',open?'true':'false');
+  //   });
+  // }
+
+  // NUEVO: estado para poder activar/desactivar
+
+function enableMobileSubmenus(){
+  if(mobileSubmenuEnabled||!headerEl)return;
+  mobileSubmenuEnabled=true;
+
+  onHeaderSubmenuClick=function(e){
+    var btn=e.target.closest('.header__link--button');
+    if(!btn||!headerEl.contains(btn))return;
+
+    var li=btn.closest('.header__item--has-submenu');
+    if(!li)return;
+
+    var open=!li.classList.contains('header__item--open');
+
+    var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
+    for(var i=0;i<openLis.length;i++){
+      openLis[i].classList.remove('header__item--open');
+      var b=openLis[i].querySelector('.header__link--button');
+      if(b)b.setAttribute('aria-expanded','false');
+    }
+
+    li.classList.toggle('header__item--open',open);
+    btn.setAttribute('aria-expanded',open?'true':'false');
+  };
+
+  headerEl.addEventListener('click',onHeaderSubmenuClick);
+}
+
+function disableMobileSubmenus(){
+  if(!mobileSubmenuEnabled||!headerEl)return;
+  mobileSubmenuEnabled=false;
+
+  if(onHeaderSubmenuClick){
+    headerEl.removeEventListener('click',onHeaderSubmenuClick);
+    onHeaderSubmenuClick=null;
+  }
+
+  var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
+  for(var i=0;i<openLis.length;i++){
+    openLis[i].classList.remove('header__item--open');
+    var b=openLis[i].querySelector('.header__link--button');
+    if(b)b.setAttribute('aria-expanded','false');
+  }
+}
+
+// helper  
+function updateSubmenuMode(){
+  if(viewportWidth<992)enableMobileSubmenus();
+  else disableMobileSubmenus();
+}
+
+updateSubmenuMode();
 
   var io=new IntersectionObserver(function(entries){
     for(var i=0;i<entries.length;i++){
@@ -1055,6 +1041,8 @@ window.addEventListener('scroll',function(){
     viewportWidth=document.documentElement.clientWidth;
       //console.log(viewportWidth)
 
+    updateSubmenuMode(); //activa/desactiva listener click submenús
+
     viewportHeight=window.innerHeight;
     if(heroEl){
       var rect=heroEl.getBoundingClientRect();
@@ -1085,7 +1073,7 @@ window.addEventListener('scroll',function(){
  
  
 
-<svg class="sr-only" aria-hidden="true" focusable="false">
+<svg class="sr-only" aria-hidden="true" focusable="false" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;">
 <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.4 22 2 13.6 2 3c0-.6.4-1 1-1h3.8c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></symbol>
 <symbol id="i-email" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></symbol>
 <symbol id="i-location" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></symbol>
