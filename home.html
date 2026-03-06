@@ -71,7 +71,7 @@
     <div class="header__overlay" data-header-overlay></div>
   </header>
 
-  <main class="main">
+  <main class="main" style="opacity: 0;">
 
     <section id="hero" class="hero" aria-roledescription="carousel" aria-label="Highlights from Cake Atelier Copenhagen">
       <div id="heroDots" class="hero__dots" aria-label="Select hero slide">
@@ -475,6 +475,13 @@
 <script>
       
 document.addEventListener('DOMContentLoaded',function(){
+ var mainEl=document.querySelector('.main');
+if(mainEl){
+  window.addEventListener('load',function(){
+    mainEl.style.opacity='1';
+  });
+}
+
   var viewportWidth=document.documentElement.clientWidth;
   //console.log(viewportWidth)
   var viewportHeight=window.innerHeight;
