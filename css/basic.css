@@ -158,8 +158,10 @@ opacity: 0;    filter: blur(14px);    pointer-events: none;    transition: opaci
 .header__item--has-submenu:focus-within>.header__submenu{max-height:500px}
 .header__item--has-submenu>.header__link--button{position:relative;padding-right:2.25rem}
 .header__item--has-submenu>.header__link--button::after{  content:"";position:absolute;right:.875rem;top:48%;width:.5rem;height:.5rem;border-right:.125rem solid currentColor;border-bottom:.125rem solid currentColor;transform:translateY(-60%) rotate(45deg);transition:transform .18s ease;opacity:.9;}
-.header__item--has-submenu:hover>.header__link--button::after,
-.header__item--has-submenu:focus-within>.header__link--button::after{transform:translateY(-40%) rotate(-135deg);}
+.header__item--has-submenu:hover>.header__link--button::after
+/* ,
+.header__item--has-submenu:focus-within>.header__link--button::after */
+{transform:translateY(-40%) rotate(-135deg);}
 
 .no-scroll{overflow:hidden}
 
@@ -197,8 +199,10 @@ opacity: 0;    filter: blur(14px);    pointer-events: none;    transition: opaci
   .header__submenu{position:absolute; /*top:calc(100% + 6px);*/ left:0; /*min-width:21.25rem;*/ background:#fff;border-radius:.5rem;box-shadow:0 18px 40px rgba(0,0,0,.35);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s ease;max-height:none;overflow:visible;padding:.75rem;border-radius: .375rem;}
   .header__submenu-link{padding:.625rem 0 .125rem 0;margin-bottom: .5rem;  font-size:.813rem; /*font-size:clamp(13px, .86vw, .86vw);*/ color:var(--color-dark);border-bottom: .125rem solid transparent;border-radius: 0;opacity: 1;}
   .header__submenu-link:hover{opacity:.6;  border-bottom-color: rgba(34, 51, 66,.6);color: inherit;}
-  .header__item--has-submenu:hover>.header__submenu,
-  .header__item--has-submenu:focus-within>.header__submenu{opacity:1;visibility:visible;transform:translateY(0)}
+  .header__item--has-submenu:hover>.header__submenu
+  /* ,
+  .header__item--has-submenu:focus-within>.header__submenu */
+  {opacity:1;visibility:visible;transform:translateY(0)}
   .header__overlay{display:none}
 
   .header.header--compact-light{background:rgba(255, 255, 255, .22);backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);height: 3rem;align-items: start; /*padding-left: 1.25rem;*/}
