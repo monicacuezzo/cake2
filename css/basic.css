@@ -6,7 +6,7 @@ html,body,div{  /*overscroll-behavior:none*/   height: auto;}
 html{margin:0;padding:0;scroll-behavior:smooth;text-size-adjust:100%;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 html::-webkit-scrollbar{width:0;height:0}
-body{margin:0;min-height:100vh;width:100%;background-color:#fff;color:#111;overflow-x:hidden; /*font-size:16px;*/  line-height:1.5;scrollbar-width:none}
+body{margin:0;min-height:100vh;width:100vw;overflow-x:hidden;background-color:#223342;  /*font-size:16px;*/  line-height:1.5;scrollbar-width:none}
 body::-webkit-scrollbar{width:0;height:0}
 main{display:block}
 ul,ol{margin:0;padding:0;list-style:none}
@@ -40,9 +40,6 @@ a[href^="tel:"]{width:-webkit-max-content;width:-moz-max-content;width:max-conte
 .flex_a_center{display: flex;align-items: center;}
 .flex_aj_center{display: flex;align-items: center;justify-content: center;}
 .flex_j_center{display: flex;justify-content: center;}
-
-.body{width:100vw;background-color:#fff;color:#111;overflow-x:hidden;scrollbar-width:none}
-.body::-webkit-scrollbar{width:0;height:0}
 
 :root{
     --max-width: 1200px;

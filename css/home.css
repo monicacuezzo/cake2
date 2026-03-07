@@ -1,8 +1,6 @@
 :root{
     --padding-horizontal: 4.25vw;
     --padding-top: 12rem /*=150px /*76px*/ ;
-    --size18px: clamp(18px,1.21vw,1.21vw);
-    --size20px: clamp(20px, 1.33vw, 1.33vw);
  }
  @media (min-width:992px){
   :root{
@@ -12,9 +10,9 @@
  }
  /* para secciones debajo del fold */
 #about,#cakes,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
-body{background-color: #223242;}
-/* .hero{padding-top: var(--padding-top);} */
-/*generales*/
+
+
+/*generales ¿PASAR A basic.css?*/
 .section{  padding-top: var(--padding-top); width: 100%;min-height: 100vh;position: relative;padding-bottom: 6.25rem; }
 .section__title{font-size: 2.5rem;margin-bottom: 2rem; /*text-transform: uppercase;*/ font-weight: 500;}
 .section__subtitle{font-size: 1.5rem;margin-bottom: 2rem;color: var(--color-accent);font-weight: 500;}
@@ -23,19 +21,7 @@ body{background-color: #223242;}
 .section__title{font-size: 1.5rem;margin-bottom: 1rem;font-weight:600}
 .section__subtitle{font-size: 1.2rem;margin-bottom: 1.2rem;font-weight:600}
 .section__text{    font-size: 0.875rem;}
-.btn{font-size: 1rem;}
 }
-
-
-.btn{display:inline-flex;align-items:center;justify-content:center; border-radius:.25rem;padding:.75rem 1.375rem;font-weight:600;font-size: 1.25rem /*20px; font-size: var(--size20px)*/;  letter-spacing:.03rem; transition:background .2s,color .2s; cursor:pointer;width: max-content;}
-.btn--primary{background:var(--color-accent);color:#fff;border: 2px solid var(--color-accent);margin-top: 1rem;  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1)}
-.btn--primary:not(:hover){text-shadow: rgb(51, 51, 51) 0px 0px 5px;}
-.btn--primary:hover{background:#fafafa; color:var(--color-accent)}
-/* .btn--secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.85)}
-.btn--secondary:hover{border-color:var(--color-accent);color:var(--color-accent)}
-.btn--secondary:active{transform:translateY(1px)} */
-/* .hero__cta{margin-top: 1rem;} */
-.btn:focus-visible{outline:2px solid currentColor;outline-offset:3px} /*?????*/
 
 .btn--neon{background: transparent; color: #fff; border: none;position: relative; margin-top: 1rem;z-index: 0; cursor:pointer;width: max-content;display: flex; align-items:center;justify-content:center; border-radius:.25rem;padding:.75rem 1.375rem;font-weight:600; font-size: 1.25rem;  letter-spacing:.03rem; }
 
@@ -127,7 +113,6 @@ transition:transform .22s ease}
 
  
 /* botones flotantes */
-.floating--hidden{opacity:0;pointer-events:none;transform:translate3d(0,10px,0)}
 .floating-button{z-index: 10;  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.3);border-radius: 50%;}
 .floating-button--wapp{position: fixed;bottom: 1.25rem;width: 3.125rem;height: 3.125rem;overflow: visible;right: 1rem;}
 .floating-button--wapp__img{width: 100%;height: 103%;}
@@ -151,93 +136,7 @@ transition:transform .22s ease}
 @keyframes float{0%,25%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}75%{transform:translateY(0);}}
 
 
-/*HERO*/
-.hero{position:relative;width:100%;height:130vh;min-height:130vh;z-index: 0; /* overflow: hidden; para probar sticky logo*/}
-.hero .btn--primary{box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)}
-.hero__inner{position:relative;width:100%;height:100vh;min-height:100vh;}
-.hero__slides{ position:relative;top:0;height:100vh;min-height:100vh; overflow:visible}
-.hero__slide{position:absolute;inset:0;width:100%;height:100%;min-height:100%;opacity:0;pointer-events:none;transition:opacity .8s ease}
-.hero__slide--1{opacity:1;animation:hero-fade-1 9s linear infinite}  
-.hero__slide--2{opacity:0;animation:hero-fade-2 9s linear infinite}  
-@keyframes hero-fade-1{0%,40%{opacity:1;pointer-events:auto}50%,90%{opacity:0;pointer-events:none}100%{opacity:1;pointer-events:none}}
-@keyframes hero-fade-2{0%,40%{opacity:0;pointer-events:none}50%,90%{opacity:1;pointer-events:auto}100%{opacity:0;pointer-events:none}}
-.hero__content{position:relative;z-index:2;height:100vh /*100%*/;display:flex;flex-direction: column; /*justify-content: space-around; *//*align-items:center;justify-content:flex-start;*/ padding:0 var(--padding-horizontal)}
-/*PRUEBA LOGO DENTRO DE HERO*/
-/* .hero__logo-container{flex: 1;} */
-.hero__logo{width:clamp(8rem,45vw,12rem); /*width:45vw; height: 37vw;*/  color: var(--color-brand);z-index: 2;   position: sticky;top: 1rem; display: flex;flex-direction: column;align-items: center;gap:1.2rem;}
-.hero__logo-img{display: block;  /*height: 6.2vw;*/ }
-.hero__logo-img use{width:100%;height:100%;}
-.hero__logo-img:nth-child(1){/*height:5rem;*/ width:65%; /*max-width:11rem;*/
-aspect-ratio:174.18/108.26; /* mantiene proporción de tu viewBox */
-/*height:auto;                /* ok, pero con aspect-ratio no es necesario */
- }
-.hero__logo-img:nth-child(2){ /*height:4.2rem;*/ width: 100%;aspect-ratio: 280.09/60.08;}
-.hero__text-container{display: flex;flex-direction: column;flex: 1; gap: 1rem; margin-top: 3rem;}
-/**/
-.hero__copy{width:100%;  z-index: 1;gap: 1rem; /*esto estaba bien, es para probar sticky logo display: grid; /*margin-top:4rem /*9.5rem;*/;
-display: flex;flex-direction: column;justify-content: space-between;padding: 1.25rem 0 2rem 0; position: sticky;top: 0;}
-/*.hero__copy2{width: 45%; /* si va margin-top:4rem /*9.5rem;}*/
-.hero__headline{font-size: 1.25rem;  line-height:1.05;color:#fff;font-weight:600;
- text-shadow: rgb(51, 51, 51) 0px 0px 5px;}
-.hero__text{ font-size:1.25rem; /*font-size:clamp(32px,2.13vw,2.13vw);*/ line-height:1.2;color:#fff;font-weight: 400;text-shadow: rgb(51, 51, 51) 0px 0px 5px;}
-.hero__text2{font-size: 1.1rem; /*font-size:clamp(28px,1.92vw,1.92vw);*/}
-.hero__media{position:absolute;inset:0;z-index:0;    height: 130vh;}
-.hero__picture{position:absolute;display:block;left:0; right:0; /*top:0;bottom:0;*/ top: -10vh;bottom: -10vh; height:130vh}
-/*animacion parallax*/ .hero__picture[data-parallax] , .hero__text-container /*,.hero__copy*/{transition:transform 60ms ease-out /*ease-out*/}
-.hero__img{position:absolute;inset:0; width:100%;height:100%;object-fit:cover;object-position:center bottom}
-.hero.is-manual .hero__slide{animation:none}
-.hero.is-manual .hero__slide{opacity:0;pointer-events:none}
-.hero.is-manual .hero__slide.is-active{opacity:1;pointer-events:auto}
-.hero__media,.hero__picture, .hero__text-container /*,.hero__copy*/{will-change:transform}
-.hero__slides,.cakes__stage{ backface-visibility:hidden;will-change:transform;transform:translateZ(0)}
-/* //animacion */
-.hero{--hero-p:0;--hero-media-shift:300px;--hero-copy-shift:150px}
-/* .hero{--hero-media-shift:-320px;--hero-copy-shift:-180px} */
-.hero .hero__picture[data-parallax]{transform:translate3d(0,calc(var(--hero-media-shift)*var(--hero-p)),0)}
- .hero .hero__text-container /*.hero__copy*/{transform:translate3d(0,calc(var(--hero-copy-shift)*var(--hero-p)),0)} /* ESTO SIIII VAAA ES SOLO PARA PROBAR STICKY */
-/*para probar sticky lo sig e hero-logo*/
-/* .hero__logo{transform:translate3d(0,var(--hero-copy-hold,0px),0);will-change:transform;transition:transform .3s ease-out} */
-/* Accesibilidad: reduce motion */
-@media (prefers-reduced-motion:reduce){   /*unificar y revisar repetidos*/
-  .hero{--hero-p:0}
-  .hero__media,.hero__copy,.hero__logo,.hero .hero__picture[data-parallax], .hero .hero__text-container{transform:none!important}
-  .hero__slide--1,.hero__slide--2,.hero__img{animation:none}
-  .hero__slide{transition:none}
-}
-.hero__dots{top:88vh;left:50%;transform: translateX(-50%); z-index: 2; display:flex;gap:1.25rem /*clamp(20px, 1.5vw, 1.5vw)*/;  }
-.hero__dots.dots--fixed{position:fixed;}
-.hero__dot{width: 1rem;  /*width:clamp(16px, 1vw, 1vw)*/ ;height: 1rem; /*height:clamp(16px, 1vw, 1vw)*/;border-radius:999px;border:1px solid rgba(255,255,255,.75);background:transparent;padding:0;;cursor:pointer;}
-.hero__dot[aria-current="true"]{background:rgba(255,255,255,.75)}
-.hero__dot:nth-child(1){animation:hero-dot-1 9s linear infinite}  
-.hero__dot:nth-child(2){animation:hero-dot-2 9s linear infinite}  
-@keyframes hero-dot-1{0%,40%{background:rgba(255,255,255,.75)}50%,90%{background:transparent;}100%{background:rgba(255,255,255,.75)}}
-@keyframes hero-dot-2{0%,40%{background:transparent; }50%,90%{background:rgba(255,255,255,.75) }100%{background:transparent;}}
-.hero.is-manual .hero__dot{animation:none}
 
-@media (min-width:768px){
-  .hero__content{ justify-content: space-around; }
-  /*animacion parallax*/  /*.hero__copy*/ .hero__text-container{transition:transform 60ms ease-out /*ease-out*/;  }
-  /*.hero__copy*/ .hero__text-container{will-change:transform}
- 
-  .hero__copy{ width: 46.9vw;height: 100%;}
-  .hero__headline{font-size: 2.375rem; font-size:clamp(2.2rem,2.5vw,2.5vw); font-weight:700;}
-.hero__text{ font-size:2rem;  }
-.hero__text2{font-size: 1.8rem; }
-.hero__img{  object-position:center bottom}
-.hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:left center}
-.hero__logo-container{flex: 1;}
-.hero__logo{width: 13.75rem; /*width: clamp(220px,15vw,15vw);*/ height: 10rem; /*height: 11vw;*/}
-.hero__logo-img{/* width: 100%;height:6rem; /*height: 6.2vw;*/ }
-.hero__text-container{display: grid; margin-top: 0;flex: 0;}
-.hero__text-container{transform:translate3d(0,calc(var(--hero-copy-shift)*var(--hero-p)),0)}
-
-.hero,.hero__media,.hero__picture{height: 150vh;}
-.hero__picture{ top: -10vh;bottom: -10vh;}
-
-}
-@media (min-width:768px){
-.hero__dots{top:92vh;}
-}
 /*ABOUT*/
 /****************************************/
 /* beige bkg #dacfc0*/
@@ -490,7 +389,7 @@ display: flex;flex-direction: column;justify-content: space-between;padding: 1.2
 
 .section--how.is-in .how__title,.section--how.is-in .how__subtitle{animation:howFadeUp var(--how-dur) var(--how-ease) forwards}
 .section--how.is-in .how__subtitle{animation-delay:.10s} /*.08s*/
-.section--how.is-in .how__steps:before{animation:howLine var(--how-line-dur) var(--how-ease) forwards;animation-delay:.25s} /*.12*/
+.section--how.is-in .how__steps:before{animation:howLine var(--how-line-dur) var(--how-ease) forwards;animation-delay:.45s} /*.12*/
 
 .section--how.is-in .how__step{animation:howFadeUp var(--how-dur) var(--how-ease) forwards}
 .section--how.is-in .how__step:nth-child(1){animation-delay:.18s}
@@ -510,7 +409,7 @@ display: flex;flex-direction: column;justify-content: space-between;padding: 1.2
 @keyframes howLine{to{transform:scale(1)}}
 
 @media (min-width:992px){
-  .section--how{--how-ease:cubic-bezier(.2,.9,.2,1);--how-dur:2.3s /*1.9 .95s*/ ;--how-stagger:.13s;--how-line-dur:2.3s} /*1.9  1.6*/
+  .section--how{--how-ease:cubic-bezier(.2,.9,.2,1);--how-dur:2.3s /*1.9 .95s*/ ;--how-stagger:.13s;--how-line-dur:3.3s} /*1.9  1.6*/
 
   .how__subtitle{font-size: 1.25rem /*20px; font-size:var(--size20px)*/}
   .how__subtitle--accent{color: inherit;}
