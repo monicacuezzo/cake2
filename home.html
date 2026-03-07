@@ -492,12 +492,12 @@
 <script>
       
 document.addEventListener('DOMContentLoaded',function(){
- var mainEl=document.querySelector('body');
-if(mainEl){
-  window.addEventListener('load',function(){
-    mainEl.style.opacity='1';
-  });
-}
+//  var mainEl=document.querySelector('body');
+// if(mainEl){
+//   window.addEventListener('load',function(){
+//     mainEl.style.opacity='1';
+//   });
+// }
 
   var viewportWidth=document.documentElement.clientWidth||0;
   //console.log(viewportWidth)
@@ -518,7 +518,8 @@ if(mainEl){
   var cakesCols=document.querySelectorAll('.cakes__col');
   var cakesSection=document.getElementById('cakes');
   var cakesNewsletter=document.querySelector('.cakes__newsletter');
-window.addEventListener('load',function(){if(cakesStage&&cakesCols&&cakesCols.length)measureCakes();},{passive:true});
+  var cakesJustActivated=false;
+ 
   var fxEls=document.querySelectorAll('#about .fx-fade-up-var');
 
 //Parallax Hero
@@ -700,7 +701,9 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
     activeId:null,
     cakesOverflow:[],
     cakesAbsSpeed:[],
-    cakesSign:[]
+    cakesSign:[],
+    cakesMeasuredOnce:false,
+    cakesBaseOffset:[]
   };
 
   //lo sig se usa??
@@ -769,6 +772,7 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
 
     for(var c=0;c<cakesCols.length;c++){
       var col=cakesCols[c];
+      col.style.transform='';
       var speed=parseFloat(col.getAttribute('data-speed')||'0');
       var absSpeed=Math.abs(speed);
       var sign=(speed<0)?-1:1;
@@ -784,14 +788,41 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
 
       //////////evita "movimiento brusco" inicial
       var startOffset=0;
-      if(viewportWidth<768&&c%2===1&&overflow>0){
+      // if(viewportWidth<768&&c%2===1&&overflow>0){
+      //   var phEls=col.getElementsByClassName('cakes__ph');
+      //   var ph=phEls&&phEls.length?phEls[0]:null;
+      //   var halfPh=ph?(ph.offsetHeight*0.5):0;
+      //   startOffset=Math.min(overflow,halfPh); //????
+
+      //   var firstPh=col.querySelector('.cakes__ph');
+      //   var halfPh=firstPh?firstPh.offsetHeight*0.5:0;
+
+      //   state.cakesBaseOffset[i]=state.cakesAbsSpeed[i]>0
+      //     ? Math.max(0,state.cakesOverflow[i]-halfPh)
+      //     : 0;
+      // }
+
+      // if(speed>0&&overflow>0){
+      //   var phEls=col.getElementsByClassName('cakes__ph');
+      //   var ph=phEls&&phEls.length?phEls[0]:null;
+      //   var halfPh=ph?(ph.offsetHeight*0.5):0;
+      //   startOffset=Math.max(0,overflow-halfPh);
+      // }
+
+      if(speed>0&&overflow>0){
         var phEls=col.getElementsByClassName('cakes__ph');
-        var ph=phEls&&phEls.length?phEls[0]:null;
-        var halfPh=ph?(ph.offsetHeight*0.5):0;
-        startOffset=Math.min(overflow,halfPh);
+        var halfStep=0;
+
+        if(phEls&&phEls.length>1){
+          var r0=phEls[0].getBoundingClientRect();
+          var r1=phEls[1].getBoundingClientRect();
+          halfStep=(r1.top-r0.top)*0.5;
+        }else if(phEls&&phEls.length){
+          halfStep=phEls[0].offsetHeight*0.5;
+        }
+
+        startOffset=Math.max(0,overflow-halfStep);
       }
-
-
       ////
     
       state.cakesStartOffset[c]=startOffset;
@@ -800,22 +831,38 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
       if(!absSpeed){
         col.style.transform='';
       }else{
-        var baseOverflow=(sign>0)?Math.max(0,overflow-startOffset):overflow;
-        var y0=(sign>0)?(-baseOverflow*absSpeed):0; // progress=0
+        var y0=(sign>0)?(-startOffset):0; // progress=0
+        // var baseOverflow=(sign>0)?Math.max(0,overflow-startOffset):overflow;
+        // //var y0=(sign>0)?(-baseOverflow*absSpeed):0; // progress=0
+        // var y0=(sign>0)?(-baseOverflow):0; // progress=0
+
+
+//este acomoda OK var shiftPx=startOffset; // halfPh en px reales
+// var y0=(sign>0)?(-overflow*absSpeed + shiftPx):0;esto no fc, anterior
+//este acomoda OK var y0=(sign>0)?(shiftPx):0;//nuevo probar
+
+        // console.log('c',c,'speed',speed,'sign',sign,'overflow',overflow,'startOffset',startOffset,'absSpeed',absSpeed);
+
+        // console.log('y0',y0)
+// col.style.transform='translate3d(0,'+y0.toFixed(1)+'px,0)'; esto no fc, anterior
         col.style.transform='translate3d(0,'+y0.toFixed(1)+'px,0)';
+        // console.log('measureCakes shiftPx=',shiftPx,'y0=',y0)
+        console.log( 'y0=',y0)
       }
       /////////////////
 
      }
   }
 
-//   function applyCakesParallaxNow(){
-//   if(!cakesWrap||!cakesStage||!cakesCols.length)return;
-//   updateCakesParallax(cakesWrap.getBoundingClientRect());
-// }
+  window.addEventListener('load',function(){
+    if(cakesStage&&cakesCols&&cakesCols.length){measureCakes();state.cakesMeasuredOnce=true;}
+  },{passive:true});
+ 
 
   function updateCakesParallax(cakesRect){
-    if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length)return;
+    if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length||(cakesRect.y>50))return;
+
+    console.log('cakesRect-y  =',cakesRect.y)
 
     // var wrapRect=cakesWrap.getBoundingClientRect();
     var wrapRect=cakesRect;
@@ -834,12 +881,41 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
 
       // var y=(sign<0)?(-progress*overflow*absSpeed):(-(1-progress)*overflow*absSpeed);
 
+      // var y=0;
+      // if(sign<0){
+      //   y=(-progress*overflow*absSpeed);
+      // }else{
+      //   y=(cakesJustActivated)?0:(-(1-progress)*overflow*absSpeed);
+      // }
+
       var startOffset=state.cakesStartOffset?state.cakesStartOffset[c]:0;
-var baseOverflow=(sign>0)?Math.max(0,overflow-startOffset):overflow;
-var y=(sign<0)?(-progress*baseOverflow*absSpeed):(-(1-progress)*baseOverflow*absSpeed);
+      var travelOverflow=(sign>0)?startOffset:overflow;
+
+      var y=0;
+      if(sign<0){
+        y=(-progress*travelOverflow*absSpeed);
+      }else{
+        y=(-(1-progress)*travelOverflow*absSpeed);
+      }
+       
+      
+
+//       var startOffset=state.cakesStartOffset?state.cakesStartOffset[c]:0;
+// var baseOverflow=(sign>0)?Math.max(0,overflow-startOffset):overflow;
+// var y=(sign<0)?(-progress*baseOverflow*absSpeed):(-(1-progress)*baseOverflow*absSpeed);
+
+//pruebo de anular lo anterior
+// var shiftPx=state.cakesStartOffset?state.cakesStartOffset[c]:0;
+// var y=(sign<0)
+//   ? (-progress*overflow*absSpeed)
+//   : (-(1-progress)*overflow*absSpeed + (1-progress)*shiftPx);
 
       cakesCols[c].style.transform='translate3d(0,'+y.toFixed(1)+'px,0)';
+      console.log('updateCakesParallax  y=',y)
+
+
     }
+    cakesJustActivated=false;
   }
 
 
@@ -884,7 +960,7 @@ function updateHeroProgressVar(){
       
       if(state.cakesOn){
         var cakesRect=cakesWrap.getBoundingClientRect();
-        updateCakesParallax(cakesRect);
+        if(cakesRect.y<=50)updateCakesParallax(cakesRect);
       }
     }
 
@@ -902,12 +978,12 @@ function updateHeroProgressVar(){
   // }
  
   //Efectos cakes
+  
   function onCakes(entry){
     state.cakesOn=entry.isIntersecting;
     if(state.cakesOn){
       if(cakesStage&&!cakesStage.classList.contains('cakes--wow-in'))cakesStage.classList.add('cakes--wow-in');
-      measureCakes();
-      // applyCakesParallaxNow();
+      if(!state.cakesMeasuredOnce){measureCakes();state.cakesMeasuredOnce=true;}
     }
   }
 
