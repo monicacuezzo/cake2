@@ -986,11 +986,19 @@ function updateCakesParallax(cakesRect){ //v4
   // progress=smoothstep(progress);ok para dsk pero pesado/lento en mob
 
   //para acelerar en mob
+  //opcion1
+  // var progress=clamp((-cakesRect.top)/travel,0,1);
+  // if(viewportWidth<768){
+  //   progress=clamp(progress*1.5,0,1); //1.35
+  // }
+  //opcion2
   var progress=clamp((-cakesRect.top)/travel,0,1);
-if(viewportWidth<768){
-  progress=clamp(progress*1.5,0,1); //1.35
-}
-//fin mob
+  if(viewportWidth<768){
+    progress=clamp(progress*1.5,0,1);
+  }else{
+    progress=smoothstep(progress);
+  }
+  //fin mob
 
 progress=smoothstep(progress);
 
