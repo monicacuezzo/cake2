@@ -53,7 +53,7 @@ display: flex;flex-direction: column;justify-content: space-between;padding: 1.2
 .hero__media,.hero__picture, .hero__text-container /*,.hero__copy*/{will-change:transform}
 .hero__slides,.cakes__stage{ backface-visibility:hidden;will-change:transform;transform:translateZ(0)}
 /* //animacion */
-.hero{--hero-p:0;--hero-media-shift:500px /*300px*/;--hero-copy-shift:150px}
+.hero{--hero-p:0;--hero-media-shift:300px /*300px*/;--hero-copy-shift:150px}
 /* .hero{--hero-media-shift:-320px;--hero-copy-shift:-180px} */
 .hero .hero__picture[data-parallax]{transform:translate3d(0,calc(var(--hero-media-shift)*var(--hero-p)),0)}
  .hero .hero__text-container /*.hero__copy*/{transform:translate3d(0,calc(var(--hero-copy-shift)*var(--hero-p)),0)} /* ESTO SIIII VAAA ES SOLO PARA PROBAR STICKY */
