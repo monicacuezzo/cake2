@@ -30,8 +30,8 @@
     <noscript><link rel="stylesheet" href="css/basic.css"></noscript>
     <link rel="preload" href="css/home-v2.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/home-v2.css"></noscript>
 
-    <link rel="icon" type="image/svg+xml" href="img/favicon/favicon.svg">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/svg+xml" href="img/favicon/favicon2.svg">
+    <link rel="icon" href="favicon2.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="img/favicon/site.webmanifest">
     <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#B8C247">
@@ -988,7 +988,7 @@ function updateCakesParallax(cakesRect){ //v4
   //para acelerar en mob
   var progress=clamp((-cakesRect.top)/travel,0,1);
 if(viewportWidth<768){
-  progress=clamp(progress*1.35,0,1);
+  progress=clamp(progress*1.5,0,1); //1.35
 }
 //fin mob
 
