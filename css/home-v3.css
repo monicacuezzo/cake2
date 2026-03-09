@@ -276,7 +276,7 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 }
 
 .about-game__cake{position:absolute;bottom:0;left:0;width:100%; height:auto;opacity:0;z-index:1;pointer-events:none;transition:opacity 1s ease}
-.about-game__radio:checked + .about-game__option + .about-game__cake,.about-game__radio:checked + .about-game__cake{opacity:1;z-index:3}
+.about-game__radio:checked + .about-game__option + .about-game__cake,.about-game__radio:checked + .sr-only + .about-game__cake{opacity:1;z-index:3}
 .about-game__radio:checked + .about-game__option{box-shadow:0 0 0 .1875rem rgba(255,255,255,.34)}
 .about-game__radio:checked + .about-game__option::before,
 .about-game__radio:checked + .about-game__option::after{border-color:rgba(255,255,255,.95);opacity:.95; /*animation-duration:2s*/}
