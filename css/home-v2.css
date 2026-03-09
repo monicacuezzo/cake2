@@ -378,7 +378,8 @@ transition:transform .22s ease}
 .section--how{--how-ease:cubic-bezier(.2,.9,.2,1);--how-dur:2.6s /*1.9 .95s*/ ;--how-stagger:.23s;--how-line-dur:5s} /* 3.5 1.9  1.6*/
 .section--how .how__title {opacity:0;transform:translate3d(0,30px,0)} /*14px*/
 .section--how .how__subtitle{opacity:0;transform:translate3d(0,50px,0)} /*14px*/
-.section--how .how__step{opacity:0;transform:translate3d(0,14px,0)}
+.section--how .how__step{ transform:translate3d(0,14px,0)}
+.section--how .how__text{opacity:0;transform:translate3d(0,14px,0)}
 .section--how .how__icon{opacity:0;transform:translate3d(0,14px,0)}/*8px*/
 .section--how .how__steps:before{transform:scaleY(0);transform-origin:top}
 
@@ -389,6 +390,8 @@ transition:transform .22s ease}
 
 .section--how.is-in .how__title,.section--how.is-in .how__subtitle{animation:howFadeUp var(--how-dur) var(--how-ease) forwards}
 .section--how.is-in .how__subtitle{animation-delay:.10s} /*.08s*/
+.section--how.is-in .how__text{animation:howFadeUp var(--how-dur) var(--how-ease) forwards;animation-delay:.18s}
+
 .section--how.is-in .how__steps:before{animation:howLine var(--how-line-dur) var(--how-ease) forwards;animation-delay:.45s} /*.12*/
 
 .section--how.is-in .how__step{animation:howFadeUp var(--how-dur) var(--how-ease) forwards}
