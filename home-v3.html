@@ -573,13 +573,14 @@ document.addEventListener('DOMContentLoaded',function(){
   var mobileSubmenuEnabled=false;
   var onHeaderSubmenuClick=null;
 
-
   var cakesWrap=document.querySelector('.cakes__wrap');
   var cakesStage=document.querySelector('.cakes__stage');
   var cakesCols=document.querySelectorAll('.cakes__col');
   var cakesSection=document.getElementById('cakes');
   var cakesNewsletter=document.querySelector('.cakes__newsletter');
   // var cakesJustActivated=false;
+  var cakesNewsletterVisible=false;
+  var footerVisible=false;
  
   var fxEls=document.querySelectorAll('#about .fx-fade-up-var');
 
@@ -1125,10 +1126,10 @@ function updateHeroProgressVar(){
     }
   }
 
-  function onCakesNewsletter(entry){
-    if(!cakesSection)return;
-    cakesSection.classList.toggle('cakes--newsletter-on',entry.isIntersecting);
-  }
+  // function onCakesNewsletter(entry){
+  //   if(!cakesSection)return;
+  //   cakesSection.classList.toggle('cakes--newsletter-on',entry.isIntersecting);
+  // }
 
   //Toggle SUBMENUS del  header
 
@@ -1247,11 +1248,22 @@ function updateSubmenuMode(){
 
 updateSubmenuMode();
 
+function syncCakesNewsletterState(){
+  if(!cakesSection)return;
+  cakesSection.classList.toggle('cakes--newsletter-on',cakesNewsletterVisible||footerVisible);
+}
+
   var io=new IntersectionObserver(function(entries){
     for(var i=0;i<entries.length;i++){
       var e=entries[i];
+      console.log(e)
       if(e.target===cakesStage){onCakes(e);continue;}
-      if(e.target===cakesNewsletter){onCakesNewsletter(e);continue;}
+      // if(e.target===cakesNewsletter){onCakesNewsletter(e);continue;}
+      if(e.target===cakesNewsletter){
+  cakesNewsletterVisible=e.isIntersecting;
+  syncCakesNewsletterState();
+  continue;
+}
       if(e.target===howEl){
         howEl.classList.toggle('is-in',e.isIntersecting);  
         // buttonTop.classList.add('floating--dark');
@@ -1266,15 +1278,20 @@ updateSubmenuMode();
       //   buttonTop.classList.remove('floating--dark');
       // }
 
-      // if(e.target===footerEl){onFooter(e);continue;}
+      // if(e.target===footerEl){cakesSection.classList.toggle('cakes--newsletter-on',true);continue;}//mantiene oculto el cta de cakes
+      if(e.target===footerEl){
+  footerVisible=e.isIntersecting;
+  syncCakesNewsletterState();
+  continue;
+}
       }
     tick();
-  },{threshold:[0,0.15],rootMargin:'-20% 0px -55% 0px'}); //-20% 0 -55% 0
+  },{threshold:[0,0.15],rootMargin:'-20% 0px -15% 0px'}); //-20% 0 -55% 0
 
    if(cakesStage)io.observe(cakesStage);
   if(cakesNewsletter)io.observe(cakesNewsletter);
   if(howEl)io.observe(howEl);
-  // if(footerEl)io.observe(footerEl);
+  if(footerEl)io.observe(footerEl);
   for(var s=0;s<spyPairs.length;s++)io.observe(spyPairs[s].el);
   
   
