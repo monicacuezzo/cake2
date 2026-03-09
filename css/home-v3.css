@@ -220,7 +220,7 @@ transition:transform .22s ease}
 /* .about__border:before{ background:conic-gradient(from 0deg,#ebf094,#e34d4e,#ebf094);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;pointer-events:none} */
 .about__border>img{display:block;width:100%;height:auto}/*hace falta???*/
 
-.about__media{display: inline-flex;flex: 1;justify-content: space-between;}
+.about__media{display: inline-flex;flex: 1; /*justify-content: space-between;*/}
 .about__media--video{flex:0 0 clamp(16.25rem,12vw,20rem); /*width: clamp(300px,15vw,400px);*/ overflow:hidden;border-radius: .25rem;margin-top: 5rem;height: max-content;}
 .about__media--photo{  overflow:hidden;border-radius: .25rem;height: max-content;
   /*game*/
@@ -235,7 +235,7 @@ position: relative;z-index: 2;
 .about-game__title::before,.about-game__title::after{position:absolute;left:0;width:100%; content:"";
   height:1.17rem ;  font-size: 1.17rem;line-height:  1.17rem; padding: 0;animation:aboutGameTitle 8s ease-in-out infinite;text-shadow:rgb(51,51,51) 0 0 5px ;}
 .about-game__title::before{content:"Which cake are you?";color: #f3e924;}
-.about-game__title::after{content:"Tap to dress the cake";color: #fff;opacity:0;animation-delay:4s}
+.about-game__title::after{content:"Tap to dress the cake!";color: #fff;opacity:0;animation-delay:4s}
 
 @keyframes aboutGameTitle{
   0%,10%{opacity:0;transform:translateX(100%)}
@@ -258,7 +258,7 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 .about-game__option::before
 /* ,
 .about-game__option::after */
-{content:"";position:absolute;inset:0; /*-.01rem;*/ border-radius:50%;z-index: 4;background: rgba(255, 255, 255, .55); animation:aboutGamePulse 2.1s ease-in-out infinite; /*2.4s ease-out */
+{content:"";position:absolute;inset:0; /*-.01rem;*/ border-radius:50%;z-index: 4;background: rgba(255, 255, 255, .55); animation:aboutGamePulse 2s ease-in-out infinite; /*2.4s ease-out */
   /* border:.125rem solid rgba(255,255,255,.55); */
     /* opacity:.55;
   transform:scale(.92) */
@@ -276,12 +276,10 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 }
 
 .about-game__cake{position:absolute;bottom:0;left:0;width:100%; height:auto;opacity:0;z-index:1;pointer-events:none;transition:opacity 1s ease}
-/* .about-game__radio:checked + .about-game__option{border-color:#222} */
 .about-game__radio:checked + .about-game__option + .about-game__cake,.about-game__radio:checked + .about-game__cake{opacity:1;z-index:3}
-
 .about-game__radio:checked + .about-game__option{box-shadow:0 0 0 .1875rem rgba(255,255,255,.34)}
 .about-game__radio:checked + .about-game__option::before,
-.about-game__radio:checked + .about-game__option::after{border-color:rgba(255,255,255,.95);opacity:.95;animation-duration:1.6s}
+.about-game__radio:checked + .about-game__option::after{border-color:rgba(255,255,255,.95);opacity:.95; /*animation-duration:2s*/}
 
 /********************/
 
@@ -308,7 +306,7 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 
 /*ABOUT RESPONSIVE*/
 @media (max-width: 1099.98px){
-  .about__media--video /*,.about__media--photo*/ {max-width: 18.75rem;}
+  .about__media--video /*,.about__media--photo*/, .about__media-mobile {max-width: 18.75rem;}
 
   .about__me{display:contents}
  .about__me-title{grid-column:1/-1;grid-row:3; margin-bottom: 0;}
@@ -318,9 +316,8 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 .about__me-media img{display:block;width:100%;max-width: 20rem; height:auto}
 .about__me-text .btn{grid-column:1/-1;grid-row:6;justify-self:center; }
 
-}
 
-@media (max-width: 1099.98px){ /* 767.98px*/
+ /* 767.98px*/
 .btn{font-size: 1rem;}
 
 .about__layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;align-items:start}
@@ -345,7 +342,7 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 .about__media--video{grid-column:1;grid-row:2;justify-self:center;width:100%; }
 .about__media--video,.about__media--photo{aspect-ratio:4/5;overflow:hidden}
 .about__video,.about__photo{display:block;width:100%;height:100%;object-fit:cover} */
-.about__media{grid-row:3;}
+.about__media-mobile .about__media--video{margin-top: 0;}
 .about__photo-sticky{position:static;top:auto}
 
 /*********agregado para game****/
@@ -353,6 +350,7 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 .about__me-text .about__p{grid-row:5}
 .about__me-media{grid-row:6}
 .about__me-text .btn{grid-row:7}
+.about__media{grid-row:8; grid-column: 1 / -1;justify-self: center;  width: 100%; max-width: 20rem;margin-top: 1.5rem;}
 }
 
 @media (min-width:400px){
@@ -421,6 +419,7 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 
 /*************************/
 }
+@media (min-width:680px){.about__media-mobile{display: none;}}
 @media (min-width:1200px){.about__media--video,.about__media,.about__me-media{max-width:37.5rem}}
 
 /**************************/
