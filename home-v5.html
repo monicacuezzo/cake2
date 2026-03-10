@@ -604,13 +604,15 @@ var lenisInstance = null;
 var lenisRafId = 0;
 function initLenis(){
   if(!window.Lenis)return;
+  if(viewportWidth<992)return;
+  if(lenisInstance)return;
 
   lenisInstance = new Lenis({
     autoRaf:false,
     smoothWheel:true,
     syncTouch:false,
-    lerp:0.08,
-    wheelMultiplier:1,
+    lerp:0.12, //.08
+    wheelMultiplier:0.9,//1
     touchMultiplier:1,
     overscroll:true
   });
@@ -626,7 +628,28 @@ function initLenis(){
 
   lenisRafId = requestAnimationFrame(onLenisRaf);
 }
-initLenis();
+function destroyLenis(){
+  if(lenisRafId){
+    cancelAnimationFrame(lenisRafId);
+    lenisRafId=0;
+  }
+  if(lenisInstance){
+    lenisInstance.destroy();
+    lenisInstance=null;
+  }
+}
+function syncLenisMode(){
+  if(viewportWidth<992){
+    destroyLenis();
+  }else{
+    initLenis();
+    if(lenisInstance)lenisInstance.resize();
+  }
+}
+syncLenisMode();
+
+
+
 
 function measureHeaderHeights(){
   // if(viewportWidth<992){return};
@@ -807,7 +830,7 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
 
   //lo sig se usa??
   function clamp(v,min,max){return v<min?min:(v>max?max:v);}
-  function smoothstep(t){return t*t*(3-2*t);}
+  // function smoothstep(t){return t*t*(3-2*t);} lo saco por Lenis
 
   function setActive(id){
     if(viewportWidth<992)return;
@@ -858,6 +881,8 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
   applyHeaderBySection('');
 }
 
+
+
  
   function measureCakes(){
     if(!cakesStage||!cakesCols.length)return;
@@ -879,7 +904,7 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
         col.style.transform='';
       }
 
-      console.log( 'measure cake cakesCols[c]',c)
+      // console.log( 'measure cake cakesCols[c]',c)
     }
   }
 
@@ -890,7 +915,9 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
 
   
 function updateCakesParallax(cakesRect){ //v4
-  if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length||cakesRect.y>50)return;
+  //if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length||cakesRect.y>50)return;
+  if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length)return;
+  console.log(cakesRect.y)
 
   var travel=cakesRect.height-viewportHeight;
   if(travel<=0)return;
@@ -903,14 +930,11 @@ function updateCakesParallax(cakesRect){ //v4
   // }
   var progress=clamp((-cakesRect.top)/travel,0,1);
   if(viewportWidth<768){
-    progress=clamp(progress*1.5,0,1);
-  }else{
-    progress=smoothstep(progress);
+    progress=clamp(progress*1.2,0,1);
   }
   //fin mob
 
-// progress=smoothstep(progress);
-
+ 
   for(var c=0;c<cakesCols.length;c++){
     var absSpeed=state.cakesAbsSpeed[c];
     if(!absSpeed)continue;
@@ -964,7 +988,8 @@ function updateHeroProgressVar(){
       
       if(state.cakesOn){
         var cakesRect=cakesWrap.getBoundingClientRect();
-        if(cakesRect.y<=50)updateCakesParallax(cakesRect);
+        // if(cakesRect.y<=50)updateCakesParallax(cakesRect);
+        updateCakesParallax(cakesRect);
       }
     }
 
@@ -1121,14 +1146,14 @@ function syncCakesNewsletterState(){
   var io=new IntersectionObserver(function(entries){
     for(var i=0;i<entries.length;i++){
       var e=entries[i];
-      console.log(e)
+      // console.log(e)
       if(e.target===cakesStage){onCakes(e);continue;}
       // if(e.target===cakesNewsletter){onCakesNewsletter(e);continue;}
       if(e.target===cakesNewsletter){
-  cakesNewsletterVisible=e.isIntersecting;
-  syncCakesNewsletterState();
-  continue;
-}
+        cakesNewsletterVisible=e.isIntersecting;
+        syncCakesNewsletterState();
+        continue;
+      }
       if(e.target===howEl){
         howEl.classList.toggle('is-in',e.isIntersecting);  
         // buttonTop.classList.add('floating--dark');
@@ -1145,11 +1170,11 @@ function syncCakesNewsletterState(){
 
       // if(e.target===footerEl){cakesSection.classList.toggle('cakes--newsletter-on',true);continue;}//mantiene oculto el cta de cakes
       if(e.target===footerEl){
-  footerVisible=e.isIntersecting;
-  syncCakesNewsletterState();
-  continue;
-}
+        footerVisible=e.isIntersecting;
+        syncCakesNewsletterState();
+        continue;
       }
+    }
     tick();
   },{threshold:[0,0.15],rootMargin:'-20% 0px -15% 0px'}); //-20% 0 -55% 0
 
@@ -1173,9 +1198,10 @@ window.addEventListener('scroll',function(){
 },{passive:true});
 
   window.addEventListener('resize',function(){
-    if(lenisInstance)lenisInstance.resize();
+    // if(lenisInstance)lenisInstance.resize();
     
     viewportWidth=document.documentElement.clientWidth;
+    syncLenisMode();
       //console.log(viewportWidth)
 
     updateSubmenuMode(); //activa/desactiva listener click submenús
