@@ -26,10 +26,12 @@
 <!--  -->
 
  <link rel="stylesheet" href="css/home-critical.css">
-
     <link rel="preload" href="css/basic.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/basic.css"></noscript>
+    
     <link rel="preload" href="css/home-v3.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/home-v3.css"></noscript>
+
+    <link rel="preload" href="css/libs/lenis.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/libs/lenis.css"></noscript>
 
     <link rel="icon" type="image/svg+xml" href="img/favicon/favicon2.svg">
     <link rel="icon" href="favicon2.ico">
@@ -39,23 +41,11 @@
 
     <!-- <link rel="canonical"> -->
 
+    <script src="js/libs/lenis.min.js" defer></script>
     <script src="js/newsletter-validator.js" defer></script>
-    <script src="js/smooth-scrollbar.js" defer></script>
-
-    <style>
-      #my-scrollbar {
-        width: 100vw;
-        height: 100vh;
-        overflow: auto;
-      }
-    </style>
-
 
   </head>
 <body>
-
-   <div id="my-scrollbar">
-
   <header class="header d_flex p_absolute" >  <!-- header--compact-light / style="opacity: 0;" -->
      
     <div class="header__top">
@@ -236,7 +226,7 @@
         </div>
       </aside>
 
-      <aside id="aboutPhotoSticky" class="about__media about__photo-sticky" aria-label="About media">
+      <aside class="about__media about__photo-sticky" aria-label="About media">
         <div class="about__media--photo about__border ">
           <img class="about__photo" src="img/home/about/mesa_final.webp" alt="" width="900" height="1600" loading="lazy" decoding="async">
 
@@ -442,7 +432,6 @@
 
   </main>
 
- 
   <footer id="footer" class="footer" aria-labelledby="footer-title">
     <h2 id="footer-title" class="sr-only">Cake Atelier – Footer</h2>
     <div class="footer__columns">
@@ -554,19 +543,26 @@
     <p class="footer__footer">&copy; 2026 Cake Atelier Copenhagen. All rights reserved.</p>
   </footer>
 
-    </div> <!-- fin scrollbar container -->
 
   <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center" aria-label="Back to top" title="Go top" ></a>
 
   <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <img src="img/iconos/wapp6k.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50">
-  </a>
+    </a>
+
+
 
 
 
 <script>
       
 document.addEventListener('DOMContentLoaded',function(){
+//  var mainEl=document.querySelector('body');
+// if(mainEl){
+//   window.addEventListener('load',function(){
+//     mainEl.style.opacity='1';
+//   });
+// }
 
   var viewportWidth=document.documentElement.clientWidth||0;
   //console.log(viewportWidth)
@@ -599,32 +595,34 @@ var heroHeightPx=1;
 var headerH_hero=0;
 var headerH_compact=0;
 
+//lenis
+var lenisInstance = null;
+var lenisRafId = 0;
+function initLenis(){
+  if(!window.Lenis)return;
 
-/////////////////////////////
-      var viewport_Height = document.documentElement.clientHeight || window.innerHeight;
+  lenisInstance = new Lenis({
+    autoRaf:false,
+    smoothWheel:true,
+    syncTouch:false,
+    lerp:0.08,
+    wheelMultiplier:1,
+    touchMultiplier:1,
+    overscroll:true
+  });
+  lenisInstance.on('scroll',function(){
+    tick();
+  });
 
-      // Inicializa librería scroll smooth 
-      var Scrollbar = window.Scrollbar;
-      const scrollbar = Scrollbar.init(document.getElementById('my-scrollbar'), {
-        damping: 0.1, // Ajusta la suavidad del desplazamiento
-      });
+  function onLenisRaf(time){
+    if(!lenisInstance)return;
+    lenisInstance.raf(time);
+    lenisRafId = requestAnimationFrame(onLenisRaf);
+  }
 
-      // Efecto parallax
-      const heroText = document.getElementsByClassName('hero__text-container')
-
-      scrollbar.addListener(({ offset }) => {
-        const scrollY = offset.y; // Obtiene la posición del scroll
-
-        //workshopContent.style.transform = `translateY(${scrollY * -0.16}px)`; 
-        hero.style.transform = `translateY(${scrollY * 0.25}px)`;
-        aboutPhotoSticky.style.transform = `translateY(${scrollY * -1}px)`;
-
-        for (let i = 0; i < heroText.length; i++) {
-          heroText[i].style.transform = `translateY(${scrollY * -0.25}px)`;
-        }
-
-      });
-////////////////////////////
+  lenisRafId = requestAnimationFrame(onLenisRaf);
+}
+initLenis();
 
 function measureHeaderHeights(){
   // if(viewportWidth<992){return};
@@ -873,16 +871,11 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
       state.cakesOverflow[c]=overflow;
       state.cakesAbsSpeed[c]=absSpeed;
       state.cakesSign[c]=sign;
-      if(!absSpeed)col.style.transform='';
+      if(!absSpeed){
+        col.style.transform='';
+      }
 
-
-      // if(!absSpeed){
-      //   col.style.transform='';
-      //   console.log( 'measure cake - style.transform=')
-      // }else{
-      //   col.style.transform='translate3d(0,0,0)';
-      //   console.log( 'measure cake translate3d(0,0,0)')
-      // }
+      console.log( 'measure cake cakesCols[c]',c)
     }
   }
 
@@ -891,14 +884,19 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
   },{passive:true});
  
 
- 
+  
 function updateCakesParallax(cakesRect){ //v4
   if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length||cakesRect.y>50)return;
 
   var travel=cakesRect.height-viewportHeight;
   if(travel<=0)return;
 
-  
+  // var progress=clamp((-cakesRect.top)/travel,0,1);
+  // if(viewportWidth<768){
+  //   progress=clamp(progress*1.5,0,1);
+  // }else{
+  //   progress=smoothstep(progress);
+  // }
   var progress=clamp((-cakesRect.top)/travel,0,1);
   if(viewportWidth<768){
     progress=clamp(progress*1.5,0,1);
@@ -907,7 +905,7 @@ function updateCakesParallax(cakesRect){ //v4
   }
   //fin mob
 
-progress=smoothstep(progress);
+// progress=smoothstep(progress);
 
   for(var c=0;c<cakesCols.length;c++){
     var absSpeed=state.cakesAbsSpeed[c];
@@ -920,25 +918,25 @@ progress=smoothstep(progress);
 
   var heroP=0; // cache para no setear de más
 
-function updateHeroProgressVar(){  //para probar scroll smooth
-  // if(!heroEl)return;
-  // if(!heroVisible)return;
+function updateHeroProgressVar(){ 
+  if(!heroEl)return;
+  if(!heroVisible)return;
 
-  // var heroRect=heroEl.getBoundingClientRect();
-  // if(heroRect.bottom<=0||heroRect.top>=viewportHeight)return;
+  var heroRect=heroEl.getBoundingClientRect();
+  if(heroRect.bottom<=0||heroRect.top>=viewportHeight)return;
 
-  // var totalTravel=heroStartTop+heroHeightPx;
-  // if(totalTravel<1)totalTravel=1;
+  var totalTravel=heroStartTop+heroHeightPx;
+  if(totalTravel<1)totalTravel=1;
 
-  // var traveled=heroStartTop-heroRect.top;
-  // var heroProgress=traveled/totalTravel;
-  // if(heroProgress<0)heroProgress=0;
-  // else if(heroProgress>1)heroProgress=1;
+  var traveled=heroStartTop-heroRect.top;
+  var heroProgress=traveled/totalTravel;
+  if(heroProgress<0)heroProgress=0;
+  else if(heroProgress>1)heroProgress=1;
 
-  // if(Math.abs(heroProgress-heroP)>0.001){
-  //   heroP=heroProgress;
-  //   heroEl.style.setProperty('--hero-p',heroP.toFixed(4));
-  // }
+  if(Math.abs(heroProgress-heroP)>0.001){
+    heroP=heroProgress;
+    heroEl.style.setProperty('--hero-p',heroP.toFixed(4));
+  }
 
 }
 
@@ -947,13 +945,17 @@ function updateHeroProgressVar(){  //para probar scroll smooth
       ticking=false;
 
       //hero animaciones
-      if(heroVisible)updateHeroProgressVar();   
+      if(heroVisible)updateHeroProgressVar();  //ag acá fixheader???
       
       // ScrollSpy: throttle (esto es lo que más “raspa”)
-      var now=performance.now();
-      if(now-ultimoTiempoScrollSpy>=scrollSpyCadaMs){
-        ultimoTiempoScrollSpy=now;
+      if(lenisInstance){
         updateScrollSpy();
+      }else{
+        var now=performance.now();
+        if(now-ultimoTiempoScrollSpy>=scrollSpyCadaMs){
+          ultimoTiempoScrollSpy=now;
+          updateScrollSpy();
+        }
       }
       
       if(state.cakesOn){
@@ -982,15 +984,17 @@ function updateHeroProgressVar(){  //para probar scroll smooth
     if(state.cakesOn){
       if(cakesStage&&!cakesStage.classList.contains('cakes--wow-in'))cakesStage.classList.add('cakes--wow-in');
       if(!state.cakesMeasuredOnce){measureCakes();state.cakesMeasuredOnce=true;}
-
-
-       var cakesRect=cakesWrap.getBoundingClientRect();
-        if(cakesRect.y<=50)updateCakesParallax(cakesRect);
     }
   }
- 
+
+  // function onCakesNewsletter(entry){
+  //   if(!cakesSection)return;
+  //   cakesSection.classList.toggle('cakes--newsletter-on',entry.isIntersecting);
+  // }
 
   //Toggle SUBMENUS del  header
+
+
   //Menu mobile 
   if(headerEl){
     var toggleEls=headerEl.getElementsByClassName('header__toggle');
@@ -1111,36 +1115,16 @@ function syncCakesNewsletterState(){
 }
 
   var io=new IntersectionObserver(function(entries){
-
-    /////////////////
-    if(heroVisible)updateHeroProgressVar();   
-      // ScrollSpy: throttle (esto es lo que más “raspa”)
-      var now=performance.now();
-      if(now-ultimoTiempoScrollSpy>=scrollSpyCadaMs){
-        ultimoTiempoScrollSpy=now;
-        updateScrollSpy();
-      }
-
-      updateHeroProgressVar(); 
-      updateScrollSpy();
-
-    //////////////////
-
     for(var i=0;i<entries.length;i++){
       var e=entries[i];
-      console.log(e.target.id)
-////
-      updateHeroProgressVar(); 
-      updateScrollSpy();
-
-//////
+      console.log(e)
       if(e.target===cakesStage){onCakes(e);continue;}
       // if(e.target===cakesNewsletter){onCakesNewsletter(e);continue;}
       if(e.target===cakesNewsletter){
-        cakesNewsletterVisible=e.isIntersecting;
-        syncCakesNewsletterState();
-        continue;
-      }
+  cakesNewsletterVisible=e.isIntersecting;
+  syncCakesNewsletterState();
+  continue;
+}
       if(e.target===howEl){
         howEl.classList.toggle('is-in',e.isIntersecting);  
         // buttonTop.classList.add('floating--dark');
@@ -1157,10 +1141,10 @@ function syncCakesNewsletterState(){
 
       // if(e.target===footerEl){cakesSection.classList.toggle('cakes--newsletter-on',true);continue;}//mantiene oculto el cta de cakes
       if(e.target===footerEl){
-          footerVisible=e.isIntersecting;
-          syncCakesNewsletterState();
-          continue;
-        }
+  footerVisible=e.isIntersecting;
+  syncCakesNewsletterState();
+  continue;
+}
       }
     tick();
   },{threshold:[0,0.15],rootMargin:'-20% 0px -15% 0px'}); //-20% 0 -55% 0
@@ -1174,14 +1158,19 @@ function syncCakesNewsletterState(){
   
 var scrollEndT=null;
 window.addEventListener('scroll',function(){
-  tick();
+  // tick();
+  if(!lenisInstance)tick();
+
   if(scrollEndT)clearTimeout(scrollEndT);
   scrollEndT=setTimeout(function(){
-    tick(); // asegura el último estado (para anchors también)
+    //tick(); // asegura el último estado (para anchors también)
+    if(!lenisInstance)tick();
   },120);
 },{passive:true});
 
   window.addEventListener('resize',function(){
+    if(lenisInstance)lenisInstance.resize();
+    
     viewportWidth=document.documentElement.clientWidth;
       //console.log(viewportWidth)
 
