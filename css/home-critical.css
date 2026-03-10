@@ -20,7 +20,8 @@
 .hero__slides{ position:relative;top:0;height:100vh;min-height:100vh; overflow:visible}
 .hero__slide{position:absolute;inset:0;width:100%;height:100%;min-height:100%;opacity:0;pointer-events:none;transition:opacity .8s ease}
 .hero__slide--1{opacity:1;animation:hero-fade-1 9s linear infinite}  
-.hero__slide--2{opacity:0;animation:hero-fade-2 9s linear infinite}  
+.hero__slide--2{opacity:0;animation:hero-fade-2 9s linear infinite}
+/*  modificar: ELIMINAR pointer-events DE LA ANIMACION*/  
 @keyframes hero-fade-1{0%,40%{opacity:1;pointer-events:auto}50%,90%{opacity:0;pointer-events:none}100%{opacity:1;pointer-events:none}}
 @keyframes hero-fade-2{0%,40%{opacity:0;pointer-events:none}50%,90%{opacity:1;pointer-events:auto}100%{opacity:0;pointer-events:none}}
 .hero__content{position:relative;z-index:2;height:100vh /*100%*/;display:flex;flex-direction: column; /*justify-content: space-around; *//*align-items:center;justify-content:flex-start;*/ padding:0 var(--padding-horizontal)}
