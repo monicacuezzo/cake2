@@ -25,7 +25,12 @@
     <link rel="stylesheet" href="css/basic.css?v=1.00"> -->
 <!--  -->
 
- <link rel="stylesheet" href="css/home-critical.css">
+
+ <!-- <link rel="stylesheet" href="css/home-critical.css"> ?????? -->
+
+ <link rel="preload" href="css/home-critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/home-critical.css"></noscript>
+
     <link rel="preload" href="css/basic.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="css/basic.css"></noscript>
     <link rel="preload" href="css/home-v3.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/home-v3.css"></noscript>
