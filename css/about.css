@@ -31,7 +31,7 @@ body{color: #f1f1f1;}
 .intro__lead{max-width:72rem;margin:2.4rem auto 0;font-size:1.6rem;font-size:clamp(20px, 1.74vw, 26px);line-height:1.7;color: #fff}
 
 .body__row{padding: var(--padding-top) var(--padding-horizontal);display:flex;gap: 2rem; /*grid-template-columns:auto minmax(0,1fr);*/ align-items:center;;width:100%;z-index: 1; position: relative; flex-direction: column;}
-.body__media{  display:flex;align-items:stretch;justify-self:start;height:100%;}
+.body__media{  display:flex;align-items:stretch;justify-self:start;height:100%;max-width: 100%;}
 .body__picture{display:block; height:100%;border-radius: .25rem;overflow: hidden;width: max-content;}
 .body__img{display:block;width:auto; height:100%; /*object-fit:cover;*/ max-height: 28rem;}
 .body__content{display:flex;flex-direction:column;justify-content:center;min-width:0;max-width: 100%;padding:2rem 0;}
