@@ -44,7 +44,6 @@
     <!-- <link rel="canonical"> -->
 
     <script src="js/newsletter-validator.js" defer></script>
-
   </head>
 <body>
   <header class="header d_flex p_absolute" >  <!-- header--compact-light / style="opacity: 0;" -->
@@ -284,27 +283,27 @@
         <li class="how__step">
           <span class="how__number" aria-hidden="true">1</span>
           <span class="how__text">Select cake type and size</span>
-          <svg class="how__icon" aria-hidden="true"><use href="img/shared/sprite-icons.svg#i-step-size" xlink:href="img/shared/sprite-icons.svg#i-step-size"></use></svg>
+          <svg class="how__icon" aria-hidden="true"><use href="#i-step-size"></use></svg>
         </li>
         <li class="how__step">
           <span class="how__number" aria-hidden="true">2</span>
           <span class="how__text">Choose flavour</span>
-          <svg class="how__icon" aria-hidden="true"><use href="img/shared/sprite-icons.svg#i-step-flavor" xlink:href="img/shared/sprite-icons.svg#i-step-flavor"></use></svg>
+          <svg class="how__icon" aria-hidden="true"><use href="#i-step-flavor"></use></svg>
         </li>
         <li class="how__step">
           <span class="how__number" aria-hidden="true">3</span>
           <span class="how__text"> Choose design style & color</span>
-          <svg class="how__icon" aria-hidden="true"><use href="img/shared/sprite-icons.svg#i-step-design" xlink:href="img/shared/sprite-icons.svg#i-step-design"></use></svg>
+          <svg class="how__icon" aria-hidden="true"><use href="#i-step-design"></use></svg>
         </li>
         <li class="how__step">
           <span class="how__number" aria-hidden="true">4</span>
           <span class="how__text">Select pick up date</span>
-          <svg class="how__icon" aria-hidden="true"><use href="img/shared/sprite-icons.svg#i-step-date" xlink:href="img/shared/sprite-icons.svg#i-step-date"></use></svg>
+          <svg class="how__icon" aria-hidden="true"><use href="#i-step-date"></use></svg>
         </li>
         <li class="how__step">
           <span class="how__number" aria-hidden="true">5</span>
           <span class="how__text">Pay & receive confirmation</span>
-          <svg class="how__icon" aria-hidden="true"><use href="img/shared/sprite-icons.svg#i-step-confirm" xlink:href="img/shared/sprite-icons.svg#i-step-confirm"></use></svg>
+          <svg class="how__icon" aria-hidden="true"><use href="#i-step-confirm"></use></svg>
         </li>
       </ol>
 
@@ -553,6 +552,8 @@
 
 
 
+    <script src="js/header-menu.js" defer></script>
+    <script src="js/animations.js" defer></script>
 
 
 <script>
@@ -575,8 +576,9 @@ document.addEventListener('DOMContentLoaded',function(){
   var buttonWapp=document.getElementById('buttonWapp');
   var buttonTop=document.getElementById('buttonTop');
   var heroDots=document.getElementById('heroDots');
-  var mobileSubmenuEnabled=false;
-  var onHeaderSubmenuClick=null;
+  
+  // var mobileSubmenuEnabled=false;
+  // var onHeaderSubmenuClick=null;
 
   var cakesWrap=document.querySelector('.cakes__wrap');
   var cakesStage=document.querySelector('.cakes__stage');
@@ -587,7 +589,7 @@ document.addEventListener('DOMContentLoaded',function(){
   var cakesNewsletterVisible=false;
   var footerVisible=false;
  
-  var fxEls=document.querySelectorAll('#about .fx-fade-up-var');
+  // var fxEls=document.querySelectorAll('#about .fx-fade-up-var');
 
 //Parallax Hero
 var heroVisible=false;
@@ -700,50 +702,50 @@ function applyHeaderBySection(activeId){
   //FIN dots slider HERO
 
 
-function fxRestart(el){
-  el.classList.remove('fx-run');
-  el.style.animation='none';
-  void el.offsetWidth; // reflow
-  el.style.animation='';
-  el.classList.add('fx-run');
-}
+// function fxRestart(el){
+//   el.classList.remove('fx-run');
+//   el.style.animation='none';
+//   void el.offsetWidth; // reflow
+//   el.style.animation='';
+//   el.classList.add('fx-run');
+// }
 
 
-function fxIndexGroup(el){
-  var parent=el.parentNode;
-  if(!parent)return;
+// function fxIndexGroup(el){
+//   var parent=el.parentNode;
+//   if(!parent)return;
 
-  // Setea indices solo una vez por contenedor (para stagger)
-  if(parent.__fxIndexed)return;
-  parent.__fxIndexed=true;
+//   // Setea indices solo una vez por contenedor (para stagger)
+//   if(parent.__fxIndexed)return;
+//   parent.__fxIndexed=true;
 
-  var kids=parent.querySelectorAll('.fx-fade-up-var');
-  for(var i=0;i<kids.length;i++){
-    kids[i].style.setProperty('--fx-i', i);
-  }
-}
+//   var kids=parent.querySelectorAll('.fx-fade-up-var');
+//   for(var i=0;i<kids.length;i++){
+//     kids[i].style.setProperty('--fx-i', i);
+//   }
+// }
 
-// Animaciones HowToOrder
-  if(fxEls&&fxEls.length){
-    var fxIO=new IntersectionObserver(function(entries){
-      for(var i=0;i<entries.length;i++){
-        var e=entries[i];
-        var el=e.target;
+// // Animaciones HowToOrder
+//   if(fxEls&&fxEls.length){
+//     var fxIO=new IntersectionObserver(function(entries){
+//       for(var i=0;i<entries.length;i++){
+//         var e=entries[i];
+//         var el=e.target;
 
-        if(e.isIntersecting){
-          fxIndexGroup(el);   // arma stagger por bloque automáticamente
-          fxRestart(el);      // re-anima siempre al entrar
-        }else{
-          el.classList.remove('fx-run'); // así al re-entrar vuelve a arrancar
-        }
-      }
-    },{
-      threshold:0,
-      rootMargin:'0px 0px -15% 0px' // dispara cuando está por entrar (no tarde)
-    });
+//         if(e.isIntersecting){
+//           fxIndexGroup(el);   // arma stagger por bloque automáticamente
+//           fxRestart(el);      // re-anima siempre al entrar
+//         }else{
+//           el.classList.remove('fx-run'); // así al re-entrar vuelve a arrancar
+//         }
+//       }
+//     },{
+//       threshold:0,
+//       rootMargin:'0px 0px -15% 0px' // dispara cuando está por entrar (no tarde)
+//     });
 
-    for(var j=0;j<fxEls.length;j++) fxIO.observe(fxEls[j]);
-  }
+//     for(var j=0;j<fxEls.length;j++) fxIO.observe(fxEls[j]);
+//   }
 
 
   // Colorear links internos
@@ -1136,122 +1138,122 @@ function updateHeroProgressVar(){
   //   cakesSection.classList.toggle('cakes--newsletter-on',entry.isIntersecting);
   // }
 
+ 
+ 
   //Toggle SUBMENUS del  header
-
-
   //Menu mobile 
-  if(headerEl){
-    var toggleEls=headerEl.getElementsByClassName('header__toggle');
-    var toggle=(toggleEls&&toggleEls.length)?toggleEls[0]:null;
+  // if(headerEl){
+  //   var toggleEls=headerEl.getElementsByClassName('header__toggle');
+  //   var toggle=(toggleEls&&toggleEls.length)?toggleEls[0]:null;
 
-    var overlay=headerEl.querySelector('[data-header-overlay]');
-    var panelEls=headerEl.getElementsByClassName('header__bottom');
-    var panel=(panelEls&&panelEls.length)?panelEls[0]:null;
+  //   var overlay=headerEl.querySelector('[data-header-overlay]');
+  //   var panelEls=headerEl.getElementsByClassName('header__bottom');
+  //   var panel=(panelEls&&panelEls.length)?panelEls[0]:null;
 
-    function openMenu(){
-      headerEl.classList.add('header--menu-open');
-      if(toggle)toggle.setAttribute('aria-expanded','true');
-      document.documentElement.classList.add('no-scroll');
-      if(overlay)overlay.classList.add('is-visible');
-    }
+  //   function openMenu(){
+  //     headerEl.classList.add('header--menu-open');
+  //     if(toggle)toggle.setAttribute('aria-expanded','true');
+  //     document.documentElement.classList.add('no-scroll');
+  //     if(overlay)overlay.classList.add('is-visible');
+  //   }
 
-    function closeMenu(){
-      headerEl.classList.remove('header--menu-open');
-      if(toggle)toggle.setAttribute('aria-expanded','false');
-      document.documentElement.classList.remove('no-scroll');
-      if(overlay)overlay.classList.remove('is-visible');
+  //   function closeMenu(){
+  //     headerEl.classList.remove('header--menu-open');
+  //     if(toggle)toggle.setAttribute('aria-expanded','false');
+  //     document.documentElement.classList.remove('no-scroll');
+  //     if(overlay)overlay.classList.remove('is-visible');
 
-      var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-      for(var i=0;i<openItems.length;i++){
-        openItems[i].classList.remove('header__item--open');
-        var b=openItems[i].querySelector('.header__link--button');
-        if(b)b.setAttribute('aria-expanded','false');
-      }
-      if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
-    }
+  //     var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
+  //     for(var i=0;i<openItems.length;i++){
+  //       openItems[i].classList.remove('header__item--open');
+  //       var b=openItems[i].querySelector('.header__link--button');
+  //       if(b)b.setAttribute('aria-expanded','false');
+  //     }
+  //     if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
+  //   }
 
-    function toggleMenu(){
-      if(headerEl.classList.contains('header--menu-open'))closeMenu();
-      else openMenu();
-    }
+  //   function toggleMenu(){
+  //     if(headerEl.classList.contains('header--menu-open'))closeMenu();
+  //     else openMenu();
+  //   }
 
-    if(toggle){
-      toggle.addEventListener('click',function(e){
-        e.preventDefault();
-        toggleMenu();
-      });
-    }
+  //   if(toggle){
+  //     toggle.addEventListener('click',function(e){
+  //       e.preventDefault();
+  //       toggleMenu();
+  //     });
+  //   }
 
-    if(overlay)overlay.addEventListener('click',closeMenu);
+  //   if(overlay)overlay.addEventListener('click',closeMenu);
 
-    if(panel){
-      panel.addEventListener('click',function(e){
-        //console.log('panel')
-        var a=e.target&&e.target.closest?e.target.closest('a'):null;
-        if(a)closeMenu();
-      });
-    }
+  //   if(panel){
+  //     panel.addEventListener('click',function(e){
+  //       //console.log('panel')
+  //       var a=e.target&&e.target.closest?e.target.closest('a'):null;
+  //       if(a)closeMenu();
+  //     });
+  //   }
 
-    document.addEventListener('keydown',function(e){
-      if(e.key==='Escape')closeMenu();
-    });
-  }
+  //   document.addEventListener('keydown',function(e){
+  //     if(e.key==='Escape')closeMenu();
+  //   });
+  // }
   // Fin menu mobile
 
   //submenus del header
   // estado para poder activar/desactivar listener y clases en submenus mobile
-function enableMobileSubmenus(){
-  if(mobileSubmenuEnabled||!headerEl)return;
-  mobileSubmenuEnabled=true;
+// function enableMobileSubmenus(){
+//   if(mobileSubmenuEnabled||!headerEl)return;
+//   mobileSubmenuEnabled=true;
 
-  onHeaderSubmenuClick=function(e){
-    var btn=e.target.closest('.header__link--button');
-    if(!btn||!headerEl.contains(btn))return;
+//   onHeaderSubmenuClick=function(e){
+//     var btn=e.target.closest('.header__link--button');
+//     if(!btn||!headerEl.contains(btn))return;
 
-    var li=btn.closest('.header__item--has-submenu');
-    if(!li)return;
+//     var li=btn.closest('.header__item--has-submenu');
+//     if(!li)return;
 
-    var open=!li.classList.contains('header__item--open');
+//     var open=!li.classList.contains('header__item--open');
 
-    var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-    for(var i=0;i<openLis.length;i++){
-      openLis[i].classList.remove('header__item--open');
-      var b=openLis[i].querySelector('.header__link--button');
-      if(b)b.setAttribute('aria-expanded','false');
-    }
+//     var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
+//     for(var i=0;i<openLis.length;i++){
+//       openLis[i].classList.remove('header__item--open');
+//       var b=openLis[i].querySelector('.header__link--button');
+//       if(b)b.setAttribute('aria-expanded','false');
+//     }
 
-    li.classList.toggle('header__item--open',open);
-    btn.setAttribute('aria-expanded',open?'true':'false');
-  };
+//     li.classList.toggle('header__item--open',open);
+//     btn.setAttribute('aria-expanded',open?'true':'false');
+//   };
 
-  headerEl.addEventListener('click',onHeaderSubmenuClick);
-}
+//   headerEl.addEventListener('click',onHeaderSubmenuClick);
+// }
 
-function disableMobileSubmenus(){
-  if(!mobileSubmenuEnabled||!headerEl)return;
-  mobileSubmenuEnabled=false;
+// function disableMobileSubmenus(){
+//   if(!mobileSubmenuEnabled||!headerEl)return;
+//   mobileSubmenuEnabled=false;
 
-  if(onHeaderSubmenuClick){
-    headerEl.removeEventListener('click',onHeaderSubmenuClick);
-    onHeaderSubmenuClick=null;
-  }
+//   if(onHeaderSubmenuClick){
+//     headerEl.removeEventListener('click',onHeaderSubmenuClick);
+//     onHeaderSubmenuClick=null;
+//   }
 
-  var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-  for(var i=0;i<openLis.length;i++){
-    openLis[i].classList.remove('header__item--open');
-    var b=openLis[i].querySelector('.header__link--button');
-    if(b)b.setAttribute('aria-expanded','false');
-  }
-}
+//   var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
+//   for(var i=0;i<openLis.length;i++){
+//     openLis[i].classList.remove('header__item--open');
+//     var b=openLis[i].querySelector('.header__link--button');
+//     if(b)b.setAttribute('aria-expanded','false');
+//   }
+// }
 
-// helper  
-function updateSubmenuMode(){
-  viewportWidth=document.documentElement.clientWidth||0;
-  if(viewportWidth<992)enableMobileSubmenus();
-  else disableMobileSubmenus();
-}
+// // helper  
+// function updateSubmenuMode(){
+//   viewportWidth=document.documentElement.clientWidth||0;
+//   if(viewportWidth<992)enableMobileSubmenus();
+//   else disableMobileSubmenus();
+// }
 
-updateSubmenuMode();
+// updateSubmenuMode();
 
 function syncCakesNewsletterState(){
   if(!cakesSection)return;
@@ -1265,10 +1267,10 @@ function syncCakesNewsletterState(){
       if(e.target===cakesStage){onCakes(e);continue;}
       // if(e.target===cakesNewsletter){onCakesNewsletter(e);continue;}
       if(e.target===cakesNewsletter){
-  cakesNewsletterVisible=e.isIntersecting;
-  syncCakesNewsletterState();
-  continue;
-}
+        cakesNewsletterVisible=e.isIntersecting;
+        syncCakesNewsletterState();
+        continue;
+      }
       if(e.target===howEl){
         howEl.classList.toggle('is-in',e.isIntersecting);  
         // buttonTop.classList.add('floating--dark');
@@ -1285,11 +1287,11 @@ function syncCakesNewsletterState(){
 
       // if(e.target===footerEl){cakesSection.classList.toggle('cakes--newsletter-on',true);continue;}//mantiene oculto el cta de cakes
       if(e.target===footerEl){
-  footerVisible=e.isIntersecting;
-  syncCakesNewsletterState();
-  continue;
-}
+        footerVisible=e.isIntersecting;
+        syncCakesNewsletterState();
+        continue;
       }
+    }
     tick();
   },{threshold:[0,0.15],rootMargin:'-20% 0px -15% 0px'}); //-20% 0 -55% 0
 
@@ -1313,7 +1315,7 @@ window.addEventListener('scroll',function(){
     viewportWidth=document.documentElement.clientWidth;
       //console.log(viewportWidth)
 
-    updateSubmenuMode(); //activa/desactiva listener click submenús
+    // lo llevo a js externo  updateSubmenuMode(); //activa/desactiva listener click submenús
 
     viewportHeight=window.innerHeight;
     if(heroEl){
@@ -1346,15 +1348,6 @@ window.addEventListener('scroll',function(){
  
 
 <svg class="sr-only" aria-hidden="true" focusable="false">
-<symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.7 3.9 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V21c0 .6-.4 1-1 1C10.4 22 2 13.6 2 3c0-.6.4-1 1-1h3.8c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8z"/></symbol>
-<symbol id="i-email" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></symbol>
-<symbol id="i-location" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z"/></symbol>
-<symbol id="i-external" viewBox="0 0 24 24"><path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14V3z"/><path d="M5 5h7v2H7v10h10v-5h2v7H5V5z"/></symbol>
-<symbol id="i-instagram" viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3z"/><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/><path d="M17.5 6.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></symbol>
-<symbol id="i-facebook" viewBox="0 0 24 24"><path d="M14 8h2V6h-2c-2.2 0-4 1.8-4 4v2H8v2h2v8h2v-8h2l1-2h-3v-2c0-1.1.9-2 2-2z"/></symbol>
-<symbol id="i-tiktok" viewBox="0 0 24 24"><path d="M16 3c.6 2.7 2.2 4.4 4.9 4.9V10c-1.7-.1-3.2-.7-4.4-1.7V15c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.3 0 .7 0 1 .1V12c-.3-.1-.6-.2-1-.2-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V3h2z"/></symbol>
-<symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" fill="#e6e3e3" stroke="#e6e3e3" stroke-width="0" stroke-linejoin="round"/><path d="M10.35 9.15c.2-.2.55-.2.75 0l1.1 1.1c.2.2.2.55 0 .75l-.7.7c-.12.12-.16.29-.1.45.45 1.11 1.36 2.02 2.47 2.47.16.06.33.02.45-.1l.7-.7c.2-.2.55-.2.75 0l1.1 1.1c.2.2.2.55 0 .75l-.62.62c-.35.35-.86.5-1.35.4-1.38-.27-2.77-1.06-3.86-2.15-1.09-1.09-1.88-2.48-2.15-3.86-.1-.49.05-1 .4-1.35l.62-.62z" fill="#111" stroke="#111" stroke-width="1.00" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-<symbol id="i-pinterest" viewBox="0 0 496 512"><path d="M248 8C111 8 0 119 0 256c0 101.4 60.6 188.5 147.2 227.3-2-19.3-3.8-49 0.8-70.1 4.2-18.1 27-115.1 27-115.1s-6.9-13.8-6.9-34.1c0-31.9 18.5-55.7 41.6-55.7 19.6 0 29 14.7 29 32.4 0 19.7-12.6 49.1-19.1 76.4-5.4 22.9 11.5 41.6 34.1 41.6 40.9 0 68.4-52.5 68.4-114.7 0-47.3-31.9-82.7-89.9-82.7-65.5 0-106.3 48.9-106.3 103.5 0 18.8 5.5 32.1 14.1 42.4 4 4.8 4.5 6.7 3.1 12.2-1 4-3.4 13.5-4.4 17.3-1.4 5.6-5.8 7.6-10.7 5.5-29.9-12.2-43.9-45.1-43.9-82.1 0-61 51.6-134 153.2-134 81.6 0 135.3 59.1 135.3 122.6 0 83.9-46.6 146.6-115.3 146.6-23.2 0-45.1-12.5-52.6-26.7 0 0-12.5 49.6-15.2 59.4-5.5 20.4-16.3 40.8-25.4 56.3 22.7 6.7 46.8 10.3 71.7 10.3 137 0 248-111 248-248S385 8 248 8z"/></symbol>
 <!-- seccion How To Order -->
 <symbol id="i-step-size" viewBox="0 0 576 512"><path fill="currentColor" d="M304 240l0-223.4c0-9 7-16.6 16-16.6C443.7 0 544 100.3 544 224c0 9-7.6 16-16.6 16L304 240zM32 272C32 150.7 122.1 50.3 239 34.3c9.2-1.3 17 6.1 17 15.4L256 288 412.5 444.5c6.7 6.7 6.2 17.7-1.5 23.1C371.8 495.6 323.8 512 272 512C139.5 512 32 404.6 32 272zm526.4 16c9.3 0 16.6 7.8 15.4 17c-7.7 55.9-34.6 105.6-73.9 142.3c-6 5.6-15.4 5.2-21.2-.7L320 288l238.4 0z"/>
 </symbol>
@@ -1370,37 +1363,6 @@ window.addEventListener('scroll',function(){
 isotipo dibujo
 logotipo texto del logo
 isologotipo completo -->
-
-<!--isologotipo completo -->
-<symbol id="isologotipo-cake-atelier" viewBox="0 0 280.09 209.42" fill="currentColor" >
-  <path d="M65.81,200.85c0-2.92,2.16-4.98,5.17-4.98,1.75,0,3.21.72,3.98,2.08l-1.35.87c-.63-.96-1.59-1.4-2.66-1.4-1.92,0-3.36,1.35-3.36,3.43s1.44,3.45,3.36,3.45c1.07,0,2.03-.44,2.66-1.4l1.35.85c-.77,1.37-2.23,2.1-3.98,2.1-3.01,0-5.17-2.08-5.17-5Z"/>
-  <path d="M79.79,200.85c0-2.92,2.16-4.98,5.09-4.98s5.07,2.07,5.07,4.98-2.14,5-5.07,5-5.09-2.08-5.09-5ZM88.17,200.85c0-2.08-1.4-3.43-3.28-3.43s-3.3,1.35-3.3,3.43,1.42,3.45,3.3,3.45,3.28-1.37,3.28-3.45Z"/>
-  <path d="M105.99,200.85c0,3.01-2.08,5-4.94,5-1.38,0-2.6-.53-3.41-1.59v5.05h-1.77v-13.36h1.7v1.55c.79-1.09,2.05-1.64,3.49-1.64,2.86,0,4.94,1.99,4.94,4.98ZM104.2,200.85c0-2.07-1.42-3.43-3.3-3.43s-3.28,1.37-3.28,3.43,1.42,3.45,3.28,3.45,3.3-1.37,3.3-3.45Z"/>
-  <path d="M120.69,201.44h-7.93c.22,1.72,1.6,2.86,3.54,2.86,1.14,0,2.1-.39,2.82-1.18l.98,1.14c-.89,1.03-2.23,1.59-3.86,1.59-3.15,0-5.26-2.08-5.26-5s2.08-4.98,4.91-4.98,4.83,2.03,4.83,5.04c0,.15-.02.37-.04.53ZM112.75,200.16h6.27c-.18-1.64-1.42-2.8-3.14-2.8s-2.95,1.14-3.14,2.8Z"/>
-  <path d="M135.91,200.11v5.63h-1.77v-5.42c0-1.92-.96-2.86-2.64-2.86-1.88,0-3.1,1.12-3.1,3.25v5.04h-1.77v-9.78h1.7v1.48c.72-1,1.97-1.57,3.52-1.57,2.38,0,4.06,1.36,4.06,4.24Z"/>
-  <path d="M151.92,200.11v5.63h-1.77v-5.42c0-1.92-.96-2.86-2.64-2.86-1.88,0-3.1,1.12-3.1,3.25v5.04h-1.77v-13.69h1.77v5.29c.74-.94,1.96-1.48,3.45-1.48,2.38,0,4.06,1.36,4.06,4.24Z"/>
-  <path d="M166.4,199.83v5.9h-1.68v-1.29c-.59.88-1.68,1.4-3.21,1.4-2.21,0-3.62-1.18-3.62-2.88,0-1.57,1.01-2.86,3.93-2.86h2.8v-.35c0-1.49-.87-2.36-2.62-2.36-1.16,0-2.34.41-3.1,1.05l-.74-1.33c1.01-.81,2.47-1.25,4.04-1.25,2.67,0,4.19,1.29,4.19,3.97ZM164.63,202.75v-1.37h-2.73c-1.75,0-2.25.68-2.25,1.51,0,.98.81,1.59,2.16,1.59s2.38-.61,2.82-1.73Z"/>
-  <path d="M182.48,195.96v8.45c0,3.45-1.75,5.02-5.07,5.02-1.79,0-3.6-.5-4.67-1.46l.85-1.37c.9.77,2.33,1.27,3.76,1.27,2.31,0,3.36-1.07,3.36-3.28v-.78c-.85,1.01-2.12,1.51-3.52,1.51-2.82,0-4.96-1.92-4.96-4.74s2.14-4.72,4.96-4.72c1.46,0,2.79.53,3.62,1.6v-1.51h1.68ZM180.75,200.59c0-1.9-1.4-3.17-3.36-3.17s-3.38,1.27-3.38,3.17,1.4,3.19,3.38,3.19,3.36-1.31,3.36-3.19Z"/>
-  <path d="M198.11,201.44h-7.93c.22,1.72,1.6,2.86,3.54,2.86,1.14,0,2.1-.39,2.82-1.18l.98,1.14c-.88,1.03-2.23,1.59-3.86,1.59-3.15,0-5.26-2.08-5.26-5s2.08-4.98,4.91-4.98,4.83,2.03,4.83,5.04c0,.15-.02.37-.04.53ZM190.17,200.16h6.27c-.18-1.64-1.42-2.8-3.14-2.8s-2.95,1.14-3.14,2.8Z"/>
-  <path d="M213.32,200.11v5.63h-1.77v-5.42c0-1.92-.96-2.86-2.64-2.86-1.88,0-3.1,1.12-3.1,3.25v5.04h-1.77v-9.78h1.7v1.48c.72-1,1.97-1.57,3.52-1.57,2.38,0,4.06,1.36,4.06,4.24Z"/>
-  <g>
-    <path d="M199.74,76.61h-126.19V31.54h34.34v10.51h57.48v-10.51h34.37v45.08ZM76.58,73.58h120.13v-39.01h-28.31v10.51h-63.54v-10.51h-28.28v39.01Z"/>
-    <path d="M223.74,108.15H49.56v-45.08h27.02v10.51h120.13v-10.51h27.03v45.08ZM52.59,105.12h168.12v-39.01h-20.97v10.51h-126.19v-10.51h-20.96v39.01Z"/>
-    <path d="M168.39,45.07h-63.54V0h63.54v45.07ZM107.89,42.04h57.48V3.03h-57.48v39.01Z"/>
-  </g>
-  <path d="M0,162.19c0-7.49,5.72-12.96,13.43-12.96,3.91,0,7.31,1.34,9.63,3.95l-2.35,2.28c-1.95-2.06-4.34-3-7.13-3-5.72,0-9.95,4.13-9.95,9.74s4.23,9.74,9.95,9.74c2.79,0,5.18-.98,7.13-3.04l2.35,2.28c-2.32,2.61-5.72,3.98-9.66,3.98-7.67,0-13.39-5.47-13.39-12.96Z"/>
-  <path d="M45.78,168.52h-13.46l-2.79,6.33h-3.73l11.47-25.34h3.58l11.51,25.34h-3.8l-2.79-6.33ZM44.52,165.62l-5.46-12.41-5.47,12.41h10.93Z"/>
-  <path d="M65.8,163.6l-4.63,4.71v6.55h-3.62v-25.34h3.62v14.15l13.75-14.15h4.13l-10.82,11.4,11.51,13.93h-4.23l-9.7-11.26Z"/>
-  <path d="M103.36,171.7v3.15h-18.39v-25.34h17.88v3.15h-14.26v7.78h12.7v3.08h-12.7v8.18h14.77Z"/>
-  <path d="M137.93,168.52h-13.46l-2.79,6.33h-3.73l11.47-25.34h3.58l11.51,25.34h-3.8l-2.79-6.33ZM136.66,165.62l-5.46-12.41-5.47,12.41h10.93Z"/>
-  <path d="M154.72,152.67h-8.69v-3.15h20.96v3.15h-8.69v22.19h-3.58v-22.19Z"/>
-  <path d="M190.73,171.7v3.15h-18.39v-25.34h17.88v3.15h-14.26v7.78h12.7v3.08h-12.7v8.18h14.77Z"/>
-  <path d="M198,149.52h3.62v22.19h13.72v3.15h-17.34v-25.34Z"/>
-  <path d="M220.91,149.52h3.62v25.34h-3.62v-25.34Z"/>
-  <path d="M251.93,171.7v3.15h-18.39v-25.34h17.88v3.15h-14.26v7.78h12.7v3.08h-12.7v8.18h14.77Z"/>
-  <path d="M276.14,174.85l-5.47-7.78c-.51.04-1.05.07-1.59.07h-6.26v7.71h-3.62v-25.34h9.88c6.59,0,10.57,3.33,10.57,8.83,0,3.91-2.03,6.73-5.57,8l6.01,8.51h-3.95ZM276.03,158.35c0-3.62-2.43-5.68-7.06-5.68h-6.15v11.4h6.15c4.63,0,7.06-2.1,7.06-5.72Z"/>
-</symbol>
-
 <!-- texto del logo -->
 <symbol id="logotipo-cake-atelier" viewBox="0 0 280.09 60.08" fill="currentColor">
   <path d="M65.81,51.56c0-2.92,2.16-4.98,5.17-4.98,1.75,0,3.21.72,3.98,2.08l-1.35.87c-.63-.96-1.59-1.4-2.66-1.4-1.92,0-3.36,1.35-3.36,3.43s1.44,3.45,3.36,3.45c1.07,0,2.03-.44,2.66-1.4l1.35.85c-.77,1.37-2.23,2.1-3.98,2.1-3.01,0-5.17-2.08-5.17-5h0Z"/>
@@ -1425,17 +1387,12 @@ isologotipo completo -->
   <path d="M251.93,22.41v3.15h-18.39V.22h17.88v3.15h-14.26v7.78h12.7v3.08h-12.7v8.18h14.77,0Z"/>
   <path d="M276.14,25.56l-5.47-7.78c-.51.04-1.05.07-1.59.07h-6.26v7.71h-3.62V.22h9.88c6.59,0,10.57,3.33,10.57,8.83,0,3.91-2.03,6.73-5.57,8l6.01,8.51h-3.95ZM276.03,9.06c0-3.62-2.43-5.68-7.06-5.68h-6.15v11.4h6.15c4.63,0,7.06-2.1,7.06-5.72Z"/>
 </symbol>
-
-
 <!-- solo imagen torta -->
 <symbol id="isotipo-cake-atelier" viewBox="0 0 174.18 108.26" fill="currentColor">
   <path d="M150.18,76.61H23.99V31.54h34.34v10.51h57.48v-10.51h34.37v45.08h0ZM27.02,73.58h120.13v-39.01h-28.31v10.51h-63.54v-10.51h-28.28s0,39.01,0,39.01Z"/>
   <path d="M174.18,108.15H0v-45.08h27.02v10.51h120.13v-10.51h27.03v45.08h0ZM3.03,105.12h168.12v-39.01h-20.97v10.51H23.99v-10.51H3.03v39.01h0Z"/>
   <path d="M118.83,45.07h-63.54V0h63.54v45.07ZM58.33,42.04h57.48V3.03h-57.48v39.01Z"/>
 </symbol>
-
-
-
 </svg>
     
 </body>

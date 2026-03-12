@@ -381,13 +381,14 @@
       <img src="img/shared/wapp6k.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50" fetchpriority=high loading="eager">
     </a>
 
+    <script src="js/header-menu.js" defer></script>
+    <script src="js/animations.js" defer></script>
+
+
 <script>
   document.addEventListener('DOMContentLoaded',function(){
-    var viewportWidth=document.documentElement.clientWidth||0;
+    //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
-    var mobileSubmenuEnabled=false;
-    var onHeaderSubmenuClick=null;
-    var fxEls=document.querySelectorAll('.fx-fade-up-var');
     var closingSection=document.getElementById('closingSection');
 
     function applyHeaderBySection(isClosingVisible){
@@ -404,175 +405,20 @@
     }
 
     if(headerEl&&closingSection){
-  var closingSectionIO=new IntersectionObserver(function(entries){
-    var entry=entries[0];
-    applyHeaderBySection(entry.isIntersecting);
-  },{threshold:0,rootMargin:'0px 0px -100% 0px'});
-  closingSectionIO.observe(closingSection);
-}
+      var closingSectionIO=new IntersectionObserver(function(entries){
+        var entry=entries[0];
+        applyHeaderBySection(entry.isIntersecting);
+      },{threshold:0,rootMargin:'0px 0px -100% 0px'});
+      closingSectionIO.observe(closingSection);
+    }
   
-    function fxRestart(el){
-  el.classList.remove('fx-run');
-  el.style.animation='none';
-  void el.offsetWidth; // reflow
-  el.style.animation='';
-  el.classList.add('fx-run');
-}
-
-    function fxIndexGroup(el){
-  var parent=el.parentNode;
-  if(!parent)return;
-
-  // Setea indices solo una vez por contenedor (para stagger)
-  if(parent.__fxIndexed)return;
-  parent.__fxIndexed=true;
-
-  var kids=parent.querySelectorAll('.fx-fade-up-var');
-  for(var i=0;i<kids.length;i++){
-    kids[i].style.setProperty('--fx-i', i);
-  }
-}
-
-    // Animaciones textos e img
-    if(fxEls&&fxEls.length){
-    var fxIO=new IntersectionObserver(function(entries){
-      for(var i=0;i<entries.length;i++){
-        var e=entries[i];
-        var el=e.target;
-        if(e.isIntersecting){
-          fxIndexGroup(el);   // arma stagger por bloque automáticamente
-          fxRestart(el);      // re-anima siempre al entrar
-        }else{
-          el.classList.remove('fx-run'); // al re-entrar vuelve a arrancar
-        }
-      }
-    },{
-      threshold:0,
-      rootMargin:'0px 0px -15% 0px' // dispara cuando está por entrar (no tarde)
-    });
-
-    for(var j=0;j<fxEls.length;j++) fxIO.observe(fxEls[j]);
-  }
-
-    //Menu mobile 
-    if(headerEl){
-      var toggleEls=headerEl.getElementsByClassName('header__toggle');
-      var toggle=(toggleEls&&toggleEls.length)?toggleEls[0]:null;
-
-      var overlay=headerEl.querySelector('[data-header-overlay]');
-      var panelEls=headerEl.getElementsByClassName('header__bottom');
-      var panel=(panelEls&&panelEls.length)?panelEls[0]:null;
-
-      function openMenu(){
-        headerEl.classList.add('header--menu-open');
-        if(toggle)toggle.setAttribute('aria-expanded','true');
-        document.documentElement.classList.add('no-scroll');
-        if(overlay)overlay.classList.add('is-visible');
-      }
-
-      function closeMenu(){
-        headerEl.classList.remove('header--menu-open');
-        if(toggle)toggle.setAttribute('aria-expanded','false');
-        document.documentElement.classList.remove('no-scroll');
-        if(overlay)overlay.classList.remove('is-visible');
-
-        var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-        for(var i=0;i<openItems.length;i++){
-          openItems[i].classList.remove('header__item--open');
-          var b=openItems[i].querySelector('.header__link--button');
-          if(b)b.setAttribute('aria-expanded','false');
-        }
-        if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
-      }
-
-      function toggleMenu(){
-        if(headerEl.classList.contains('header--menu-open'))closeMenu();
-        else openMenu();
-      }
-
-      if(toggle){
-        toggle.addEventListener('click',function(e){
-          e.preventDefault();
-          toggleMenu();
-        });
-      }
-
-      if(overlay)overlay.addEventListener('click',closeMenu);
-
-      if(panel){
-        panel.addEventListener('click',function(e){
-          //console.log('panel')
-          var a=e.target&&e.target.closest?e.target.closest('a'):null;
-          if(a)closeMenu();
-        });
-      }
-
-      document.addEventListener('keydown',function(e){
-        if(e.key==='Escape')closeMenu();
-      });
-    }
-    // Fin menu mobile
-
-    //submenus del header
-    // estado para poder activar/desactivar listener y clases en submenus mobile
-    function enableMobileSubmenus(){
-      if(mobileSubmenuEnabled||!headerEl)return;
-      mobileSubmenuEnabled=true;
-
-      onHeaderSubmenuClick=function(e){
-        var btn=e.target.closest('.header__link--button');
-        if(!btn||!headerEl.contains(btn))return;
-
-        var li=btn.closest('.header__item--has-submenu');
-        if(!li)return;
-
-        var open=!li.classList.contains('header__item--open');
-
-        var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-        for(var i=0;i<openLis.length;i++){
-          openLis[i].classList.remove('header__item--open');
-          var b=openLis[i].querySelector('.header__link--button');
-          if(b)b.setAttribute('aria-expanded','false');
-        }
-
-        li.classList.toggle('header__item--open',open);
-        btn.setAttribute('aria-expanded',open?'true':'false');
-      };
-
-      headerEl.addEventListener('click',onHeaderSubmenuClick);
-    }
-
-    function disableMobileSubmenus(){
-    if(!mobileSubmenuEnabled||!headerEl)return;
-    mobileSubmenuEnabled=false;
-
-    if(onHeaderSubmenuClick){
-      headerEl.removeEventListener('click',onHeaderSubmenuClick);
-      onHeaderSubmenuClick=null;
-    }
-
-    var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-    for(var i=0;i<openLis.length;i++){
-      openLis[i].classList.remove('header__item--open');
-      var b=openLis[i].querySelector('.header__link--button');
-      if(b)b.setAttribute('aria-expanded','false');
-    }
-  }
-
-    // helper  
-    function updateSubmenuMode(){
-      viewportWidth=document.documentElement.clientWidth||0;
-      if(viewportWidth<992)enableMobileSubmenus();
-      else disableMobileSubmenus();
-    }
-
-    updateSubmenuMode();
 
     window.addEventListener('resize',function(){
       viewportWidth=document.documentElement.clientWidth;
   //    syncLenisMode();
-      updateSubmenuMode(); //activa/desactiva listener click submenús
+      //updateSubmenuMode(); //activa/desactiva listener click submenús
     },{passive:true});
+
   });
 </script>
 </body>
