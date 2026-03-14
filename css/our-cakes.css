@@ -178,4 +178,5 @@ body{ color: #223242;}
 }
 @media (min-width:1200px){
   .roll__gallery-track{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));overflow:visible}
+  .roll__gallery-item:nth-child(n+7){display:none}
 }
