@@ -1,0 +1,175 @@
+/* .flavours{position:relative;display:flex;flex-direction:column;gap:1.6rem;}
+.flavours__media{position:relative;overflow:hidden;min-height:42rem;border-radius:2.4rem;background:#e9dfd4;}
+.flavours__img{display:block;width:100%;height:100%;object-fit:cover;}
+.flavours__media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,22,18,.58) 0%,rgba(30,22,18,.28) 38%,rgba(30,22,18,.08) 100%);}
+.flavours__box{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;}
+.flavours__control{position:absolute;inline-size:0;block-size:0;opacity:0;pointer-events:none;}
+.flavours__label{display:flex;align-items:center;justify-content:center;min-height:4.8rem;padding:1.2rem 1.4rem;border:1px solid rgba(62,44,38,.14);border-radius:999px;background:rgba(255,255,255,.45);text-align:center;cursor:pointer;transition:border-color .25s ease,background-color .25s ease,color .25s ease;}
+.flavours__caption{position:absolute;left:1.6rem;right:1.6rem;top:calc(42rem - 13.6rem);z-index:2;padding:1.6rem 1.8rem;border-radius:1.8rem;background:rgba(247,241,235,.9);backdrop-filter:blur(.4rem);box-shadow:0 1rem 2.4rem rgba(0,0,0,.08);opacity:0;visibility:hidden;transform:translateY(1rem);transition:opacity .25s ease,visibility .25s ease,transform .25s ease;}
+.flavours__name{margin:0 0 .8rem;font-size:1.9rem;line-height:1.15;}
+.flavours__text{margin:0;}
+.flavours__control:checked + .flavours__label + .flavours__caption{opacity:1;visibility:visible;transform:none;}
+
+.flavours__control:checked + .flavours__label{color:#fff;background:#3e2c26;border-color:#3e2c26;}
+.flavours__control[id="flavour-lemon"]:checked + .flavours__label{color:#3e2c26;background:#f7edba;border-color:#e6d36f;}
+.flavours__control[id="flavour-bombon"]:checked + .flavours__label{color:#fff;background:#5a3a2e;border-color:#5a3a2e;}
+.flavours__control[id="flavour-red"]:checked + .flavours__label{color:#fff;background:#a33b5e;border-color:#a33b5e;}
+.flavours__control[id="flavour-love"]:checked + .flavours__label{color:#3e2c26;background:#dde6bc;border-color:#a7b96b;}
+.flavours__control[id="flavour-passion"]:checked + .flavours__label{color:#3e2c26;background:#f1d4a8;border-color:#d9a45b;}
+.flavours__control[id="flavour-master"]:checked + .flavours__label{color:#fff;background:#8b6a4e;border-color:#8b6a4e;}
+.flavours__control[id="flavour-italian"]:checked + .flavours__label{color:#fff;background:#6b4a3a;border-color:#6b4a3a;}
+
+.flavours__caption--lemon .flavours__name{color:#7f6a16;}
+.flavours__caption--bombon .flavours__name{color:#5a3a2e;}
+.flavours__caption--red .flavours__name{color:#a33b5e;}
+.flavours__caption--love .flavours__name{color:#73843f;}
+.flavours__caption--passion .flavours__name{color:#b57823;}
+.flavours__caption--master .flavours__name{color:#8b6a4e;}
+.flavours__caption--italian .flavours__name{color:#6b4a3a;}
+
+.flavours__cta-wrap{margin-top:2.4rem;text-align:center;}
+
+@media (min-width:48rem){
+.flavours{flex-direction:row-reverse;align-items:stretch;gap:3.2rem;}
+.flavours__media{flex:1 1 auto;min-height:64rem;}
+.flavours__box{display:flex;flex:0 0 clamp(24rem,28vw,34rem);flex-direction:column;align-items:stretch;gap:1rem;}
+.flavours__label{justify-content:flex-end;min-height:auto;padding:1rem 3.2rem 1rem 0;border:none;border-right:1px solid rgba(62,44,38,.16);border-radius:0;background:transparent;text-align:right;font-size:clamp(2rem,2.2vw,3rem);line-height:1.08;}
+.flavours__caption{top:auto;right:0;bottom:2.4rem;left:auto;width:min(42rem,calc(100% - 4.8rem));padding:2rem 2.2rem;}
+.flavours__control:checked + .flavours__label{background:transparent;border-top-color:transparent;border-bottom-color:transparent;border-left-color:transparent;}
+}
+
+@media (hover:hover){
+.flavours__label:hover{border-color:rgba(62,44,38,.32);}
+}
+
+@media (prefers-reduced-motion:reduce){
+.flavours__label,.flavours__caption{transition:none;}
+} */
+
+:root{
+    --padding-horizontal: 4.7vw;
+    --padding-top: 7rem  ;
+   --accent: var(--color-brand);
+   /* Paleta 1 — sofisticada y segura */
+/*base general: #F8F3EC
+roll cakes: #DCE8E8
+cakes: #EDE2D3
+sizes & structure: #F4EEE7*/
+   --col1:#F8F3EC;
+   --col2:#DCE8E8;
+   --col3:#EDE2D3;
+   --col4:#F4EEE7;/**/
+
+/*
+Esta me parece la más equilibrada.
+Paleta 2 — un poco más femenina y delicada
+base general: #FAF6F1
+roll cakes: #DCE7EA
+cakes: #EADBD6
+sizes & structure: #F3ECE7*/
+   --col5:#FAF6F1;
+   --col6:#DCE7EA;
+   --col7:#EADBD6;
+   --col8:#F3ECE7;
+
+/*Esta tiene más suavidad romántica, pero todavía elegante.
+Paleta 3 — más moderna, menos dulce
+base general: #F6F0E8
+roll cakes: #D7E1E1
+cakes: #E7DED2
+sizes & structure: #EFE8DF*/
+   --col9:#F6F0E8;
+   --col10:#D7E1E1;
+   --col11:#E7DED2;
+   --col12:#EFE8DF;/**/
+
+  }
+ @media (min-width:992px){
+  :root{
+    --padding-top:7.375rem;
+ }
+ }
+ 
+
+body{background:#f7f1eb;color:#3e2c26;}
+/* .main{background:#f7f1eb;} */
+
+.section{padding: var(--padding-top) var(--padding-horizontal); width: 100%; }
+
+.hero{ background: var(--col3);color: #223342; padding-bottom: 2rem; }
+.hero__title{font-size: 3.5rem; font-size:clamp(34px, 3.73vw, 3.5rem) ;  color:var(--color16);color: #5a3a2e; font-weight: 700; text-align: center;margin-bottom: 1rem;}
+.hero__lead{ font-size:1.1rem;font-size:clamp(18px, 1.5vw, 1.125rem); /*line-height:1.7;*/ max-width:55rem ; margin:0 auto 1rem auto;}
+.hero__hint{font-size: 1.8rem;    font-size:clamp(1.375rem,1.46vw,3rem); font-weight: 500;text-align: center;margin: 2rem;}
+
+.flavours{position:relative;display:flex;flex-direction:column;gap:1.6rem;background:#f7f1eb;}
+.flavours__media{position:relative;overflow:hidden;min-height:2rem;border-radius:1rem;background:#d9cbbd;
+display: inline-flex; height: 100%;margin: auto;
+align-items: stretch;
+max-width: 300px; /*margin-top: 2rem; /*border: 4px solid #93b2b2fc; */}
+.flavours__img{/*aspect-ratio: 1/1;*/ flex:0 0 clamp(20.25rem,21.6vw,23rem); overflow:hidden;  /*height: max-content;*/ object-fit:cover;filter: saturate(0.7) contrast(0.7);}
+
+/* .flavours__img{display:block;width:100%;height:100%;object-fit:cover;} */
+.flavours__media::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,22,18,.56) 0%,rgba(30,22,18,.24) 40%,rgba(30,22,18,.08) 100%);}
+.flavours__box{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.8rem;}
+.flavours__control{position:absolute;inline-size:0;block-size:0;opacity:0;pointer-events:none;}
+.flavours__label{display:flex;align-items:center;justify-content:center;height:4rem;padding-inline:1.4rem;
+    /* border:1px solid rgba(62,44,38,.14);border-radius:999px; */
+    background:#fff8f2;border-bottom: 1px solid brown;
+    /* text-align:center; */
+    cursor:pointer;transition:border-color .25s ease,background-color .25s ease,color .25s ease;} /*OJO*/
+.flavours__caption{position:absolute;
+    /* right:1.6rem;bottom:8rem;left:1.6rem; */
+    top: 1.5rem;left: calc(50% - 8rem);bottom: auto;
+    
+    z-index:2;width: 16rem; padding:1.6rem 1.8rem;border-radius:1.8rem;background:rgba(247,241,235,.92);box-shadow:0 1rem 2.4rem rgba(0,0,0,.08);opacity:0;visibility:hidden;transform:translateY(1rem);transition:opacity .25s ease,visibility .25s ease,transform .25s ease;}
+.flavours__name{margin:0 0 .8rem;font-size:1.9rem;line-height:1.15;}
+.flavours__text{margin:0;}
+.flavours__control:checked + .flavours__label + .flavours__caption{opacity:1;visibility:visible;transform:none;}
+
+#flavour-lemon:checked + .flavours__label,#flavour-lemon:checked + .flavours__label + .flavours__caption{color:#3e2c26;background:#f7edba;border-color:#e6d36f;}
+#flavour-bombon:checked + .flavours__label, #flavour-bombon:checked + .flavours__label + .flavours__caption{color:#fff;background:#5a3a2e;border-color:#5a3a2e;}
+#flavour-red:checked + .flavours__label, #flavour-red:checked + .flavours__label + .flavours__caption{color:#fff;background:#a33b5e;border-color:#a33b5e;}
+#flavour-love:checked + .flavours__label, #flavour-love:checked + .flavours__label + .flavours__caption{color:#3e2c26;background:#dde6bc;border-color:#a7b96b;}
+#flavour-passion:checked + .flavours__label, #flavour-passion:checked + .flavours__label + .flavours__caption{color:#3e2c26;background:#f1d4a8;border-color:#d9a45b;}
+#flavour-master:checked + .flavours__label, #flavour-master:checked + .flavours__label + .flavours__caption{color:#fff;background:#8b6a4e;border-color:#8b6a4e;}
+#flavour-italian:checked + .flavours__label, #flavour-italian:checked + .flavours__label + .flavours__caption{color:#fff;background:#6b4a3a;border-color:#6b4a3a;}
+
+.flavours__caption--lemon .flavours__name{color:#7f6a16;}
+.flavours__caption--bombon .flavours__name{color:var(--color-brand)/*#5a3a2e*/;}
+.flavours__caption--red .flavours__name{color:var(--color-brand) /*#a33b5e*/;}
+.flavours__caption--love .flavours__name{color:#73843f;}
+.flavours__caption--passion .flavours__name{color:#b57823;}
+.flavours__caption--master .flavours__name{color:var(--color-brand)/*#8b6a4e;*/}
+.flavours__caption--italian .flavours__name{color:var(--color-brand)/*#6b4a3a;*/}
+
+.flavours__cta-wrap{margin:2.4rem auto;text-align:center;}
+.btn--primary:hover,.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background: transparent;}
+
+
+@media (min-width:768px){
+.flavours{flex-direction:row-reverse;align-items:stretch;justify-content: center; gap:3.2rem;}
+.hero__hint{ margin: 4rem;}
+ .flavours__media{max-width: 100%;margin: 0; /*flex:1 1 auto;min-height:64rem;*/} 
+.flavours__box{display:flex;flex:0 0 clamp(20.25rem,21.6vw,23rem)  /*clamp(24rem,28vw,34rem)*/;flex-direction:column;gap:0;position: relative;}
+.flavours__label{justify-content:flex-end;
+    /* min-height:auto; */
+    /* padding:1rem 3.2rem 1rem 0;border:none; */
+    /* background:transparent;text-align:right; */
+font-size: 2rem;    font-size:clamp(1.375rem,1.46vw,3rem); }
+.flavours__caption{left:calc(100% + 5.2rem) ;bottom:2.2rem;top: auto; /*width:min(42rem,calc(100% - 4.8rem))*/;padding:2rem 2.2rem;}
+/* #flavour-lemon:checked + .flavours__label{color:#e6d36f;background:transparent;}
+#flavour-bombon:checked + .flavours__label{color:#5a3a2e;background:transparent;}
+#flavour-red:checked + .flavours__label{color:#a33b5e;background:transparent;}
+#flavour-love:checked + .flavours__label{color:#73843f;background:transparent;}
+#flavour-passion:checked + .flavours__label{color:#b57823;background:transparent;}
+#flavour-master:checked + .flavours__label{color:#8b6a4e;background:transparent;}
+#flavour-italian:checked + .flavours__label{color:#6b4a3a;background:transparent;} */
+}
+
+@media (hover:hover){
+.flavours__label:hover{border-color:rgba(62,44,38,.32);}
+}
+
+@media (prefers-reduced-motion:reduce){
+.flavours__label,.flavours__caption{transition:none;}
+}

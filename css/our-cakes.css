@@ -86,11 +86,7 @@ body{ color: #223242;}
 .our-cakes-hero-tab__text{max-width:26rem;font-size:.97rem;line-height:1.5;color:#5d4f44}
 .our-cakes-hero-tab--roll{background:linear-gradient(180deg,#dce8e8 0%,#e7f0f0 100%);border-color:#c6d6d6}
 .our-cakes-hero-tab--cakes{background:linear-gradient(180deg,#ede2d3 0%,#f3ebe1 100%);border-color:#d8c8b7}
-
-/* @media (max-width:752px){
-  .our-cakes-hero-nav{grid-template-columns:1fr}
-} */
-
+ 
 .section{padding: var(--padding-top) var(--padding-horizontal); width: 100%; }
 .rollCakes{background-color: var(--col2);}
 .rollCakes .border{border-color:#93b2b2fc;}
@@ -167,7 +163,7 @@ body{ color: #223242;}
   .roll__gallery-item{/*flex:none;*/max-width:none}
 }
 @media (min-width:992px){
-  .roll__gallery-track{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));overflow:visible}
+  .roll__gallery-track{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));overflow:visible}
    .cakes-sizes__eyebrow{margin:0 0 1.4rem;font-size:1.3rem; }
    .cakes-sizes__boxes{flex-direction: row;}
    .cakes-sizes__text p{margin-bottom: .625rem}
