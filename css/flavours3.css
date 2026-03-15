@@ -1,0 +1,160 @@
+:root{
+    --padding-horizontal: 4.7vw;
+    --padding-top: 7rem  ;
+   --accent: var(--color-brand);
+   /* Paleta 1 — sofisticada y segura */
+/*base general: #F8F3EC
+roll cakes: #DCE8E8
+cakes: #EDE2D3
+sizes & structure: #F4EEE7*/
+   --col1:#F8F3EC;
+   --col2:#DCE8E8;
+   --col3:#EDE2D3;
+   --col4:#F4EEE7;/**/
+
+/*
+Esta me parece la más equilibrada.
+Paleta 2 — un poco más femenina y delicada
+base general: #FAF6F1
+roll cakes: #DCE7EA
+cakes: #EADBD6
+sizes & structure: #F3ECE7*/
+   --col5:#FAF6F1;
+   --col6:#DCE7EA;
+   --col7:#EADBD6;
+   --col8:#F3ECE7;
+
+/*Esta tiene más suavidad romántica, pero todavía elegante.
+Paleta 3 — más moderna, menos dulce
+base general: #F6F0E8
+roll cakes: #D7E1E1
+cakes: #E7DED2
+sizes & structure: #EFE8DF*/
+   --col9:#F6F0E8;
+   --col10:#D7E1E1;
+   --col11:#E7DED2;
+   --col12:#EFE8DF;/**/
+
+  }
+ @media (min-width:992px){
+  :root{
+    --padding-top:7.375rem;
+ }
+ }
+
+body{background:#f7f1eb;color:#3e2c26;}
+/* .main{background:#f7f1eb;} */
+
+.section{padding: var(--padding-top) var(--padding-horizontal); width: 100%; }
+
+.hero{ background: var(--col3);color: #223342; padding-bottom: 2rem; }
+.hero__title{font-size: 3.5rem; font-size:clamp(34px, 3.73vw, 3.5rem) ;  color:var(--color16);color: #5a3a2e; font-weight: 700; text-align: center;margin-bottom: 1rem;}
+.hero__lead{ font-size:1.1rem;font-size:clamp(18px, 1.5vw, 1.125rem);   max-width:55rem ; margin:0 auto 1rem auto;}
+.hero__hint{font-size: 1.8rem;    font-size:clamp(1.375rem,1.46vw,3rem); font-weight: 500;text-align: center;margin: 2rem;}
+
+
+.flavours{position:relative;overflow:hidden; /*padding:2.4rem 1.6rem;background:#f7f1eb;*/}
+/* .flavours__media{position:absolute;inset:0;z-index:0;pointer-events:none;} */
+/* .flavours__media::after{content:"";position:absolute;inset:0;background:rgba(247,241,235,.9);} */
+/* .flavours__img{display:block;width:100%;height:100%;object-fit:cover;opacity:.19;filter:grayscale(.08);} */
+.flavours__box{position:relative;z-index:1;display:grid;gap:0;width: max-content;max-width: 60%; margin: auto;}
+.flavours__card{padding:1.8rem;border-bottom:1px solid rgba(62,44,38,.12);background:transparent;width: 100%;}
+.flavours__name{margin:0 0 .6rem;font-size:2rem;line-height:1.06;}
+.flavours__text{ color:rgba(62,44,38,.82);}
+.flavours__card--lemon .flavours__name{color:#7f6a16;}
+.flavours__card--bombon .flavours__name{color:#5a3a2e;}
+.flavours__card--red .flavours__name{color:#a33b5e;}
+.flavours__card--love .flavours__name{color:#73843f;}
+.flavours__card--passion .flavours__name{color:#b57823;}
+.flavours__card--master .flavours__name{color:#8b6a4e;}
+.flavours__card--italian .flavours__name{color:#6b4a3a;}
+.flavours__cta-wrap{padding:2.4rem 1.6rem 0;text-align:center;}
+
+/*********vers3*****/
+.flavours__box{grid-template-columns:1fr;justify-items:center;gap:0;}
+/* .flavours__card{width:100%;max-width:60%;padding:1.8rem 0;border-radius:0;} */
+.flavours__card--lemon{background:rgba(230,211,111,.10);}
+.flavours__card--bombon{background:rgba(90,58,46,.06);}
+.flavours__card--red{background:rgba(163,59,94,.07);}
+.flavours__card--love{background:rgba(167,185,107,.08);}
+.flavours__card--passion{background:rgba(217,164,91,.08);}
+.flavours__card--master{background:rgba(139,106,78,.07);}
+.flavours__card--italian{background:rgba(107,74,58,.07);}
+
+/*******************/
+/* .flavours{padding:4rem 3.2rem;} */
+.flavours__box{column-gap:5.6rem;}
+/* .flavours__name{font-size:2.4rem;line-height:1.02;} */
+/* .flavours__text{max-width:24ch;} */
+
+/*********vers3*****/
+@media (min-width:768px){
+/* .flavours{padding:3.2rem 2.4rem;} */
+/* .flavours__box{grid-template-columns:1fr;justify-items:center;gap:0; } */
+}
+
+@media (min-width:1200px){
+/* .flavours{padding:4rem 3.2rem;} */
+/* .flavours__box{grid-template-columns:1fr;justify-items:center;gap:0;  } */
+}
+
+/*************vers2
+@media (min-width:768px){
+.flavours{padding:3.2rem 2.4rem;}
+.flavours__box{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:4rem;}
+.flavours__card{padding:2rem 0;min-height:14rem;}
+.flavours__card:nth-child(odd){padding-right:1.6rem;}
+.flavours__card:nth-child(even){padding-left:1.6rem;}
+}
+
+@media (min-width:1200px){
+.flavours{padding:4rem 3.2rem;}
+.flavours__box{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:4rem;}
+.flavours__card{min-height:15rem;}
+.flavours__card:nth-child(odd),.flavours__card:nth-child(even){padding-left:0;padding-right:0;}
+}
+
+ /********************* variante1
+ 
+
+body{background:#f7f1eb;color:#3e2c26;}
+ 
+.section{padding: var(--padding-top) var(--padding-horizontal); width: 100%; }
+
+.hero{ background: var(--col3);color: #223342; padding-bottom: 2rem; }
+.hero__title{font-size: 3.5rem; font-size:clamp(34px, 3.73vw, 3.5rem) ;  color:var(--color16);color: #5a3a2e; font-weight: 700; text-align: center;margin-bottom: 1rem;}
+.hero__lead{ font-size:1.1rem;font-size:clamp(18px, 1.5vw, 1.125rem);   max-width:55rem ; margin:0 auto 1rem auto;}
+.hero__hint{font-size: 1.8rem;    font-size:clamp(1.375rem,1.46vw,3rem); font-weight: 500;text-align: center;margin: 2rem;}
+
+.flavours{position:relative;display:flex;flex-direction:column;gap:1.6rem;background:#f7f1eb;}
+
+body{background:#f7f1eb;color:#3e2c26;}
+.main{background:#f7f1eb;}
+.flavours{position:relative;overflow:hidden;padding:2.4rem 1.6rem;border-radius:2.4rem;background:#f3ece4;}
+.flavours__media{position:absolute;inset:0;z-index:0;pointer-events:none;}
+.flavours__media::after{content:"";position:absolute;inset:0;background:rgba(247,241,235,.82);}
+.flavours__img{display:block;width:100%;height:100%;object-fit:cover;opacity:.18;filter:grayscale(.08);}
+.flavours__box{position:relative;z-index:1;display:grid;gap:1.2rem;}
+.flavours__card{padding:1.6rem 1.6rem 1.5rem;border:1px solid rgba(62,44,38,.1);border-radius:1.8rem;background:rgba(255,252,248,.72);backdrop-filter:blur(.3rem);}
+.flavours__name{margin:0 0 .7rem;font-size:2rem;line-height:1.08;}
+.flavours__text{margin:0;max-width:28ch;}
+.flavours__card--lemon .flavours__name{color:#7f6a16;}
+.flavours__card--bombon .flavours__name{color:#5a3a2e;}
+.flavours__card--red .flavours__name{color:#a33b5e;}
+.flavours__card--love .flavours__name{color:#73843f;}
+.flavours__card--passion .flavours__name{color:#b57823;}
+.flavours__card--master .flavours__name{color:#8b6a4e;}
+.flavours__card--italian .flavours__name{color:#6b4a3a;}
+.flavours__cta-wrap{padding:2.4rem 1.6rem 0;text-align:center;}
+
+@media (min-width:768px){
+.flavours{padding:3.2rem;}
+.flavours__box{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.6rem;}
+.flavours__card{min-height:14rem;padding:2rem 2rem 1.8rem;}
+}
+
+@media (min-width:1200px){
+.flavours__box{grid-template-columns:repeat(3,minmax(0,1fr));}
+.flavours__card{min-height:15rem;}
+}
+/****fin variante 1******************/
