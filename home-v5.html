@@ -168,18 +168,19 @@
                 </div>
                 <div class="hero__media ">
                   <picture class="hero__picture" data-parallax>
-                    <!-- <source srcset="img/home/hero/grupo7.webp" media="(max-width: 599px)" type="image/webp">
-                    <source srcset="img/home/hero/grupo9.avif" media="(max-width: 599px)" type="image/avif">
-
-                    <source srcset="img/home/hero/grupo7.webp" media="(min-width: 600px) and (max-width: 1023px)" type="image/webp">
-                    <source srcset="img/home/hero/grupo7.avif" media="(min-width: 600px) and (max-width: 1023px)" type="image/avif">
-
-                     -->
-                    <!-- <source srcset="img/home/hero/grupo9-margen3.jpg" media="(min-width: 1024px)" type="image/webp"> -->
+                      <!-- <source srcset="img/home/hero/grupo9-margen3.jpg" media="(min-width: 1024px)" type="image/webp"> -->
 
                     <!-- <img class="hero__img" src="img/home/hero/ws-feb2026.png" alt="Tall artistic buttercream cake on a stand" width="1600" height="900" loading="eager" decoding="async" fetchpriority="high"> -->
 
-                    <source srcset="img/home/hero/grupo8.webp" media="(min-width: 768px)" type="image/webp">
+                    <source srcset="img/home/hero/grupo81-4000px.avif" media="(min-width: 2560px)" type="image/avif">
+                    <source srcset="img/home/hero/grupo81-4000px.webp" media="(min-width: 2560px)" type="image/webp">
+
+                    <source srcset="img/home/hero/grupo81-2560px.avif" media="(min-width: 1600px) and (max-width: 2559.98px)" type="image/avif">
+                    <source srcset="img/home/hero/grupo81-2560px.webp" media="(min-width: 1600px) and (max-width: 2559.98px)" type="image/webp">
+
+                    <source srcset="img/home/hero/grupo81-1600px.avif" media="(min-width: 768px) and (max-width: 1599.98px)" type="image/avif">
+                    <source srcset="img/home/hero/grupo81-1600px.webp" media="(min-width: 768px) and (max-width: 1599.98px)" type="image/webp">
+
                     <img class="hero__img" src="img/home/hero/Group68.webp" alt="Cake decorating workshop" width="768" height="1277" loading="lazy" decoding="async" >
                   </picture>
                 </div>
@@ -573,8 +574,10 @@ document.addEventListener('DOMContentLoaded',function(){
 // }
 
   var viewportWidth=document.documentElement.clientWidth||0;
-  //console.log(viewportWidth)
+  console.log(viewportWidth)
   var viewportHeight=window.innerHeight;
+    alert('VIEWPORT='+viewportWidth+'/'+viewportHeight)
+
   var headerEl=document.querySelector('.header');
   var heroEl=document.getElementById('hero');
   var howEl=document.getElementById('howToOrder');
@@ -640,6 +643,7 @@ function destroyLenis(){
   }
 }
 function syncLenisMode(){
+  viewportWidth=document.documentElement.clientWidth||0;
   if(viewportWidth<992){
     destroyLenis();
   }else{
