@@ -101,56 +101,56 @@
       <p class="hint">Choose a flavour to reveal its story.</p>
       <div class="flavours__inner">
 
-      <div class="flavours__media fx-fade-up-var" style="--fx-dur:1.9s;--fx-y:50px;--fx-delay:.5s">
+      <div class="flavours__media fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:50px;--fx-delay:.5s">
           <img class="flavours__img" src="img/flavours/flavours-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
       </div>
 
-      <div class="flavours__box" style="--fx-stagger:.05s;--fx-delay:.02s">
+      <div class="flavours__box" style="--fx-dur:1.9s;--fx-y:70px;--fx-delay:.7s">
 
             <input class="flavours__control" type="radio" name="flavour" id="flavour-lemon" checked>
-            <label class="flavours__label fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px" for="flavour-lemon">Lemon Diva</label>
+            <label class="flavours__label" for="flavour-lemon">Lemon Diva</label>
             <div class="flavours__caption flavours__caption--lemon">
                 <p class="flavours__name">Lemon Diva</p>
                 <p class="flavours__text">Lemon sponge, lemon curd, blueberry coulis.</p>
             </div>
  
             <input class="flavours__control" type="radio" name="flavour" id="flavour-bombon">
-            <label class="flavours__label fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px" for="flavour-bombon">Chocolate Bombon</label>
+            <label class="flavours__label" for="flavour-bombon">Chocolate Bombon</label>
             <div class="flavours__caption flavours__caption--bombon">
                 <p class="flavours__name">Chocolate Bombon</p>
                 <p class="flavours__text">Dark chocolate sponge, dulce de leche, vanilla mascarpone.</p>
               </div>
               
             <input class="flavours__control" type="radio" name="flavour" id="flavour-red">
-            <label class="flavours__label fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px" for="flavour-red">Lady in Red</label>
+            <label class="flavours__label" for="flavour-red">Lady in Red</label>
               <div class="flavours__caption flavours__caption--red">
                 <p class="flavours__name">Lady in Red</p>
                 <p class="flavours__text">Red velvet sponge, raspberry coulis, mascarpone cream cheese.</p>
             </div>
  
             <input class="flavours__control" type="radio" name="flavour" id="flavour-love">
-            <label class="flavours__label fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px" for="flavour-love">Love Story</label>
+            <label class="flavours__label" for="flavour-love">Love Story</label>
               <div class="flavours__caption flavours__caption--love">
                 <p class="flavours__name">Love Story</p>
                 <p class="flavours__text">Pistachio sponge, raspberry coulis, mascarpone cream.</p>
             </div>
 
             <input class="flavours__control" type="radio" name="flavour" id="flavour-passion">
-            <label class="flavours__label fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px" for="flavour-passion">Passion Dream</label>
+            <label class="flavours__label" for="flavour-passion">Passion Dream</label>
               <div class="flavours__caption flavours__caption--passion">
                 <p class="flavours__name">Passion Dream</p>
                 <p class="flavours__text">Coconut &amp; vanilla sponge, mango–passion fruit coulis, white chocolate ganache.</p>
             </div>
 
             <input class="flavours__control" type="radio" name="flavour" id="flavour-master">
-            <label class="flavours__label fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px" for="flavour-master">Master of Cakes</label>
+            <label class="flavours__label" for="flavour-master">Master of Cakes</label>
               <div class="flavours__caption flavours__caption--master">
                 <p class="flavours__name">Master of Cakes</p>
                 <p class="flavours__text">Chocolate and vanilla sponge, whipped cream, berries, dulce de leche.</p>
             </div>
 
             <input class="flavours__control" type="radio" name="flavour" id="flavour-italian">
-            <label class="flavours__label fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px" for="flavour-italian">Italian Affair</label>
+            <label class="flavours__label" for="flavour-italian">Italian Affair</label>
               <div class="flavours__caption flavours__caption--italian">
                 <p class="flavours__name">Italian Affair</p>
                 <p class="flavours__text">Coffee sponge, coffee ganache, dark chocolate cream, hazelnut crunch.</p>
@@ -161,7 +161,7 @@
 
       </div>
 
-      <div class="flavours__cta-wrap"><a class="btn btn--primary" href="designs.html">Discover our designs</a></div>
+      <div class="flavours__cta-wrap"><a class="btn btn--primary" href="designs.html">Now, discover our designs</a></div>
 
     </div>
 
@@ -225,17 +225,26 @@
             </a>
           </li>
 
-          <li class="footer__item footer__item--note">
+          <li class="footer__item footer__item--note footer__desktop">
             Cake Atelier Copenhagen is a home-based bakery. There is no street shop — all creations are made to order and available by pre-order only.
-            <!-- Cake Atelier Copenhagen is a home bakery. There is no street shop — we work by pre-order only. -->
           </li>
-          <li class="footer__item footer__item--note">
+          <li class="footer__item footer__item--note footer__mobile">
+            <span>Home-based bakery in Copenhagen. No street-faced shop.</span>
+            <span>All creations are made to order.</span>
+          </li>
+          <li class="footer__item footer__item--note footer__desktop">
             <strong>Hours: </strong>By appointment · I reply within 24 hours
           </li>
-          <li class="footer__item footer__item--note">
-            <strong>Pickup: </strong><a class="footer__map-link" href="https://maps.app.goo.gl/fhZnAjqaqKGyHpwa7" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">By appointment in 2300 Amager Øst (by Øresund metro station near the beach)</a>
+          <li class="footer__item footer__item--note footer__mobile">
+            <strong>Hours: </strong>By appointment
           </li>
-          <li class="footer__item footer__item--note">
+          <li class="footer__item footer__item--note footer__desktop">
+            <strong>Pickup only: </strong><a class="footer__map-link" href="https://maps.app.goo.gl/fhZnAjqaqKGyHpwa7" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">By appointment in 2300 Amager Øst (by Øresund metro station near the beach)</a>
+          </li>
+          <li class="footer__item footer__item--note footer__mobile">
+            <strong>Pickup only: </strong><a class="footer__map-link" href="https://maps.app.goo.gl/fhZnAjqaqKGyHpwa7" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">Amager Øst, near Øresund metro</a>
+          </li>
+           <li class="footer__item footer__item--note">
             <strong>Delivery: </strong>No delivery — pre-order pickup only
           </li>
         </ul>
