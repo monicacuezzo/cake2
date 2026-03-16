@@ -298,18 +298,15 @@
     //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
     var flavoursSection=document.getElementById('flavours');
-    var footerEl=document.getElementById('footer');
+    // var flavoursVisible=false;
 
     function applyHeaderBySection(isFlavoursVisible){
       if(!headerEl)return;
-      headerEl.classList.remove(
-        'header--compact-light',
-        'header--compact-dark'
-      );
+      headerEl.classList.remove('header--compact-light','header--compact-dark');
       if(isFlavoursVisible){
-        headerEl.classList.add('header--compact','header--compact-dark');
+        headerEl.classList.add('header--compact-dark');
       }else{
-        headerEl.classList.add('header--compact','header--compact-light');
+        headerEl.classList.add('header--compact-light');
       }
     }
 
@@ -317,9 +314,8 @@
       var sectionIO=new IntersectionObserver(function(entries){
         var entry=entries[0];
         applyHeaderBySection(entry.isIntersecting);
-      },{threshold:0,rootMargin:'0px 0px -100% 0px'});
+      },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
       sectionIO.observe(flavoursSection);
-      sectionIO.observe(footerEl);
     }
   
 
