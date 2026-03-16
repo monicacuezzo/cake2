@@ -42,7 +42,7 @@ sizes & structure: #EFE8DF*/
  
 
 .header.header--compact{box-shadow: none;}
-.border{border: .125rem solid var(--accent);}
+/* .border{border: .125rem solid var(--accent);} */
 .main{position:relative;width:100%;overflow:hidden;  }
 .main::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background-image:url("../img/bg/art-line.svg");background-repeat:no-repeat;background-position:right 0;background-size:70vh;opacity:.8;pointer-events:none;z-index:0;  /*#8f7f78;*/}
 .section{padding: var(--padding-top) var(--padding-horizontal); width: 100%; }
