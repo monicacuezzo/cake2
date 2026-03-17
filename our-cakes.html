@@ -174,27 +174,15 @@
           <figure class="roll__gallery-item border">
             <img class="roll__gallery-img" src="img/cakes/roll-cakes/roll-cake-rosa232.webp" alt="Detail of roll cake texture and cream layers" width="600" height="900" loading="lazy">
           </figure>
-
-
-
-
           <figure class="roll__gallery-item border">
             <img class="roll__gallery-img" src="img/cakes/roll-cakes/roll-cake-rosa-corte232.webp" alt="Detail of roll cake texture and cream layers" width="600" height="900" loading="lazy">
           </figure>
-
           <figure class="roll__gallery-item border">
             <img class="roll__gallery-img" src="img/cakes/roll-cakes/roll-cake-vainilla-y-chocolate232.webp" alt="Detail of roll cake texture and cream layers" width="600" height="900" loading="lazy">
           </figure>
-
-
           <figure class="roll__gallery-item border">
             <img class="roll__gallery-img" src="img/cakes/roll-cakes/rool-cake5-1.webp" alt="Detail of roll cake texture and cream layers" width="600" height="900" loading="lazy">
           </figure>
-           
-
-          
-         
- 
         </div>
       </section>
 
@@ -457,29 +445,38 @@
   document.addEventListener('DOMContentLoaded',function(){
     //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
-    var closingSection=document.getElementById('closingSection');
+    var heroEl=document.getElementById('hero');
+    var sizesSection=document.getElementById('cakesSizesAndStructure');
+    var buttonTop=document.getElementById('buttonTop');
 
-    function applyHeaderBySection(isClosingVisible){
+    if(heroEl){
+      var heroIO=new IntersectionObserver(function(entries){
+        var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+        if(buttonTop){//oculto si Hero está visible
+          buttonTop.classList.toggle('floating--hidden',heroVisible);
+        }
+      },{threshold:0,rootMargin:'0px 0px -100% 0px'}); //200px 0px 200px 0px
+      heroIO.observe(heroEl);
+    }
+
+    function applyHeaderBySection(issizesVisible){
       if(!headerEl)return;
-      headerEl.classList.remove(
-        'header--compact-light',
-        'header--compact-dark'
-      );
-      if(isClosingVisible){
-        headerEl.classList.add('header--compact','header--compact-dark');
+      headerEl.classList.remove('header--compact-light','header--compact-dark');
+      if(issizesVisible){
+        headerEl.classList.add('header--compact-dark');
       }else{
-        headerEl.classList.add('header--compact','header--compact-light');
+        headerEl.classList.add('header--compact-light');
       }
     }
 
-    // if(headerEl&&closingSection){
-    //   var closingSectionIO=new IntersectionObserver(function(entries){
-    //     var entry=entries[0];
-    //     applyHeaderBySection(entry.isIntersecting);
-    //   },{threshold:0,rootMargin:'0px 0px -100% 0px'});
-    //   closingSectionIO.observe(closingSection);
-    // }
-  
+    if(headerEl&&sizesSection){
+      var sectionIO=new IntersectionObserver(function(entries){
+        var entry=entries[0];
+        applyHeaderBySection(entry.isIntersecting);
+      },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
+      sectionIO.observe(sizesSection);
+    }
+
 
     window.addEventListener('resize',function(){
       viewportWidth=document.documentElement.clientWidth;

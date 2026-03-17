@@ -307,7 +307,8 @@
     //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
     var flavoursSection=document.getElementById('flavours');
-    // var flavoursVisible=false;
+    var buttonTop=document.getElementById('buttonTop');
+
 
     function applyHeaderBySection(isFlavoursVisible){
       if(!headerEl)return;
@@ -316,6 +317,9 @@
         headerEl.classList.add('header--compact-dark');
       }else{
         headerEl.classList.add('header--compact-light');
+      }
+      if(buttonTop){//oculto si Flavours no está visible
+        buttonTop.classList.toggle('floating--hidden',!isFlavoursVisible);
       }
     }
 

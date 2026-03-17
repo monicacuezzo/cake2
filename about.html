@@ -395,18 +395,27 @@
   document.addEventListener('DOMContentLoaded',function(){
     //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
+    var heroEl=document.getElementById('hero');
     var closingSection=document.getElementById('closingSection');
+    var buttonTop=document.getElementById('buttonTop');
+
+    if(heroEl){
+      var heroIO=new IntersectionObserver(function(entries){
+        var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+        if(buttonTop){//oculto si Hero está visible
+          buttonTop.classList.toggle('floating--hidden',heroVisible);
+        }
+      },{threshold:0,rootMargin:'0px 0px -100% 0px'}); //200px 0px 200px 0px
+      heroIO.observe(heroEl);
+    }
 
     function applyHeaderBySection(isClosingVisible){
       if(!headerEl)return;
-      headerEl.classList.remove(
-        'header--compact-light',
-        'header--compact-dark'
-      );
+      headerEl.classList.remove('header--compact-light','header--compact-dark');
       if(isClosingVisible){
-        headerEl.classList.add('header--compact','header--compact-dark');
+        headerEl.classList.add('header--compact-dark');
       }else{
-        headerEl.classList.add('header--compact','header--compact-light');
+        headerEl.classList.add('header--compact-light');
       }
     }
 
