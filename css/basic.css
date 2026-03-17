@@ -46,7 +46,7 @@ a[href^="tel:"]{width:-webkit-max-content;width:-moz-max-content;width:max-conte
 :root{
     --max-width: 1200px;
     --color-white: #fff;
-    --color-brand: #ebf094;
+    --color-brand: #ebf094; /* == rgb(235, 240, 148)*/
     --color-dark: #223342;
     --color-light: #e8e2d6;
     --color-accent: #A74C79 /*#e34d4e; /*contraste aceptado DF2F2F*/;
