@@ -97,19 +97,6 @@
         <p class="intro__subtitle  fx-fade-up-var" style="--fx-dur:1.1s;--fx-y:30px">Your Sweetest Dream, Our Masterpiece</p>
         <p class="intro__lead  fx-fade-up-var" style="--fx-dur:1.1s;--fx-y:30px">At Cake Atelier, we believe every celebration deserves a cake <strong>as unique as the occasion</strong>. Whether you're marking a milestone or just indulging in a sweet moment, our cakes are designed to impress, delight, and taste as good as they look. Choose your favorite design and let us create a showstopper that's sure to leave everyone craving more!</p>
       </div>
-
-      <div class="intro__nav-container">
-      
-      <nav class="intro__nav d-grid">
-        <a class="intro__nav-link" href="#classic" aria-label="Go to Classic Cakes section"><span class="hero-tab__title">Classic / Vintage Inspired</span></a>
-        <a class="intro__nav-link" href="#artistic-bloom" aria-label="Go to Artistic Bloom section"><span class="hero-tab__title">Artistic Bloom</span></a>
-        <a class="intro__nav-link" href="#abstract-floral-cakescape" aria-label="Go to Abstract Floral Cakescape section"><span class="hero-tab__title">Abstract Floral / Cakescape</span></a>
-        <a class="intro__nav-link" href="#heart-shaped-full-vintage" aria-label="Go to Heart-Shaped and Full Vintage Cakes section"><span class="hero-tab__title">Heart-Shaped & Full Vintage Cakes</span></a>
-      </nav>
-    </div>
-
-    <!-- <button class="design-card__btn" type="button" aria-label="Take a closer look at Classic / Vintage Inspired cake design" data-modal-open="classic">Take a closer look</button> -->
-<!-- agregar en cada uno data-modal-open="classic" -->
     </section>
 
     <div id="designs" class="section designs">
@@ -118,125 +105,173 @@
       <p class="hint">Pick Your Dream Design</p>
       <div class="designs__inner">
 
-        <!-- <div class="designs__media fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:50px;--fx-delay:.5s">
-            <img class="designs__img" src="img/flavours/flavours-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
-        </div> -->
+        <div class="designs__box">
+          <div class="designs__tabs">
+            <button class="designs__tab designs__tab-classic is-active" type="button" data-panel-open="panel-classic">Classic / Vintage Inspired</button>
+            <button class="designs__tab designs__tab-artistic" type="button" data-panel-open="panel-artistic">Artistic Bloom</button>
+            <button class="designs__tab designs__tab-floral" type="button" data-panel-open="panel-floral">Abstract Floral / Cakescape</button>
+            <button class="designs__tab designs__tab-heart" type="button" data-panel-open="panel-heart">Heart-Shaped & Full Vintage Cakes</button>
+          </div>
 
-        <div class="designs__box" style="--fx-dur:1.9s;--fx-y:70px;--fx-delay:.7s">
+          <div class="designs__panels">
+            <article id="panel-classic" class="designs__panel">
+              <button class="designs__panel-close" type="button" aria-label="Close design details">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#A74C79"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></svg>
+              </button>
+              <h2 class="designs__panel-title panel-title--classic">Classic / Vintage Inspired</h2>
+              <div class="modal__text">
+                <p><i>Design included in base cake price</i></p>
+                <p>Soft colours, gentle piping, and nostalgic details inspired by vintage celebration cakes.<span class="d-block">Balanced & timeless. Up to 2 colors.</span></p>
+              </div>
+              <div class="designs__panel-gallery">
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/cake-classic-1.png" alt="Classic vintage-inspired cake design" width="600" height="900" loading="lazy"></figure>
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/cake-classic-2.jpg" alt="Classic vintage-inspired cake with soft cream piping" width="600" height="900" loading="lazy"></figure>
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/cake-classic-3.jpg" alt="Classic vintage-inspired cake close-up" width="600" height="900" loading="lazy"></figure>
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/torta-chocolate.webp" alt="Classic vintage-inspired celebration cake" width="600" height="900" loading="lazy"></figure>
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-7.webp" alt="Classic vintage-inspired handcrafted cake detail" width="600" height="900" loading="lazy"></figure>
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-6.webp" alt="Classic vintage-inspired cake presented whole" width="600" height="900" loading="lazy"></figure>
+              </div>
+            </article>
 
-              <input class="designs__control" type="radio" name="design" id="design-classic" checked>
-              <label class="designs__label" for="design-classic">Classic / Vintage Inspired</label>
-              <div class="designs__caption designs__caption--classic">
-                  <p class="designs__name">Classic / Vintage Inspired</p>
-                  <button class="design-card__btn" type="button" data-modal-open="classic" aria-controls="classic" aria-expanded="false" aria-label="Take a closer look at Classic / Vintage Inspired">Take a closer look</button>
+            <article id="panel-artistic" class="designs__panel" hidden>
+              <button class="designs__panel-close" type="button" aria-label="Close design details">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#A74C79"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></svg>
+              </button>
+              <h2 class="designs__panel-title panel-title--artistic">Artistic Bloom</h2>
+              <div class="modal__text">
+                <p><i>Design price added to base cake price</i></p>
+                <p>Floral piping and expressive decoration with a more artistic, blooming look.</p>
+              </div>
+              <div class="designs__panel-gallery">
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-7.webp" alt="Artistic Bloom cake detail" width="600" height="900" loading="lazy"></figure>
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-6.webp" alt="Artistic Bloom cake design" width="600" height="900" loading="lazy"></figure>
+              </div>
+            </article>
+
+            <article id="panel-floral" class="designs__panel" hidden>
+              <button class="designs__panel-close" type="button" aria-label="Close design details">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#A74C79"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></svg>
+              </button>
+              <h2 class="designs__panel-title panel-title--floral">Abstract Floral / Cakescape</h2>
+              <div class="modal__text">
+                <p><i>Design price added to base cake price</i></p>
+                <p>Abstract florals and a more sculptural cakescape composition.</p>
+              </div>
+              <div class="designs__panel-gallery">
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/designs/designs-bkg.webp" alt="Abstract Floral cake design" width="900" height="1200" loading="lazy"></figure>
+              </div>
+            </article>
+
+            <article id="panel-heart" class="designs__panel" hidden>
+              <button class="designs__panel-close" type="button" aria-label="Close design details">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#A74C79"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></svg>
+              </button>
+              <h2 class="designs__panel-title panel-title--heart">Heart-Shaped & Full Vintage Cakes</h2>
+              <div class="modal__text">
+                <p><i>Design price added to base cake price</i></p>
+                <p>Playful heart-shaped cakes and full vintage decoration with layered piping.</p>
+              </div>
+              <div class="designs__panel-gallery">
+                <figure class="designs__panel-item"><img class="designs__panel-img" src="img/designs/designs-bkg.webp" alt="Heart-shaped vintage cake design" width="900" height="1200" loading="lazy"></figure>
+              </div>
+            </article>
+          </div>
+        </div>
+
+<!-- ////////////////// -->
+
+          <!-- <div class="design__item">
+              <input class="designs__control" type="radio" name="design" id="design-classic">
+              <label class="designs__label" for="design-classic" data-caption-show>Classic / Vintage Inspired</label>
+              <div class="designs__caption modal__text">
+                <p><i>Design included in base cake price</i></p>
+                <p>Soft colours, gentle piping, and nostalgic details inspired by vintage celebration cakes.<span class="d-block">Balanced & timeless. Up to 2 colors.</span></p>
               </div>
               <div class="designs__media">
                 <img class="designs__img" src="img/cakes/cake-classic-1.png" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
               </div>
-              <!--  -->
-              <input class="designs__control" type="radio" name="design" id="design-artistic" checked>
-              <label class="designs__label" for="design-artistic">Artistic Bloom</label>
-              <div class="designs__caption designs__caption--artistic">
-                  <p class="designs__name">Artistic Bloom</p>
-                  <button class="design-card__btn" type="button" data-modal-open="artistic-bloom" aria-controls="artistic-bloom" aria-expanded="false" aria-label="Take a closer look at Artistic Bloom">Take a closer look</button>
-              </div>
-              <div class="designs__media">
-                <img class="designs__img" src="img/designs/designs-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
-              </div>
-              <!--  -->
-              <input class="designs__control" type="radio" name="design" id="design-floral" checked>
-              <label class="designs__label" for="design-floral">Abstract Floral / Cakescape</label>
-              <div class="designs__caption designs__caption--floral">
-                  <p class="designs__name">Abstract Floral / Cakescape</p>
-                  <button class="design-card__btn" type="button" data-modal-open="floral" aria-controls="floral" aria-expanded="false" aria-label="Take a closer look at Abstract Floral / Cakescap">Take a closer look</button>
-              </div>
-              <div class="designs__media">
-                <img class="designs__img" src="img/designs/designs-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
-              </div>
-              <!--  -->
-              <input class="designs__control" type="radio" name="design" id="design-heart" checked>
-              <label class="designs__label" for="design-heart">Heart-Shaped & Full Vintage Cakes</label>
-              <div class="designs__caption designs__caption--heart">
-                  <p class="designs__name">Heart-Shaped & Full Vintage Cakes</p>
-                  <button class="design-card__btn" type="button" data-modal-open="heart" aria-controls="heart" aria-expanded="false" aria-label="Take a closer look at Heart-Shaped & Full Vintage Cakes">Take a closer look</button>
-              </div>
-              <div class="designs__media">
-                <img class="designs__img" src="img/designs/designs-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
-              </div>
+              <section class="modal__gallery" aria-label="Classic / Vintage cake image gallery">
+                <div class="modal__gallery-track">
+                  <button class="modal__close" type="button" aria-label="Close design details"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#A74C79"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></svg></button>
 
-        </div>
+                  <figure class="modal__gallery-item">
+                    <img class="modal__gallery-img" src="img/cakes/cake-classic-1.png" alt="Classic vintage-inspired cake design" width="600" height="900" loading="lazy">
+                  </figure>
+                  <figure class="modal__gallery-item">
+                    <img class="modal__gallery-img" src="img/cakes/cake-classic-2.jpg" alt="Classic vintage-inspired cake with soft cream piping" width="600" height="900" loading="lazy">
+                  </figure>
+                  <figure class="modal__gallery-item">
+                    <img class="modal__gallery-img" src="img/cakes/cake-classic-3.jpg" alt="Classic vintage-inspired cake close-up" width="600" height="900" loading="lazy">
+                  </figure>
+                  <figure class="modal__gallery-item">
+                    <img class="modal__gallery-img" src="img/cakes/torta-chocolate.webp" alt="Classic vintage-inspired celebration cake" width="600" height="900" loading="lazy">
+                  </figure>
+                  <figure class="modal__gallery-item">
+                    <img class="modal__gallery-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-7.webp" alt="Classic vintage-inspired handcrafted cake detail" width="600" height="900" loading="lazy">
+                  </figure>
+                  <figure class="modal__gallery-item">
+                    <img class="modal__gallery-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-6.webp" alt="Classic vintage-inspired cake presented whole" width="600" height="900" loading="lazy">
+                  </figure>
+                </div>
+              </section>
+           </div> -->
+             <!--  -->
+
+              
         
 
       </div>
 
-    </div>
-
-
-    <!-- parte vieja -->
-
-    <div class="section-divider dos" aria-hidden="true"></div>
-
-    <section class="body" aria-label="Cake design collection">
-
-      
-      
-    <article id="classic" class="modal__section" aria-labelledby="classic-modal-title" aria-modal="true" role="dialog" aria-hidden="true"> 
-      <div class="modal__panel classic-modal">
-        <button class="modal__close" type="button" aria-label="Close design details"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></svg></button>
-
-        <h2 id="classic-modal-title" class="modal__title">Classic / Vintage Inspired</h2>
-
-        <div class="modal__text">
-          <p><i>Design included in base cake price</i></p>
-          <p>Soft colours, gentle piping, and nostalgic details inspired by vintage celebration cakes.<span class="d-block">Balanced & timeless. Up to 2 colors.</span></p>
+      <div class="closing">
+        <div class="closing__inner">
+          <p class="closing__text">Design note:</p>
+          <p class="closing__note">All prices listed for cake designs are in addition to the base cake price and include VAT.</p>
+          <p class="closing__note">Cake designs are inspired by reference images, not copied exactly.</p>
+          <p class="closing__note">Each cake is created individually, based on your request, chosen colours, and the creative flow of the day — making every cake one of a kind.</p>
         </div>
-
-        <section class="modal__gallery" aria-label="Classic / Vintage cake image gallery">
-          <!-- <div class="modal__gallery-controls">
-            <button class="modal__gallery-btn" type="button" aria-label="Previous image">‹</button>
-            <button class="modal__gallery-btn" type="button" aria-label="Next image">›</button>
-          </div> -->
-
-          <div class="modal__gallery-track">
-            <figure class="modal__gallery-item">
-              <img class="modal__gallery-img" src="img/cakes/cake-classic-1.png" alt="Classic vintage-inspired cake design" width="600" height="900" loading="lazy">
-            </figure>
-            <figure class="modal__gallery-item">
-              <img class="modal__gallery-img" src="img/cakes/cake-classic-2.jpg" alt="Classic vintage-inspired cake with soft cream piping" width="600" height="900" loading="lazy">
-            </figure>
-            <figure class="modal__gallery-item">
-              <img class="modal__gallery-img" src="img/cakes/cake-classic-3.jpg" alt="Classic vintage-inspired cake close-up" width="600" height="900" loading="lazy">
-            </figure>
-            <figure class="modal__gallery-item">
-              <img class="modal__gallery-img" src="img/cakes/torta-chocolate.webp" alt="Classic vintage-inspired celebration cake" width="600" height="900" loading="lazy">
-            </figure>
-            <figure class="modal__gallery-item">
-              <img class="modal__gallery-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-7.webp" alt="Classic vintage-inspired handcrafted cake detail" width="600" height="900" loading="lazy">
-            </figure>
-            <figure class="modal__gallery-item">
-              <img class="modal__gallery-img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-6.webp" alt="Classic vintage-inspired cake presented whole" width="600" height="900" loading="lazy">
-            </figure>
-          </div>
-        </section>
-      </div>
-    </article>
-
-
-      <div class="section-divider dos" aria-hidden="true"></div>
-
-      <div id="closingSection"  class="body__closing">
-        <div class="body__closing-inner">
-          <p class="body__closing-text">Design note:</p>
-          <p class="body__closing-note">All prices listed for cake designs are in addition to the base cake price and include VAT.</p>
-          <p class="body__closing-note">Cake designs are inspired by reference images, not copied exactly.</p>
-          <p class="body__closing-note">Each cake is created individually, based on your request, chosen colours, and the creative flow of the day — making every cake one of a kind.</p>
-        </div>
-        <div class="body__closing-cta">
+        <div class="closing__cta">
           <a class="btn btn--primary" href="https://forms.gle/gjVjPLNnLNNYmWsy7" target="_blank" rel="noopener noreferrer">Order a cake</a>
         </div>
       </div>
 
-    </section>
+      <!-- PANELES -->
+           
+      <!-- PANEL Classic / Vintage Inspired -->
+      <!-- <article id="classic" class="modal__section flex_aj_center" aria-labelledby="classic-modal-title" aria-modal="true" role="dialog" aria-hidden="true"> 
+        <div class="modal__container flex_aj_center">
+        <button class="modal__close" type="button" aria-label="Close design details"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="#A74C79"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></svg></button>
+
+        <div class="modal__panel classic-modal d_flex">
+
+          <div class="designs__box">
+            <h2 id="classic-modal-title" class="classic-modal-title">Classic / Vintage Inspired</h2>
+
+            <div class="modal__text">
+              <p><i>Design included in base cake price</i></p>
+              <p>Soft colours, gentle piping, and nostalgic details inspired by vintage celebration cakes.<span class="d-block">Balanced & timeless. Up to 2 colors.</span></p>
+            </div>
+          </div>
+
+          <div class="modal__media">
+            <img class="modal__media-img" src="img/cakes/cake-classic-1.png" alt="Classic vintage-inspired cake design" width="600" height="900" loading="lazy">
+          </div>
+
+        </div>
+      </div>
+    </article> -->
+
+    <!-- FIN PANELES -->
+
+
+
+    </div>
+
+
+    
+
+    <div class="section-divider dos" aria-hidden="true"></div>
+
+     
   </main>
 
   <footer id="footer" class="footer" aria-labelledby="footer-title">
@@ -375,7 +410,7 @@
     //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
     var heroEl=document.getElementById('hero');
-    var closingSection=document.getElementById('closingSection');
+    var theSection=document.getElementById('designs');
     var buttonTop=document.getElementById('buttonTop');
 
     if(heroEl){
@@ -398,76 +433,62 @@
       }
     }
 
-    if(headerEl&&closingSection){
-      var closingSectionIO=new IntersectionObserver(function(entries){
+    if(headerEl&&theSection){
+      var theSectionIO=new IntersectionObserver(function(entries){
         var entry=entries[0];
         applyHeaderBySection(entry.isIntersecting);
       },{threshold:0,rootMargin:'0px 0px -100% 0px'});
-      closingSectionIO.observe(closingSection);
+      theSectionIO.observe(theSection);
     }
 
 
-    //manejo de panels de cada diseño
-    var openBtns=document.querySelectorAll('[data-modal-open]');
-    var modals=document.querySelectorAll('.modal__section');
+    // paneles
+    (function(){
+      var tabBtns=document.querySelectorAll('[data-panel-open]');
+      var panels=document.querySelectorAll('.designs__panel');
+      var closeBtns=document.querySelectorAll('.designs__panel-close');
 
-    function closeModal(modal){
-      if(!modal)return;
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden','true');
-      document.body.classList.remove('modal-open');
-    }
-
-    for(var i=0;i<openBtns.length;i++){
-      openBtns[i].addEventListener('click',function(){
-        var modal=document.getElementById(this.getAttribute('data-modal-open'));
-        if(!modal)return;
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden','false');
-        document.body.classList.add('modal-open');
-      });
-    }
-
-for(var j=0;j<modals.length;j++){
-  (function(modal){
-    var closeBtn=modal.getElementsByClassName('modal__close')[0];
-    var galleryTrack=modal.getElementsByClassName('modal__gallery-track')[0];
-    var galleryBtns=modal.getElementsByClassName('modal__gallery-btn');
-
-    if(closeBtn){
-      closeBtn.addEventListener('click',function(){
-        closeModal(modal);
-      });
-    }
-
-    modal.addEventListener('click',function(e){
-      if(e.target===modal){
-        closeModal(modal);
+      function closeAllPanels(){
+        for(var i=0;i<panels.length;i++){
+          panels[i].hidden=true;
+          panels[i].classList.remove('is-open');
+        }
+        for(var j=0;j<tabBtns.length;j++){
+          tabBtns[j].classList.remove('is-active');
+        }
       }
-    });
 
-    if(galleryTrack&&galleryBtns.length>=2){
-      galleryBtns[0].addEventListener('click',function(){
-        galleryTrack.scrollBy({left:-galleryTrack.clientWidth*.8,behavior:'smooth'});
-      });
+      for(var k=0;k<tabBtns.length;k++){
+        tabBtns[k].addEventListener('click',function(){
+          var panel=document.getElementById(this.getAttribute('data-panel-open'));
+          var isOpen=panel && !panel.hidden;
 
-      galleryBtns[1].addEventListener('click',function(){
-        galleryTrack.scrollBy({left:galleryTrack.clientWidth*.8,behavior:'smooth'});
-      });
-    }
-  })(modals[j]);
-}
+          closeAllPanels();
 
-document.addEventListener('keydown',function(e){
-  if(e.key!=='Escape')return;
+          if(panel && !isOpen){
+            panel.hidden=false;
+            panel.classList.add('is-open');
+            this.classList.add('is-active');
+          }
+        });
+      }
 
-  for(var k=0;k<modals.length;k++){
-    if(modals[k].classList.contains('is-open')){
-      closeModal(modals[k]);
-    }
-  }
-});
-  
+      for(var m=0;m<closeBtns.length;m++){
+        closeBtns[m].addEventListener('click',function(){
+          var panel=this.closest('.designs__panel');
+          if(!panel)return;
+          panel.hidden=true;
+          panel.classList.remove('is-open');
+          for(var n=0;n<tabBtns.length;n++){
+            if(tabBtns[n].getAttribute('data-panel-open')===panel.id){
+              tabBtns[n].classList.remove('is-active');
+            }
+          }
+        });
+      }
+    })();
+    // FIN paneles
+
 
     window.addEventListener('resize',function(){
       viewportWidth=document.documentElement.clientWidth;
