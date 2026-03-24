@@ -410,21 +410,27 @@
     var heroEl=document.getElementById('hero');
     var theSection=document.getElementById('designs');
     var buttonTop=document.getElementById('buttonTop');
+    var heroVisible=false;
+    var sectionVisible=false;
+
+    function updateButtonTop(){
+      if(!buttonTop)return;
+      var isMobile=window.innerWidth<600;
+      buttonTop.classList.toggle('floating--hidden',heroVisible||(isMobile&&sectionVisible));
+    }
 
     if(heroEl){
       var heroIO=new IntersectionObserver(function(entries){
-        var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
-        if(buttonTop){//oculto si Hero está visible
-          buttonTop.classList.toggle('floating--hidden',heroVisible);
-        }
-      },{threshold:0,rootMargin:'0px 0px -100% 0px'}); //200px 0px 200px 0px
+        heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+        updateButtonTop();
+      },{threshold:0,rootMargin:'0px 0px -100% 0px'});
       heroIO.observe(heroEl);
     }
 
-    function applyHeaderBySection(isClosingVisible){
+    function applyHeaderBySection(isTheSectionVisible){
       if(!headerEl)return;
       headerEl.classList.remove('header--compact-light','header--compact-dark');
-      if(isClosingVisible){
+      if(isTheSectionVisible){
         headerEl.classList.add('header--compact-dark');
       }else{
         headerEl.classList.add('header--compact-light');
@@ -434,7 +440,9 @@
     if(headerEl&&theSection){
       var theSectionIO=new IntersectionObserver(function(entries){
         var entry=entries[0];
-        applyHeaderBySection(entry.isIntersecting);
+        sectionVisible=!!(entry&&entry.isIntersecting);
+        applyHeaderBySection(sectionVisible);
+        updateButtonTop();
       },{threshold:0,rootMargin:'0px 0px -100% 0px'});
       theSectionIO.observe(theSection);
     }
@@ -442,121 +450,122 @@
 
     // paneles
 
-(function(){
-  var tabBtns=document.querySelectorAll('[data-panel-open]');
-  var panels=document.querySelectorAll('.designs__panel');
-  var captions=document.querySelectorAll('.modal__text');
+    (function(){
+      var tabBtns=document.querySelectorAll('[data-panel-open]');
+      var panels=document.querySelectorAll('.designs__panel');
+      var captions=document.querySelectorAll('.modal__text');
 
-  function closeAllPanels(){
-    for(var i=0;i<panels.length;i++){
-      panels[i].classList.remove('is-open');
-    }
-    for(var j=0;j<tabBtns.length;j++){
-      tabBtns[j].classList.remove('is-active');
-    }
-  }
-
-  function openPanel(panelId,btn){
-    var panel=document.getElementById(panelId);
-    if(!panel||panel.classList.contains('is-open'))return;
-
-    closeAllPanels();
-    document.body.classList.add('panel-open');
-    panel.classList.add('is-open');
-    btn.classList.add('is-active');
-  }
-
-  for(var k=0;k<tabBtns.length;k++){
-    tabBtns[k].addEventListener('click',function(){
-      openPanel(this.getAttribute('data-panel-open'),this);
-    });
-  }
-
-  for(var m=0;m<panels.length;m++){
-    (function(panel){
-      //var mainImg=panel.querySelector('.designs__main-image.image-shadow .designs__panel-img'); si le iagrego shadow
-      // var mainImg=panel.querySelector('.designs__main-image .designs__panel-img');//ok sin flip
-      var flip=panel.querySelector('.designs__panel-flip');
-      var galleryTrack=panel.querySelector('.modal__gallery-track');
-      var thumbs=panel.querySelectorAll('.modal__gallery-track .designs__panel-item');
-
-      // if(!mainImg||!galleryTrack||!thumbs.length)return; //ok sin flip
-      if(!flip||!galleryTrack||!thumbs.length)return;
-
-      function setActiveThumb(activeThumb){
-        for(var i=0;i<thumbs.length;i++){
-          thumbs[i].classList.remove('is-active');
+      function closeAllPanels(){
+        for(var i=0;i<panels.length;i++){
+          panels[i].classList.remove('is-open');
         }
-        activeThumb.classList.add('is-active');
+        for(var j=0;j<tabBtns.length;j++){
+          tabBtns[j].classList.remove('is-active');
+        }
       }
 
-      galleryTrack.addEventListener('click',function(e){
-        var item=e.target.closest('.designs__panel-item');
-        var thumbImg=item?item.querySelector('img'):null;
-        if(!item||!thumbImg)return;
+      function openPanel(panelId,btn){
+        var panel=document.getElementById(panelId);
+        if(!panel||panel.classList.contains('is-open'))return;
 
-        // mainImg.src=thumbImg.src; //ok sin flip
-        // mainImg.alt=thumbImg.alt;//ok sin flip
-        // setActiveThumb(item);//ok sin flip
+        closeAllPanels();
+        document.body.classList.add('panel-open');
+        panel.classList.add('is-open');
+        btn.classList.add('is-active');
+      }
 
-        flipPanelImage(panel,thumbImg.src,thumbImg.alt);
-setActiveThumb(item);
+      for(var k=0;k<tabBtns.length;k++){
+        tabBtns[k].addEventListener('click',function(){
+          openPanel(this.getAttribute('data-panel-open'),this);
+        });
+      }
+
+      for(var m=0;m<panels.length;m++){
+        (function(panel){
+          //var mainImg=panel.querySelector('.designs__main-image.image-shadow .designs__panel-img'); si le iagrego shadow
+          // var mainImg=panel.querySelector('.designs__main-image .designs__panel-img');//ok sin flip
+          var flip=panel.querySelector('.designs__panel-flip');
+          var galleryTrack=panel.querySelector('.modal__gallery-track');
+          var thumbs=panel.querySelectorAll('.modal__gallery-track .designs__panel-item');
+
+          // if(!mainImg||!galleryTrack||!thumbs.length)return; //ok sin flip
+          if(!flip||!galleryTrack||!thumbs.length)return;
+
+          function setActiveThumb(activeThumb){
+            for(var i=0;i<thumbs.length;i++){
+              thumbs[i].classList.remove('is-active');
+            }
+            activeThumb.classList.add('is-active');
+          }
+
+          galleryTrack.addEventListener('click',function(e){
+            var item=e.target.closest('.designs__panel-item');
+            var thumbImg=item?item.querySelector('img'):null;
+            if(!item||!thumbImg)return;
+
+            // mainImg.src=thumbImg.src; //ok sin flip
+            // mainImg.alt=thumbImg.alt;//ok sin flip
+            // setActiveThumb(item);//ok sin flip
+
+            flipPanelImage(panel,thumbImg.src,thumbImg.alt);
+    setActiveThumb(item);
+          });
+
+          setActiveThumb(thumbs[0]);
+        })(panels[m]);
+      }
+
+      for(var n=0;n<captions.length;n++){
+        captions[n].addEventListener('click',function(e){
+          e.stopPropagation();
+          this.classList.toggle('is-expanded');
+        });
+
+        captions[n].addEventListener('keydown',function(e){
+          if(e.key==='Enter'||e.key===' '){
+            e.preventDefault();
+            this.classList.toggle('is-expanded');
+          }
+        });
+      }
+
+      document.addEventListener('click',function(e){
+        if(e.target.closest('.modal__text'))return;
+
+        for(var i=0;i<captions.length;i++){
+          captions[i].classList.remove('is-expanded');
+        }
       });
+    })(); 
 
-      setActiveThumb(thumbs[0]);
-    })(panels[m]);
-  }
+    //efecto flip img ppal de cada panel
+    function flipPanelImage(panel,newSrc,newAlt){ 
+      var flip=panel.getElementsByClassName('designs__panel-flip')[0];
+      var front=panel.getElementsByClassName('designs__panel-img--front')[0];
+      var back=panel.getElementsByClassName('designs__panel-img--back')[0];
 
-  for(var n=0;n<captions.length;n++){
-    captions[n].addEventListener('click',function(e){
-      e.stopPropagation();
-      this.classList.toggle('is-expanded');
-    });
+      if(!flip||!front||!back)return;
+      if(flip.classList.contains('is-flipping'))return;
+      if(front.getAttribute('src')===newSrc)return;
 
-    captions[n].addEventListener('keydown',function(e){
-      if(e.key==='Enter'||e.key===' '){
-        e.preventDefault();
-        this.classList.toggle('is-expanded');
+      back.src=newSrc;
+      back.alt=newAlt||'';
+
+      flip.classList.add('is-flipping');
+
+      function onFlipEnd(e){
+        if(e.propertyName!=='transform')return;
+        if(e.target!==back)return;
+        flip.classList.remove('is-flipping');
+        front.src=newSrc;
+        front.alt=newAlt||'';
+        flip.removeEventListener('transitionend',onFlipEnd);
       }
-    });
-  }
 
-  document.addEventListener('click',function(e){
-    if(e.target.closest('.modal__text'))return;
-
-    for(var i=0;i<captions.length;i++){
-      captions[i].classList.remove('is-expanded');
+      flip.addEventListener('transitionend',onFlipEnd);
     }
-  });
-})(); 
 
-//efecto flip img ppal de cada panel
-function flipPanelImage(panel,newSrc,newAlt){ 
-  var flip=panel.getElementsByClassName('designs__panel-flip')[0];
-  var front=panel.getElementsByClassName('designs__panel-img--front')[0];
-  var back=panel.getElementsByClassName('designs__panel-img--back')[0];
-
-  if(!flip||!front||!back)return;
-  if(flip.classList.contains('is-flipping'))return;
-  if(front.getAttribute('src')===newSrc)return;
-
-  back.src=newSrc;
-  back.alt=newAlt||'';
-
-  flip.classList.add('is-flipping');
-
-  function onFlipEnd(e){
-    if(e.propertyName!=='transform')return;
-    if(e.target!==back)return;
-    flip.classList.remove('is-flipping');
-    front.src=newSrc;
-    front.alt=newAlt||'';
-    flip.removeEventListener('transitionend',onFlipEnd);
-  }
-
-  flip.addEventListener('transitionend',onFlipEnd);
-}
-
+    window.addEventListener('resize',updateButtonTop,{passive:true});
 
   });
 </script>
