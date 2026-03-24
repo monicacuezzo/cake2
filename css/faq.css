@@ -1,0 +1,55 @@
+:root{--padding-horizontal:4.7vw;--padding-top:7rem;}@media (min-width:992px){:root{--padding-top:9.375rem;}}
+body{background:#223242; color: #f1f1f1;}
+.header.header--compact{box-shadow: none;}
+.footer{position: relative; z-index: 2;}
+.footer::before{content:"";display:block;width:100%;height:.0625rem; background:var(--color-brand);opacity:.9;}
+.faq{position:relative;padding:var(--padding-top) var(--padding-horizontal) 0;width:100%;max-width:90rem;margin:0 auto; overflow:hidden;  }
+.faq__inner{position: relative; z-index:2;background: #223242;padding-bottom:4rem;max-width: 100ch;}
+.faq__title{margin:0;color:var(--color-brand);font-size:clamp(2.125rem,3.73vw,3.5rem);font-weight:700;line-height:1.05;text-shadow:rgb(51 51 51) 0 0 .3125rem;}
+.faq__index{margin:2rem 0 0;}
+.faq__index-list{display:flex;flex-wrap:wrap;gap:.75rem;list-style:none;margin:0;padding:0;}
+.faq__index-link{display:inline-flex;align-items:center;min-height:2.75rem;padding:.7rem 1rem;color:#fff;text-decoration:none;border:.0625rem solid rgba(255,255,255,.35);background:rgba(34,50,66,.5);transition:border-color .25s ease,background-color .25s ease,color .25s ease;}
+.faq__index-link:hover{border-color:var(--color-brand);color:var(--color-brand);}
+.faq__index-link:focus-visible{outline:.125rem solid var(--color-brand);outline-offset:.1875rem;}
+.faq__category{margin-top:3rem;scroll-margin-top:8rem;}
+.faq__category:first-of-type{margin-top:2.5rem;}
+.faq__category-title{margin:0;padding:0 0 1rem;color:#f1f1f1;font-size:clamp(1.375rem,2.3vw,2rem);font-weight:600;line-height:1.2;}
+.faq__details{border:.0625rem solid rgba(255,255,255,.28);background:rgba(34,50,66,.5);overflow:hidden;margin:1.25rem 0 1rem 0;}
+.faq__details[open]{border-color:rgba(235,240,148,.55);}
+.faq__question{position:relative;display:block;margin:0;padding:1rem 3.25rem 1rem 1rem;color:#f1f1f1;font-size:1rem;font-weight:600;line-height:1.5;cursor:pointer;list-style:none;transition:color .25s ease,background-color .25s ease,box-shadow .25s ease;}
+.faq__question::-webkit-details-marker{display:none;}
+.faq__question::marker{display:none;}
+.faq__question::after{content:"+";position:absolute;top:50%;right:1rem;transform:translateY(-50%);font-size:1.75rem;font-weight:300;line-height:1;color:var(--color-brand);}
+.faq__details[open] .faq__question{color:var(--color-brand);}
+.faq__details[open] .faq__question::after{content:"–";}
+.faq__question:hover{color:#fff;background:rgba(255,255,255,.06);box-shadow:inset 0 0 0 .0625rem rgba(235,240,148,.35);}
+.faq__question:focus-visible{outline:.125rem solid var(--color-brand);outline-offset:-.125rem;}
+.faq__answer{padding:0 1rem 1rem 1.5rem;color:#fff;font-size:1rem;font-size:clamp(14px,1.74vw,1rem);line-height:1.7;font-weight:400;}
+.faq__answer > *:first-child{margin-top:0;}
+.faq__answer > *:last-child{margin-bottom:0;}
+.faq__answer strong{font-weight: 700;}
+.faq__answer p{margin:0 0 .9rem;}
+.faq__answer span{display: block;}
+.faq__answer ul{margin:0 0 .9rem;padding-left:1rem;list-style:disc;}
+.faq__answer li{margin:.35rem 0;list-style:disc;}
+.faq__category + .faq__category{padding-top:3rem;}
+.faq__category + .faq__category::before{content:"";display:block;width:100%;height:.0625rem;margin:0 0 2rem;background:var(--color-brand);opacity:.9;}
+
+@media (min-width:992px){
+.faq::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background-image:url("../img/bg/art-line.svg");background-repeat:no-repeat;background-position:right 0;background-size:70vh;opacity:.5;pointer-events:none;z-index:0; }
+.faq{padding:var(--padding-top) calc(var(--padding-horizontal) - 3rem) 0 var(--padding-horizontal);}
+.faq__inner{padding-right:3rem;padding-bottom:6rem;}
+}
+@media (min-width:768px){
+.faq__index{margin-top:2.25rem;}
+.faq__category{margin-top:4rem;}
+.faq__category:first-of-type{margin-top:3rem;}
+.faq__question{padding:1.15rem 3.75rem 1.15rem 1.25rem;font-size:1.0625rem;}
+.faq__question::after{right:1.25rem;}
+.faq__answer{padding:0 1.25rem 1.25rem 2.5rem;}
+.faq__category + .faq__category{padding-top:3rem;}
+.faq__category + .faq__category::before{margin:0 0 4rem;}
+}
+@media (prefers-reduced-motion:reduce){
+.faq__index-link{transition:none;}
+}
