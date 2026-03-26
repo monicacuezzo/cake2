@@ -3,7 +3,8 @@ body{background:#223242; color: #f1f1f1;}
 .header.header--compact{box-shadow: none;}
 .footer{position: relative; z-index: 2;}
 .footer::before{content:"";display:block;width:100%;height:.0625rem; background:var(--color-brand);opacity:.9;}
-.faq{position:relative;padding:var(--padding-top) var(--padding-horizontal) 0;width:100%;max-width:90rem;margin:0 auto; overflow:hidden;  }
+.hero{padding-top:var(--padding-top)}
+.faq{position:relative;padding:0 var(--padding-horizontal) 0;width:100%;max-width:90rem;margin:0 auto; overflow:hidden;  }
 .faq__inner{position: relative; z-index:2;background: #223242;padding-bottom:4rem;max-width: 100ch;}
 .faq__title{margin:0;color:var(--color-brand);font-size:clamp(2.125rem,3.73vw,3.5rem);font-weight:700;line-height:1.05;text-shadow:rgb(51 51 51) 0 0 .3125rem;}
 .faq__index{margin:2rem 0 0;}
@@ -37,7 +38,7 @@ body{background:#223242; color: #f1f1f1;}
 
 @media (min-width:992px){
 .faq::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background-image:url("../img/bg/art-line.svg");background-repeat:no-repeat;background-position:right 0;background-size:70vh;opacity:.5;pointer-events:none;z-index:0; }
-.faq{padding:var(--padding-top) calc(var(--padding-horizontal) - 3rem) 0 var(--padding-horizontal);}
+.faq{padding:0 calc(var(--padding-horizontal) - 3rem) 0 var(--padding-horizontal);}
 .faq__inner{padding-right:3rem;padding-bottom:6rem;}
 }
 @media (min-width:768px){
