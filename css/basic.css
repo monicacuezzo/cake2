@@ -363,7 +363,7 @@ opacity: 0;    filter: blur(14px);    pointer-events: none;    transition: opaci
 .footer__item--note strong{display: inline;}
 .footer__columns{padding:3rem 3vw 2rem 3vw;grid-auto-flow:column;grid-template-rows:repeat(2,auto);align-content:start;align-items:start;}
 .footer__col{max-width:26rem /*350px*/; }
-.footer__h3{width: 100%; font-size:1.5rem;margin-bottom: 1rem;}
+.footer__h3{width: 100%; font-size:1.35rem;margin-bottom: 1rem;}
 .footer__footer{margin:1rem; font-size: inherit;}
 }
 @media (min-width: 1200px){
