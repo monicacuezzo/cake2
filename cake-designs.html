@@ -13,13 +13,13 @@
     <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
 
     <style>
-      body{background-color: #223242;}.d_flex{display:flex}
-      /* .p_absolute{position: absolute!important;} */
+      body{background-color: #223242;color: #fafafa;}.d_flex{display:flex}
       ul,ol{margin:0;padding:0;list-style:none}
-      /* .header.p_absolute .header__contenedor-img{display: none;} */
       .header__link{color: #fafafa;}
       .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index: 114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa; }
-#about,#cakes,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
+
+      /*corregir nom de seccion*/
+      #about,#cakes,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
 
 
     </style>
@@ -443,7 +443,7 @@
         sectionVisible=!!(entry&&entry.isIntersecting);
         applyHeaderBySection(sectionVisible);
         updateButtonTop();
-      },{threshold:0,rootMargin:'0px 0px -100% 0px'});
+      },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
       theSectionIO.observe(theSection);
     }
 
