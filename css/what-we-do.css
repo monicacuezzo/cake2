@@ -29,11 +29,22 @@ body{background:#223242; color: #f1f1f1;}
 .workshops__list{display:grid;/*gap:1rem;*/}
 .workshops__item{ border-bottom:.0625rem solid rgba(62,44,38,.18);}
 .workshops__item:first-of-type{ border-top:.0625rem solid rgba(62,44,38,.18);}
-.workshops__link{display:grid;gap:.18rem;padding: 1rem;color:inherit;text-decoration:none;transition:background-color .5s ease;color:#223242;}
 
+.workshops__link{display:grid;gap:.18rem;padding: 1rem;color:inherit;text-decoration:none;transition:background-color .5s ease;color:#223242;}
 .workshops__level{font-size:.92rem;font-weight:700;letter-spacing:.04rem;color:var(--color12);}
 .workshops__level em{text-transform:uppercase;font-style:normal;}
 .workshops__name{font-size:1.18rem;font-size:clamp(18px,1.5vw,24px);line-height:1.2;color:var(--color15);font-weight:700;}
+
+/*opcion con fondo amarillo y texto oscuro*/
+.amarillo .workshops__link{color:#223242;}
+.amarillo .workshops__level{ color:var(--color12);}
+.amarillo .workshops__name{ color:var(--color15); }
+/*opcion con fondo rosa y texto blanco*/
+.rosa .workshops__link{background:var(--color15);color:#fff;}
+.rosa .workshops__level{ color:var(--color-brand);}
+.rosa .workshops__name{ color:#fff; }
+
+
 .workshops__text{font-size:1rem;line-height:1.45;}
 .workshops__link:hover,.workshops__link:focus,.workshops__link:focus-visible{background-color:var(--color16)/*#ecb4ac*/;color: #fff;}
 .workshops__link:hover .workshops__name,.workshops__link:focus .workshops__name,.workshops__link:focus-visible .workshops__name{color: #fff;}
@@ -59,7 +70,7 @@ body{background:#223242; color: #f1f1f1;}
 
 .workshops__gallery-btn{display:block;width:5.25rem;height:5.25rem;margin:0;padding:0;border:0;background:none;overflow:hidden;border-radius:.25rem;cursor:pointer;opacity:.78;transition:opacity .25s ease,border-color .25s ease,transform .25s ease;}
 
-.workshops__gallery-btn:hover,.workshops__gallery-btn:focus,.workshops__gallery-btn:focus-visible,.workshops__gallery-btn.is-active{opacity:1;transform:scale(.98);outline:.125rem solid var(--color16);outline-offset:-.125rem;}
+.workshops__gallery-btn:hover,.workshops__gallery-btn:focus,.workshops__gallery-btn:focus-visible,.workshops__gallery-btn.is-active{opacity:1;/*transform:scale(.98);*/outline:.125rem solid var(--color16);outline-offset:-.125rem;}
 .workshops__gallery-img,.workshops__video-thumb{display:block;width:100%;height:100%;object-fit:cover;}
 .workshops__videos .workshops__gallery-btn{position:relative;}
 .workshops__videos .workshops__gallery-btn::after{content:"";position:absolute;inset:0;margin:auto;width:1.2rem;height:1.2rem;border-radius:50%;background:rgba(34,50,66,.68);pointer-events:none;}
