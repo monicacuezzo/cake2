@@ -162,7 +162,7 @@ transition:transform .22s ease}
 .about__title::before{content: '';position: absolute;left: 0;bottom: 0;width: 50%;height: .125rem;background-color: var(--about-accent);}
 .about__text{font-size:.9375rem;width: 30%;}
 .about__text p{margin: 1.5rem 0;}
-.about__border{border: .125rem solid rgba(255, 255, 255,.5);}
+.about__border{ /*border: .125rem solid rgba(255, 255, 255,.5);*/}
 .about__border>img{display:block;width:100%;height:auto}/*hace falta???*/
 
 .about__media{display: inline-flex;flex: 1; /*justify-content: space-between;*/}
