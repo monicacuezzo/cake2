@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Discover cake decorating workshops in Copenhagen with Cake Atelier. Creative, beginner-friendly sessions focused on technique, artistry and connection.">
+  <meta name="robots" content="index, follow">
+  <meta name="HandheldFriendly" content="true">
+  <title>Cake Decorating Workshops in Copenhagen | Cake Atelier CPH</title>
+  <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+  <style>
+    body{background-color:#223242;}
+    ul,ol{margin:0;padding:0;list-style:none;}
+    .header__link{color:#fafafa;}
+    .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114;}
+    .header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa;}
+    .footer{content-visibility:auto;contain-intrinsic-size:700px;}
+  </style>
+  <link rel="preload" href="css/basic.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/basic.css"></noscript>
+  <link rel="preload" href="css/workshop.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="css/workshop.css"></noscript>
+  <link rel="icon" type="image/svg+xml" href="img/favicon/favicon-white.svg">
+  <link rel="icon" href="favicon-white.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#B8C247">
+  <script src="js/header-menu.js" defer></script>
+  <!-- <script src="js/workshops.js" defer></script> -->
+    <script src="js/animations.js" defer></script>
+</head>
+<body>
+  <header class="header d_flex p_absolute header--compact">
+    <div class="header__top">
+      <div class="header__top-inner">
+        <a class="header__logo" href="home.html#hero" aria-label="Cake Atelier Copenhagen - Workshops">
+          <div class="header__contenedor-img">
+            <svg class="header__logo-img" aria-hidden="true"><use href="#isotipo-cake-atelier"></use></svg>
+            <svg class="header__logo-img" aria-hidden="true"><use href="#logotipo-cake-atelier"></use></svg>
+          </div>
+        </a>
+        <button class="header__toggle" type="button" aria-expanded="false" aria-controls="header-nav" aria-label="Open navigation menu">
+          <span class="header__toggle-bar"></span><span class="header__toggle-bar"></span><span class="header__toggle-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="header__bottom">
+      <nav class="header__nav" id="header-nav" aria-label="Primary navigation">
+        <ul class="header__ul">
+          <li class="header__item"><a class="header__link" href="home.html">HOME</a></li>
+          <li class="header__item"><a class="header__link" href="about.html">ABOUT</a></li>
+          <li class="header__item"><a class="header__link" href="home.html#howToOrder">HOW TO ORDER</a></li>
+          <li class="header__item header__item--has-submenu">
+            <button class="header__link header__link--button" type="button" aria-expanded="false">CAKES</button>
+            <ul class="header__submenu" aria-label="Cakes submenu">
+              <li class="header__submenu-item"><a class="header__submenu-link" href="our-cakes.html">Our Cakes</a></li>
+              <li class="header__submenu-item"><a class="header__submenu-link" href="flavours.html">The Flavour Collection</a></li>
+              <li class="header__submenu-item"><a class="header__submenu-link" href="cake-designs.html">Cake Designs</a></li>
+            </ul>
+          </li>
+          <li class="header__item header__item--has-submenu">
+            <button class="header__link header__link--button" type="button" aria-expanded="false">WORKSHOPS</button>
+            <ul class="header__submenu" aria-label="Workshops submenu">
+              <li class="header__submenu-item"><a class="header__submenu-link" href="what-we-do.html">What we do</a></li>
+              <li class="header__submenu-item"><a class="header__submenu-link" href="workshops.html" aria-current="page">Discover workshops</a></li>
+              <li class="header__submenu-item"><a class="header__submenu-link" href="cake-club.html">Cake Club Community</a></li>
+              <li class="header__submenu-item"><a class="header__submenu-link" href="#gift-cards">Gift Cards</a></li>
+            </ul>
+          </li>
+          <li class="header__item"><a class="header__link" href="contact.html">CONTACT</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="header__overlay" data-header-overlay></div>
+  </header>
+
+  <main class="main">
+    <section id="hero" class="hero" aria-roledescription="carousel" aria-label="Workshop highlights from Cake Atelier Copenhagen">
+        <div class="hero__copy">
+          <div class="hero__copy-fixed">
+            <div class="hero__fixed">
+            <h1 class="hero__headline">Our Workshops</h1>
+            <p class="hero__text">Learn, connect, and take home something beautiful.</p>
+            </div>
+            <!-- Hands-on cake decorating, made creative and fun. -->
+          </div>
+          <a class="hero__cta btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd9OWp7uETEheUXI4H1ONWzq6FM19nMNx91fnjkdfUkFlATgQ/viewform?usp=sharing&ouid=109570026161112033608"  target="_blank" rel="noopener noreferrer">Reserve your spot</a>
+      <div id="heroDots" class="hero__dots" aria-label="Select hero slide">
+        <button class="hero__dot" type="button" data-hero-go="1" aria-label="Show workshop slide 1" aria-current="true"></button>
+        <button class="hero__dot" type="button" data-hero-go="2" aria-label="Show workshop slide 2" aria-current="false"></button>
+        <button class="hero__dot" type="button" data-hero-go="3" aria-label="Show workshop slide 3" aria-current="false"></button>
+      </div>
+        </div>
+
+      <div class="hero__inner">
+        <div class="hero__slides" id="heroSlides">
+          <article class="hero__slide hero__slide--1 is-active" data-slide="1" aria-hidden="false">
+            <picture class="hero__picture" data-parallax>
+              <!-- <source srcset="img/home/hero/group91-1536px-squoosh70.avif" media="(min-width: 768px)" type="image/avif"> -->
+              <source srcset="img/workshops/group110.webp" media="(min-width: 768px)" type="image/webp">
+              <img class="hero__img" src="img/workshops/group110.webp" alt="Cake decorating workshop at Cake Atelier Copenhagen" width="768" height="1277" loading="eager" decoding="async" fetchpriority="high">
+            </picture>
+          </article>
+
+          <article class="hero__slide hero__slide--2" data-slide="2" aria-hidden="true">
+            <picture class="hero__picture" data-parallax>
+              <!-- <source srcset="img/home/hero/group92-1536px-squoosh75.avif" media="(min-width: 768px)" type="image/avif"> -->
+              <source srcset="img/workshops/group113.webp" media="(min-width: 768px)" type="image/webp">
+              <img class="hero__img" src="img/workshops/group113.webp" alt="Buttercream cake styling detail from Cake Atelier Copenhagen" width="768" height="1277" loading="lazy" decoding="async">
+            </picture>
+          </article>
+          <article class="hero__slide hero__slide--3" data-slide="3" aria-hidden="true">
+            <picture class="hero__picture" data-parallax>
+              <!-- <source srcset="img/home/hero/group92-1536px-squoosh75.avif" media="(min-width: 768px)" type="image/avif"> -->
+              <source srcset="img/workshops/group112.webp" media="(min-width: 768px)" type="image/webp">
+              <img class="hero__img" src="img/workshops/group112.webp" alt="Buttercream cake styling detail from Cake Atelier Copenhagen" width="768" height="1277" loading="lazy" decoding="async">
+            </picture>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section workshops" aria-labelledby="workshops-title">
+      <h2 id="workshops-title" class="sr-only">Cake Atelier workshops</h2>
+
+      <article class="workshops__card fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s">
+        <div class="workshops__media autoplay fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s" aria-label="Intro to Buttercream Cake Decorating photos">
+          <img class="workshops__img workshops__img--active" src="img/workshops/ws_basic1.webp" alt="Beginner buttercream cake decorating workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_basic2.webp" alt="Beginner buttercream cake decorating workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_basic3.webp" alt="Beginner buttercream cake decorating workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_basic4.webp" alt="Beginner buttercream cake decorating workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_basic5.webp" alt="Beginner buttercream cake decorating workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+
+          <div class="workshops__dots" aria-label="Workshop gallery">
+            <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1"></button>
+            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2"></button>
+            <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3"></button>
+            <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4"></button>
+            <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5"></button>
+          </div>
+        </div>
+
+        <div class="workshops__content">
+          <p class="workshops__level">Level 1. Buttercream Basics</p>
+          <h3 class="workshops__title">Intro to Buttercream Cake Decorating</h3>
+
+          <div class="workshops__intro">
+            <p class="workshops__p">The perfect starting point if you’re new to cake decorating.</p>
+            <p class="workshops__p">This 3-hour beginner workshop focuses on buttercream handling, smooth finishes, and basic piping, giving you a solid foundation to build on for future creations. The atmosphere is fun and supportive, with plenty of time to practice and ask questions.</p>
+          </div>
+
+          <div class="workshops__meta">
+            <section class="workshops__block" aria-labelledby="workshops-details-1">
+              <h4 id="workshops-details-1" class="workshops__subtitle">Details</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item"><strong>Duration:</strong> 3 hours</li>
+                <li class="workshops__item"><strong>Group size:</strong> 4 to 20 people</li>
+                <li class="workshops__item"><strong>Level:</strong> Beginner</li>
+                <li class="workshops__item"><strong>Cake size:</strong> 4-inch (10 cm)</li>
+              </ul>
+            </section>
+
+            <section class="workshops__block" aria-labelledby="workshops-included-1">
+              <h4 id="workshops-included-1" class="workshops__subtitle">What’s included</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item">One individual cake to decorate and take home</li>
+                <li class="workshops__item">All tools, buttercream, colors & materials</li>
+                <li class="workshops__item">Coffee, tea & light snacks</li>
+                <li class="workshops__item">Guided session</li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="workshops__footer">
+            <p class="workshops__price-label">Price</p>
+            <p class="workshops__price">from 790 DKK <span class="workshops__price-note">(Incl. VAT)</span></p>
+
+            <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd9OWp7uETEheUXI4H1ONWzq6FM19nMNx91fnjkdfUkFlATgQ/viewform?usp=sharing&ouid=109570026161112033608" target="_blank" rel="noopener noreferrer">Join Workshop</a>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="workshops__card fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s">
+        <div class="workshops__media autoplay fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s" aria-label="Cake Atelier Club photos">
+          <img class="workshops__img workshops__img--active" src="img/workshops/ws_level2-1.webp" alt="Cake Atelier Club workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level2-2.webp" alt="Cake Atelier Club workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level2-3.webp" alt="Cake Atelier Club workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level2-4.webp" alt="Cake Atelier Club workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level2-5.webp" alt="Cake Atelier Club workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+
+          <div class="workshops__dots" aria-label="Workshop gallery">
+            <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1"></button>
+            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2"></button>
+            <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3"></button>
+            <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4"></button>
+            <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5"></button>
+          </div>
+        </div>
+
+        <div class="workshops__content">
+          <p class="workshops__level">Level 2. Cake Atelier Club</p>
+          <h3 class="workshops__title">Practice · Share · Improve</h3>
+
+          <div class="workshops__intro">
+            <p class="workshops__p">Cake Atelier Club is a guided practice space for anyone with some prior experience who wants time to decorate, experiment, have fun, and grow — together.</p>
+            <p class="workshops__p">This is not a structured workshop, but a calm, community-focused session. You’ll work on your own cake, revisit techniques, ask questions, and receive feedback when needed — while sharing time and experiences with others like you.</p>
+          </div>
+
+          <div class="workshops__meta">
+            <section class="workshops__block" aria-labelledby="workshops-details-2">
+              <h4 id="workshops-details-2" class="workshops__subtitle">Details</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item"><strong>Duration:</strong> 2–2.5 hours</li>
+                <li class="workshops__item"><strong>Group size:</strong> 4 to 20 people</li>
+                <li class="workshops__item"><strong>Level:</strong> Some experience recommended</li>
+                <li class="workshops__item"><strong>Cake size:</strong> 4-inch (10 cm)</li>
+              </ul>
+            </section>
+
+            <section class="workshops__block" aria-labelledby="workshops-included-2">
+              <h4 id="workshops-included-2" class="workshops__subtitle">What’s included</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item">Cake, buttercream & materials</li>
+                <li class="workshops__item">Use of all tools</li>
+                <li class="workshops__item">Coffee, tea & light snacks</li>
+                <li class="workshops__item">Guidance and feedback throughout</li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="workshops__footer">
+            <p class="workshops__price-label">Pricing</p>
+            <p class="workshops__price">From 660 DKK <span class="workshops__price-note">(Incl. VAT)</span></p>
+
+            <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd9OWp7uETEheUXI4H1ONWzq6FM19nMNx91fnjkdfUkFlATgQ/viewform?usp=sharing&ouid=109570026161112033608" target="_blank" rel="noopener noreferrer">Join Workshop</a>
+          </div>
+
+        </div>
+      </article>
+
+      <article class="workshops__card fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s">
+        <div class="workshops__media autoplay fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s" aria-label="Creative Buttercream photos">
+          <img class="workshops__img workshops__img--active" src="img/workshops/ws_level3-1.webp" alt="Creative Buttercream workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <!-- <img class="workshops__img" src="img/workshops/ws_level3-2.webp" alt="Creative Buttercream workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level3-3.webp" alt="Creative Buttercream workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level3-4.webp" alt="Creative Buttercream workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level3-5.webp" alt="Creative Buttercream workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async"> -->
+
+          <div class="workshops__dots" aria-label="Workshop gallery">
+            <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1"></button>
+            <!-- <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2"></button>
+            <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3"></button>
+            <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4"></button>
+            <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5"></button> -->
+          </div>
+        </div>
+
+        <div class="workshops__content">
+          <p class="workshops__level">Level 3. Creative Buttercream</p>
+          <h3 class="workshops__title">Style-Focused & Themed Advanced Workshops</h3>
+
+          <div class="workshops__intro">
+            <p class="workshops__p">Creative Buttercream is an umbrella for rotating intermediate to advanced workshops, each focused on a specific style or aesthetic.</p>
+            <p class="workshops__p">These sessions are for those who already feel confident with buttercream basics and want to explore design, composition, texture, and color harmony in more depth. Themes change over time, while the format stays consistent.</p>
+          </div>
+
+          <div class="workshops__meta">
+            <section class="workshops__block" aria-labelledby="workshops-details-3">
+              <h4 id="workshops-details-3" class="workshops__subtitle">Details</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item"><strong>Duration:</strong> 3.5 hours</li>
+                <li class="workshops__item"><strong>Group size:</strong> 4 to 20 people</li>
+                <li class="workshops__item"><strong>Level:</strong> Intermediate / Advanced</li>
+                <li class="workshops__item"><strong>Cake size:</strong> 6-inch (15 cm)</li>
+              </ul>
+            </section>
+
+            <section class="workshops__block" aria-labelledby="workshops-included-3">
+              <h4 id="workshops-included-3" class="workshops__subtitle">What’s included</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item">One 6-inch cake</li>
+                <li class="workshops__item">All tools, buttercream, colors & materials</li>
+                <li class="workshops__item">Coffee, tea & light snacks</li>
+                <li class="workshops__item">Packaging to take your cake home</li>
+              </ul>
+            </section>
+          </div>
+
+          <section class="workshops__block" aria-labelledby="workshops-themes-3">
+            <h4 id="workshops-themes-3" class="workshops__subtitle">Example themes</h4>
+            <ul class="workshops__list">
+              <li class="workshops__item">Abstract petals & textures</li>
+              <li class="workshops__item">Vintage piping</li>
+              <li class="workshops__item">Botanical cakes with fresh flowers</li>
+              <li class="workshops__item">Palette knife designs (realistic flowers)</li>
+            </ul>
+          </section>
+
+          <div class="workshops__footer">
+            <p class="workshops__price-label">Price</p>
+            <p class="workshops__price">From 950–1,300 DKK <span class="workshops__price-note">(Incl. VAT)</span></p>
+            <p class="workshops__price-note">(depending on theme & materials)</p>
+            <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd9OWp7uETEheUXI4H1ONWzq6FM19nMNx91fnjkdfUkFlATgQ/viewform?usp=sharing&ouid=109570026161112033608" target="_blank" rel="noopener noreferrer">Join Workshop</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="workshops__card fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s">
+        <div class="workshops__media autoplay fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s" aria-label="Cake Painting and Coffee photos">
+          <img class="workshops__img workshops__img--active" src="img/workshops/ws_level4-1.webp" alt="Cake Painting and Coffee event at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level4-2.webp" alt="Cake Painting and Coffee event at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level4-3.webp" alt="Cake Painting and Coffee event at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level4-4.webp" alt="Cake Painting and Coffee event at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+          <img class="workshops__img" src="img/workshops/ws_level4-5.webp" alt="Cake Painting and Coffee event at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
+
+          <div class="workshops__dots" aria-label="Workshop gallery">
+            <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1"></button>
+            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2"></button>
+            <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3"></button>
+            <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4"></button>
+            <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5"></button>
+          </div>
+        </div>
+
+        <div class="workshops__content">
+          <p class="workshops__level">Event: Cake Painting & Coffee</p>
+          <h3 class="workshops__title">Creative Gathering</h3>
+
+          <div class="workshops__intro">
+            <p class="workshops__p">Cake Painting & Coffee is a relaxed creative event.</p>
+            <p class="workshops__p">We begin with a gentle introduction to painting with buttercream using palette knives and brushes. From there, the session becomes freestyle, social and fun— focused on creativity, conversation, and enjoying the process.</p>
+          </div>
+
+          <div class="workshops__meta">
+            <section class="workshops__block" aria-labelledby="workshops-details-4">
+              <h4 id="workshops-details-4" class="workshops__subtitle">Details</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item"><strong>Duration:</strong> 1.5 hours</li>
+                <li class="workshops__item"><strong>Group size:</strong> 4 to 20 people</li>
+                <li class="workshops__item"><strong>Level:</strong> Open to all</li>
+              </ul>
+            </section>
+
+            <section class="workshops__block" aria-labelledby="workshops-included-4">
+              <h4 id="workshops-included-4" class="workshops__subtitle">What’s included</h4>
+              <ul class="workshops__list">
+                <li class="workshops__item">Square cake portion (10cm × 10 cm)</li>
+                <li class="workshops__item">Buttercream & tools</li>
+                <li class="workshops__item">Coffee, tea & light snacks</li>
+              </ul>
+            </section>
+          </div>
+
+          <div class="workshops__footer">
+            <p class="workshops__price-label">Price</p>
+            <p class="workshops__price">From 590 DKK <span class="workshops__price-note">(Incl. VAT)</span></p>
+
+            <a class="btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd9OWp7uETEheUXI4H1ONWzq6FM19nMNx91fnjkdfUkFlATgQ/viewform?usp=sharing&ouid=109570026161112033608" target="_blank" rel="noopener noreferrer">Join Workshop</a>
+          </div>
+
+        </div>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer" aria-labelledby="footer-title">
+    <h2 id="footer-title" class="sr-only">Cake Atelier – Footer</h2>
+    <div class="footer__columns">
+      <section class="footer__col" aria-labelledby="footer-contact">
+        <h3 id="footer-contact" class="footer__h3">Contact</h3>
+        <address class="footer__address">
+          <ul>
+            <li class="footer__item">
+              <a class="footer__link footer__contact-link flex_a_center" href="tel:+4591702650" aria-label="Call Cake Atelier Copenhagen at +45 9170 2650">
+                <svg class="footer__icon footer__icon--phone" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-phone" xlink:href="img/shared/sprite-icons.svg#i-phone"></use></svg>
+                <span>+45 9170 2650</span>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link footer__contact-link flex_a_center" href="https://wa.me/4591702650" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Cake Atelier Copenhagen at +45 9170 2650">
+                <svg class="footer__icon footer__icon--wapp" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-whatsapp" xlink:href="img/shared/sprite-icons.svg#i-whatsapp"></use></svg>
+                <span>+45 9170 2650</span>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link footer__contact-link flex_a_center" href="mailto:hello@cakeateliercph.dk" aria-label="Email Cake Atelier Copenhagen for orders">
+                <svg class="footer__icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-email" xlink:href="img/shared/sprite-icons.svg#i-email"></use></svg>
+                <span>Orders: hello@cakeateliercph.dk</span>
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__link footer__contact-link flex_a_center" href="mailto:admin@cakeateliercph.dk" aria-label="Email Cake Atelier Copenhagen for collaborations">
+                <svg class="footer__icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-email" xlink:href="img/shared/sprite-icons.svg#i-email"></use></svg>
+                <span>Collaborations: admin@cakeateliercph.dk</span>
+              </a>
+            </li>
+          </ul>
+        </address>
+      </section>
+
+      <section class="footer__col footer__info" aria-labelledby="footer-info">
+        <h3 id="footer-info" class="footer__h3">Info</h3>
+        <ul>
+          <li class="footer__item footer__item--location d_flex">
+            <svg class="footer__icon footer__icon--top" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-location" xlink:href="img/shared/sprite-icons.svg#i-location"></use></svg>
+            <p class="footer__location">
+              <span class="footer__location-span">Cake Atelier CPH</span>
+              <span class="footer__location-span">CVR-nr: 45259846</span>
+              <a class="footer__link footer__map-link" href="https://maps.app.goo.gl/fhZnAjqaqKGyHpwa7" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">2300 Amager, Copenhagen</a>
+            </p>
+          </li>
+          <li class="footer__item">
+            <a class="footer__link footer__contact-link flex_a_center" href="javascript:void(0)" target="_blank" rel="noopener noreferrer" aria-label="Open Smiley inspection report">
+              <svg class="footer__icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-external" xlink:href="img/shared/sprite-icons.svg#i-external"></use></svg>
+              <span>See Smiley Report</span>
+            </a>
+          </li>
+          <li class="footer__item footer__item--note footer__desktop">Cake Atelier Copenhagen is a home-based bakery. There is no street shop — all creations are made to order and available by pre-order only.</li>
+          <li class="footer__item footer__item--note footer__mobile"><span>Home-based bakery in Copenhagen. No street-faced shop.</span><span>All creations are made to order.</span></li>
+          <li class="footer__item footer__item--note footer__desktop"><strong>Hours: </strong>By appointment · I reply within 24 hours</li>
+          <li class="footer__item footer__item--note footer__mobile"><strong>Hours: </strong>By appointment</li>
+          <li class="footer__item footer__item--note footer__desktop"><strong>Pickup only: </strong><a class="footer__map-link" href="https://maps.app.goo.gl/fhZnAjqaqKGyHpwa7" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">By appointment in 2300 Amager Øst (by Øresund metro station near the beach)</a></li>
+          <li class="footer__item footer__item--note footer__mobile"><strong>Pickup only: </strong><a class="footer__map-link" href="https://maps.app.goo.gl/fhZnAjqaqKGyHpwa7" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">Amager Øst, near Øresund metro</a></li>
+          <li class="footer__item footer__item--note"><strong>Delivery: </strong>No delivery — pre-order pickup only</li>
+        </ul>
+      </section>
+
+      <div class="footer__col footer__social">
+        <h3 class="footer__h3">Follow us</h3>
+        <ul class="footer__list--social d_flex">
+          <li class="footer__item footer__item--social"><a class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/cakeatelier.cph/?hl=en" aria-label="Instagram Cake Atelier Copenhagen"><svg class="footer__social-icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-instagram" xlink:href="img/shared/sprite-icons.svg#i-instagram"></use></svg></a></li>
+          <li class="footer__item footer__item--social"><a class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/CakeAtelierCPH" aria-label="Facebook Cake Atelier Copenhagen"><svg class="footer__social-icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-facebook" xlink:href="img/shared/sprite-icons.svg#i-facebook"></use></svg></a></li>
+          <li class="footer__item footer__item--social"><a class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" href="https://www.tiktok.com/@cakeatelier.cph?is_from_webapp=1&sender_device=pc" aria-label="TikTok Cake Atelier Copenhagen"><svg class="footer__social-icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-tiktok" xlink:href="img/shared/sprite-icons.svg#i-tiktok"></use></svg></a></li>
+          <li class="footer__item footer__item--social"><a class="footer__link footer__social-link" target="_blank" rel="noopener noreferrer" href="https://dk.pinterest.com/cakeateliercopenhagen/" aria-label="Pinterest Cake Atelier Copenhagen"><svg class="footer__social-icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-pinterest" xlink:href="img/shared/sprite-icons.svg#i-pinterest"></use></svg></a></li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Footer policies">
+        <h3 class="footer__h3">Policies</h3>
+        <ul class="footer__list--policies">
+          <li class="footer__item"><a class="footer__link footer__policies-link" href="faq-cakes.html">FAQs Cakes</a></li>
+          <li class="footer__item"><a class="footer__link footer__policies-link" href="faq-workshops.html">FAQs Workshops</a></li>
+          <li class="footer__item"><a class="footer__link footer__policies-link" href="terms.html">Terms and conditions</a></li>
+          <li class="footer__item"><a class="footer__link footer__policies-link" href="">Cookies and privacy policies</a></li>
+        </ul>
+      </nav>
+    </div>
+    <hr class="footer__hr footer__hr--bottom">
+    <p class="footer__footer">&copy; 2026 Cake Atelier Copenhagen. All rights reserved.</p>
+  </footer>
+
+  <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center floating--hidden" aria-label="Back to top" title="Go top"></a>
+  <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
+      <img src="img/shared/wapp6k.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50">
+  </a>
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+  var headerEl=document.querySelector('.header');
+  var heroEl=document.getElementById('hero');
+  var footerEl=document.getElementById('footer');
+  var buttonTop=document.getElementById('buttonTop');
+  var heroDots=document.getElementById('heroDots');
+  var slides=heroEl?heroEl.getElementsByClassName('hero__slide'):[];
+  var dots=heroEl?heroEl.querySelectorAll('.hero__dot[data-hero-go]'):[];
+  var prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var heroVisible=true;
+  ////revisar
+  var viewportWidth=document.documentElement.clientWidth||0;
+  var viewportHeight=window.innerHeight;
+   var heroStartTop=0;
+  var heroHeightPx=1;
+  var headerH_hero=0;
+  var headerH_compact=0;
+  /////
+  var ticking=false;
+
+  function setHeroActive(n){
+    if(!heroEl)return;
+    heroEl.classList.add('is-manual');
+    for(var i=0;i<slides.length;i++){
+      var isActive=slides[i].getAttribute('data-slide')===String(n);
+      slides[i].classList.toggle('is-active',isActive);
+      slides[i].setAttribute('aria-hidden',isActive?'false':'true');
+    }
+    for(var d=0;d<dots.length;d++){
+      dots[d].setAttribute('aria-current',dots[d].getAttribute('data-hero-go')===String(n)?'true':'false');
+    }
+  }
+
+  if(heroEl){
+    var heroIO=new IntersectionObserver(function(entries){
+      heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+      tick();
+    },{threshold:0,rootMargin:'200px 0px 200px 0px'});
+    heroIO.observe(heroEl);
+  }
+
+  function applyHeaderState(){
+    if(!headerEl)return;
+    headerEl.classList.remove('header--hidden','header--compact','header--compact-light','header--compact-dark','p_absolute');
+    if(heroVisible){
+      headerEl.classList.add('p_absolute','header--compact');
+    }else{
+      headerEl.classList.add('header--compact','header--compact-dark');
+    }
+    if(buttonTop)buttonTop.classList.toggle('floating--hidden',heroVisible);
+    if(heroDots)heroDots.classList.toggle('dots--fixed',heroVisible);
+  }
+
+  var heroP=0;
+  function updateHeroProgressVar(){
+    if(!heroEl)return;
+    if(!heroVisible)return;
+
+    var heroRect=heroEl.getBoundingClientRect();
+    if(heroRect.bottom<=0||heroRect.top>=viewportHeight)return;
+
+    var totalTravel=heroStartTop+heroHeightPx;
+    if(totalTravel<1)totalTravel=1;
+
+    var traveled=heroStartTop-heroRect.top;
+    var heroProgress=traveled/totalTravel;
+    if(heroProgress<0)heroProgress=0;
+    else if(heroProgress>1)heroProgress=1;
+
+    if(Math.abs(heroProgress-heroP)>0.001){
+      heroP=heroProgress;
+      heroEl.style.setProperty('--hero-p',heroP.toFixed(4));
+    }
+  }
+
+  function frame(){
+    ticking=false;
+    if(heroVisible)updateHeroProgressVar();
+    // updateHeroProgress();
+  }
+
+  function tick(){
+    if(ticking)return;
+    ticking=true;
+    requestAnimationFrame(frame);
+  }
+
+  if(prefersReduced&&heroEl){
+    setHeroActive(1);
+  }
+
+  //hero dots
+  if(heroEl){
+    heroEl.addEventListener('click',function(e){
+      var btn=e.target.closest('.hero__dot[data-hero-go]');
+      if(!btn||!heroEl.contains(btn))return;
+      e.preventDefault();
+      setHeroActive(parseInt(btn.getAttribute('data-hero-go'),10)||1);
+    });
+
+    var heroIO=new IntersectionObserver(function(entries){
+      heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+      applyHeaderState();
+      tick();
+    },{threshold:0,rootMargin:'0px 0px -100% 0px'});
+    heroIO.observe(heroEl);
+  }
+
+  if(footerEl){
+    var footerIO=new IntersectionObserver(function(){
+      applyHeaderState();
+    },{threshold:0});
+    footerIO.observe(footerEl);
+  }
+
+  window.addEventListener('scroll',tick,{passive:true});
+  window.addEventListener('resize',function(){
+     viewportHeight=window.innerHeight;
+    if(heroEl){
+      var rect=heroEl.getBoundingClientRect();
+      heroStartTop=rect.top;
+      heroHeightPx=heroEl.offsetHeight||viewportHeight;
+    }
+    applyHeaderState();
+    tick();
+  },{passive:true});
+
+  applyHeaderState();
+  tick();
+
+// galerías de img de tarjetas
+  var galleries=document.getElementsByClassName('workshops__media');
+  var autoplayMs=5000;
+  var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function setActive(items,index){
+    for(var i=0;i<items.length;i++){
+      items[i].classList.toggle('is-active',i===index);
+    }
+  }
+
+  for(var g=0;g<galleries.length;g++){
+    (function(gallery){
+      var images=gallery.getElementsByClassName('workshops__img');
+      var dots=gallery.getElementsByClassName('workshops__dot');
+      var current=0;
+      var timer=null;
+      var isManual=false;
+
+      if(!images.length||images.length!==dots.length)return;
+
+      function goTo(index){
+        if(index<0)index=0;
+        if(index>=images.length)index=0;
+        current=index;
+        setActive(images,current);
+        setActive(dots,current);
+      }
+
+      function stopAutoplay(){
+        isManual=true;
+        gallery.classList.remove('autoplay');
+        if(timer){
+          clearInterval(timer);
+          timer=null;
+        }
+      }
+
+      function startAutoplay(){
+        if(reduceMotion||isManual||images.length<2)return;
+        gallery.classList.add('autoplay');
+        timer=setInterval(function(){
+          goTo(current+1);
+        },autoplayMs);
+      }
+
+      gallery.addEventListener('click',function(e){
+        var dot=e.target.closest('.workshops__dot');
+        var i;
+        if(!dot||!gallery.contains(dot))return;
+
+        for(i=0;i<dots.length;i++){
+          if(dots[i]===dot){
+            stopAutoplay();
+            goTo(i);
+            break;
+          }
+        }
+      });
+
+      goTo(0);
+      startAutoplay();
+    })(galleries[g]);
+  }
+ //fin galerías de img de tarjetas
+
+
+
+
+
+
+
+});
+</script>
+
+  <svg class="sr-only" aria-hidden="true" focusable="false">
+    <symbol id="logotipo-cake-atelier" viewBox="0 0 280.09 60.08" fill="currentColor">
+      <path d="M65.81,51.56c0-2.92,2.16-4.98,5.17-4.98,1.75,0,3.21.72,3.98,2.08l-1.35.87c-.63-.96-1.59-1.4-2.66-1.4-1.92,0-3.36,1.35-3.36,3.43s1.44,3.45,3.36,3.45c1.07,0,2.03-.44,2.66-1.4l1.35.85c-.77,1.37-2.23,2.1-3.98,2.1-3.01,0-5.17-2.08-5.17-5h0Z"></path>
+      <path d="M79.79,51.56c0-2.92,2.16-4.98,5.09-4.98s5.07,2.07,5.07,4.98-2.14,5-5.07,5-5.09-2.08-5.09-5ZM88.17,51.56c0-2.08-1.4-3.43-3.28-3.43s-3.3,1.35-3.3,3.43,1.42,3.45,3.3,3.45,3.28-1.37,3.28-3.45Z"></path>
+      <path d="M105.99,51.56c0,3.01-2.08,5-4.94,5-1.38,0-2.6-.53-3.41-1.59v5.05h-1.77v-13.36h1.7v1.55c.79-1.09,2.05-1.64,3.49-1.64,2.86,0,4.94,1.99,4.94,4.98h0ZM104.2,51.56c0-2.07-1.42-3.43-3.3-3.43s-3.28,1.37-3.28,3.43,1.42,3.45,3.28,3.45,3.3-1.37,3.3-3.45Z"></path>
+      <path d="M120.69,52.15h-7.93c.22,1.72,1.6,2.86,3.54,2.86,1.14,0,2.1-.39,2.82-1.18l.98,1.14c-.89,1.03-2.23,1.59-3.86,1.59-3.15,0-5.26-2.08-5.26-5s2.08-4.98,4.91-4.98,4.83,2.03,4.83,5.04c0,.15-.02.37-.04.53h.01ZM112.75,50.87h6.27c-.18-1.64-1.42-2.8-3.14-2.8s-2.95,1.14-3.14,2.8h.01Z"></path>
+      <path d="M135.91,50.82v5.63h-1.77v-5.42c0-1.92-.96-2.86-2.64-2.86-1.88,0-3.1,1.12-3.1,3.25v5.04h-1.77v-9.78h1.7v1.48c.72-1,1.97-1.57,3.52-1.57,2.38,0,4.06,1.36,4.06,4.24h0Z"></path>
+      <path d="M151.92,50.82v5.63h-1.77v-5.42c0-1.92-.96-2.86-2.64-2.86-1.88,0-3.1,1.12-3.1,3.25v5.04h-1.77v-13.69h1.77v5.29c.74-.94,1.96-1.48,3.45-1.48,2.38,0,4.06,1.36,4.06,4.24h0Z"></path>
+      <path d="M166.4,50.54v5.9h-1.68v-1.29c-.59.88-1.68,1.4-3.21,1.4-2.21,0-3.62-1.18-3.62-2.88,0-1.57,1.01-2.86,3.93-2.86h2.8v-.35c0-1.49-.87-2.36-2.62-2.36-1.16,0-2.34.41-3.1,1.05l-.74-1.33c1.01-.81,2.47-1.25,4.04-1.25,2.67,0,4.19,1.29,4.19,3.97h.01ZM164.63,53.46v-1.37h-2.73c-1.75,0-2.25.68-2.25,1.51,0,.98.81,1.59,2.16,1.59s2.38-.61,2.82-1.73h0Z"></path>
+      <path d="M182.48,46.67v8.45c0,3.45-1.75,5.02-5.07,5.02-1.79,0-3.6-.5-4.67-1.46l.85-1.37c.9.77,2.33,1.27,3.76,1.27,2.31,0,3.36-1.07,3.36-3.28v-.78c-.85,1.01-2.12,1.51-3.52,1.51-2.82,0-4.96-1.92-4.96-4.74s2.14-4.72,4.96-4.72c1.46,0,2.79.53,3.62,1.6v-1.51h1.68,0ZM180.75,51.3c0-1.9-1.4-3.17-3.36-3.17s-3.38,1.27-3.38,3.17,1.4,3.19,3.38,3.19,3.36-1.31,3.36-3.19Z"></path>
+      <path d="M198.11,52.15h-7.93c.22,1.72,1.6,2.86,3.54,2.86,1.14,0,2.1-.39,2.82-1.18l.98,1.14c-.88,1.03-2.23,1.59-3.86,1.59-3.15,0-5.26-2.08-5.26-5s2.08-4.98,4.91-4.98,4.83,2.03,4.83,5.04c0,.15-.02.37-.04.53h0ZM190.17,50.87h6.27c-.18-1.64-1.42-2.8-3.14-2.8s-2.95,1.14-3.14,2.8h0Z"></path>
+      <path d="M213.32,50.82v5.63h-1.77v-5.42c0-1.92-.96-2.86-2.64-2.86-1.88,0-3.1,1.12-3.1,3.25v5.04h-1.77v-9.78h1.7v1.48c.72-1,1.97-1.57,3.52-1.57,2.38,0,4.06,1.36,4.06,4.24h0Z"></path>
+      <path d="M0,12.9C0,5.41,5.72-.06,13.43-.06c3.91,0,7.31,1.34,9.63,3.95l-2.35,2.28c-1.95-2.06-4.34-3-7.13-3C7.86,3.17,3.63,7.3,3.63,12.91s4.23,9.74,9.95,9.74c2.79,0,5.18-.98,7.13-3.04l2.35,2.28c-2.32,2.61-5.72,3.98-9.66,3.98C5.73,25.87.01,20.4.01,12.91h-.01Z"></path>
+      <path d="M45.78,19.23h-13.46l-2.79,6.33h-3.73L37.27.22h3.58l11.51,25.34h-3.8l-2.79-6.33h0ZM44.52,16.33l-5.46-12.41-5.47,12.41h10.93Z"></path>
+      <path d="M65.8,14.31l-4.63,4.71v6.55h-3.62V.23h3.62v14.15L74.92.23h4.13l-10.82,11.4,11.51,13.93h-4.23l-9.7-11.26h0Z"></path>
+      <path d="M103.36,22.41v3.15h-18.39V.22h17.88v3.15h-14.26v7.78h12.7v3.08h-12.7v8.18h14.77Z"></path>
+      <path d="M137.93,19.23h-13.46l-2.79,6.33h-3.73L129.42.22h3.58l11.51,25.34h-3.8l-2.79-6.33h.01ZM136.66,16.33l-5.46-12.41-5.47,12.41h10.93Z"></path>
+      <path d="M154.72,3.38h-8.69V.23h20.96v3.15h-8.69v22.19h-3.58V3.38h0Z"></path>
+      <path d="M190.73,22.41v3.15h-18.39V.22h17.88v3.15h-14.26v7.78h12.7v3.08h-12.7v8.18h14.77,0Z"></path>
+      <path d="M198,.23h3.62v22.19h13.72v3.15h-17.34V.23Z"></path>
+      <path d="M220.91.23h3.62v25.34h-3.62V.23Z"></path>
+      <path d="M251.93,22.41v3.15h-18.39V.22h17.88v3.15h-14.26v7.78h12.7v3.08h-12.7v8.18h14.77,0Z"></path>
+      <path d="M276.14,25.56l-5.47-7.78c-.51.04-1.05.07-1.59.07h-6.26v7.71h-3.62V.22h9.88c6.59,0,10.57,3.33,10.57,8.83,0,3.91-2.03,6.73-5.57,8l6.01,8.51h-3.95ZM276.03,9.06c0-3.62-2.43-5.68-7.06-5.68h-6.15v11.4h6.15c4.63,0,7.06-2.1,7.06-5.72Z"></path>
+    </symbol>
+    <symbol id="isotipo-cake-atelier" viewBox="0 0 174.18 108.26" fill="currentColor">
+      <path d="M150.18,76.61H23.99V31.54h34.34v10.51h57.48v-10.51h34.37v45.08h0ZM27.02,73.58h120.13v-39.01h-28.31v10.51h-63.54v-10.51h-28.28s0,39.01,0,39.01Z"></path>
+      <path d="M174.18,108.15H0v-45.08h27.02v10.51h120.13v-10.51h27.03v45.08h0ZM3.03,105.12h168.12v-39.01h-20.97v10.51H23.99v-10.51H3.03v39.01h0Z"></path>
+      <path d="M118.83,45.07h-63.54V0h63.54v45.07ZM58.33,42.04h57.48V3.03h-57.48v39.01Z"></path>
+    </symbol>
+  </svg>
+</body>
+</html>
