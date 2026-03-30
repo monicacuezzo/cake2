@@ -124,7 +124,7 @@
                   <div class="hero__text-container">
                     <p class="hero__text">It's not just cake.</p>
                     <h2 class="hero__headline">It's your Master-Piece of Cake.</h2>
-                    <a class="hero__cta btn btn--primary" href="#cakes">Design my dream cake</a>
+                    <a class="hero__cta btn btn--primary" href="https://forms.gle/gjVjPLNnLNNYmWsy7" target="_blank" rel="noopener noreferrer">Design my dream cake</a>
                   </div>
                 </div>
 
@@ -170,7 +170,7 @@
                   <div class="hero__text-container">
                   <h2 class="hero__headline">Where cake becomes a canvas.</h2>
                   <p class="hero__text hero__text2">Cake decorating workshops and events focused on technique, creativity, and connection.</p>
-                  <a class="hero__cta btn btn--primary" href="#workshop" data-target="workshop">Save me a seat</a>
+                  <a class="hero__cta btn btn--primary" href="https://docs.google.com/forms/d/e/1FAIpQLSd9OWp7uETEheUXI4H1ONWzq6FM19nMNx91fnjkdfUkFlATgQ/viewform?usp=sharing&ouid=109570026161112033608"  target="_blank" rel="noopener noreferrer">Save me a seat</a>
                   </div>
                 </div>
                 <div class="hero__media ">
@@ -1132,9 +1132,9 @@ function updateHeroProgressVar(){
 //   updateSubmenuMode();
 
   function syncCakesNewsletterState(){
-  if(!cakesSection)return;
-  cakesSection.classList.toggle('cakes--newsletter-on',cakesNewsletterVisible||footerVisible);
-}
+    if(!cakesSection)return;
+    cakesSection.classList.toggle('cakes--newsletter-on',cakesNewsletterVisible||footerVisible);
+  }
 
   var io=new IntersectionObserver(function(entries){
     for(var i=0;i<entries.length;i++){
@@ -1171,7 +1171,7 @@ function updateHeroProgressVar(){
     tick();
   },{threshold:[0,0.15],rootMargin:'-20% 0px -15% 0px'}); //-20% 0 -55% 0
 
-   if(cakesStage)io.observe(cakesStage);
+  if(cakesStage)io.observe(cakesStage);
   if(cakesNewsletter)io.observe(cakesNewsletter);
   if(howEl)io.observe(howEl);
   if(footerEl)io.observe(footerEl);
