@@ -415,7 +415,7 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
 .cakes__head{padding:2rem 1.125rem 1.125rem;padding: 2rem 1.125rem 1.125rem; /*background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 100%)*/}
 .cakes__head{position:absolute;top:0;left:0;right:0;z-index:2;padding:2rem 1.125rem 1.125rem;padding: 2rem 1.125rem 1.125rem; background:linear-gradient(180deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%)}
 .cakes__h2-span{color:var(--color-brand);font-weight:600;font-size:inherit;text-shadow:rgb(51,51,51) 0 0 5px}
-.cakes__subtitle{ font-weight:500;font-size:.95rem;  }
+.cakes__subtitle{display:none;}
 .cakes__wrap{height:600vh  /*360vh*/; /*padding: .875rem;*/}
 .cakes__stage{position:-webkit-sticky;position:sticky;top:0;height:100vh;width:100%;overflow:hidden; /*background:var(--backgroundCakes)*/}
 .cakes__grid{position:absolute;inset:0;
@@ -510,7 +510,8 @@ display:flex;
   .cakes__col{gap:.75rem}
 }
 @media (min-width:992px){
-  .cakes__subtitle{font-size:1.2rem  ;  }
+  .cakes__subtitle{display: block; font-size:1.2rem;font-weight:500;}
+
   .cakes__slot{flex:0 0 calc((100% - (.75rem  * 3))/4)}
 }
 @media (min-width:1024px){

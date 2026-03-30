@@ -1,19 +1,20 @@
 :root{
     --padding-horizontal: 4.7vw;
-    --padding-top: 4rem  ;
+    --padding-top: 3rem  ;
    --accent: var(--color-brand);
  }
- @media (min-width:992px){
+ /* @media (min-width:992px){
   :root{
     --padding-top:9.375rem;
- }
- }
+ } */
+ /* } */
 body{color: #f1f1f1;}
 .header.header--compact{box-shadow: none;}
 .blue-bkg{background: rgba(34, 50, 66,.5)}
 
-
-.about__border{border: .125rem solid rgba(255, 255, 255,.5) /* rgba(235, 240, 148,.5)   /*var(--accent)*/;}
+.about__border{border: .125rem solid rgba(255, 255, 255,.5)  }
+.about__border1{border: .125rem solid rgba(255, 255, 255,1) }
+.about__border2{border:5px solid rgba(255, 255, 255,1) }
 /*mas transparente*/ 
 .section-divider{width:min(100%,120rem);height:.2rem;margin:0 auto;background:linear-gradient(90deg,transparent 0%,rgba(143,127,120,.18) 16%,#8f7f78 50%,rgba(143,127,120,.18) 84%,transparent 100%);}
 /*opcion2 +amarillo*/ 
@@ -24,8 +25,8 @@ body{color: #f1f1f1;}
 /* .section-divider.tres{height:.05rem;background:linear-gradient(90deg,transparent 0%,rgba(143,127,120,.15) 12%,var(--color-brand) 50%,rgba(143,127,120,.15) 78%,transparent 100%);}  */
 .section-divider.tres{height:.1rem;background:linear-gradient(90deg,transparent 0%,rgba(143,127,120,.9) 8%,var(--color-brand) 50%,rgba(143,127,120,1) 78%,transparent 100%);} 
 /*color parejo y amarillo, w100%*/
-.section-divider{width: 100%; height: 0.125rem;background: var(--color-brand);}
-.section-divider.cinco{width: 100%; height: 0.0625rem;background: var(--color-brand);}
+.section-divider{width:50%; height: 0.0625rem;background: var(--color-brand);margin: 0 auto 0 var( --padding-horizontal);}
+.section-divider.cinco{width:calc(100% - (var(--padding-horizontal) * 2)); height: 0.0625rem;background: var(--color-brand);}
 
 .main{position:relative;width:100%;overflow:hidden;  }
 .main::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background-image:url("../img/bg/art-line.svg");background-repeat:no-repeat;background-position:right 0;background-size:70vh;opacity:.5;pointer-events:none;z-index:0;  /*#8f7f78;*/}
@@ -60,19 +61,23 @@ body{color: #f1f1f1;}
 .body__closing-text{font-size: 2.2rem; font-size:clamp(20px, 2.35vw, 35px); line-height:1.65; color: var(--color12);}
 .body__closing-signoff{margin:2rem auto 0 auto;font-size: 1.5rem; font-size: clamp(20px, 2.35vw, 35px); /**/;line-height:1.7; color: var(--color15); letter-spacing:.01em; width: max-content;max-width: 100%; position: relative;}
 .body__closing-signoff::after{content:"";position:absolute;right: 0;bottom: -100%;width: 50%;height:100%;background:url("../img/bg/pincelada-rosa-500x200.webp") no-repeat right 0;background-size:contain;opacity:.6;pointer-events:none;z-index:1;}
-.body__closing-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:1.6rem;margin-top:3.2rem;}
+.body__closing-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom: 1rem;}
 .footer{position: relative;z-index: 3;}
 .btn--primary:hover,.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background: transparent;}
 
+@media (min-width:450px){
+.body__closing-cta{gap:.375rem;margin-top:3.2rem}
+}
 @media (min-width:750px){
 .main::before{ opacity:.8;}
 .body__row{flex-direction: row; }
 .body__row--reverse .body__media{order:1;}
 .body__row--reverse .body__content{order:2;}
 .body__closing::before,.body__closing::after{opacity:.8;}
+.body__closing-cta{gap: 1.6rem;}
 }
 @media (min-width:992px){
-   .intro{margin-top:0 ; }
+   .intro{margin-top:5rem ; }
    .body__title{font-size:2.25rem;}
    .body__text p{font-size:1.05rem;}
    .body__eyebrow{margin:0 0 1.4rem;font-size:1.3rem; }
