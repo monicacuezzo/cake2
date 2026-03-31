@@ -231,7 +231,10 @@
 
           <article class="about__me d_flex">
             <div class="about__me-media fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:70px;--fx-delay:.05s">
-              <img src="img/home/about/about-orne1-500px.webp" alt="About Us Image" class="margin-auto" width="316" height="475">
+              <picture>
+                <source srcset="img/home/about/about1-500px.webp" media="(min-width: 1600px)" type="image/webp">
+                <img src="img/home/about/about1-300px.webp" alt="About Us Image" class="margin-auto" width="300" height="450">
+              </picture>
             </div>
             <div class="about__me-text">
               <h2 class="about__title about__me-title  fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:70px;--fx-delay:.05s">Meet Ornella, the Heart Behind Cake Atelier</h2>
@@ -243,52 +246,75 @@
 
        <aside class="about__media-mobile" aria-label="About media">
         <div class="about__media--video">
-          <img class="about__photo" src="img/home/about/decoracion-torta-artist-crown500.webp" alt="" width="900" height="1600" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="img/home/about/decoracion-torta-artist-crown500.webp" media="(min-width: 1600px)" type="image/webp">
+            <img class="about__photo" src="img/home/about/decoracion-torta-artist-crown280px.webp" alt="" width="280" height="350" loading="lazy" decoding="async">
+          </picture>
         </div>
       </aside>
 
       <aside class="about__media about__photo-sticky" aria-label="About media">
         <div class="about__media--photo">
-          <img class="about__photo" src="img/home/about/mesa_final.webp" alt="" width="900" height="1600" loading="lazy" decoding="async">
+          <picture>
+            <source srcset="img/home/about/mesa_final320px.webp" media="(min-width: 1600px)" type="image/webp">
+            <img class="about__photo" src="img/home/about/mesa_final500px.webp" alt="" width="300" height="533" loading="lazy" decoding="async">
+          </picture>
 
           <section class="about-game" aria-labelledby="about-game-title">
             <div class="about-game__list" role="radiogroup" aria-label="Choose cake color">
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-0" checked>
               <label class="sr-only" for="cake-color-0" aria-label="Base cake" style="--x:0;--y:-0">Base cake</label>
-              <img class="about-game__cake" src="img/home/about/cake-base.webp" alt="Base cake" width="420" height="560">
+              <picture  class="about-game__cake-picture">
+                <source srcset="img/home/about/cake-base500px.webp" media="(min-width: 1600px)" type="image/webp">
+                <img class="about-game__cake-img" src="img/home/about/cake-base320px.webp" alt="Base cake" width="320" height="568">
+              </picture>
 
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-1">
               <label class="about-game__option" for="cake-color-1" aria-label="Pink cake" style="--x:0;--y:-1.875rem">
                 <img src="img/home/about/color-pink.webp" alt="" width="56" height="56">
               </label>
-              <img class="about-game__cake" src="img/home/about/cake-pink.webp" alt="Pink decorated cake" width="420" height="560">
+              <picture class="about-game__cake-picture">
+                <source srcset="img/home/about/cake-pink500px.webp" media="(min-width: 1600px)" type="image/webp">
+                <img class="about-game__cake-img" src="img/home/about/cake-pink320px.webp" alt="Pink decorated cake" width="320" height="568">
+              </picture>
 
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-2">
               <label class="about-game__option" for="cake-color-2" aria-label="Light blue cake" style="--x:0;--y:-4.06rem">
                 <img src="img/home/about/color-light-blue.webp" alt="" width="56" height="56">
               </label>
-              <img class="about-game__cake" src="img/home/about/cake-light-blue.webp" alt="Light blue decorated cake" width="420" height="560">
+              <picture  class="about-game__cake-picture">
+                <source srcset="img/home/about/cake-light-blue500px.webp" media="(min-width: 1600px)" type="image/webp">
+                <img class="about-game__cake-img" src="img/home/about/cake-light-blue320px.webp" alt="Light blue decorated cake" width="320" height="568">
+              </picture>
 
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-3">
               <label class="about-game__option" for="cake-color-3" aria-label="Lilac cake" style="--x:0;--y:-5.625rem">
                 <img src="img/home/about/color-lilac.webp" alt="" width="56" height="56">
               </label>
-              <img class="about-game__cake" src="img/home/about/cake-lilac.webp" alt="Lilac decorated cake" width="420" height="560">
+              <picture  class="about-game__cake-picture">
+                <source srcset="img/home/about/cake-lilac500px.webp" media="(min-width: 1600px)" type="image/webp">
+                <img class="about-game__cake-img" src="img/home/about/cake-lilac320px.webp" alt="Lilac decorated cake" width="320" height="568">
+              </picture>
 
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-4">
               <label class="about-game__option" for="cake-color-4" aria-label="Green cake" style="--x:3.125rem;--y:-3.75rem">
                 <img src="img/home/about/color-green.webp" alt="" width="56" height="56">
               </label>
-              <img class="about-game__cake" src="img/home/about/cake-green.webp" alt="Green decorated cake" width="420" height="560">
+              <picture  class="about-game__cake-picture">
+                <source srcset="img/home/about/cake-green500px.webp" media="(min-width: 1600px)" type="image/webp">
+                <img class="about-game__cake-img" src="img/home/about/cake-green320px.webp" alt="Green decorated cake" width="320" height="568">
+              </picture>
 
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-5">
               <label class="about-game__option" for="cake-color-5" aria-label="Orange cake" style="--x:0px;--y:-5.625rem">
                 <img src="img/home/about/color-orange.webp" alt="" width="56" height="56">
               </label>
-              <img class="about-game__cake" src="img/home/about/cake-orange.webp" alt="Orange decorated cake" width="420" height="560">
+              <picture  class="about-game__cake-picture">
+                <source srcset="img/home/about/cake-orange500px.webp" media="(min-width: 1600px)" type="image/webp">
+                <img class="about-game__cake-img" src="img/home/about/cake-orange320px.webp" alt="Orange decorated cake" width="320" height="568">
+              </picture>
             </div>
             <h3 id="about-game-title" class="about-game__title"></h3>
-            <!-- <h3 id="about-game-title" class="about-game__title">Tap to dress the cake</h3> -->
             <!-- Play with the palette , Choose your cake vibe, Which cake are you today? , Pick your favorite flavour mood -->
           </section>
         </div>
@@ -328,20 +354,12 @@
         </li>
       </ol>
 
-      <!-- <a class=" btn-neon" href="https://forms.gle/gjVjPLNnLNNYmWsy7" target="_blank" rel="noopener noreferrer">Start your order</a> -->
       <a class="btn btn--primary btn--primary-how" href="https://forms.gle/gjVjPLNnLNNYmWsy7" target="_blank" rel="noopener noreferrer">Start your order</a>
-    <!-- <button class="neon-button">PRUEBA</button> -->
-
     </section>
 
-
     <section id="cakes" class="cakes section">
-
-      <!-- Wrapper que define el “tramo” de scroll -->
-      <div class="cakes__wrap">
-
-        <!-- Área sticky visible mientras dura el tramo -->
-        <div class="cakes__stage" aria-label="Cake gallery">
+      <div class="cakes__wrap"><!-- Wrapper que define el “tramo” de scroll -->
+        <div class="cakes__stage" aria-label="Cake gallery"><!--Área sticky-->
             <div class="cakes__head text-center">
                 <h2 class="section__title w_100 text-center">What’s Your <span class="cakes__h2-span nowrap">Cake Mood?</span></h2>
                 <p class="cakes__subtitle">Feeling classic or curious? Swipe to get inspired by our latest creations — and pick your favourite.</p>
@@ -360,16 +378,13 @@
 
 
             <div class="cakes__slot cakes__slot--down">
-                          <div class="cakes__col cakes__col--down" data-speed="1.05">
-              <!-- 0.15 -->
+              <div class="cakes__col cakes__col--down" data-speed="1.05"><!-- 0.15 -->
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-4.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-5.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-6.webp" alt="" loading="lazy" decoding="async"></span>
-
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-7.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-artistic-bloom-cake-8.webp" alt="" loading="lazy" decoding="async"></span>
-            </div>
-
+              </div>
             </div>
 
             <div class="cakes__slot cakes__slot--up">
@@ -383,7 +398,7 @@
             </div>
 
             <div class="cakes__slot cakes__slot--down">
-                          <div class="cakes__col cakes__col--down" data-speed="1.05"> <!-- 0.3 -->
+              <div class="cakes__col cakes__col--down" data-speed="1.05"> <!-- 0.3 -->
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-custom-cake.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-custom-kids-cake-2.webp" alt="" loading="lazy" decoding="async"></span>
               <span class="cakes__ph"><img class="cakes__img" src="img/cakes/cakeatelier-cph-floral-cake-1.webp" alt="" loading="lazy" decoding="async"></span>
@@ -424,18 +439,14 @@
             <form class="newsletter" action="#" method="post" autocomplete="on">
               <h3 class="newsletter__title">Be the first to know</h3>
               <p class="newsletter__lead">New workshops, special promos, and meaningful updates from Cake Atelier — delivered occasionally, never spammy.</p>
-               
                 <div class="newsletter__field">
                   <label class="newsletter__label" for="nl-name">Full name <span class="newsletter__req" aria-hidden="true">*</span></label>
                   <input class="newsletter__input" id="nl-name" name="name" type="text" autocomplete="name" required aria-required="true" minlength="2" maxlength="60" placeholder="Please enter your full name.">
                 </div>
-
                 <div class="newsletter__field"> 
                   <label class="newsletter__label" for="nl-email">Email <span class="newsletter__req" aria-hidden="true">*</span></label>
                   <input class="newsletter__input" id="nl-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-required="true" maxlength="254" placeholder="you@example.com">
-
                 </div>
-
                 <button class="btn btn--primary newsletter__submit" type="submit">
                   <span class="newsletter__btn-text">Keep me posted</span>
                   <span class="newsletter__spinner" aria-hidden="true"></span>
@@ -445,10 +456,7 @@
             </form>
           </div>
         </div>
-        
-
      </div>
-
     </section>
 
   </main>
@@ -573,18 +581,14 @@
     <p class="footer__footer">&copy; 2026 Cake Atelier Copenhagen. All rights reserved.</p>
   </footer>
 
-
   <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center" aria-label="Back to top" title="Go top" ></a>
 
   <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
       <img src="img/shared/wapp6k.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50">
     </a>
 
-
-    <script src="js/header-menu.js" defer></script>
-    <script src="js/animations.js" defer></script>
-
-
+  <script src="js/header-menu.js" defer></script>
+  <script src="js/animations.js" defer></script>
 
 <script>
       
@@ -597,10 +601,7 @@ document.addEventListener('DOMContentLoaded',function(){
 // }
 
   var viewportWidth=document.documentElement.clientWidth||0;
-  console.log(viewportWidth)
   var viewportHeight=window.innerHeight;
-    //alert('VIEWPORT='+viewportWidth+'/'+viewportHeight)
-
   var headerEl=document.querySelector('.header');
   var heroEl=document.getElementById('hero');
   var howEl=document.getElementById('howToOrder');
@@ -614,72 +615,65 @@ document.addEventListener('DOMContentLoaded',function(){
   var cakesCols=document.querySelectorAll('.cakes__col');
   var cakesSection=document.getElementById('cakes');
   var cakesNewsletter=document.querySelector('.cakes__newsletter');
-  // var cakesJustActivated=false;
   var cakesNewsletterVisible=false;
   var footerVisible=false;
- 
+  //Parallax Hero
+  var heroVisible=false;
+  var heroStartTop=0;
+  var heroHeightPx=1;
+  var headerH_hero=0;
+  var headerH_compact=0;
 
-//Parallax Hero
-var heroVisible=false;
-var heroStartTop=0;
-var heroHeightPx=1;
-var headerH_hero=0;
-var headerH_compact=0;
+  //lenis
+  var lenisInstance = null;
+  var lenisRafId = 0;
+  function initLenis(){
+    if(!window.Lenis)return;
+    if(viewportWidth<992)return;
+    if(lenisInstance)return;
+    lenisInstance = new Lenis({
+      autoRaf:false,
+      smoothWheel:true,
+      syncTouch:false,
+      lerp:0.12, //.08
+      wheelMultiplier:0.9,//1
+      touchMultiplier:1,
+      overscroll:true
+    });
+    lenisInstance.on('scroll',function(){
+      tick();
+    });
 
-//lenis
-var lenisInstance = null;
-var lenisRafId = 0;
-function initLenis(){
-  if(!window.Lenis)return;
-  if(viewportWidth<992)return;
-  if(lenisInstance)return;
+    function onLenisRaf(time){
+      if(!lenisInstance)return;
+      lenisInstance.raf(time);
+      lenisRafId = requestAnimationFrame(onLenisRaf);
+    }
 
-  lenisInstance = new Lenis({
-    autoRaf:false,
-    smoothWheel:true,
-    syncTouch:false,
-    lerp:0.12, //.08
-    wheelMultiplier:0.9,//1
-    touchMultiplier:1,
-    overscroll:true
-  });
-  lenisInstance.on('scroll',function(){
-    tick();
-  });
-
-  function onLenisRaf(time){
-    if(!lenisInstance)return;
-    lenisInstance.raf(time);
     lenisRafId = requestAnimationFrame(onLenisRaf);
   }
-
-  lenisRafId = requestAnimationFrame(onLenisRaf);
-}
-function destroyLenis(){
-  if(lenisRafId){
-    cancelAnimationFrame(lenisRafId);
-    lenisRafId=0;
+  function destroyLenis(){
+    if(lenisRafId){
+      cancelAnimationFrame(lenisRafId);
+      lenisRafId=0;
+    }
+    if(lenisInstance){
+      lenisInstance.destroy();
+      lenisInstance=null;
+    }
   }
-  if(lenisInstance){
-    lenisInstance.destroy();
-    lenisInstance=null;
+  function syncLenisMode(){
+    viewportWidth=document.documentElement.clientWidth||0;
+    if(viewportWidth<992){
+      destroyLenis();
+    }else{
+      initLenis();
+      if(lenisInstance)lenisInstance.resize();
+    }
   }
-}
-function syncLenisMode(){
-  viewportWidth=document.documentElement.clientWidth||0;
-  if(viewportWidth<992){
-    destroyLenis();
-  }else{
-    initLenis();
-    if(lenisInstance)lenisInstance.resize();
-  }
-}
-syncLenisMode();
+  syncLenisMode();
 
-
-
-
-function measureHeaderHeights(){
+  function measureHeaderHeights(){
   // if(viewportWidth<992){return};
   if(!headerEl)return;
 
@@ -700,7 +694,7 @@ function measureHeaderHeights(){
   headerEl.className=prevClass;
 }
  
-   if(heroEl){
+  if(heroEl){
     var heroIO=new IntersectionObserver(function(entries){
       heroVisible=!!(entries[0]&&entries[0].isIntersecting);
       tick();
@@ -708,8 +702,7 @@ function measureHeaderHeights(){
     heroIO.observe(heroEl);
   }
 
-
-function applyHeaderBySection(activeId){
+  function applyHeaderBySection(activeId){
   // if(viewportWidth<992){return};
   if(!headerEl)return;
 
@@ -754,9 +747,8 @@ function applyHeaderBySection(activeId){
 
   if(heroDots)heroDots.classList.toggle('dots--fixed',activeId==='hero');
 }
-  
-
-   // HERO dots 
+ 
+  // HERO dots 
   if(heroEl){
     var slides=heroEl.getElementsByClassName('hero__slide');
 
@@ -782,7 +774,6 @@ function applyHeaderBySection(activeId){
   }
   //FIN dots slider HERO
 
-
   // Colorear links internos
   var spyLinks=document.querySelectorAll('.js-scroll-link[data-target]');
   var spyPairs=[];
@@ -797,8 +788,8 @@ function applyHeaderBySection(activeId){
   }
  
   var ticking=false;
-   var ultimoTiempoScrollSpy=0;
-var scrollSpyCadaMs=120; // 80–150ms funciona bien
+  var ultimoTiempoScrollSpy=0;
+  var scrollSpyCadaMs=120; // 80–150ms funciona bien
 
   var state={
     cakesOn:false,
@@ -829,7 +820,7 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
     state.activeId=null;
   }
 
- function updateScrollSpy(){
+  function updateScrollSpy(){
   // if(viewportWidth<992){return};
   if(!spyPairs.length){clearActive();applyHeaderBySection('');return;}
 
@@ -863,9 +854,6 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
   applyHeaderBySection('');
 }
 
-
-
- 
   function measureCakes(){
     if(!cakesStage||!cakesCols.length)return;
     var stageH=cakesStage.clientHeight;
@@ -885,8 +873,6 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
       if(!absSpeed){
         col.style.transform='';
       }
-
-      // console.log( 'measure cake cakesCols[c]',c)
     }
   }
 
@@ -894,69 +880,47 @@ var scrollSpyCadaMs=120; // 80–150ms funciona bien
     if(cakesStage&&cakesCols&&cakesCols.length){measureCakes();state.cakesMeasuredOnce=true;}
   },{passive:true});
  
-
-  
-function updateCakesParallax(cakesRect){ //v4
-  //if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length||cakesRect.y>50)return;
-  if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length)return;
-  // console.log(cakesRect.y)
-
-  var travel=cakesRect.height-viewportHeight;
-  if(travel<=0)return;
-
-  // var progress=clamp((-cakesRect.top)/travel,0,1);
-  // if(viewportWidth<768){
-  //   progress=clamp(progress*1.5,0,1);
-  // }else{
-  //   progress=smoothstep(progress);
-  // }
-  var progress=clamp((-cakesRect.top)/travel,0,1);
-  if(viewportWidth<768){
-    progress=clamp(progress*1.2,0,1);
+  function updateCakesParallax(cakesRect){ //v4
+    //if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length||cakesRect.y>50)return;
+    if(!state.cakesOn||!cakesWrap||!cakesStage||!cakesCols.length)return;
+    var travel=cakesRect.height-viewportHeight;
+    if(travel<=0)return;
+    var progress=clamp((-cakesRect.top)/travel,0,1);
+    if(viewportWidth<768){
+      progress=clamp(progress*1.2,0,1);
+    }
+    //fin mob
+    for(var c=0;c<cakesCols.length;c++){
+      var absSpeed=state.cakesAbsSpeed[c];
+      if(!absSpeed)continue;
+      var y=progress*state.cakesOverflow[c]*absSpeed*state.cakesSign[c];
+      cakesCols[c].style.transform='translate3d(0,'+y.toFixed(1)+'px,0)';
+    }
   }
-  //fin mob
 
- 
-  for(var c=0;c<cakesCols.length;c++){
-    var absSpeed=state.cakesAbsSpeed[c];
-    if(!absSpeed)continue;
+  var heroP=0;
 
-    var y=progress*state.cakesOverflow[c]*absSpeed*state.cakesSign[c];
-    cakesCols[c].style.transform='translate3d(0,'+y.toFixed(1)+'px,0)';
-  }
-}
-
-  var heroP=0; // cache para no setear de más
-
-function updateHeroProgressVar(){ 
+  function updateHeroProgressVar(){ 
   if(!heroEl)return;
   if(!heroVisible)return;
-
   var heroRect=heroEl.getBoundingClientRect();
   if(heroRect.bottom<=0||heroRect.top>=viewportHeight)return;
-
   var totalTravel=heroStartTop+heroHeightPx;
   if(totalTravel<1)totalTravel=1;
-
   var traveled=heroStartTop-heroRect.top;
   var heroProgress=traveled/totalTravel;
   if(heroProgress<0)heroProgress=0;
   else if(heroProgress>1)heroProgress=1;
-
   if(Math.abs(heroProgress-heroP)>0.001){
     heroP=heroProgress;
     heroEl.style.setProperty('--hero-p',heroP.toFixed(4));
   }
-
 }
-
 
   function frame(){
       ticking=false;
-
       //hero animaciones
-      if(heroVisible)updateHeroProgressVar();  //ag acá fixheader???
-      
+      if(heroVisible)updateHeroProgressVar(); 
       // ScrollSpy: throttle (esto es lo que más “raspa”)
       if(lenisInstance){
         updateScrollSpy();
@@ -982,14 +946,8 @@ function updateHeroProgressVar(){
     }
   }
 
-   
 
-  // function onFooter(entry){
-  //   if(buttonWapp)buttonWapp.classList.toggle('floating--hidden',true);
-  // }
- 
   //Efectos cakes
-  
   function onCakes(entry){
     state.cakesOn=entry.isIntersecting;
     if(state.cakesOn){
@@ -997,128 +955,6 @@ function updateHeroProgressVar(){
       if(!state.cakesMeasuredOnce){measureCakes();state.cakesMeasuredOnce=true;}
     }
   }
-
-  // function onCakesNewsletter(entry){
-  //   if(!cakesSection)return;
-  //   cakesSection.classList.toggle('cakes--newsletter-on',entry.isIntersecting);
-  // }
-
-  //Toggle SUBMENUS del  header
-
-
-  // //Menu mobile 
-  // if(headerEl){
-  //   var toggleEls=headerEl.getElementsByClassName('header__toggle');
-  //   var toggle=(toggleEls&&toggleEls.length)?toggleEls[0]:null;
-
-  //   var overlay=headerEl.querySelector('[data-header-overlay]');
-  //   var panelEls=headerEl.getElementsByClassName('header__bottom');
-  //   var panel=(panelEls&&panelEls.length)?panelEls[0]:null;
-
-  //   function openMenu(){
-  //     headerEl.classList.add('header--menu-open');
-  //     if(toggle)toggle.setAttribute('aria-expanded','true');
-  //     document.documentElement.classList.add('no-scroll');
-  //     if(overlay)overlay.classList.add('is-visible');
-  //   }
-
-  //   function closeMenu(){
-  //     headerEl.classList.remove('header--menu-open');
-  //     if(toggle)toggle.setAttribute('aria-expanded','false');
-  //     document.documentElement.classList.remove('no-scroll');
-  //     if(overlay)overlay.classList.remove('is-visible');
-
-  //     var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-  //     for(var i=0;i<openItems.length;i++){
-  //       openItems[i].classList.remove('header__item--open');
-  //       var b=openItems[i].querySelector('.header__link--button');
-  //       if(b)b.setAttribute('aria-expanded','false');
-  //     }
-  //     if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
-  //   }
-
-  //   function toggleMenu(){
-  //     if(headerEl.classList.contains('header--menu-open'))closeMenu();
-  //     else openMenu();
-  //   }
-
-  //   if(toggle){
-  //     toggle.addEventListener('click',function(e){
-  //       e.preventDefault();
-  //       toggleMenu();
-  //     });
-  //   }
-
-  //   if(overlay)overlay.addEventListener('click',closeMenu);
-
-  //   if(panel){
-  //     panel.addEventListener('click',function(e){
-  //       //console.log('panel')
-  //       var a=e.target&&e.target.closest?e.target.closest('a'):null;
-  //       if(a)closeMenu();
-  //     });
-  //   }
-
-  //   document.addEventListener('keydown',function(e){
-  //     if(e.key==='Escape')closeMenu();
-  //   });
-  // }
-  // // Fin menu mobile
-
-  //submenus del header
-  // estado para poder activar/desactivar listener y clases en submenus mobile
-//   function enableMobileSubmenus(){
-//   if(mobileSubmenuEnabled||!headerEl)return;
-//   mobileSubmenuEnabled=true;
-
-//   onHeaderSubmenuClick=function(e){
-//     var btn=e.target.closest('.header__link--button');
-//     if(!btn||!headerEl.contains(btn))return;
-
-//     var li=btn.closest('.header__item--has-submenu');
-//     if(!li)return;
-
-//     var open=!li.classList.contains('header__item--open');
-
-//     var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-//     for(var i=0;i<openLis.length;i++){
-//       openLis[i].classList.remove('header__item--open');
-//       var b=openLis[i].querySelector('.header__link--button');
-//       if(b)b.setAttribute('aria-expanded','false');
-//     }
-
-//     li.classList.toggle('header__item--open',open);
-//     btn.setAttribute('aria-expanded',open?'true':'false');
-//   };
-
-//   headerEl.addEventListener('click',onHeaderSubmenuClick);
-// }
-
-//   function disableMobileSubmenus(){
-//   if(!mobileSubmenuEnabled||!headerEl)return;
-//   mobileSubmenuEnabled=false;
-
-//   if(onHeaderSubmenuClick){
-//     headerEl.removeEventListener('click',onHeaderSubmenuClick);
-//     onHeaderSubmenuClick=null;
-//   }
-
-//   var openLis=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-//   for(var i=0;i<openLis.length;i++){
-//     openLis[i].classList.remove('header__item--open');
-//     var b=openLis[i].querySelector('.header__link--button');
-//     if(b)b.setAttribute('aria-expanded','false');
-//   }
-// }
-
-// // helper  
-//   function updateSubmenuMode(){
-//   viewportWidth=document.documentElement.clientWidth||0;
-//   if(viewportWidth<992)enableMobileSubmenus();
-//   else disableMobileSubmenus();
-// }
-
-//   updateSubmenuMode();
 
   function syncCakesNewsletterState(){
     if(!cakesSection)return;
@@ -1128,9 +964,7 @@ function updateHeroProgressVar(){
   var io=new IntersectionObserver(function(entries){
     for(var i=0;i<entries.length;i++){
       var e=entries[i];
-      // console.log(e)
       if(e.target===cakesStage){onCakes(e);continue;}
-      // if(e.target===cakesNewsletter){onCakesNewsletter(e);continue;}
       if(e.target===cakesNewsletter){
         cakesNewsletterVisible=e.isIntersecting;
         syncCakesNewsletterState();
@@ -1138,19 +972,8 @@ function updateHeroProgressVar(){
       }
       if(e.target===howEl){
         howEl.classList.toggle('is-in',e.isIntersecting);  
-        // buttonTop.classList.add('floating--dark');
         continue;
-      // }else{
-      //   buttonTop.classList.remove('floating--dark');
       }
-
-      // if(activeId==='howToOrder'){
-      //   buttonTop.classList.add('floating--dark');
-      // }else{
-      //   buttonTop.classList.remove('floating--dark');
-      // }
-
-      // if(e.target===footerEl){cakesSection.classList.toggle('cakes--newsletter-on',true);continue;}//mantiene oculto el cta de cakes
       if(e.target===footerEl){
         footerVisible=e.isIntersecting;
         syncCakesNewsletterState();
@@ -1165,13 +988,10 @@ function updateHeroProgressVar(){
   if(howEl)io.observe(howEl);
   if(footerEl)io.observe(footerEl);
   for(var s=0;s<spyPairs.length;s++)io.observe(spyPairs[s].el);
-  
-  
   var scrollEndT=null;
   window.addEventListener('scroll',function(){
   // tick();
   if(!lenisInstance)tick();
-
   if(scrollEndT)clearTimeout(scrollEndT);
     scrollEndT=setTimeout(function(){
       //tick(); // asegura el último estado (para anchors también)
@@ -1180,14 +1000,10 @@ function updateHeroProgressVar(){
   },{passive:true});
 
   window.addEventListener('resize',function(){
-    // if(lenisInstance)lenisInstance.resize();
-    
+    // if(lenisInstance)lenisInstance.resize();    
     viewportWidth=document.documentElement.clientWidth;
     syncLenisMode();
-      //console.log(viewportWidth)
-
     //updateSubmenuMode(); //activa/desactiva listener click submenús
-
     viewportHeight=window.innerHeight;
     if(heroEl){
       var rect=heroEl.getBoundingClientRect();
@@ -1199,8 +1015,6 @@ function updateHeroProgressVar(){
     if(state.cakesOn)measureCakes();
     tick();
   },{passive:true});
-
-   
 
   if(heroEl){
     var rect=heroEl.getBoundingClientRect();
@@ -1214,9 +1028,7 @@ function updateHeroProgressVar(){
 });
 </script>
 
- 
- 
- 
+
 
 <svg class="sr-only" aria-hidden="true" focusable="false">
 <!-- seccion How To Order -->
