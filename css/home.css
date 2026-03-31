@@ -184,8 +184,7 @@ transition:transform .22s ease}
   85%,100%{opacity:0;transform:translateX(-100%)}
 }
 
-.about-game__list{position:relative;display:flex;justify-content: space-around;
-    padding: 1rem;flex-wrap:wrap;z-index: 5;}
+.about-game__list{position:relative;display:flex;justify-content: space-around; padding: 1rem;flex-wrap:wrap;z-index: 5;}
 .about-game__radio{position:absolute;opacity:0;pointer-events:none}
 .about-game__option{position:relative;z-index:5;display:block;cursor:pointer;border:.125rem solid transparent;border-radius:50%;overflow:visible;transform: translate3d(var(--x),var(--y),0); 
 flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
@@ -200,8 +199,9 @@ flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center
   100%{opacity: .2; }
 }
 
-.about-game__cake{position:absolute;bottom:0;left:0;width:100%; height:auto;opacity:0;z-index:1;pointer-events:none;transition:opacity 1s ease}
-.about-game__radio:checked + .about-game__option + .about-game__cake,.about-game__radio:checked + .sr-only + .about-game__cake{opacity:1;z-index:3}
+.about-game__cake-picture{position:absolute;bottom:0;left:0;width:100%; height:auto;opacity:0;z-index:1;pointer-events:none;transition:opacity 1s ease}
+.about-game__cake-img{width:100%; height:auto;/*pointer-events:none;*/}
+.about-game__radio:checked + .about-game__option + .about-game__cake-picture,.about-game__radio:checked + .sr-only + .about-game__cake-picture{opacity:1;z-index:3}
 .about-game__radio:checked + .about-game__option{box-shadow:0 0 0 .1875rem rgba(255,255,255,.34)}
 .about-game__radio:checked + .about-game__option::before,
 .about-game__radio:checked + .about-game__option::after{border-color:rgba(255,255,255,.95);opacity:.95; /*animation-duration:2s*/}
