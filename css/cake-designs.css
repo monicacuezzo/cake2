@@ -14,7 +14,7 @@ body{color: #f1f1f1;}
 .header.header--compact{box-shadow: none;}
 .blue-bkg{background: rgba(34, 50, 66,.5)}
 .main{position:relative;width:100%;overflow:hidden;  }
-.main::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background:url("../img/bg/art-line.svg") no-repeat right 0;background-size:70vh;opacity:.5;pointer-events:none;z-index:0;}
+.main::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background:url("../img/bg/art-line.svg") no-repeat right 0;background-size:70vh;opacity:.4;pointer-events:none;z-index:0;}
 
 .intro,.body{position:relative;z-index:1;}
 .intro{padding: var(--padding-top) var(--padding-horizontal) 3.5rem;}
