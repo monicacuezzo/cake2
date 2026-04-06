@@ -9,6 +9,9 @@
  }
  }
 #about,#cakes,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
+/* .btn--primary:hover,.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background:transparent;color:var(--color16);text-shadow: none;} 
+IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
+*/
 
 /* html{scroll-behavior:smooth;} */
 /* @media (prefers-reduced-motion:reduce){ */
