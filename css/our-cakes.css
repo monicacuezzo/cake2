@@ -51,7 +51,6 @@
 
 .section{padding: var(--padding-top) var(--padding-horizontal); width: 100%;z-index: 2;    position: relative; }
 .blue-bkg{background: rgba(34, 50, 66,.5)}
-.rollCakes .border{border-color:var(--rosa2);border-width: 1px;}
 .roll__container{gap: 4vw; align-items:center;justify-content: center;width:100%;flex-wrap: wrap; flex-direction: column;}
 .roll__intro{display:inline-grid;flex:1;gap:2rem; justify-items:start;}
 .title{font-size:1.5rem;font-size:clamp(1.35rem, 2vw, 1.75rem);font-weight:700;position: relative;}
@@ -78,10 +77,8 @@
 .roll__gallery-img{display:block;width:100%;height:auto;aspect-ratio:260/462;object-fit:cover;transform: scale(1.06);transition: transform .9s ease;}
 .roll__gallery-item:hover .roll__gallery-img{transform: scale(1);}
 
-/* .cakes{background: var(--col3);} */
 .cakes .title::before{ background-color:var(--color-brand) ;}
 .cakes .roll__best-for{background: var(--color-brand);color: #223242;}
-/* .cakes .border{border-color:var(--color-brand);} */
 
 .cakes-sizes{background: var(--rosa60);color: #223242;}
 .cakes-sizes .title{margin-bottom: 2rem;width:max-content;max-width:100%;}
@@ -90,7 +87,6 @@
 .cakes-sizes__subtitle{font-size:1.1rem;font-size:clamp(1.1rem, 1.2vw, 1.25rem);font-weight: 600;}
 .cakes-sizes strong{font-weight: 800;}
 .cakes-sizes__title span{font-weight: 500;}
-.cakes-sizes .border{border-color:var(--color15);border-width: 1px;}
 .cakes-sizes__box{ padding:2rem ;position: relative; }
 .cakes-sizes__box::before{content:'';position:absolute;left:0;top:2rem;width:.3rem;height:calc(100% - 4rem); background-color:var(--color15);}
 

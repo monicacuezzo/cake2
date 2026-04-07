@@ -34,7 +34,7 @@ body{color: #f1f1f1;}
 .designs__tab{position:relative;display:flex;align-items:flex-end;justify-content:center;min-height:15rem;padding:.75rem;background-repeat:no-repeat;background-position:center;background-size:cover;border-radius:5px;overflow:hidden;text-align: center;}
 .designs__tab{transition:transform .25s ease,box-shadow .25s ease;}
 .designs__tab:nth-child(1){background-image:url("../img/cakes/cake-classic-2.webp");}
-.designs__tab:nth-child(2){background-image:url("../img/cakes/cakeatelier-cph-abstract-elegance-cake-1.webp");}
+.designs__tab:nth-child(2){background-image:url("../img/cakes/cakeatelier-cph-petal-crown-cake-4.webp");}
 .designs__tab:nth-child(3){background-image:url("../img/workshops/cake-floral-ws2.webp");}
 .designs__tab:nth-child(4){background-image:url("../img/cakes/cakeatelier-cph-classic-heart-cake-6.webp");}
 
