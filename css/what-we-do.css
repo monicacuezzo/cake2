@@ -75,8 +75,11 @@ body{background:#223242; color: #f1f1f1;}
 .workshops__videos .workshops__gallery-btn{position:relative;}
 .workshops__videos .workshops__gallery-btn::after{content:"";position:absolute;inset:0;margin:auto;width:1.2rem;height:1.2rem;border-radius:50%;background:rgba(34,50,66,.68);pointer-events:none;}
 .workshops__videos .workshops__gallery-btn::before{content:"";position:absolute;inset:0;margin:auto 0 auto .2rem;width:0;height:0;border-top:.38rem solid transparent;border-bottom:.38rem solid transparent;border-left:.6rem solid #fff;z-index:1;pointer-events:none;}
-
 .workshops__viewer-img[hidden],.workshops__viewer-video[hidden]{display:none;}
+
+.faq-link{font-weight: 600; margin: 1rem auto 0;color: var(--color16);text-decoration:underline;display: block;padding: .5rem 1rem;width: max-content;}
+.faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7;}
+.faq-link:focus-visible{outline:.125rem solid var(--color16);outline-offset:.125rem;}
 
 @media (min-width:768px){
 .workshops{padding: 0;}
