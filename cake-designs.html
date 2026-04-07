@@ -16,10 +16,9 @@
       body{background-color: #223242;}.d_flex{display:flex}
       /* .p_absolute{position: absolute!important;} */
       ul,ol{margin:0;padding:0;list-style:none}
-      /* .header.p_absolute .header__contenedor-img{display: none;} */
       .header__link{color: #fafafa;}
       .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index: 114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa; }
-#about,#cakes,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
+#designs,#footer{content-visibility:auto;contain-intrinsic-size:800px}
 
 
     </style>
@@ -344,7 +343,7 @@
   <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center" aria-label="Back to top" title="Go top" ></a>
 
   <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="img/shared/wapp6k.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50" fetchpriority=high loading="eager">
+      <img src="img/shared/icon-wapp.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50" fetchpriority=high loading="eager">
     </a>
 
     <script src="js/header-menu.js" defer></script>
@@ -353,7 +352,6 @@
 
 <script>
   document.addEventListener('DOMContentLoaded',function(){
-    //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
     var heroEl=document.getElementById('hero');
     var theSection=document.getElementById('designs');
@@ -399,15 +397,15 @@
         if(!panel)return;
         if(openPanelEl&&openPanelEl!==panel){
           openPanelEl.hidden=true;
-resetGallery(openPanelEl);          
+          resetGallery(openPanelEl);          
           var openBtn=document.querySelector('.designs__tab[aria-controls="'+openPanelEl.id+'"]');
           if(openBtn)openBtn.setAttribute('aria-expanded','false');
         }
 
         panel.hidden=false;
         btn.setAttribute('aria-expanded','true');
-resetGallery(panel);
-observeGallery(panel);
+        resetGallery(panel);
+        observeGallery(panel);
         var closeBtn=panel.querySelector('.designs__panel-close');
         if(closeBtn)closeBtn.focus();
 
@@ -428,7 +426,7 @@ observeGallery(panel);
           var btn;
           if(!panel)return;
           panel.hidden=true;
-resetGallery(panel);          
+          resetGallery(panel);          
           btn=document.querySelector('.designs__tab[aria-controls="'+panel.id+'"]');
           if(btn)btn.setAttribute('aria-expanded','false');
         });
@@ -437,7 +435,6 @@ resetGallery(panel);
     
     //animación galeria de tortas
     var galleryIO;
-
     function resetGallery(panel){
       var items=panel.querySelectorAll('.fx-gallery');
       for(var i=0;i<items.length;i++){
@@ -446,7 +443,6 @@ resetGallery(panel);
       }
       if(galleryIO)galleryIO.disconnect();
     }
-
     function observeGallery(panel){
       var items=panel.querySelectorAll('.fx-gallery');
       var i;
@@ -470,15 +466,12 @@ resetGallery(panel);
       }
     }
     //fin animación
-    
     // FIN paneles
-    
   });
 </script>
 
 <svg class="sr-only" aria-hidden="true" focusable="false">
 <symbol id="i-close" viewBox="0 0 512 512" fill="#A74C79"><path d="M256 48C140.559 48 48 140.559 48 256c0 115.436 92.559 208 208 208 115.435 0 208-92.564 208-208 0-115.441-92.564-208-208-208zm104.002 282.881l-29.12 29.117L256 285.117l-74.881 74.881-29.121-29.117L226.881 256l-74.883-74.881 29.121-29.116L256 226.881l74.881-74.878 29.12 29.116L285.119 256l74.883 74.881z"></path></symbol>
 </svg>
-
 </body>
 </html>
