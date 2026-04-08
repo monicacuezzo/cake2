@@ -99,14 +99,11 @@
       </div>
     </section>
     
-    <section id="workshop" class="section workshops">
+    <section id="workshop" class="workshops" aria-labelledby="workshops-title">
       <div class="workshops__panel">
-        <h2 class="workshops__title fx-fade-up-var" style="--fx-dur:1.6s;--fx-y:30px;--fx-delay:.5s">Your Cake Atelier Journey</h2>
-
+        <h2 id="workshops-title" class="workshops__title fx-fade-up-var" style="--fx-dur:1.6s;--fx-y:30px;--fx-delay:.5s">Your Cake Atelier Journey</h2>
         <div class="workshops__inner">
           <div class="workshops__box">
-
-            <!-- IMPORTANTE: ELIMINAR LA CLASE DE COLOR -->
             <div class="workshops__info">
               <ul class="workshops__list fx-fade-up-var" style="--fx-dur:1.6s;--fx-y:30px;--fx-delay:.5s">
                 <li class="workshops__item">
@@ -116,7 +113,6 @@
                     <span class="workshops__text">Learn the fundamentals</span>
                   </a>
                 </li>
-
                 <li class="workshops__item">
                   <a class="workshops__link" href="workshops.html">
                     <span class="workshops__level">Level 2. <em>Practice</em></span>
@@ -124,7 +120,6 @@
                     <span class="workshops__text">Practice, experiment, improve, socialize</span>
                   </a>
                 </li>
-
                 <li class="workshops__item">
                   <a class="workshops__link" href="workshops.html">
                     <span class="workshops__level">Level 3. <em>Advanced</em></span>
@@ -132,7 +127,6 @@
                     <span class="workshops__text">Style-focused &amp; themed workshops</span>
                   </a>
                 </li>
-
                 <li class="workshops__item">
                   <a class="workshops__link" href="workshops.html">
                     <span class="workshops__level"><em>Creative Event</em></span>
@@ -141,17 +135,8 @@
                   </a>
                 </li>
               </ul>
-
               <p class="workshops__note">All experiences are hobby-based and non-certified.</p>
             </div>
-
-            <!-- <div class="workshops__viewer fx-fade-up-var" style="--fx-dur:1.6s;--fx-y:70px;--fx-delay:.3s;">
-              <img class="workshops__viewer-img" src="img/workshops/cakeatelier-cph-workshop2.webp" alt="Cake Atelier workshop in Copenhagen" width="336" height="512" loading="lazy" hidden>
-              <video class="workshops__viewer-video" autoplay muted loop playsinline preload="none">
-                <source src="about-video.webm" type="video/webm">
-                <source src="img/videos/cakeatelier-cph-video-buttercream-piping-5.mp4" type="video/mp4">
-              </video>
-            </div> -->
 
             <div class="workshops__viewer fx-fade-up-var" style="--fx-dur:1.6s;--fx-y:70px;--fx-delay:.3s;">
               <div class="workshops__viewer-flip" hidden>
@@ -164,7 +149,7 @@
             </div>
 
             <div class="workshops__media-col fx-fade-up-var" style="--fx-dur:1.6s;--fx-y:50px;--fx-delay:.3s">
-              <p class="workshops__media-title">Photos</p>
+              <h3 class="workshops__media-title">Photos</h3>
               <div class="workshops__gallery" aria-label="Workshop photo gallery">
                 <div class="workshops__gallery-track">
                   <button class="workshops__gallery-btn" type="button" data-media-type="image" data-img-src="img/workshops/cakeatelier-cph-workshop2.webp" aria-label="Show photo 1"><img class="workshops__gallery-img" src="img/workshops/cakeatelier-cph-workshop2.webp" alt="Buttercream practice during workshop" width="57" height="57" loading="lazy"></button>
@@ -180,30 +165,15 @@
             </div>
 
             <div class="workshops__media-col fx-fade-up-var" style="--fx-dur:1.7s;--fx-y:50px;--fx-delay:.4s">
-              <p class="workshops__media-title">Videos</p>
+              <h3 class="workshops__media-title">Videos</h3>
               <div class="workshops__gallery workshops__videos" aria-label="Workshop video gallery">
                 <div class="workshops__gallery-track workshops__videos-track">
-
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-1.mp4" aria-label="Play video 1">
-                    <img class="workshops__video-thumb" src="img/videos/video1-thumb.webp" alt="" width="57" height="57" loading="lazy">
-                  </button>
-
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-2.mp4" aria-label="Play video 2">
-                    <img class="workshops__video-thumb" src="img/videos/video2-thumb.webp" alt="" width="57" height="57" loading="lazy">
-                  </button>
-
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-3.mp4" aria-label="Play video 3">
-                    <img class="workshops__video-thumb" src="img/videos/video3-thumb.webp" alt="" width="57" height="57" loading="lazy">
-                  </button>
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-4.mp4" aria-label="Play video 4">
-                    <img class="workshops__video-thumb" src="img/videos/video4-thumb.webp" alt="" width="57" height="57" loading="lazy">
-                  </button>
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-5.mp4" aria-label="Play video 5">
-                    <img class="workshops__video-thumb" src="img/videos/video5-thumb.webp" alt="" width="57" height="57" loading="lazy">
-                  </button>
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-6.mp4" aria-label="Play video 6">
-                    <img class="workshops__video-thumb" src="img/videos/video6-thumb.webp" alt="" width="57" height="57" loading="lazy">
-                  </button>
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-1.mp4" aria-label="Play video 1"><img class="workshops__video-thumb" src="img/videos/video1-thumb.webp" alt="" width="57" height="57" loading="lazy"></button>
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-2.mp4" aria-label="Play video 2"><img class="workshops__video-thumb" src="img/videos/video2-thumb.webp" alt="" width="57" height="57" loading="lazy"></button>
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-3.mp4" aria-label="Play video 3"><img class="workshops__video-thumb" src="img/videos/video3-thumb.webp" alt="" width="57" height="57" loading="lazy"></button>
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-4.mp4" aria-label="Play video 4"><img class="workshops__video-thumb" src="img/videos/video4-thumb.webp" alt="" width="57" height="57" loading="lazy"></button>
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-5.mp4" aria-label="Play video 5"><img class="workshops__video-thumb" src="img/videos/video5-thumb.webp" alt="" width="57" height="57" loading="lazy"></button>
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-6.mp4" aria-label="Play video 6"><img class="workshops__video-thumb" src="img/videos/video6-thumb.webp" alt="" width="57" height="57" loading="lazy"></button>
                 </div>
               </div>
             </div>
@@ -357,10 +327,15 @@
   var heroVisible=false;
   var theSectionVisible=false;
 
-  function updateButtonTop(){
-    if(!buttonTop)return;
-    buttonTop.classList.toggle('floating--hidden',heroVisible);
-  }
+  //function updateButtonTop(){
+   // if(!buttonTop)return;
+   // buttonTop.classList.toggle('floating--hidden',heroVisible);
+ // }
+ function updateButtonTop(){
+  if(!buttonTop)return;
+  var isSmallScreen=window.innerWidth<992;
+  buttonTop.classList.toggle('floating--hidden',heroVisible||(isSmallScreen&&theSectionVisible));
+}
 
   function applyHeaderBySection(){
     if(!headerEl)return;
@@ -388,7 +363,8 @@
     var sectionIO=new IntersectionObserver(function(entries){
       theSectionVisible=!!(entries[0]&&entries[0].isIntersecting);
       applyHeaderBySection();
-    },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
+      updateButtonTop();
+    },{threshold:0,rootMargin:'-50px 0px -100% 0px'}); //'-50px 0px -100% 0px'
     sectionIO.observe(theSection);
   }
 
@@ -400,91 +376,261 @@
   var viewerBack=document.querySelector('.workshops__viewer-img--back');
   var viewerVideo=document.querySelector('.workshops__viewer-video');
   var mediaBtns=document.querySelectorAll('.workshops__gallery-btn');
+  var videoLoadHandler=null;
 
   if(!viewer||!viewerFlip||!viewerFront||!viewerBack||!viewerVideo||!mediaBtns.length)return;
 
+  // function setActiveMediaBtn(activeBtn){
+  //   for(var i=0;i<mediaBtns.length;i++){
+  //     mediaBtns[i].classList.remove('is-active');
+  //   }
+  //   activeBtn.classList.add('is-active');
+  // }
+
   function setActiveMediaBtn(activeBtn){
-    for(var i=0;i<mediaBtns.length;i++){
-      mediaBtns[i].classList.remove('is-active');
-    }
-    activeBtn.classList.add('is-active');
-  }
-
-  function showImage(newSrc,newAlt){
-    if(viewerVideo){
-      viewerVideo.pause();
-      viewerVideo.classList.remove('is-fading-out');
-      viewerVideo.hidden=true;
-    }
-
-    viewerFlip.hidden=false;
-
-    if(viewerFront.getAttribute('src')===newSrc){
-      viewerFront.alt=newAlt||'';
-      return;
-    }
-
-    if(viewerFlip.classList.contains('is-flipping'))return;
-
-    viewerBack.src=newSrc;
-    viewerBack.alt=newAlt||'';
-    viewerFlip.classList.add('is-flipping');
-
-    function onFlipEnd(e){
-      if(e.propertyName!=='transform')return;
-      if(e.target!==viewerBack)return;
-      viewerFlip.classList.remove('is-flipping');
-      viewerFront.src=newSrc;
-      viewerFront.alt=newAlt||'';
-      viewerFlip.removeEventListener('transitionend',onFlipEnd);
-    }
-
-    viewerFlip.addEventListener('transitionend',onFlipEnd);
-  }
-
-  function showVideo(videoSrc){
-    if(!viewerVideo.querySelector('source'))return;
-
-    viewerFlip.hidden=true;
-    viewerVideo.hidden=false;
-    viewerVideo.classList.add('is-fading-out');
-
-    var source=viewerVideo.querySelector('source');
-
-    function startVideo(){
-      if(source.getAttribute('src')!==videoSrc){
-        source.setAttribute('src',videoSrc);
-        viewerVideo.load();
-      }
-
-      viewerVideo.classList.remove('is-fading-out');
-      viewerVideo.play().catch(function(){});
-    }
-
-    requestAnimationFrame(function(){
-      requestAnimationFrame(startVideo);
-    });
-  }
-
   for(var i=0;i<mediaBtns.length;i++){
-    mediaBtns[i].addEventListener('click',function(){
-      var mediaType=this.getAttribute('data-media-type');
+    mediaBtns[i].classList.remove('is-active');
+    mediaBtns[i].setAttribute('aria-pressed','false');
+  }
+  activeBtn.classList.add('is-active');
+  activeBtn.setAttribute('aria-pressed','true');
+}
 
-      if(mediaType==='image'){
-        var thumbImg=this.querySelector('img');
-        if(!thumbImg)return;
-        showImage(this.getAttribute('data-img-src'),thumbImg.alt);
-      }else if(mediaType==='video'){
-        showVideo(this.getAttribute('data-video-src'));
-      }
+  // function showImage(newSrc,newAlt){
+  //   if(viewerVideo){
+  //     viewerVideo.pause();
+  //     viewerVideo.classList.remove('is-fading-out');
+  //     viewerVideo.hidden=true;
+  //   }
 
-      setActiveMediaBtn(this);
-    });
+  //   viewerFlip.hidden=false;
+
+  //   if(viewerFront.getAttribute('src')===newSrc){
+  //     viewerFront.alt=newAlt||'';
+  //     return;
+  //   }
+
+  //   if(viewerFlip.classList.contains('is-flipping'))return;
+
+  //   viewerBack.src=newSrc;
+  //   viewerBack.alt=newAlt||'';
+  //   viewerFlip.classList.add('is-flipping');
+
+  //   function onFlipEnd(e){
+  //     if(e.propertyName!=='transform')return;
+  //     if(e.target!==viewerBack)return;
+  //     viewerFlip.classList.remove('is-flipping');
+  //     viewerFront.src=newSrc;
+  //     viewerFront.alt=newAlt||'';
+  //     viewerFlip.removeEventListener('transitionend',onFlipEnd);
+  //   }
+
+  //   viewerFlip.addEventListener('transitionend',onFlipEnd);
+  // }
+
+  // function showVideo(videoSrc){
+  //   if(!viewerVideo.querySelector('source'))return;
+
+  //   viewerFlip.hidden=true;
+  //   viewerVideo.hidden=false;
+  //   viewerVideo.classList.add('is-fading-out');
+
+  //   var source=viewerVideo.querySelector('source');
+
+  //   function startVideo(){
+  //     if(source.getAttribute('src')!==videoSrc){
+  //       source.setAttribute('src',videoSrc);
+  //       viewerVideo.load();
+  //     }
+
+  //     viewerVideo.classList.remove('is-fading-out');
+  //     viewerVideo.play().catch(function(){});
+  //   }
+
+  //   requestAnimationFrame(function(){
+  //     requestAnimationFrame(startVideo);
+  //   });
+  // }
+
+// function showImage(newSrc,newAlt){
+//   if(viewerFlip.classList.contains('is-flipping'))return;
+
+//   viewerVideo.pause();
+//   viewerVideo.hidden=true;
+//   viewerVideo.classList.remove('is-fading-in');
+//   viewerFlip.hidden=false;
+
+//   if(viewerFront.getAttribute('src')===newSrc){
+//     viewerFront.alt=newAlt||'';
+//     return;
+//   }
+
+//   viewerBack.src=newSrc;
+//   viewerBack.alt=newAlt||'';
+//   viewerFlip.classList.add('is-flipping');
+
+//   function onFlipEnd(e){
+//     if(e.propertyName!=='transform')return;
+//     if(e.target!==viewerBack)return;
+//     viewerFlip.classList.remove('is-flipping');
+//     viewerFront.src=newSrc;
+//     viewerFront.alt=newAlt||'';
+//     viewerFlip.removeEventListener('transitionend',onFlipEnd);
+//   }
+
+//   viewerFlip.addEventListener('transitionend',onFlipEnd);
+// }
+
+
+function showImage(newSrc,newAlt){
+  if(viewerFlip.classList.contains('is-flipping'))return;
+
+  if(videoLoadHandler){
+    viewerVideo.removeEventListener('loadeddata',videoLoadHandler);
+    videoLoadHandler=null;
   }
 
-  setActiveMediaBtn(mediaBtns[0]);
+  viewerVideo.pause();
+  viewerVideo.classList.remove('is-fading-in');
+  viewerVideo.hidden=true;
+  viewerFlip.hidden=false;
+
+  if(viewerFront.getAttribute('src')===newSrc){
+    viewerFront.alt=newAlt||'';
+    return;
+  }
+
+  viewerBack.src=newSrc;
+  viewerBack.alt=newAlt||'';
+  viewerFlip.classList.add('is-flipping');
+
+  function onFlipEnd(e){
+    if(e.propertyName!=='transform')return;
+    if(e.target!==viewerBack)return;
+    viewerFlip.classList.remove('is-flipping');
+    viewerFront.src=newSrc;
+    viewerFront.alt=newAlt||'';
+    viewerFlip.removeEventListener('transitionend',onFlipEnd);
+  }
+
+  viewerFlip.addEventListener('transitionend',onFlipEnd);
+}
+
+//   function showVideo(videoSrc){
+//   var source=viewerVideo.querySelector('source');
+//   if(!source)return;
+//   if(viewerFlip.classList.contains('is-flipping'))return;
+
+//   viewerFlip.hidden=true;
+//   viewerVideo.hidden=false;
+
+//   if(source.getAttribute('src')===videoSrc){
+//     viewerVideo.play().catch(function(){});
+//     return;
+//   }
+
+//   viewerVideo.pause();
+//   source.setAttribute('src',videoSrc);
+//   viewerVideo.load();
+
+//   function onLoaded(){
+//     viewerVideo.classList.add('is-fading-in');
+//     viewerVideo.play().catch(function(){});
+//     requestAnimationFrame(function(){
+//       viewerVideo.classList.remove('is-fading-in');
+//     });
+//     viewerVideo.removeEventListener('loadeddata',onLoaded);
+//   }
+
+//   viewerVideo.addEventListener('loadeddata',onLoaded);
+// }
+
+function showVideo(videoSrc){
+  var source=viewerVideo.querySelector('source');
+  if(!source)return;
+  if(viewerFlip.classList.contains('is-flipping'))return;
+
+  if(videoLoadHandler){
+    viewerVideo.removeEventListener('loadeddata',videoLoadHandler);
+    videoLoadHandler=null;
+  }
+
+  viewerFlip.hidden=true;
+  viewerVideo.hidden=false;
+
+  if(source.getAttribute('src')===videoSrc){
+    viewerVideo.classList.remove('is-fading-in');
+    viewerVideo.play().catch(function(){});
+    return;
+  }
+
+  viewerVideo.pause();
+  viewerVideo.classList.add('is-fading-in');
+  source.setAttribute('src',videoSrc);
+  viewerVideo.load();
+
+  videoLoadHandler=function(){
+    viewerVideo.play().catch(function(){});
+    requestAnimationFrame(function(){
+      viewerVideo.classList.remove('is-fading-in');
+    });
+    viewerVideo.removeEventListener('loadeddata',videoLoadHandler);
+    videoLoadHandler=null;
+  };
+
+  viewerVideo.addEventListener('loadeddata',videoLoadHandler);
+}
+
+
+  // for(var i=0;i<mediaBtns.length;i++){
+  //   mediaBtns[i].addEventListener('click',function(){
+  //     var mediaType=this.getAttribute('data-media-type');
+
+  //     if(mediaType==='image'){
+  //       var thumbImg=this.querySelector('img');
+  //       if(!thumbImg)return;
+  //       showImage(this.getAttribute('data-img-src'),thumbImg.alt);
+  //     }else if(mediaType==='video'){
+  //       showVideo(this.getAttribute('data-video-src'));
+  //     }
+
+  //     setActiveMediaBtn(this);
+  //   });
+  // }
+
+for(var i=0;i<mediaBtns.length;i++){
+  mediaBtns[i].setAttribute('aria-pressed','false');
+
+  mediaBtns[i].addEventListener('click',function(){
+    var mediaType=this.getAttribute('data-media-type');
+
+    if(mediaType==='image'){
+      var thumbImg=this.querySelector('img');
+      if(!thumbImg)return;
+      showImage(this.getAttribute('data-img-src'),thumbImg.alt);
+    }else if(mediaType==='video'){
+      showVideo(this.getAttribute('data-video-src'));
+    }
+
+    setActiveMediaBtn(this);
+  });
+}
+
+
+  // setActiveMediaBtn(mediaBtns[0]);
+
+var initialVideoSrc=viewerVideo.querySelector('source')?viewerVideo.querySelector('source').getAttribute('src'):'';
+
+for(var j=0;j<mediaBtns.length;j++){
+  if(mediaBtns[j].getAttribute('data-media-type')==='video'&&mediaBtns[j].getAttribute('data-video-src')===initialVideoSrc){
+    setActiveMediaBtn(mediaBtns[j]);
+    break;
+  }
+}
+
 })();
 
+window.addEventListener('resize',updateButtonTop,{passive:true});
 });
 
   
