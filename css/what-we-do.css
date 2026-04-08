@@ -17,31 +17,21 @@ body{background:#223242; color: #f1f1f1;}
 .hero__media--video{aspect-ratio: 9/16; flex:0 0 clamp(17.25rem,12vw,20rem); overflow:hidden;  height: max-content;max-height: 100%;}
 
 .workshops{padding:0 var(--padding-horizontal);}
-.workshops__title{margin:0 auto .8rem;font-size:1.125rem;font-size:clamp(18px,1.86vw,26px);font-weight:700;color:/*#223242;*/var(--color16);text-align:center;padding:0 .5rem;}
+.workshops__title{margin:0 auto .8rem;font-size:1.125rem;font-size:clamp(18px,1.86vw,26px);font-weight:700;color: var(--color16);text-align:center;padding:0 .5rem;}
 .workshops__panel{width:90%;max-width:60rem;padding:4vw 0;margin:auto;background:var(--color7);position:relative;}
 .workshops__inner{padding-top:1.2rem;text-align:center;width:max-content;max-width:100%;margin:auto;}
 .workshops__box{display:flex;flex-direction:column;gap:1rem;width:100%;}
 .workshops__info{padding:0 1.2rem;text-align:left;}
-.workshops__list{display:grid;/*gap:1rem;*/}
+.workshops__list{display:grid; }
 .workshops__item{ border-bottom:.0625rem solid rgba(62,44,38,.18);}
 .workshops__item:first-of-type{ border-top:.0625rem solid rgba(62,44,38,.18);}
-.workshops__link{display:grid;gap:.18rem;padding: 1rem;color:inherit;text-decoration:none;transition:background-color .5s ease;color:#223242;}
+.workshops__link{display:grid;gap:.18rem;padding: 1rem; transition:background-color .5s ease;color:#223242;}
 .workshops__level{font-size:.92rem;font-weight:700;letter-spacing:.04rem;color:var(--color12);}
 .workshops__level em{text-transform:uppercase;font-style:normal;}
 .workshops__name{font-size:1.18rem;font-size:clamp(18px,1.5vw,24px);line-height:1.2;color:var(--color15);font-weight:700;}
 
-/*opcion con fondo amarillo y texto oscuro*/
-.amarillo .workshops__link{color:#223242;}
-.amarillo .workshops__level{ color:var(--color12);}
-.amarillo .workshops__name{ color:var(--color15); }
-/*opcion con fondo rosa y texto blanco*/
-.rosa .workshops__link{background:var(--color15);color:#fff;}
-.rosa .workshops__level{ color:var(--color-brand);}
-.rosa .workshops__name{ color:#fff; }
-
-
 .workshops__text{font-size:1rem;line-height:1.45;}
-.workshops__link:hover,.workshops__link:focus,.workshops__link:focus-visible{background-color:var(--color16)/*#ecb4ac*/;color: #fff;}
+.workshops__link:hover,.workshops__link:focus,.workshops__link:focus-visible{background-color:var(--color16) ;color: #fff;}
 .workshops__link:hover .workshops__name,.workshops__link:focus .workshops__name,.workshops__link:focus-visible .workshops__name{color: #fff;}
 .workshops__link:hover .workshops__level,.workshops__link:focus .workshops__level,.workshops__link:focus-visible .workshops__level{color: var(--color-brand);}
 .workshops__note{margin:1.5rem 0 0;font-size:.98rem;line-height:1.2;color:#223242;}
@@ -57,7 +47,7 @@ body{background:#223242; color: #f1f1f1;}
 .workshops__viewer-img,.workshops__viewer-video{display:block;width:100%;height:100%;object-fit:cover;}
 
 /*FLIP*/
-.workshops__viewer-video{opacity:1;transition:opacity .28s ease;}
+.workshops__viewer-video{opacity:1;transition:opacity .22s ease;}
 .workshops__viewer-video.is-fading-out{opacity:0;}
 
 .workshops__viewer{perspective:75rem;}
@@ -105,7 +95,7 @@ body{background:#223242; color: #f1f1f1;}
 
 .workshops__inner{padding:2rem 0 0 0;display:flex;align-items:center;justify-content:center;width:100%;}
 .workshops__box{flex-direction:row;align-items:stretch;gap:1rem;width:max-content;margin:0;}
-.workshops__info{flex:0 0 20rem;padding:0;text-align:left;}
+.workshops__info{flex:0 0 20rem;padding:0; }
 .workshops__main-image{width:21rem;max-width:none;height:32rem;margin:0;}
 .workshops__viewer{width:21rem;max-width:none;height:32rem;margin:0;}
 .workshops__media-col{width:3.75rem;max-width:none;margin:0;height:32rem;}
@@ -116,13 +106,9 @@ body{background:#223242; color: #f1f1f1;}
 .workshops__videos .workshops__gallery-btn::before{border-top:.32rem solid transparent;border-bottom:.32rem solid transparent;border-left:.5rem solid #fff;}
 }
 
-
-
 @media (min-width:870px){
-/* .workshops{padding: 0;} */
-.workshops__panel{width:65vw;min-width:54.125rem;max-width:none;}
-/* .workshops__box{gap:3rem;} */
-.workshops__info{flex:0 0 20rem;margin-right:1.5rem;}
+ /* .workshops__panel{width:65vw;min-width:54.125rem;max-width:none;} */
+ .workshops__info{ margin-right:1.5rem;}
 }
 
 @media (hover:hover){
