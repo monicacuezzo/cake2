@@ -12,12 +12,10 @@
 
     <style>
       body{background-color:#223242;}.d_flex{display:flex}
-      /* .p_absolute{position: absolute!important;} */
       ul,ol{margin:0;padding:0;list-style:none}
-      /* .header.p_absolute .header__contenedor-img{display: none;} */
       .header__link{color: #fafafa;}
       .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index: 114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa; }
-#about,#cakes,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
+ #workshop{content-visibility:auto;contain-intrinsic-size:800px}
 
 
     </style>
@@ -42,8 +40,7 @@
   </head>
 <body>
 
-  <header class="header d_flex header--compact header--compact-light" >  <!-- header--compact-light / style="opacity: 0;" -->
-     
+  <header class="header d_flex header--compact header--compact-light" >  <!--  style="opacity: 0;" -->
     <div class="header__top">
       <div class="header__top-inner">
         <a class="header__logo" href="home.html#hero" aria-label="Cake Atelier Copenhagen - Home">
@@ -170,9 +167,6 @@
               <p class="workshops__media-title">Photos</p>
               <div class="workshops__gallery" aria-label="Workshop photo gallery">
                 <div class="workshops__gallery-track">
-                  <!-- <figure class="workshops__gallery-item"></figure> 
-                    eliminar data-img-alt
-                    is-active ????-->
                   <button class="workshops__gallery-btn" type="button" data-media-type="image" data-img-src="img/workshops/cakeatelier-cph-workshop2.webp" aria-label="Show photo 1"><img class="workshops__gallery-img" src="img/workshops/cakeatelier-cph-workshop2.webp" alt="Buttercream practice during workshop" width="57" height="57" loading="lazy"></button>
                   <button class="workshops__gallery-btn" type="button" data-media-type="image" data-img-src="img/workshops/cakeatelier-cph-workshop1.webp" aria-label="Show photo 2"><img class="workshops__gallery-img" src="img/workshops/cakeatelier-cph-workshop1.webp" alt="Workshop student decorating cake" width="57" height="57" loading="lazy"></button>
                   <button class="workshops__gallery-btn" type="button" data-media-type="image" data-img-src="img/workshops/cakeatelier-cph-workshop3.webp" aria-label="Show photo 3"><img class="workshops__gallery-img" src="img/workshops/cakeatelier-cph-workshop3.webp" alt="Cake Atelier creative session" width="57" height="57" loading="lazy"></button>
@@ -189,22 +183,26 @@
               <p class="workshops__media-title">Videos</p>
               <div class="workshops__gallery workshops__videos" aria-label="Workshop video gallery">
                 <div class="workshops__gallery-track workshops__videos-track">
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/workshop-video-1.mp4" aria-label="Play video 1">
-                    <img class="workshops__video-thumb" src="img/workshops/video-cover-1.webp" alt="" width="57" height="57" loading="lazy">
+
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-1.mp4" aria-label="Play video 1">
+                    <img class="workshops__video-thumb" src="img/videos/video1-thumb.webp" alt="" width="57" height="57" loading="lazy">
                   </button>
 
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/ws2_clideo.mp4" aria-label="Play video 2">
-                    <img class="workshops__video-thumb" src="img/videos/ws2.png" alt="" width="57" height="57" loading="lazy">
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-2.mp4" aria-label="Play video 2">
+                    <img class="workshops__video-thumb" src="img/videos/video2-thumb.webp" alt="" width="57" height="57" loading="lazy">
                   </button>
 
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/ws3-surtido_clideo.mp4" aria-label="Play video 3">
-                    <img class="workshops__video-thumb" src="img/videos/ws3.png" alt="" width="57" height="57" loading="lazy">
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-3.mp4" aria-label="Play video 3">
+                    <img class="workshops__video-thumb" src="img/videos/video3-thumb.webp" alt="" width="57" height="57" loading="lazy">
                   </button>
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/ws4.mp4" aria-label="Play video 4">
-                    <img class="workshops__video-thumb" src="img/videos/ws4.png" alt="" width="57" height="57" loading="lazy">
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-4.mp4" aria-label="Play video 4">
+                    <img class="workshops__video-thumb" src="img/videos/video4-thumb.webp" alt="" width="57" height="57" loading="lazy">
                   </button>
-                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/ws5.mp4" aria-label="Play video 5">
-                    <img class="workshops__video-thumb" src="img/workshops/video-cover-3.webp" alt="" width="57" height="57" loading="lazy">
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-5.mp4" aria-label="Play video 5">
+                    <img class="workshops__video-thumb" src="img/videos/video5-thumb.webp" alt="" width="57" height="57" loading="lazy">
+                  </button>
+                  <button class="workshops__gallery-btn" type="button" data-media-type="video" data-video-src="img/videos/cakeatelier-cph-video-buttercream-piping-6.mp4" aria-label="Play video 6">
+                    <img class="workshops__video-thumb" src="img/videos/video6-thumb.webp" alt="" width="57" height="57" loading="lazy">
                   </button>
                 </div>
               </div>
@@ -219,8 +217,6 @@
     </section>
 
 </main>
-
-
 
   <footer id="footer" class="footer" aria-labelledby="footer-title">
     <h2 id="footer-title" class="sr-only">Cake Atelier – Footer</h2>
@@ -342,7 +338,6 @@
     <p class="footer__footer">&copy; 2026 Cake Atelier Copenhagen. All rights reserved.</p>
   </footer>
 
-
   <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center" aria-label="Back to top" title="Go top" ></a>
 
   <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
@@ -396,102 +391,103 @@
     },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
     sectionIO.observe(theSection);
   }
+
+//efecto FLIP
+(function(){
+  var viewer=document.querySelector('.workshops__viewer');
+  var viewerFlip=document.querySelector('.workshops__viewer-flip');
+  var viewerFront=document.querySelector('.workshops__viewer-img--front');
+  var viewerBack=document.querySelector('.workshops__viewer-img--back');
+  var viewerVideo=document.querySelector('.workshops__viewer-video');
+  var mediaBtns=document.querySelectorAll('.workshops__gallery-btn');
+
+  if(!viewer||!viewerFlip||!viewerFront||!viewerBack||!viewerVideo||!mediaBtns.length)return;
+
+  function setActiveMediaBtn(activeBtn){
+    for(var i=0;i<mediaBtns.length;i++){
+      mediaBtns[i].classList.remove('is-active');
+    }
+    activeBtn.classList.add('is-active');
+  }
+
+  function showImage(newSrc,newAlt){
+    if(viewerVideo){
+      viewerVideo.pause();
+      viewerVideo.classList.remove('is-fading-out');
+      viewerVideo.hidden=true;
+    }
+
+    viewerFlip.hidden=false;
+
+    if(viewerFront.getAttribute('src')===newSrc){
+      viewerFront.alt=newAlt||'';
+      return;
+    }
+
+    if(viewerFlip.classList.contains('is-flipping'))return;
+
+    viewerBack.src=newSrc;
+    viewerBack.alt=newAlt||'';
+    viewerFlip.classList.add('is-flipping');
+
+    function onFlipEnd(e){
+      if(e.propertyName!=='transform')return;
+      if(e.target!==viewerBack)return;
+      viewerFlip.classList.remove('is-flipping');
+      viewerFront.src=newSrc;
+      viewerFront.alt=newAlt||'';
+      viewerFlip.removeEventListener('transitionend',onFlipEnd);
+    }
+
+    viewerFlip.addEventListener('transitionend',onFlipEnd);
+  }
+
+  function showVideo(videoSrc){
+    if(!viewerVideo.querySelector('source'))return;
+
+    viewerFlip.hidden=true;
+    viewerVideo.hidden=false;
+    viewerVideo.classList.add('is-fading-out');
+
+    var source=viewerVideo.querySelector('source');
+
+    function startVideo(){
+      if(source.getAttribute('src')!==videoSrc){
+        source.setAttribute('src',videoSrc);
+        viewerVideo.load();
+      }
+
+      viewerVideo.classList.remove('is-fading-out');
+      viewerVideo.play().catch(function(){});
+    }
+
+    requestAnimationFrame(function(){
+      requestAnimationFrame(startVideo);
+    });
+  }
+
+  for(var i=0;i<mediaBtns.length;i++){
+    mediaBtns[i].addEventListener('click',function(){
+      var mediaType=this.getAttribute('data-media-type');
+
+      if(mediaType==='image'){
+        var thumbImg=this.querySelector('img');
+        if(!thumbImg)return;
+        showImage(this.getAttribute('data-img-src'),thumbImg.alt);
+      }else if(mediaType==='video'){
+        showVideo(this.getAttribute('data-video-src'));
+      }
+
+      setActiveMediaBtn(this);
+    });
+  }
+
+  setActiveMediaBtn(mediaBtns[0]);
+})();
+
 });
 
-  // document.addEventListener('DOMContentLoaded',function(){
-
-  //   var headerEl=document.querySelector('.header');
-  //   var heroEl=document.getElementById('hero');
-  //   var theSection=document.getElementById('workshop');
-  //   var buttonTop=document.getElementById('buttonTop');
-  //   var heroVisible=false;
-  //   var theSectionVisible=false;
-
-  //   function updateUI(){
-  //     if(headerEl){
-  //       headerEl.classList.remove('header--compact-light','header--compact-dark');
-  //       headerEl.classList.add(theSectionVisible?'header--compact-dark':'header--compact-light');
-  //     }
-  //     if(buttonTop){
-  //       buttonTop.classList.toggle('floating--hidden',heroVisible);
-  //     }
-  //   }
-
-  //   if(buttonTop){
-  //     buttonTop.classList.add('floating--hidden');
-  //   }
-
-  //   if(heroEl||theSection){
-  //     var io=new IntersectionObserver(function(entries){
-  //       for(var i=0;i<entries.length;i++){
-  //         var entry=entries[i];
-  //         if(entry.target===heroEl){
-  //           heroVisible=entry.isIntersecting;
-  //         }else if(entry.target===theSection){
-  //           theSectionVisible=entry.isIntersecting;
-  //         }
-  //       }
-  //       updateUI();
-  //     },{threshold:0,rootMargin:'0px 0px -15% 0px'});
-
-  //     if(heroEl)io.observe(heroEl);
-  //     if(theSection)io.observe(theSection);
-  //   }
-
-   
-
-  //   // if(!heroEl||!buttonTop)return;
-  //   // buttonTop.classList.add('floating--hidden');
-
-  //   // if(heroEl){
-  //   //   var heroIO=new IntersectionObserver(function(entries){
-  //   //     var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
-  //   //     buttonTop.classList.toggle('floating--hidden',heroVisible);
-  //   //   },{threshold:0,rootMargin:'0px 0px -15% 0px'});
-  //   //   heroIO.observe(heroEl);
-  //   // }
-
-
-
-
-
-
-
-  //   // var headerEl=document.querySelector('.header');
-  //   // var heroEl=document.getElementById('hero');
-  //   // var theSection=document.getElementById('workshop');
-  //   // var buttonTop=document.getElementById('buttonTop');
-
-
-  //   // function applyHeaderBySection(isTheSectionVisible){
-  //   //   if(!headerEl)return;
-  //   //   headerEl.classList.remove('header--compact-light','header--compact-dark');
-  //   //   if(isTheSectionVisible){
-  //   //     headerEl.classList.add('header--compact-dark');
-  //   //   }else{
-  //   //     headerEl.classList.add('header--compact-light');
-  //   //   }
-  //   //   if(buttonTop){//oculto si theSection no está visible
-  //   //     buttonTop.classList.toggle('floating--hidden',!isFlavoursVisible);
-  //   //   }
-  //   // }
-
-  //   // if(headerEl&&theSection){
-  //   //   var sectionIO=new IntersectionObserver(function(entries){
-  //   //     var entry=entries[0];
-  //   //     applyHeaderBySection(entry.isIntersecting);
-  //   //   },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
-  //   //   sectionIO.observe(theSection);
-  //   // }
   
-
-  // //   window.addEventListener('resize',function(){
-  // //     viewportWidth=document.documentElement.clientWidth;
-  // // //    syncLenisMode();
-  // //     //updateSubmenuMode(); //activa/desactiva listener click submenús
-  // //   },{passive:true});
-
-  // });
 </script>
 
 </body>
