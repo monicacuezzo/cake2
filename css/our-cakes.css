@@ -73,7 +73,7 @@
 .roll__gallery-track{display:flex;gap:1.2rem;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;scroll-snap-type:x proximity;padding-bottom:.2rem}
 .roll__gallery-track::-webkit-scrollbar{display:none}
 .roll__gallery-item{flex:0 0 68vw;max-width:230px;scroll-snap-align:start;margin:0;border-radius:.3125rem;overflow:hidden;position: relative;}
-.roll__gallery-item::after {    content: "";    position: absolute;    inset: 0;    background: rgba(34, 50, 66, .22);    pointer-events: none;}
+.roll__gallery-item::after {content:"";position:absolute;inset:0;background:rgba(34,50,66,.22);pointer-events:none;}
 .roll__gallery-img{display:block;width:100%;height:auto;aspect-ratio:260/462;object-fit:cover;transform: scale(1.06);transition: transform .9s ease;}
 .roll__gallery-item:hover .roll__gallery-img{transform: scale(1);}
 
