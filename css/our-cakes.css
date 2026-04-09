@@ -20,7 +20,7 @@
 
 .border{border:2px solid  var(--color-brand); border-radius: .5rem;}
 .main{position:relative;width:100%;overflow:hidden;  }
-.main::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background:url("../img/bg/art-line.svg") no-repeat right 0;background-size:70vh;opacity:.4;pointer-events:none;z-index:0; }
+.main::before{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background:url("../img/bg/art-line.svg") no-repeat right 0;background-size:70vh;opacity:.2;pointer-events:none;z-index:0; }
 .section{padding: var(--padding-top) var(--padding-horizontal); width: 100%; }
 
 
