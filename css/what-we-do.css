@@ -58,7 +58,7 @@ body{background:#223242; color: #f1f1f1;}
 .workshops__viewer-flip.is-flipping .workshops__viewer-img--front{transform:rotateY(180deg);transition:transform .95s cubic-bezier(.45,.05,.55,.95);}
 .workshops__viewer-flip.is-flipping .workshops__viewer-img--back{transform:rotateY(0deg);transition:transform .95s cubic-bezier(.45,.05,.55,.95);}
 .workshops__viewer-video{opacity:1;transition:opacity .28s ease;}
-.workshops__viewer-video.is-fading-out{opacity:0;}
+.workshops__viewer-video.is-fading-in{opacity:0;}
 /**********/
 
 
