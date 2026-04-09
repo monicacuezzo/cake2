@@ -390,10 +390,8 @@
   function setActiveMediaBtn(activeBtn){
   for(var i=0;i<mediaBtns.length;i++){
     mediaBtns[i].classList.remove('is-active');
-    mediaBtns[i].setAttribute('aria-pressed','false');
   }
   activeBtn.classList.add('is-active');
-  activeBtn.setAttribute('aria-pressed','true');
 }
 
   // function showImage(newSrc,newAlt){
@@ -493,6 +491,15 @@ function showImage(newSrc,newAlt){
   viewerVideo.pause();
   viewerVideo.classList.remove('is-fading-in');
   viewerVideo.hidden=true;
+  
+  if(viewerFlip.hidden){
+    viewerFlip.hidden=false;
+    viewerFront.src=newSrc;
+    viewerFront.alt=newAlt||'';
+    viewerBack.src=newSrc;
+    viewerBack.alt=newAlt||'';
+    return;
+  }
   viewerFlip.hidden=false;
 
   if(viewerFront.getAttribute('src')===newSrc){
@@ -599,8 +606,6 @@ function showVideo(videoSrc){
   // }
 
 for(var i=0;i<mediaBtns.length;i++){
-  mediaBtns[i].setAttribute('aria-pressed','false');
-
   mediaBtns[i].addEventListener('click',function(){
     var mediaType=this.getAttribute('data-media-type');
 
