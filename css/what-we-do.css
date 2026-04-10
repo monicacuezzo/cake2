@@ -23,10 +23,10 @@ body{background:#223242;color:#f1f1f1}
 .workshops__link{display:grid;gap:.18rem;padding:1rem;transition:background-color .5s ease;color:#223242}
 .workshops__level{font-size:.8125rem;font-weight:700;letter-spacing:.04rem;color:var(--color12)}
 .workshops__level em{text-transform:uppercase;font-style:normal}
-.workshops__name{font-size:1.18rem;font-size:clamp(17px,1.5vw,24px);line-height:1.2;color:var(--color16);font-weight:700}
+.workshops__name{font-size:1.18rem;font-size:clamp(17px,1.5vw,24px);line-height:1.2;color:var(--color16);font-weight:800}
 .workshops__text{font-size:.75rem;line-height:1.3}
 .workshops__link:hover,.workshops__link:focus,.workshops__link:focus-visible{background-color:var(--color16);color:#fff}
-.workshops__link:hover .workshops__name,.workshops__link:focus .workshops__name,.workshops__link:focus-visible .workshops__name{color:#fff}
+.workshops__link:hover .workshops__name,.workshops__link:focus .workshops__name,.workshops__link:focus-visible .workshops__name{color:#fff;font-weight:700}
 .workshops__link:hover .workshops__level,.workshops__link:focus .workshops__level,.workshops__link:focus-visible .workshops__level{color:var(--color-brand)}
 .workshops__note{margin:1.5rem 0 0;font-size:.875rem;line-height:1.2;color:#223242}
 .workshops__cta-wrap{text-align:center}
