@@ -421,125 +421,6 @@
   </a>
 
 <script>
-//   document.addEventListener('DOMContentLoaded',function(){
-//   var headerEl=document.querySelector('.header');
-//   var heroEl=document.getElementById('hero');
-//   var footerEl=document.getElementById('footer');
-//   var buttonTop=document.getElementById('buttonTop');
-//   var heroDots=document.getElementById('heroDots');
-//   var slides=heroEl?heroEl.getElementsByClassName('hero__slide'):[];
-//   var dots=heroEl?heroEl.querySelectorAll('.hero__dot[data-hero-go]'):[];
-//   var prefersReduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-//   var heroVisible=true;
-  
-//   function setHeroActive(n){
-//     if(!heroEl)return;
-//     heroEl.classList.add('is-manual');
-//     for(var i=0;i<slides.length;i++){
-//       var isActive=slides[i].getAttribute('data-slide')===String(n);
-//       slides[i].classList.toggle('is-active',isActive);
-//       slides[i].setAttribute('aria-hidden',isActive?'false':'true');
-//     }
-//     for(var d=0;d<dots.length;d++){
-//       dots[d].setAttribute('aria-current',dots[d].getAttribute('data-hero-go')===String(n)?'true':'false');
-//     }
-//   }
-
-//   function applyHeaderState(){
-//     if(!headerEl)return;
-//     headerEl.classList.remove('header--hidden','header--compact','header--compact-light','header--compact-dark','p_absolute');
-//     if(heroVisible){
-//       headerEl.classList.add('p_absolute','header--compact');
-//     }else{
-//       headerEl.classList.add('header--compact','header--compact-dark');
-//     }
-//     if(buttonTop)buttonTop.classList.toggle('floating--hidden',heroVisible);
-//   }
-
-//   if(prefersReduced&&heroEl){
-//     setHeroActive(1);
-//   }
-
-//   //hero dots
-//   if(heroEl){
-//     heroEl.addEventListener('click',function(e){
-//       var btn=e.target.closest('.hero__dot[data-hero-go]');
-//       if(!btn||!heroEl.contains(btn))return;
-//       e.preventDefault();
-//       setHeroActive(parseInt(btn.getAttribute('data-hero-go'),10)||1);
-//     });
-
-//     var heroIO=new IntersectionObserver(function(entries){
-//       heroVisible=!!(entries[0]&&entries[0].isIntersecting);
-//       applyHeaderState();
-//     },{threshold:0,rootMargin:'0px 0px -100% 0px'});
-//     heroIO.observe(heroEl);
-//   }
-
-//   window.addEventListener('resize',function(){
-//     applyHeaderState();
-//   },{passive:true});
-
-//   applyHeaderState();
-
-// // galerías de img de tarjetas
-//   var galleries=document.getElementsByClassName('workshops__media');
-//   var autoplayMs=5000;
-//   var reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-//   function setActive(items,index){
-//     for(var i=0;i<items.length;i++){
-//       items[i].classList.toggle('is-active',i===index);
-//     }
-//   }
-//   for(var g=0;g<galleries.length;g++){
-//     (function(gallery){
-//       var images=gallery.getElementsByClassName('workshops__img');
-//       var dots=gallery.getElementsByClassName('workshops__dot');
-//       var current=0;
-//       var timer=null;
-//       var isManual=false;
-//       if(!images.length||images.length!==dots.length)return;
-//       function goTo(index){
-//         if(index<0)index=0;
-//         if(index>=images.length)index=0;
-//         current=index;
-//         setActive(images,current);
-//         setActive(dots,current);
-//       }
-//       function stopAutoplay(){
-//         isManual=true;
-//         gallery.classList.remove('autoplay');
-//         if(timer){
-//           clearInterval(timer);
-//           timer=null;
-//         }
-//       }
-//       function startAutoplay(){
-//         if(reduceMotion||isManual||images.length<2)return;
-//         gallery.classList.add('autoplay');
-//         timer=setInterval(function(){
-//           goTo(current+1);
-//         },autoplayMs);
-//       }
-//       gallery.addEventListener('click',function(e){
-//         var dot=e.target.closest('.workshops__dot');
-//         var i;
-//         if(!dot||!gallery.contains(dot))return;
-//         for(i=0;i<dots.length;i++){
-//           if(dots[i]===dot){
-//             stopAutoplay();
-//             goTo(i);
-//             break;
-//           }
-//         }
-//       });
-//       goTo(0);
-//       startAutoplay();
-//     })(galleries[g]);
-//   }
-//  //fin galerías de img de tarjetas
-// });
-
 document.addEventListener('DOMContentLoaded',function(){
   var headerEl=document.querySelector('.header');
   var heroEl=document.getElementById('hero');
@@ -587,12 +468,10 @@ document.addEventListener('DOMContentLoaded',function(){
       e.preventDefault();
       setHeroActive(parseInt(btn.getAttribute('data-hero-go'),10)||1);
     });
-
     var heroIO=new IntersectionObserver(function(entries){
       heroVisible=!!(entries[0]&&entries[0].isIntersecting);
       applyHeaderState();
     },{threshold:0,rootMargin:'0px 0px -100% 0px'});
-
     heroIO.observe(heroEl);
   }
 
@@ -620,7 +499,6 @@ document.addEventListener('DOMContentLoaded',function(){
       var current=0;
       var timer=null;
       var isManual=false;
-
       if(!images.length||images.length!==dots.length)return;
 
       function goTo(index){
@@ -666,7 +544,6 @@ document.addEventListener('DOMContentLoaded',function(){
     })(galleries[g]);
   }
 });
-
 </script>
 
 <svg class="sr-only" aria-hidden="true" focusable="false">
