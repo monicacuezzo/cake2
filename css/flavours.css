@@ -54,7 +54,7 @@
 .flavours__caption--passion .flavours__name{color:#b57823;}
 
 .flavours__cta-wrap{/*margin:1.4rem auto;*/text-align:center;}
-.btn--primary:hover,.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background: transparent;}
+.btn--primary:hover,/*.btn--primary:focus,.btn--primary:focus-visible,*/.btn--primary:active{background: transparent;text-shadow: none;}
 
 .faq-link{font-weight: 600; margin: 1rem auto 0;color: var(--color16);text-decoration:underline;display: block;padding: .5rem 1rem;width: max-content;}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7;}

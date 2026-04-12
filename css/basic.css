@@ -100,7 +100,7 @@ B494C1 lavanda claro
 .header__top{width:100%;padding:.625rem 1.25rem}
 .header__top-inner{width:100%;display:flex;align-items:center;justify-content:space-between}
 .header__contenedor-img{height:2.25rem;overflow:hidden;display:flex}
-.header__logo{display:flex;overflow:hidden}
+.header__logo{display:flex;overflow:hidden}.header__logo:focus-visible{outline:1px solid #fafafa;outline-offset:4px}
 .header__logo-img{display:block;color:#fff}
 
 /*UNIFICAR CON DSK*/
@@ -199,10 +199,9 @@ B494C1 lavanda claro
 .btn--primary:link,.btn--primary:visited{background:var(--color-accent);color:#fff}
 .btn--primary:not(:hover){text-shadow:rgb(51, 51, 51) 0px 0px 5px}
 .btn--primary:hover{background:#fafafa;color:var(--color-accent)}
-.btn:focus-visible{outline:2px solid currentColor;outline-offset:3px}  
-@media (max-width:991.98px){
-.btn{font-size:1rem}
-}
+.btn:focus-visible{outline:2px solid var(--color16);outline-offset:3px; /*color:var(--color16);background: transparent;text-shadow: none;*/}  
+.btn.focus-light:focus-visible,.floating-button--wapp:focus-visible{outline:2px solid #fff; /*outline-offset:3px;color:currentColor;background: currentColor;text-shadow: inherit;*/}
+@media (max-width:991.98px){.btn{font-size:1rem}}
 
  /*animaciones generales*/
 /*agregar el nom de todas las animac juntas ???*/

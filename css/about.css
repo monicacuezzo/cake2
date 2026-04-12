@@ -46,7 +46,7 @@ body{color: #f1f1f1;}
 .body__closing-signoff::after{content:"";position:absolute;right: 0;bottom: -100%;width: 50%;height:100%;background:url("../img/bg/pincelada-rosa-500x200.webp") no-repeat right 0;background-size:contain;opacity:.6;pointer-events:none;z-index:1;}
 .body__closing-cta{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;margin-bottom: 1rem;}
 .footer{position: relative;z-index: 3;}
-.btn--primary:hover,.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background: transparent;}
+.btn--primary:hover,/*.btn--primary:focus,/*.btn--primary:focus-visible,*/.btn--primary:active{background: transparent;}
 
 @media (min-width:450px){
 .body__closing-cta{gap:.375rem;margin-top:3.2rem}

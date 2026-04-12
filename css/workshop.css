@@ -59,7 +59,7 @@ body{background:#223242;color:#223242}
 .workshops__dot:focus-visible{outline:.125rem solid #fff;outline-offset:.1875rem}
 .workshops .btn{margin-top:0}
 .workshops .btn--primary:hover{background:transparent;color:var(--color-accent)}
-.workshops .btn--primary:focus,.workshops .btn--primary:focus-visible{outline:.125rem solid var(--color-accent);outline-offset:.125rem}
+/* .workshops .btn--primary:focus,.workshops .btn--primary:focus-visible{outline:.125rem solid var(--color-accent);outline-offset:.125rem} */
 .faq-wrap{width:100%;text-align:center}
 .faq-link{font-weight:600;margin:1rem auto;color:var(--color-brand);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}
@@ -83,7 +83,6 @@ body{background:#223242;color:#223242}
 .workshops__footer{grid-column:1/-1;grid-row:4}
 .workshops__p{max-width: 16rem;}
 }
-@media (max-width:991.98px){.btn{font-size:1rem}}
 @media (min-width:992px){
 .workshops__title{font-size:1.75rem}
 .workshops__p{font-size:1rem}
