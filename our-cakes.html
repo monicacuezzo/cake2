@@ -437,7 +437,7 @@
       var sectionIO=new IntersectionObserver(function(entries){
         var entry=entries[0];
         applyHeaderBySection(entry.isIntersecting);
-      },{threshold:0,rootMargin:'0px 0px -100% 0px'});
+      },{threshold:0,rootMargin:'-20px 0px -100% 0px'});
       sectionIO.observe(sizesSection);
     }
    
