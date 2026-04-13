@@ -12,12 +12,10 @@
 
     <style>
       body{background-color: #fff;}.d_flex{display:flex}
-      /* .p_absolute{position: absolute!important;} */
       ul,ol{margin:0;padding:0;list-style:none}
-      /* .header.p_absolute .header__contenedor-img{display: none;} */
       .header__link{color: #fafafa;}
       .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index: 114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa; }
-#about,#cakes,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
+#flavours,#footer{content-visibility:auto;contain-intrinsic-size:800px}
 
 
     </style>
@@ -43,7 +41,6 @@
 <body>
 
   <header class="header d_flex header--compact header--compact-light" >  <!-- header--compact-light / style="opacity: 0;" -->
-     
     <div class="header__top">
       <div class="header__top-inner">
         <a class="header__logo" href="home.html#hero" aria-label="Cake Atelier Copenhagen - Home">
@@ -57,7 +54,6 @@
         </button>
       </div>
     </div>
-
     <div class="header__bottom">
       <nav class="header__nav" id="header-nav" aria-label="Primary navigation">
         <ul class="header__ul">
@@ -99,75 +95,62 @@
     </section>
     
     <div id="flavours" class="section flavours">
-
-      <p class="hint">Choose a flavour <span>to reveal its filling</span></p>
+      <p class="hint" id="flavours-hint">Choose a flavour <span>to reveal its filling</span></p>
       <div class="flavours__inner">
-
-      <div class="flavours__media fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:50px;--fx-delay:.5s">
-          <img class="flavours__img" src="img/flavours/flavours-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
+        <div class="flavours__media fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:50px;--fx-delay:.5s">
+            <img class="flavours__img" src="img/flavours/flavours-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
+        </div>
+        <fieldset class="flavours__box" style="--fx-dur:1.9s;--fx-y:70px;--fx-delay:.7s" aria-describedby="flavours-hint">
+          <legend class="sr-only">Choose a flavour</legend>
+          <input class="flavours__control" type="radio" name="flavour" id="flavour-lemon" checked>
+          <label class="flavours__label" for="flavour-lemon">Lemon Diva</label>
+          <div class="flavours__caption flavours__caption--lemon">
+              <p class="flavours__name">Lemon Diva</p>
+              <p class="flavours__text">Lemon sponge, lemon curd, blueberry coulis.</p>
+          </div>
+          <input class="flavours__control" type="radio" name="flavour" id="flavour-bombon">
+          <label class="flavours__label" for="flavour-bombon">Chocolate Bombon</label>
+          <div class="flavours__caption flavours__caption--bombon">
+            <p class="flavours__name">Chocolate Bombon</p>
+            <p class="flavours__text">Dark chocolate sponge, dulce de leche, vanilla mascarpone.</p>
+          </div>
+          <input class="flavours__control" type="radio" name="flavour" id="flavour-red">
+          <label class="flavours__label" for="flavour-red">Lady in Red</label>
+          <div class="flavours__caption flavours__caption--red">
+            <p class="flavours__name">Lady in Red</p>
+            <p class="flavours__text">Red velvet sponge, raspberry coulis, mascarpone cream cheese.</p>
+          </div>
+          <input class="flavours__control" type="radio" name="flavour" id="flavour-love">
+          <label class="flavours__label" for="flavour-love">Love Story</label>
+          <div class="flavours__caption flavours__caption--love">
+            <p class="flavours__name">Love Story</p>
+            <p class="flavours__text">Pistachio sponge, raspberry coulis, mascarpone cream.</p>
+          </div>
+          <input class="flavours__control" type="radio" name="flavour" id="flavour-passion">
+          <label class="flavours__label" for="flavour-passion">Passion Dream</label>
+          <div class="flavours__caption flavours__caption--passion">
+            <p class="flavours__name">Passion Dream</p>
+            <p class="flavours__text">Coconut &amp; vanilla sponge, mango–passion fruit coulis, white chocolate ganache.</p>
+          </div>
+          <input class="flavours__control" type="radio" name="flavour" id="flavour-master">
+          <label class="flavours__label" for="flavour-master">Master of Cakes</label>
+          <div class="flavours__caption flavours__caption--master">
+            <p class="flavours__name">Master of Cakes</p>
+            <p class="flavours__text">Chocolate and vanilla sponge, whipped cream, berries, dulce de leche.</p>
+          </div>
+          <input class="flavours__control" type="radio" name="flavour" id="flavour-italian">
+          <label class="flavours__label" for="flavour-italian">Italian Affair</label>
+          <div class="flavours__caption flavours__caption--italian">
+            <p class="flavours__name">Italian Affair</p>
+            <p class="flavours__text">Coffee sponge, coffee ganache, dark chocolate cream, hazelnut crunch.</p>
+          </div>
+        </fieldset>
       </div>
-
-      <div class="flavours__box" style="--fx-dur:1.9s;--fx-y:70px;--fx-delay:.7s">
-
-            <input class="flavours__control" type="radio" name="flavour" id="flavour-lemon" checked>
-            <label class="flavours__label" for="flavour-lemon">Lemon Diva</label>
-            <div class="flavours__caption flavours__caption--lemon">
-                <p class="flavours__name">Lemon Diva</p>
-                <p class="flavours__text">Lemon sponge, lemon curd, blueberry coulis.</p>
-            </div>
- 
-            <input class="flavours__control" type="radio" name="flavour" id="flavour-bombon">
-            <label class="flavours__label" for="flavour-bombon">Chocolate Bombon</label>
-            <div class="flavours__caption flavours__caption--bombon">
-                <p class="flavours__name">Chocolate Bombon</p>
-                <p class="flavours__text">Dark chocolate sponge, dulce de leche, vanilla mascarpone.</p>
-              </div>
-              
-            <input class="flavours__control" type="radio" name="flavour" id="flavour-red">
-            <label class="flavours__label" for="flavour-red">Lady in Red</label>
-              <div class="flavours__caption flavours__caption--red">
-                <p class="flavours__name">Lady in Red</p>
-                <p class="flavours__text">Red velvet sponge, raspberry coulis, mascarpone cream cheese.</p>
-            </div>
- 
-            <input class="flavours__control" type="radio" name="flavour" id="flavour-love">
-            <label class="flavours__label" for="flavour-love">Love Story</label>
-              <div class="flavours__caption flavours__caption--love">
-                <p class="flavours__name">Love Story</p>
-                <p class="flavours__text">Pistachio sponge, raspberry coulis, mascarpone cream.</p>
-            </div>
-
-            <input class="flavours__control" type="radio" name="flavour" id="flavour-passion">
-            <label class="flavours__label" for="flavour-passion">Passion Dream</label>
-              <div class="flavours__caption flavours__caption--passion">
-                <p class="flavours__name">Passion Dream</p>
-                <p class="flavours__text">Coconut &amp; vanilla sponge, mango–passion fruit coulis, white chocolate ganache.</p>
-            </div>
-
-            <input class="flavours__control" type="radio" name="flavour" id="flavour-master">
-            <label class="flavours__label" for="flavour-master">Master of Cakes</label>
-              <div class="flavours__caption flavours__caption--master">
-                <p class="flavours__name">Master of Cakes</p>
-                <p class="flavours__text">Chocolate and vanilla sponge, whipped cream, berries, dulce de leche.</p>
-            </div>
-
-            <input class="flavours__control" type="radio" name="flavour" id="flavour-italian">
-            <label class="flavours__label" for="flavour-italian">Italian Affair</label>
-              <div class="flavours__caption flavours__caption--italian">
-                <p class="flavours__name">Italian Affair</p>
-                <p class="flavours__text">Coffee sponge, coffee ganache, dark chocolate cream, hazelnut crunch.</p>
-              </div>
-
-      </div>
-        
-
-      </div>
-
+      <div class="flavours__top-sentinel" aria-hidden="true"></div>
       <div class="flavours__cta-wrap">
         <a class="btn btn--primary" href="cake-designs.html">Now, discover our designs</a>
         <a class="faq-link" href="faq-cakes.html">FAQs Cakes</a>
       </div>
-
     </div>
   </main>
 
@@ -205,7 +188,6 @@
         </ul>
         </address>
       </section>
-
       <section class="footer__col footer__info" aria-labelledby="footer-info">
         <h3 id="footer-info" class="footer__h3">Info</h3>
         <ul>
@@ -217,14 +199,12 @@
               <a class="footer__link footer__map-link" href="https://maps.app.goo.gl/fhZnAjqaqKGyHpwa7" target="_blank" rel="noopener noreferrer" aria-label="Open location in Google Maps">2300 Amager, Copenhagen</a>
             </p>
           </li>
-
           <li class="footer__item">
             <a class="footer__link footer__contact-link flex_a_center" href="https://www.findsmiley.dk/1515938" target="_blank" rel="noopener noreferrer" aria-label="Open Smiley inspection report">
               <svg class="footer__icon" aria-hidden="true" focusable="false"><use href="img/shared/sprite-icons.svg#i-external"></use></svg>
               <span>See Smiley Report</span>
             </a>
           </li>
-
           <li class="footer__item footer__item--note footer__desktop">
             Cake Atelier Copenhagen is a home-based bakery. There is no street shop — all creations are made to order and available by pre-order only.
           </li>
@@ -249,7 +229,6 @@
           </li>
         </ul>
       </section>
-  
       <div class="footer__col footer__social">
           <h3 class="footer__h3">Follow us</h3>
           <ul class="footer__list--social d_flex">
@@ -275,7 +254,6 @@
             </li>
           </ul>
       </div>
-
       <nav class="footer__col" aria-label="Footer policies">
           <h3 class="footer__h3">Policies</h3>
           <ul class="footer__list--policies">
@@ -286,11 +264,9 @@
           </ul>
       </nav>
     </div>
-
     <hr class="footer__hr footer__hr--bottom">
     <p class="footer__footer">&copy; 2026 Cake Atelier Copenhagen. All rights reserved.</p>
   </footer>
-
 
   <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center" aria-label="Back to top" title="Go top" ></a>
 
@@ -301,14 +277,11 @@
     <script src="js/header-menu.js" defer></script>
     <script src="js/animations.js" defer></script>
 
-
-<script>
+<!-- <script>
   document.addEventListener('DOMContentLoaded',function(){
-    //var viewportWidth=document.documentElement.clientWidth||0;
     var headerEl=document.querySelector('.header');
     var flavoursSection=document.getElementById('flavours');
     var buttonTop=document.getElementById('buttonTop');
-
 
     function applyHeaderBySection(isFlavoursVisible){
       if(!headerEl)return;
@@ -318,7 +291,7 @@
       }else{
         headerEl.classList.add('header--compact-light');
       }
-      if(buttonTop){//oculto si Flavours no está visible
+      if(buttonTop){ 
         buttonTop.classList.toggle('floating--hidden',!isFlavoursVisible);
       }
     }
@@ -330,16 +303,74 @@
       },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
       sectionIO.observe(flavoursSection);
     }
-  
+  });
+</script> -->
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var headerEl=document.querySelector('.header');
+    var flavoursSection=document.getElementById('flavours');
+    var heroEl=document.getElementById('hero');
+    var buttonTop=document.getElementById('buttonTop');
+    var flavoursTopSentinel=document.querySelector('.flavours__top-sentinel');
+
+    var heroVisible=false;
+    var flavoursTopVisible=false;
+    var isMobileFlavoursRule=window.innerWidth<580;
+
+    function applyHeaderBySection(isFlavoursVisible){
+      if(!headerEl)return;
+      headerEl.classList.remove('header--compact-light','header--compact-dark');
+      if(isFlavoursVisible){
+        headerEl.classList.add('header--compact-dark');
+      }else{
+        headerEl.classList.add('header--compact-light');
+      }
+    }
+
+    function updateButtonTop(){
+      if(!buttonTop)return;
+      var hideButton=heroVisible||(isMobileFlavoursRule&&flavoursTopVisible);
+      buttonTop.classList.toggle('floating--hidden',hideButton);
+    }
+
+    if(headerEl&&flavoursSection){
+      var sectionIO=new IntersectionObserver(function(entries){
+        var entry=entries[0];
+        applyHeaderBySection(entry.isIntersecting);
+      },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
+      sectionIO.observe(flavoursSection);
+    }
+
+    if(heroEl&&buttonTop){
+      var heroIO=new IntersectionObserver(function(entries){
+        heroVisible=entries[0].isIntersecting;
+        updateButtonTop();
+      },{threshold:0});
+      heroIO.observe(heroEl);
+    }
+
+    if(flavoursTopSentinel&&buttonTop){
+      var flavoursTopIO=new IntersectionObserver(function(entries){
+        flavoursTopVisible=entries[0].isIntersecting;
+        updateButtonTop();
+      },{threshold:0});
+      flavoursTopIO.observe(flavoursTopSentinel);
+    }
+
+    updateButtonTop();
 
     window.addEventListener('resize',function(){
-      viewportWidth=document.documentElement.clientWidth;
-  //    syncLenisMode();
-      //updateSubmenuMode(); //activa/desactiva listener click submenús
-    },{passive:true});
+      var wasMobileFlavoursRule=isMobileFlavoursRule;
+      isMobileFlavoursRule=window.innerWidth<580;
 
+      if(wasMobileFlavoursRule!==isMobileFlavoursRule){
+        updateButtonTop();
+      }
+    },{passive:true});
   });
 </script>
+
 
 </body>
 </html>
