@@ -45,8 +45,8 @@
       <div class="header__top-inner">
         <a class="header__logo" href="home.html#hero" aria-label="Cake Atelier Copenhagen - Home">
           <div class="header__contenedor-img">
-            <svg class="header__logo-img" aria-hidden="true"><use href="img/shared/sprite-icons.svg#isotipo-cake-atelier" xlink:href="img/shared/sprite-icons.svg#isotipo-cake-atelier"></use></svg>
-            <svg class="header__logo-img" aria-hidden="true"><use href="img/shared/sprite-icons.svg#logotipo-cake-atelier" xlink:href="img/shared/sprite-icons.svg#logotipo-cake-atelier"></use></svg>
+            <svg class="header__logo-img" aria-hidden="true"><use href="img/shared/sprite-icons.svg#isotipo-cake-atelier"></use></svg>
+            <svg class="header__logo-img" aria-hidden="true"><use href="img/shared/sprite-icons.svg#logotipo-cake-atelier"></use></svg>
           </div>
         </a>
         <button class="header__toggle" type="button" aria-expanded="false" aria-controls="header-nav" aria-label="Open navigation menu">
@@ -98,7 +98,7 @@
     <div class="body__media">
         <picture class="body__picture fx-fade-up-var" style="--fx-dur:1.9s;--fx-y:50px;--fx-delay:.5s">
           <!-- <source srcset="img/about/01.webp" type="image/webp"> -->
-          <img fetchpriority=high loading="eager" class="body__img" src="img/about/about-intro.webp" alt="Portrait or atmosphere representing the origin of Cake Atelier Copenhagen" width="300" height="448">
+          <img fetchpriority="high" loading="eager" class="body__img" src="img/about/about-intro.webp" alt="Portrait or atmosphere representing the origin of Cake Atelier Copenhagen" width="300" height="448">
         </picture>
     </div>
 
@@ -371,7 +371,7 @@
   <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center" aria-label="Back to top" title="Go top" ></a>
 
   <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp">
-      <img src="img/shared/icon-wapp.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50" fetchpriority=high loading="eager">
+      <img src="img/shared/icon-wapp.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50" fetchpriority="high" loading="eager">
     </a>
 
     <script src="js/header-menu.js" defer></script>
@@ -384,7 +384,7 @@
     var heroEl=document.getElementById('hero');
     var closingSection=document.getElementById('closingSection');
     var buttonTop=document.getElementById('buttonTop');
-
+    if(buttonTop)buttonTop.classList.add('floating--hidden');
     if(heroEl){
       var heroIO=new IntersectionObserver(function(entries){
         var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
@@ -414,13 +414,6 @@
       closingSectionIO.observe(closingSection);
       applyHeaderBySection(false);
     }
-
-    window.addEventListener('resize',function(){
-      viewportWidth=document.documentElement.clientWidth;
-  //    syncLenisMode();
-      //updateSubmenuMode(); //activa/desactiva listener click submenús
-    },{passive:true});
-
   });
 </script>
 </body>
