@@ -286,7 +286,6 @@
     var flavoursTopSentinel=document.querySelector('.flavours__top-sentinel');
     var heroVisible=false;
     var flavoursTopVisible=false;
-    // var isMobileFlavoursRule=window.innerWidth<580;
     var isMobileFlavoursRule=window.matchMedia('(max-width: 579.98px)').matches;
 
     function applyHeaderBySection(isFlavoursVisible){
@@ -333,9 +332,7 @@
 
     window.addEventListener('resize',function(){
       var wasMobileFlavoursRule=isMobileFlavoursRule;
-      // isMobileFlavoursRule=window.innerWidth<580;
       isMobileFlavoursRule=window.matchMedia('(max-width: 579.98px)').matches;
-
       if(wasMobileFlavoursRule!==isMobileFlavoursRule){
         updateButtonTop();
       }
