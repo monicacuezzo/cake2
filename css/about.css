@@ -3,11 +3,6 @@
     --padding-top: 3rem  ;
    --accent: var(--color-brand);
  }
- /* @media (min-width:992px){
-  :root{
-    --padding-top:9.375rem;
- } */
- /* } */
 body{color: #f1f1f1;}
 .header.header--compact{box-shadow: none;}
 .blue-bkg{background: rgba(34, 50, 66,.5)}
@@ -15,6 +10,7 @@ body{color: #f1f1f1;}
 .main{position:relative;width:100%;overflow:hidden;  }
 .main::after{content:"";position:fixed;inset:0;width: 100vw;height: 100vh;  background-image:url("../img/bg/art-line.svg");background-repeat:no-repeat;background-position:right 0;background-size:70vh;opacity:.2;pointer-events:none;z-index:0}
 
+#hero{scroll-margin-top:0}
 .intro,.body{position:relative;z-index:1;}
 .intro{margin-top:3rem ; }
 .intro__inner{max-width:100%;margin:0 auto 0 0;}
