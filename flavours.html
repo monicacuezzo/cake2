@@ -277,35 +277,6 @@
     <script src="js/header-menu.js" defer></script>
     <script src="js/animations.js" defer></script>
 
-<!-- <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    var headerEl=document.querySelector('.header');
-    var flavoursSection=document.getElementById('flavours');
-    var buttonTop=document.getElementById('buttonTop');
-
-    function applyHeaderBySection(isFlavoursVisible){
-      if(!headerEl)return;
-      headerEl.classList.remove('header--compact-light','header--compact-dark');
-      if(isFlavoursVisible){
-        headerEl.classList.add('header--compact-dark');
-      }else{
-        headerEl.classList.add('header--compact-light');
-      }
-      if(buttonTop){ 
-        buttonTop.classList.toggle('floating--hidden',!isFlavoursVisible);
-      }
-    }
-
-    if(headerEl&&flavoursSection){
-      var sectionIO=new IntersectionObserver(function(entries){
-        var entry=entries[0];
-        applyHeaderBySection(entry.isIntersecting);
-      },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
-      sectionIO.observe(flavoursSection);
-    }
-  });
-</script> -->
-
 <script>
   document.addEventListener('DOMContentLoaded',function(){
     var headerEl=document.querySelector('.header');
@@ -345,7 +316,7 @@
       var heroIO=new IntersectionObserver(function(entries){
         heroVisible=entries[0].isIntersecting;
         updateButtonTop();
-      },{threshold:0,rootMargin:'0px 0px 25% 0px'});
+      },{threshold:0});
       heroIO.observe(heroEl);
     }
 
@@ -353,7 +324,7 @@
       var flavoursTopIO=new IntersectionObserver(function(entries){
         flavoursTopVisible=entries[0].isIntersecting;
         updateButtonTop();
-      },{threshold:0});
+      },{threshold:0,rootMargin:'0px 0px 40% 0px'});
       flavoursTopIO.observe(flavoursTopSentinel);
     }
 
