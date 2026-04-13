@@ -180,6 +180,7 @@
 
           </div>
         </div>
+        <div class="workshops__cta-sentinel" aria-hidden="true"></div>
           <div class="workshops__cta-wrap">
             <a class="btn btn--primary workshops__cta" href="workshops.html">Explore Workshops</a>
             <a class="faq-link" href="faq-workshops.html">FAQs Workshops</a>
@@ -327,13 +328,27 @@
   var buttonTop=document.getElementById('buttonTop');
   var heroVisible=false;
   var theSectionVisible=false;
+  var ctaSentinel=document.querySelector('.workshops__cta-sentinel');
+  var ctaReached=false;
+  var isSmallScreen=window.matchMedia('(max-width: 991.98px)').matches;
 
+  // function updateButtonTop(){
+  //   if(!buttonTop)return;
+  //   buttonTop.classList.toggle('floating--hidden',heroVisible||(isSmallScreen&&theSectionVisible));
+  // }
   function updateButtonTop(){
-    if(!buttonTop)return;
-    var isSmallScreen=window.innerWidth<992;
-    buttonTop.classList.toggle('floating--hidden',heroVisible||(isSmallScreen&&theSectionVisible));
-  }
+  if(!buttonTop)return;
+  var hideButton=heroVisible||(isSmallScreen&&theSectionVisible&&!ctaReached);
+  buttonTop.classList.toggle('floating--hidden',hideButton);
+}
 
+if(ctaSentinel&&buttonTop){
+  var ctaIO=new IntersectionObserver(function(entries){
+    ctaReached=!!(entries[0]&&entries[0].isIntersecting);
+    updateButtonTop();
+  },{threshold:0,rootMargin:'0px 0px -140px 0px'});
+  ctaIO.observe(ctaSentinel);
+}
   function applyHeaderBySection(){
     if(!headerEl)return;
     headerEl.classList.remove('header--compact-light','header--compact-dark');
@@ -361,7 +376,7 @@
       theSectionVisible=!!(entries[0]&&entries[0].isIntersecting);
       applyHeaderBySection();
       updateButtonTop();
-    },{threshold:0,rootMargin:'-50px 0px -100% 0px'}); //'-50px 0px -100% 0px'
+    },{threshold:0,rootMargin:'-50px 0px -100% 0px'});  
     sectionIO.observe(theSection);
   }
 
@@ -474,7 +489,11 @@
     }
   })();
 
-  window.addEventListener('resize',updateButtonTop,{passive:true});
+  // window.addEventListener('resize',updateButtonTop,{passive:true});
+  window.addEventListener('resize',function(){
+  isSmallScreen=window.matchMedia('(max-width: 991.98px)').matches;
+  updateButtonTop();
+},{passive:true});
 });
 </script>
 
