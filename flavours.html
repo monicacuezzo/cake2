@@ -286,7 +286,8 @@
     var flavoursTopSentinel=document.querySelector('.flavours__top-sentinel');
     var heroVisible=false;
     var flavoursTopVisible=false;
-    var isMobileFlavoursRule=window.innerWidth<580;
+    // var isMobileFlavoursRule=window.innerWidth<580;
+    var isMobileFlavoursRule=window.matchMedia('(max-width: 579.98px)').matches;
 
     function applyHeaderBySection(isFlavoursVisible){
       if(!headerEl)return;
@@ -324,7 +325,7 @@
       var flavoursTopIO=new IntersectionObserver(function(entries){
         flavoursTopVisible=entries[0].isIntersecting;
         updateButtonTop();
-      },{threshold:0,rootMargin:'0px 0px 40% 0px'});
+      },{threshold:0,rootMargin:'-140px 0px 0px 0px'});
       flavoursTopIO.observe(flavoursTopSentinel);
     }
 
@@ -332,7 +333,8 @@
 
     window.addEventListener('resize',function(){
       var wasMobileFlavoursRule=isMobileFlavoursRule;
-      isMobileFlavoursRule=window.innerWidth<580;
+      // isMobileFlavoursRule=window.innerWidth<580;
+      isMobileFlavoursRule=window.matchMedia('(max-width: 579.98px)').matches;
 
       if(wasMobileFlavoursRule!==isMobileFlavoursRule){
         updateButtonTop();
