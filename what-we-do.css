@@ -53,7 +53,8 @@ body{background:#223242;color:#f1f1f1}
 .workshops__videos .workshops__gallery-btn::after{content:"";position:absolute;inset:0;margin:auto;width:1.55rem;height:1.55rem;border-radius:50%;background:rgba(34,50,66,.52);backdrop-filter:blur(.08rem);-webkit-backdrop-filter:blur(.08rem);box-shadow:0 .08rem .35rem rgba(0,0,0,.16);pointer-events:none}
 .workshops__videos .workshops__gallery-btn::before{content:"";position:absolute;inset:0;margin:auto;width:0;height:0;border-top:.34rem solid transparent;border-bottom:.34rem solid transparent;border-left:.54rem solid #fff;transform:translateX(.09rem);z-index:1;pointer-events:none}
 .workshops__viewer::after,.workshops__photos .workshops__gallery-btn::after{content:"";position:absolute;inset:0;background:rgba(34,50,66,.22);pointer-events:none}
-.btn--primary:hover,/*.btn--primary:focus,.btn--primary:focus-visible,*/.btn--primary:active{background:transparent;text-shadow:none}
+.workshops__cta-sentinel{display:block;height:1px;pointer-events:none;}
+.btn--primary:hover,.btn--primary:active{background:transparent;text-shadow:none}
 .faq-link{font-weight:600;margin:1rem auto 0;color:var(--color16);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}
 .faq-link:focus-visible{outline:.125rem solid var(--color16);outline-offset:.125rem}
