@@ -496,7 +496,7 @@ function applyHeaderState(){
   var footerIO=new IntersectionObserver(function(entries){
     footerVisible=!!(entries[0]&&entries[0].isIntersecting);
     applyHeaderState();
-  },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
+  },{threshold:0,rootMargin:'-100px 0px -100% 0px'});
   footerIO.observe(footerEl);
 }
 
