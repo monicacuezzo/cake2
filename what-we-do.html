@@ -332,23 +332,19 @@
   var ctaReached=false;
   var isSmallScreen=window.matchMedia('(max-width: 991.98px)').matches;
 
-  // function updateButtonTop(){
-  //   if(!buttonTop)return;
-  //   buttonTop.classList.toggle('floating--hidden',heroVisible||(isSmallScreen&&theSectionVisible));
-  // }
   function updateButtonTop(){
-  if(!buttonTop)return;
-  var hideButton=heroVisible||(isSmallScreen&&theSectionVisible&&!ctaReached);
-  buttonTop.classList.toggle('floating--hidden',hideButton);
-}
+    if(!buttonTop)return;
+    var hideButton=heroVisible||(isSmallScreen&&theSectionVisible&&!ctaReached);
+    buttonTop.classList.toggle('floating--hidden',hideButton);
+  }
 
-if(ctaSentinel&&buttonTop){
-  var ctaIO=new IntersectionObserver(function(entries){
-    ctaReached=!!(entries[0]&&entries[0].isIntersecting);
-    updateButtonTop();
-  },{threshold:0,rootMargin:'0px 0px -140px 0px'});
-  ctaIO.observe(ctaSentinel);
-}
+  if(ctaSentinel&&buttonTop){
+    var ctaIO=new IntersectionObserver(function(entries){
+      ctaReached=!!(entries[0]&&entries[0].isIntersecting);
+      updateButtonTop();
+    },{threshold:0,rootMargin:'0px 0px -140px 0px'});
+    ctaIO.observe(ctaSentinel);
+  }
   function applyHeaderBySection(){
     if(!headerEl)return;
     headerEl.classList.remove('header--compact-light','header--compact-dark');
@@ -389,7 +385,6 @@ if(ctaSentinel&&buttonTop){
     var viewerVideo=document.querySelector('.workshops__viewer-video');
     var mediaBtns=document.querySelectorAll('.workshops__gallery-btn');
     var videoLoadHandler=null;
-
     if(!viewer||!viewerFlip||!viewerFront||!viewerBack||!viewerVideo||!mediaBtns.length)return;
 
     function setActiveMediaBtn(activeBtn){
@@ -480,7 +475,6 @@ if(ctaSentinel&&buttonTop){
     }
 
     var initialVideoSrc=viewerVideo.querySelector('source')?viewerVideo.querySelector('source').getAttribute('src'):'';
-
     for(var j=0;j<mediaBtns.length;j++){
       if(mediaBtns[j].getAttribute('data-media-type')==='video'&&mediaBtns[j].getAttribute('data-video-src')===initialVideoSrc){
         setActiveMediaBtn(mediaBtns[j]);
@@ -489,11 +483,10 @@ if(ctaSentinel&&buttonTop){
     }
   })();
 
-  // window.addEventListener('resize',updateButtonTop,{passive:true});
   window.addEventListener('resize',function(){
-  isSmallScreen=window.matchMedia('(max-width: 991.98px)').matches;
-  updateButtonTop();
-},{passive:true});
+    isSmallScreen=window.matchMedia('(max-width: 991.98px)').matches;
+    updateButtonTop();
+  },{passive:true});
 });
 </script>
 
