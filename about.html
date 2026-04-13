@@ -391,34 +391,63 @@
     var closingSection=document.getElementById('closingSection');
     var buttonTop=document.getElementById('buttonTop');
 
+    // if(heroEl){
+    //   var heroIO=new IntersectionObserver(function(entries){
+    //     var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+    //     if(buttonTop){//oculto si Hero está visible
+    //       buttonTop.classList.toggle('floating--hidden',heroVisible);
+    //     }
+    //   },{threshold:0,rootMargin:'0px 0px -100% 0px'}); //200px 0px 200px 0px
+    //   heroIO.observe(heroEl);
+    // }
+
     if(heroEl){
-      var heroIO=new IntersectionObserver(function(entries){
-        var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
-        if(buttonTop){//oculto si Hero está visible
-          buttonTop.classList.toggle('floating--hidden',heroVisible);
-        }
-      },{threshold:0,rootMargin:'0px 0px -100% 0px'}); //200px 0px 200px 0px
-      heroIO.observe(heroEl);
+  var heroIO=new IntersectionObserver(function(entries){
+    var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+    if(buttonTop){
+      buttonTop.classList.toggle('floating--hidden',heroVisible);
     }
+  },{threshold:0}); //,rootMargin:'-55px 0px -100% 0px'}
+  heroIO.observe(heroEl);
+}
+
+    // function applyHeaderBySection(isClosingVisible){
+    //   if(!headerEl)return;
+    //   headerEl.classList.remove('header--compact-light','header--compact-dark');
+    //   if(isClosingVisible){
+    //     headerEl.classList.add('header--compact-dark');
+    //   }else{
+    //     headerEl.classList.add('header--compact-light');
+    //   }
+    // }
 
     function applyHeaderBySection(isClosingVisible){
-      if(!headerEl)return;
-      headerEl.classList.remove('header--compact-light','header--compact-dark');
-      if(isClosingVisible){
-        headerEl.classList.add('header--compact-dark');
-      }else{
-        headerEl.classList.add('header--compact-light');
-      }
-    }
+  if(!headerEl)return;
+  headerEl.classList.remove('header--compact-light','header--compact-dark');
+  if(isClosingVisible){
+    headerEl.classList.add('header--compact-dark');
+  }else{
+    headerEl.classList.add('header--compact-light');
+  }
+}
 
-    if(headerEl&&closingSection){
-      var closingSectionIO=new IntersectionObserver(function(entries){
-        var entry=entries[0];
-        applyHeaderBySection(entry.isIntersecting);
-      },{threshold:0,rootMargin:'0px 0px -100% 0px'});
-      closingSectionIO.observe(closingSection);
-    }
+    // if(headerEl&&closingSection){
+    //   var closingSectionIO=new IntersectionObserver(function(entries){
+    //     var entry=entries[0];
+    //     applyHeaderBySection(entry.isIntersecting);
+    //   },{threshold:0,rootMargin:'0px 0px -100% 0px'});
+    //   closingSectionIO.observe(closingSection);
+    // }
   
+if(headerEl&&closingSection){
+  var closingSectionIO=new IntersectionObserver(function(entries){
+    var entry=entries[0];
+    var isClosingVisible=!!(entry&&entry.isIntersecting);
+    applyHeaderBySection(isClosingVisible);
+  },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
+  closingSectionIO.observe(closingSection);
+  applyHeaderBySection(false);
+}
 
     window.addEventListener('resize',function(){
       viewportWidth=document.documentElement.clientWidth;
