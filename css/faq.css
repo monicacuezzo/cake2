@@ -39,6 +39,7 @@ body{background:#223242;color:#f1f1f1}
 .faq__download-link:hover{background:rgba(235,240,148,.16);border-color:var(--color-brand);box-shadow:inset 0 0 0 .0625rem rgba(235,240,148,.2)}
 .faq__download-link:focus-visible{outline:.125rem solid var(--color-brand);outline-offset:.1875rem}
 .faq__download-link::after{content:"↓";font-size:1rem;line-height:1}
+.faq__subheading{font-size:1.2rem;font-weight:700;margin:2.5rem 0 1rem;}
 .footer{position:relative;z-index:2}
 .footer::before{content:"";display:block;width:100%;height:.0625rem;background:var(--color-brand);opacity:.9;position:absolute;top:0;left:0}
 @media (min-width:992px){
