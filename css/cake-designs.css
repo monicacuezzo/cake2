@@ -50,6 +50,7 @@ use{width:100%;height:100%}
 .closing__text{font-size:1.5rem;font-size:clamp(20px,2.35vw,24px);color:var(--color16);font-weight:700}
 .closing__note{margin:1rem 0;font-size:1.2rem;font-size:clamp(14px,1.7vw,1rem);line-height:1.7;color:var(--color12);width:100%}
 .closing__cta{text-align:center}
+.faq-wrap{width:max-content;max-width:100%;display:flex;flex-wrap:wrap;margin:auto;font-size:14px}
 .closing__faq-link{margin:0 auto;color:var(--color16);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content;text-underline-offset:.2em}
 .closing__faq-link:hover,.closing__faq-link:focus,.closing__faq-link:focus-visible,.closing__faq-link:active{opacity:.7}
 

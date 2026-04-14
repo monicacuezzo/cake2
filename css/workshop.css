@@ -60,7 +60,7 @@ body{background:#223242;color:#223242}
 .workshops .btn{margin-top:0}
 .workshops .btn--primary:hover{background:transparent;color:var(--color-accent)}
 /* .workshops .btn--primary:focus,.workshops .btn--primary:focus-visible{outline:.125rem solid var(--color-accent);outline-offset:.125rem} */
-.faq-wrap{width:100%;text-align:center}
+.faq-wrap{width:max-content;max-width:100%;display:flex;flex-wrap:wrap;margin:auto;font-size:14px}
 .faq-link{font-weight:600;margin:1rem auto;color:var(--color-brand);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content;text-underline-offset:.2em}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}
 .faq-link:focus-visible{outline:.125rem solid var(--color-brand);outline-offset:.125rem}
