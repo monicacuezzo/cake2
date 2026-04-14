@@ -12,7 +12,7 @@ body{background:#223242;color:#f1f1f1}
 .hero__subtitle::before{content:'';position:absolute;left:0;bottom:0;width:50%;height:.125rem;background-color:var(--color-brand)}
 .hero__lead{max-width:58rem;margin:1rem 0 0;font-size:1rem;font-size:clamp(13px,2.33vw,1rem);line-height:1.5;color:#fff}
 .workshops{padding:0 var(--padding-horizontal)}
-.workshops__title{margin:auto;font-size:1.125rem;font-size:clamp(18px,1.86vw,26px);font-weight:700;color:var(--color16);text-align:center;padding:0 .5rem}
+.workshops__title{margin:auto;font-size:clamp(20px,2vw,32px);font-weight:700;color:var(--color16);text-align:center;padding:0 .5rem}
 .workshops__panel{max-width:60rem;padding:1.4rem 0 4vw 0;margin:auto;background:var(--color7);position:relative}
 .workshops__inner{padding:1.2rem 0 1rem;text-align:center;width:max-content;max-width:100%;margin:auto}
 .workshops__box{display:flex;flex-direction:column;gap:1rem;width:100%}
