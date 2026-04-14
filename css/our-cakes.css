@@ -67,7 +67,7 @@
 .cakes-sizes__btn-container{padding:2rem 0 0;text-align:center}
 /*.btn--primary:hover,/*.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background:transparent;text-shadow:none}
 /* .btn--primary:focus-visible{outline:.125rem solid var(--color-accent);outline-offset:.125rem;color:var(--color-accent)} */
-.faq-link{font-weight:600;margin:1rem auto 0;color:var(--color16);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content}
+.faq-link{font-weight:600;margin:1rem auto 0;color:var(--color16);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content;text-underline-offset:.2em}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}
 .faq-link:focus-visible{outline:.125rem solid var(--color16);outline-offset:.125rem}
 .footer{position:relative;z-index:3}
