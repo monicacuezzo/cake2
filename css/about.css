@@ -1,11 +1,9 @@
 :root{--padding-horizontal:4.7vw;--padding-top:3rem;--accent:var(--color-brand)}
-/* html{scroll-padding-top:0} */
 body{color:#f1f1f1}
 .header.header--compact{box-shadow:none}
 .blue-bkg{background:rgba(34,50,66,.5)}
 .main{position:relative;width:100%;overflow:hidden}
 .main::after{content:"";position:fixed;inset:0;width:100%;height:100vh;background-image:url("../img/bg/art-line.svg");background-repeat:no-repeat;background-position:right 0;background-size:70vh;opacity:.2;pointer-events:none;z-index:0}
-/* #hero{scroll-margin-top:0} */
 .intro,.body{position:relative;z-index:1}
 .intro__inner{max-width:100%;margin:0 auto 0 0}
 .intro__title{font-size:clamp(34px,3.73vw,56px);color:var(--color-brand);font-weight:700;text-shadow:rgb(51,51,51) 0px 0px 5px}
