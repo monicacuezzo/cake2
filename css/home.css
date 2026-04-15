@@ -31,7 +31,7 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 
 /*hace falta?*/
 .about{
-  --about-bkg:linear-gradient(180deg,#223342 0%,#223342 42%,#1d2b37 78%,#1a2430 100%);
+  --about-bkg:linear-gradient(180deg,#223242 0%,#223242 42%,#1d2b37 78%,#1a2430 100%);
   --about-font:#f1f1f1;
   --about-accent:var(--color-brand);
   --about-h2:#f1f1f1;
@@ -220,8 +220,8 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 /* cakes */
 .cakes{
    --backgroundCakes:var(--color-light)  ;
-   --backgroundCakes2:linear-gradient(180deg,#223342 0%,#1a2530 55%,#0b0f12 100%);
-   --bakgroundGradientCakes:linear-gradient(180deg,#223342 0%,rgba(11,15,18,.92) 100%);
+   --backgroundCakes2:linear-gradient(180deg,#223242 0%,#1a2530 55%,#0b0f12 100%);
+   --bakgroundGradientCakes:linear-gradient(180deg,#223242 0%,rgba(11,15,18,.92) 100%);
 }
 .cakes{position:relative;padding:3.5rem 0;background:var(--backgroundCakes); color:#fafafa}
 .cakes__head{padding:2rem 1.125rem 1.125rem;padding:2rem 1.125rem 1.125rem}
@@ -320,7 +320,7 @@ display:flex;flex-wrap:nowrap}
   
 
 /*B cakes azul*/
-.cakes{background:#223342;color:#fafafa}
+.cakes{background:#223242;color:#fafafa}
 .cakes::before{content:"";position:absolute;left:0;right:0;top:-1px;height:4.938rem;background:linear-gradient(180deg,rgba(11,15,18,.6),rgba(0,0,0,0.5))}
 .cakes__stage,.cakes__grid{background:#354e65}
 .cakes__veil{opacity:.7;mix-blend-mode:multiply}

@@ -8,7 +8,7 @@ html{margin:0;padding:0;/*scroll-behavior:smooth;*/   text-size-adjust:100%;-web
 /* html::-webkit-scrollbar{width:0;height:0} */
 div{height:auto;}
 /* div::-webkit-scrollbar{width:0;height:0} */
-body{margin:0;min-height:100vh;/*width:100vw;overflow-x:hidden*/;background-color:#223342;line-height:1.5;/*scrollbar-width:none*/}
+body{margin:0;min-height:100vh;/*width:100vw;overflow-x:hidden*/;background-color:#223242;line-height:1.5;/*scrollbar-width:none*/}
 /* body::-webkit-scrollbar{width:0;height:0} */
 main{display:block}
 ul,ol{margin:0;padding:0;list-style:none}
@@ -45,10 +45,10 @@ html{font-size:16px;font-size:clamp(16px,1.07vw,24px)}
     --max-width:1200px;
     --color-white:#fff;
     --color-brand:#ebf094;
-    --color-dark:#223342;
+    --color-dark:#223242;
     --color-light:#e8e2d6;
     --color-accent:#A74C79 ;
-  --color-bg-menu:#223342;
+  --color-bg-menu:#223242;
   --color-font-menu:#fafafa;
   --color-pink:#F4C6B8;
 
@@ -245,7 +245,7 @@ B494C1 lavanda claro
 
 
 /*FOOTER*/
-.footer{width:100%;background:linear-gradient(180deg,#223342,#000);color:#fff;font-size:.75rem/*.625rem*/;padding:1.25rem;padding-bottom:4rem}
+.footer{width:100%;background:linear-gradient(180deg,#223242,#000);color:#fff;font-size:.75rem/*.625rem*/;padding:1.25rem;padding-bottom:4rem}
 .footer__columns{padding:3rem 0 1.5rem 0;display:grid;gap:3.125rem 1.875rem}
 .footer__hr{border-color:rgba(240,240,240,.8);margin-bottom:1rem;margin-top:1.5rem}
 .footer__h3{font-size:1.1rem;border-bottom:.125rem solid rgba(240,240,240,.7) ;margin-bottom:0.875rem;width:max-content}
