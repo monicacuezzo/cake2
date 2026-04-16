@@ -1,8 +1,8 @@
 :root{--padding-horizontal:4.7vw;--padding-top:3rem}
 .header.header--compact{box-shadow:none}
 .main{position:relative;overflow:hidden}
-.gift-hero{position:relative;min-height:12.5rem;height:max-content}
-.gift-hero__img{position:relative;width:100%;height:auto;padding-top:4rem}
+.gift-hero{position:relative;padding-top:4rem}
+.gift-hero__img{position:relative;width:100%;height:auto}
 .gift-hero__title{position:absolute;z-index:2;width:100%;text-align:center;top:50%;left:0;font-size:clamp(32px,6vw,50px);font-weight:700;color:var(--color-brand)}
 .gift-card{position:relative;z-index:2;display:flex;justify-content:center;padding:var(--padding-top) var(--padding-horizontal) 5rem;width:100%}
 .gift-card__card{width:95%;max-width:46rem;background:var(--color7);color:#223242;border-radius:.25rem;padding:2rem 1.25rem 2.2rem}
@@ -30,14 +30,10 @@
 .main::before{content:"";position:fixed;inset:0;background:url("../img/workshops/gift-card.webp") no-repeat center;background-size:cover;pointer-events:none;z-index:0}
 .gift-hero__title{position:relative;margin-top:9rem;top:0}
 .gift-hero__img{display:none}
-.gift-hero{min-height:max-content;height:max-content;max-height:none}
 .gift-card{min-height:auto;padding:8rem 0 12rem}
 .gift-card__card{width:40rem;max-width:none;padding:2.7rem 2.4rem 2.9rem;margin:0 auto}
 .gift-card__copy p{line-height:1.72}
 .gift-card__item{line-height:1.58}
 }
 @media (min-width:992px){.gift-card__card{width:min(60vw,47rem)}}
-@media (hover:hover){.gift-card__legal-link:hover{opacity:.7}}
-@media (prefers-reduced-motion:reduce){
-.gift-card__card,.gift-card__legal-link{transition:none}
-}
+@media (prefers-reduced-motion:reduce){.gift-card__card,.gift-card__legal-link{transition:none}}
