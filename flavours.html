@@ -28,6 +28,7 @@
     <!-- <link rel="preload" href="css/basic.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/basic.css"></noscript> -->
     
     <link rel="preload" href="css/flavours.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/flavours.css"></noscript>
+    <link rel="preload" href="css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/footer.css"></noscript>
 
     <link rel="icon" type="image/svg+xml" href="img/favicon/favicon-white.svg">
     <link rel="icon" href="favicon-white.ico">
@@ -97,10 +98,10 @@
     <div id="flavours" class="section flavours">
       <p class="hint" id="flavours-hint">Choose a flavour <span>to reveal its filling</span></p>
       <div class="flavours__inner">
-        <div class="flavours__media fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:50px;--fx-delay:.5s">
+        <div class="flavours__media fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px;--fx-delay:.2s">
             <img class="flavours__img" src="img/flavours/flavours-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
         </div>
-        <fieldset class="flavours__box" style="--fx-dur:1.9s;--fx-y:70px;--fx-delay:.7s" aria-describedby="flavours-hint">
+        <fieldset class="flavours__box fx-fade-up-var" style="--fx-dur:1.9s;--fx-y:70px;--fx-delay:.7s" aria-describedby="flavours-hint">
           <legend class="sr-only">Choose a flavour</legend>
           <input class="flavours__control" type="radio" name="flavour" id="flavour-lemon" checked>
           <label class="flavours__label" for="flavour-lemon">Lemon Diva</label>
