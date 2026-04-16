@@ -61,7 +61,7 @@
 .cakes__structure-imgs{display:flex;gap:1rem}
 .cakes-sizes__media{margin:2rem 0 0;display:inline-flex;height:100%;align-items:stretch;max-width:100%;border-radius:.3125rem;overflow:hidden}
 .cakes-sizes__img-structure{height:175px;width:auto}
-.cakes-sizes__img-sizes{aspect-ratio:3/2;overflow:hidden;height:max-content}
+.cakes-sizes__img-sizes{aspect-ratio:340/225;overflow:hidden;height:max-content}
 .cakes-sizes__text{margin-top:2rem}
 .cakes-sizes__text p{margin-bottom:.95rem;font-weight:500}
 .cakes-sizes__btn-container{padding:2rem 0 0;text-align:center}
