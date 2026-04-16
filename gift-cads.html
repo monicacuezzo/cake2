@@ -10,7 +10,7 @@
     <title>Gift Cards | Cake Atelier Copenhagen</title>
 
     <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="img/gift-cards/gift-card-hero.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="img/workshops/gift-card-tablet.webp" as="image" fetchpriority="high">
 
     <style>
       body{background-color:#223242;}
@@ -19,7 +19,7 @@
       .header__link{color:#fafafa;}
       .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114;}
       .header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa;}
-      #gift-card-content,#footer{content-visibility:auto;contain-intrinsic-size:800px}
+      #footer{content-visibility:auto;contain-intrinsic-size:800px}
     </style>
 
     <link rel="stylesheet" href="css/basic.css">
@@ -88,51 +88,52 @@
   </header>
 
   <main class="main">
-    <section id="hero" class="gift-hero" aria-label="Gift card hero image">
-      <img class="gift-hero__img" src="img/workshops/cakeatelier-cph-workshop-buttercream-piping-1.webp" alt="Decorated cake workshop setup at Cake Atelier Copenhagen" width="1440" height="1800" fetchpriority="high">
+    <section id="hero" class="gift-hero" aria-labelledby="gift-card-title">
+  <img class="gift-hero__img" src="img/workshops/gift-card-tablet.webp" alt="Decorated cake workshop setup at Cake Atelier Copenhagen" width="1440" height="1800" fetchpriority="high">
+  <h1 id="gift-card-title" class="gift-hero__title blue-bkg fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s">Gift Cards</h1>
+</section>
+
+<section id="gift-card-content" class="gift-card">
+<article class="gift-card__card fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.04s" aria-labelledby="gift-card-card-title">
+  <p id="gift-card-card-title" class="gift-card__eyebrow">Gift an experience</p>
+
+  <p class="gift-card__lead">A gift that’s more than a thing — it’s time, creativity, and a shared experience.</p>
+  
+    <div class="gift-card__copy">
+      <p>Cake Atelier gift cards can be used for any workshop or event, from buttercream basics to artistic cake painting sessions.</p>
+      <p>They’re perfect for birthdays, celebrations, or simply treating someone to a creative pause.</p>
+      <p>No experience needed, all materials included — just show up, decorate, have lots of fun, and take your cake home.</p>
+    </div>
+
+    <section class="gift-card__info" aria-labelledby="gift-card-info-title">
+      <h2 id="gift-card-info-title" class="gift-card__info-title">Good to know</h2>
+      <ul class="gift-card__list">
+        <li class="gift-card__item">Valid for all public workshops</li>
+        <li class="gift-card__item">Digital delivery (easy, instant, no wrapping required)</li>
+        <li class="gift-card__item">Ideal for creative souls, curious beginners, and cake lovers alike</li>
+        <li class="gift-card__item">All materials included</li>
+        <li class="gift-card__item">No experience needed</li>
+        <li class="gift-card__item">Valid for 3 years from purchase date</li>
+        <li class="gift-card__item">Booking required and subject to availability</li>
+      </ul>
     </section>
 
-    <section id="gift-card-content" class="gift-card section">
-      <div class="gift-card__layout">
-        <article class="gift-card__card fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.04s" aria-labelledby="gift-card-title">
-          <p class="gift-card__eyebrow">Gift an experience</p>
-          <h1 id="gift-card-title" class="gift-card__title">Gift Cards</h1>
+    <p class="gift-card__note">Because the best gifts are the ones you get to experience.</p>
 
-          <p class="gift-card__lead">A gift that’s more than a thing — it’s time, creativity, and a shared experience.</p>
+    <div class="gift-card__cta-wrap">
+      <a class="btn btn--primary" href="https://TU-PLATAFORMA-DE-PAGO" target="_blank" rel="noopener noreferrer">Give a Gift Card</a>
+    </div>
 
-          <div class="gift-card__copy">
-            <p>Cake Atelier gift cards can be used for any workshop or event, from buttercream basics to artistic cake painting sessions.</p>
-            <p>They’re perfect for birthdays, celebrations, or simply treating someone to a creative pause.</p>
-            <p>No experience needed, all materials included — just show up, decorate, have lots of fun, and take your cake home.</p>
-          </div>
+    <p class="gift-card__legal">
+      Terms and conditions apply. Please review our
+      <a class="gift-card__legal-link" href="terms.html">Terms and conditions</a>
+      and
+      <a class="gift-card__legal-link" href="privacy-policy.html">Privacy policy</a>.
+    </p>
+  </article>
+</section>
 
-          <section class="gift-card__info" aria-labelledby="gift-card-info-title">
-            <h2 id="gift-card-info-title" class="gift-card__info-title">Good to know</h2>
-            <ul class="gift-card__list">
-              <li class="gift-card__item">Valid for all public workshops</li>
-              <li class="gift-card__item">Digital delivery (easy, instant, no wrapping required)</li>
-              <li class="gift-card__item"> Ideal for creative souls, curious beginners, and cake lovers alike</li>
-              <li class="gift-card__item">All materials included</li>
-              <li class="gift-card__item">No experience needed</li>
-              <li class="gift-card__item">Valid for 3 years from purchase date</li>
-              <li class="gift-card__item">Booking required and subject to availability</li>
-            </ul>
-          </section>
 
-          <p class="gift-card__note">Because the best gifts are the ones you get to experience.</p>
-          <div class="gift-card__cta-wrap">
-            <a class="btn btn--primary" href="https://TU-PLATAFORMA-DE-PAGO" target="_blank" rel="noopener noreferrer">Give a Gift Card</a>
-          </div>
-
-          <p class="gift-card__legal">
-            Terms and conditions apply. Please review our
-            <a class="gift-card__legal-link" href="terms.html">Terms and conditions</a>
-            and
-            <a class="gift-card__legal-link" href="privacy-policy.html">Privacy policy</a>.
-          </p>
-        </article>
-      </div>
-    </section>
   </main>
 
   <footer id="footer" class="footer" aria-labelledby="footer-title">
@@ -258,7 +259,7 @@
   <script src="js/header-menu.js" defer></script>
   <script src="js/animations.js" defer></script>
 
-  <script>
+  <!-- <script>
     document.addEventListener('DOMContentLoaded',function(){
       var buttonTop=document.getElementById('buttonTop');
       var heroEl=document.getElementById('hero');
@@ -270,6 +271,40 @@
         heroIO.observe(heroEl);
       }
     });
-  </script>
+  </script> -->
+
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    var headerEl=document.querySelector('.header');
+    var heroEl=document.getElementById('hero');
+    var buttonTop=document.getElementById('buttonTop');
+    var giftCardEl=document.querySelector('.gift-card__card');
+
+    function applyHeaderBySection(isGiftCardVisible){
+      if(!headerEl)return;
+      headerEl.classList.remove('header--compact-light','header--compact-dark');
+      if(isGiftCardVisible){
+        headerEl.classList.add('header--compact-dark');
+      }else{
+        headerEl.classList.add('header--compact-light');
+      }
+    }
+
+    if(heroEl&&buttonTop){
+      var heroIO=new IntersectionObserver(function(entries){
+        buttonTop.classList.toggle('floating--hidden',entries[0].isIntersecting);
+      },{threshold:0});
+      heroIO.observe(heroEl);
+    }
+
+    if(headerEl&&giftCardEl){
+      var giftCardIO=new IntersectionObserver(function(entries){
+        applyHeaderBySection(entries[0].isIntersecting);
+      },{threshold:0,rootMargin:'-50px 0px -55% 0px'});
+      giftCardIO.observe(giftCardEl);
+    }
+  });
+</script>
+
 </body>
 </html>
