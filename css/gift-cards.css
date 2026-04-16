@@ -22,11 +22,11 @@
 .gift-card__list{display:grid;gap:.8rem;margin-top:1rem}
 .gift-card__item{position:relative;padding-left:1.1rem;font-size:clamp(.875rem,2vw,1rem)}
 .gift-card__item::before{content:"";position:absolute;left:0;top:.62rem;width:.4375rem;height:.4375rem;border-radius:50%;background:var(--color16)}
-.gift-card__note{margin-top:2rem;padding-top:1.5rem;border-top:.0625rem solid rgba(34,50,66,.16);font-size:clamp(1.05rem,2.6vw,1.45rem);line-height:1.5;font-weight:600}
+.gift-card__note{margin-top:2rem;padding-top:1.5rem;border-top:.0625rem solid rgba(34,50,66,.16);font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.5;font-weight:600}
 .gift-card__cta-wrap{text-align:center;margin-top:1.5rem}
 .gift-card__cta-wrap .btn{margin:0 auto;}
 .btn--primary:hover,.btn--primary:active{background:transparent;text-shadow:none}
-.gift-card__legal{margin-top:1.5rem;font-size:clamp(.75rem,2vw,9375rem);line-height:1.65}
+.gift-card__legal{margin-top:1.5rem;font-size:clamp(.75rem,2vw,.9375rem);line-height:1.65}
 .gift-card__legal-link{text-decoration:underline;text-underline-offset:.18em}
 .gift-card__legal-link:hover,.gift-card__legal-link:focus-visible{opacity:.72}
 
@@ -37,12 +37,12 @@
 @media (min-width:768px){
 .main{min-height:100vh}
 .main::before{content:"";position:fixed;inset:0;background:url("../img/workshops/gift-card.webp") no-repeat center;background-size:cover;pointer-events:none;z-index:0}
-.gift-hero__title{position:relative; margin-top:7rem;top: 0;}
+.gift-hero__title{position:relative; margin-top:9rem;top: 0;}
 .gift-hero__img{display:none;}
 .gift-hero{/*min-height:100vh;height:100vh;*/min-height: max-content;height: max-content;max-height:none}
-.gift-card{min-height:auto;/*align-items:flex-start;/*margin-top:-22rem;padding-top:0;*/   padding:6rem 0 12rem}
+.gift-card{min-height:auto;/*align-items:flex-start;/*margin-top:-22rem;padding-top:0;*/   padding:8rem 0 12rem}
 .gift-card__card{width:40rem;max-width:none;padding:2.7rem 2.4rem 2.9rem;margin:0 auto}
-.gift-card__lead{ font-weight:500}
+/* .gift-card__lead{ font-weight:500} */
 .gift-card__copy p{line-height:1.72}
 .gift-card__item{line-height:1.58}
 }
