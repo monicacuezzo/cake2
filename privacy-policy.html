@@ -15,7 +15,7 @@
     <style>
       body{background-color:#223242;}.d_flex{display:flex} ul,ol{margin:0;padding:0;list-style:none} .header__link{color:#fafafa;}
       .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa;}
-      .faq__inner,#footer{content-visibility:auto;contain-intrinsic-size:800px}
+      #footer{content-visibility:auto;contain-intrinsic-size:800px}
     </style>
 
     <link rel="stylesheet" href="css/basic.css">
@@ -370,22 +370,22 @@
   </a>
 
   <script src="js/header-menu.js" defer></script>
-  <script src="js/animations.js" defer></script>
 
   <script>
     document.addEventListener('DOMContentLoaded',function(){
-       var heroEl=document.getElementById('hero');
-        var buttonTop=document.getElementById('buttonTop');
+      var heroEl=document.getElementById('hero');
+      var buttonTop=document.getElementById('buttonTop');
 
-        if(heroEl){
+      if(!heroEl||!buttonTop)return;
+      buttonTop.classList.add('floating--hidden');
+
+      if(heroEl){
         var heroIO=new IntersectionObserver(function(entries){
-            var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
-            if(buttonTop){//oculto si Hero está visible
-            buttonTop.classList.toggle('floating--hidden',heroVisible);
-            }
-        },{threshold:0,rootMargin:'0px 0px -100% 0px'}); //200px 0px 200px 0px
+          var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+          buttonTop.classList.toggle('floating--hidden',heroVisible);
+        },{threshold:0,rootMargin:'0px 0px -15% 0px'});
         heroIO.observe(heroEl);
-        }
+      }
     });
   </script>
 </body>
