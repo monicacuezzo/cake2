@@ -94,7 +94,7 @@
 </section>
 
 <section id="gift-card-content" class="gift-card">
-<article class="gift-card__card fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.04s" aria-labelledby="gift-card-card-title">
+<article id="gift-card-card" class="gift-card__card fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.04s" aria-labelledby="gift-card-card-title">
   <p id="gift-card-card-title" class="gift-card__eyebrow">Gift an experience</p>
 
   <p class="gift-card__lead">A gift that’s more than a thing — it’s time, creativity, and a shared experience.</p>
@@ -259,26 +259,12 @@
   <script src="js/header-menu.js" defer></script>
   <script src="js/animations.js" defer></script>
 
-  <!-- <script>
-    document.addEventListener('DOMContentLoaded',function(){
-      var buttonTop=document.getElementById('buttonTop');
-      var heroEl=document.getElementById('hero');
-
-      if(heroEl&&buttonTop){
-        var heroIO=new IntersectionObserver(function(entries){
-          buttonTop.classList.toggle('floating--hidden',entries[0].isIntersecting);
-        },{threshold:0});
-        heroIO.observe(heroEl);
-      }
-    });
-  </script> -->
-
 <script>
   document.addEventListener('DOMContentLoaded',function(){
     var headerEl=document.querySelector('.header');
     var heroEl=document.getElementById('hero');
     var buttonTop=document.getElementById('buttonTop');
-    var giftCardEl=document.querySelector('.gift-card__card');
+    var giftCardSection=document.getElementById('gift-card-card');
 
     function applyHeaderBySection(isGiftCardVisible){
       if(!headerEl)return;
@@ -290,6 +276,14 @@
       }
     }
 
+    if(headerEl&&giftCardSection){
+      var sectionIO=new IntersectionObserver(function(entries){
+        var entry=entries[0];
+        applyHeaderBySection(entry.isIntersecting);
+      },{threshold:0,rootMargin:'-50px 0px -100% 0px'});
+      sectionIO.observe(giftCardSection);
+    }
+
     if(heroEl&&buttonTop){
       var heroIO=new IntersectionObserver(function(entries){
         buttonTop.classList.toggle('floating--hidden',entries[0].isIntersecting);
@@ -297,12 +291,7 @@
       heroIO.observe(heroEl);
     }
 
-    if(headerEl&&giftCardEl){
-      var giftCardIO=new IntersectionObserver(function(entries){
-        applyHeaderBySection(entries[0].isIntersecting);
-      },{threshold:0,rootMargin:'-50px 0px -55% 0px'});
-      giftCardIO.observe(giftCardEl);
-    }
+    applyHeaderBySection(false);
   });
 </script>
 
