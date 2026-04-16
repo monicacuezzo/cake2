@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded',function(){
     var fxEls=document.querySelectorAll('.fx-fade-up-var');
 
-    //no esperar al observer, no hacer animación,queden visibles directamente
+    //no esperar al observer, no hacer la animación y que queden visibles directamente
     if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
         for(var k=0;k<fxEls.length;k++)fxEls[k].classList.add('fx-run');
         return;
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded',function(){
         }
       },{
         threshold:0,
-        rootMargin:'0px 0px -15% 0px' // dispara cuando está por entrar (no tarde)
+        rootMargin:'0px 0px -15% 0px' // dispara cuando está por entrar 
       });
 
       for(var j=0;j<fxEls.length;j++) fxIO.observe(fxEls[j]);
