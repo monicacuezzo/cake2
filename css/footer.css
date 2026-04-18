@@ -41,13 +41,9 @@
 .footer__col{width:max-content}
 .footer__info{flex:1;max-width:25rem}
 }
-
 @media (prefers-reduced-motion:reduce){
 html:focus-within{scroll-behavior:auto}
-.header,.header__bottom,.header__overlay,.header__toggle-bar,.header__submenu,.header__submenu-link,.header__item--has-submenu>.header__link--button::after,.btn,
-.fx-fade-up,.fx-fade-up-var,.fx-fade-up-var.fx-run,.floating-button,
-.floating-button--wapp,.floating-button--up,.floating-button--up::before,
-.floating-button--up::after{animation:none!important;transition:none!important}
-.fx-fade-up,.fx-fade-up-var,.fx-fade-up-var.fx-run{opacity:1!important;transform:none!important}
-.floating-button--wapp:hover{transform:none}
-.floating-button--up:hover{scale:1}}
+.header,.header__bottom,.header__overlay,.header__toggle-bar,.header__submenu,.header__submenu-link,.header__item--has-submenu>.header__link--button::after,.btn,.floating-button,.floating-button--wapp,.floating-button--up,.floating-button--up::before,.floating-button--up::after{animation:none!important;transition:none!important}
+.fx-fade-up,.fx-fade-up-var,.fx-fade-up-var.fx-run{opacity:1!important;transform:none!important;animation:none!important}
+.floating-button--wapp:hover{transform:none!important}
+.floating-button--up:hover{scale:1!important}}

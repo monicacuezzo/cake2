@@ -203,13 +203,7 @@ B494C1 lavanda claro
 .btn.focus-light:focus-visible,.floating-button--wapp:focus-visible{outline:2px solid #fff; /*outline-offset:3px;color:currentColor;background: currentColor;text-shadow: inherit;*/}
 @media (max-width:991.98px){.btn{font-size:1rem}}
 
- /*animaciones generales*/
-/*agregar el nom de todas las animac juntas ???*/
-@media (prefers-reduced-motion:reduce){
-.fx-fade-up,.fx-fade-up-var{opacity:1;animation:none;transform:none} 
-.fx-fade-up-var{opacity:1;transform:none}
-.fx-fade-up-var.fx-run{animation:none}
-}
+/*********??????????se usa??*****/
 .fx-sticky{position:-webkit-sticky;position:sticky;top:var(--fx-sticky-top,0)}
 /*Aparecer suave + subir un poco*/
 .fx-fade-up{opacity:0;animation:fxFadeUp .7s ease forwards} /*revisar si se usa*/

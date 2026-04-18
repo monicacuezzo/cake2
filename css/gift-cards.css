@@ -22,7 +22,6 @@
 .svg__icon{display:block;flex:0 0 auto;color:#fff;margin-right: 0.5rem;width:2rem;height:2rem }
 .svg__icon use{pointer-events:none}
 .btn--primary:hover .svg__icon,.btn--primary:active .svg__icon{color:var(--color16)}
-
 .btn--primary:hover,.btn--primary:active{background:transparent;text-shadow:none}
 .gift-card__legal{margin-top:1.5rem;font-size:clamp(.75rem,2vw,.9375rem);line-height:1.65}
 .gift-card__legal-link{text-decoration:underline;text-underline-offset:.18em}

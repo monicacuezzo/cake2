@@ -65,13 +65,10 @@
 .cakes-sizes__text{margin-top:2rem}
 .cakes-sizes__text p{margin-bottom:.95rem;font-weight:500}
 .cakes-sizes__btn-container{padding:2rem 0 0;text-align:center}
-/*.btn--primary:hover,/*.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background:transparent;text-shadow:none}
-/* .btn--primary:focus-visible{outline:.125rem solid var(--color-accent);outline-offset:.125rem;color:var(--color-accent)} */
 .faq-link{font-weight:600;margin:1rem auto 0;color:var(--color16);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content;text-underline-offset:.2em}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}
 .faq-link:focus-visible{outline:.125rem solid var(--color16);outline-offset:.125rem}
 .footer{position:relative;z-index:3}
-
 @media (min-width:480px){
 .hero-tab{padding:0 1.25rem 0 0;width:max-content;height:auto;flex-direction:row;gap:1rem}
 .hero-tab__icon{width:4.5rem;height:5.5rem}
@@ -113,6 +110,5 @@
 @media (prefers-reduced-motion:reduce){
 html:focus-within{scroll-behavior:auto}
 .hero-tab,.roll__gallery-img{animation:none!important;transition:none!important;opacity:1!important;transform:none!important}
-.hero-tab:hover,.hero-tab:focus-visible,.roll__gallery-item:hover .roll__gallery-img,.floating-button--wapp:hover{transform:none!important}
-.floating-button--up:hover{scale:1}
+.hero-tab:hover,.hero-tab:focus-visible,.roll__gallery-item:hover .roll__gallery-img{transform:none!important}
 }

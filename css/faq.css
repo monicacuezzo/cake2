@@ -57,6 +57,4 @@ body{background:#223242;color:#f1f1f1}
 .faq__category + .faq__category{padding-top:3rem}
 .faq__category + .faq__category::before{margin:0 0 4rem}
 }
-@media (prefers-reduced-motion:reduce){
-.faq__index-link{transition:none}
-}
+@media (prefers-reduced-motion:reduce){.faq__index-link{transition:none}}

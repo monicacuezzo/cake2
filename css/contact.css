@@ -58,6 +58,4 @@ body{background:#223242;color:#f1f1f1}
 .contact{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);align-items:start;gap:3rem 3.5rem;padding-top:4rem;padding-bottom:4rem}
 .contact__text{max-width:29rem}
 }
-@media (prefers-reduced-motion:reduce){
-.contact__chip,.contact__submit,.contact__link,.contact__aux-link,.contact__policy-link{transition:none}
-}
+@media (prefers-reduced-motion:reduce){.contact__chip,.contact__submit,.contact__link,.contact__aux-link,.contact__policy-link{transition:none}}

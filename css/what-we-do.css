@@ -33,8 +33,8 @@ body{background:#223242;color:#f1f1f1}
 .workshops__viewer{width:calc(100% - 2.4rem);max-width:21rem;aspect-ratio:336/512;max-height:32rem;margin:auto;border-radius:1rem;overflow:hidden;position:relative;z-index:1;perspective:75rem;background:#223242}
 .workshops__viewer-img,.workshops__viewer-video{display:block;width:100%;height:100%;object-fit:cover}
 /*FLIP*/.workshops__viewer-flip{position:relative;width:100%;height:100%;transform-style:preserve-3d}
-.workshops__viewer-flip,.workshops__viewer-video{position:absolute;inset:0;}
-.workshops__viewer-flip[hidden],.workshops__viewer-video[hidden]{display:none;}
+.workshops__viewer-flip,.workshops__viewer-video{position:absolute;inset:0}
+.workshops__viewer-flip[hidden],.workshops__viewer-video[hidden]{display:none}
 .workshops__viewer-img--front,.workshops__viewer-img--back{position:absolute;inset:0;transform:translateZ(0);backface-visibility:hidden;-webkit-backface-visibility:hidden;will-change:transform}
 .workshops__viewer-img--front{transform:rotateY(0deg)}
 .workshops__viewer-img--back{transform:rotateY(-180deg)}
@@ -53,7 +53,7 @@ body{background:#223242;color:#f1f1f1}
 .workshops__videos .workshops__gallery-btn::after{content:"";position:absolute;inset:0;margin:auto;width:1.55rem;height:1.55rem;border-radius:50%;background:rgba(34,50,66,.52);backdrop-filter:blur(.08rem);-webkit-backdrop-filter:blur(.08rem);box-shadow:0 .08rem .35rem rgba(0,0,0,.16);pointer-events:none}
 .workshops__videos .workshops__gallery-btn::before{content:"";position:absolute;inset:0;margin:auto;width:0;height:0;border-top:.34rem solid transparent;border-bottom:.34rem solid transparent;border-left:.54rem solid #fff;transform:translateX(.09rem);z-index:1;pointer-events:none}
 .workshops__viewer::after,.workshops__photos .workshops__gallery-btn::after{content:"";position:absolute;inset:0;background:rgba(34,50,66,.22);pointer-events:none}
-.workshops__cta-sentinel{display:block;height:1px;pointer-events:none;}
+.workshops__cta-sentinel{display:block;height:1px;pointer-events:none}
 .btn--primary:hover,.btn--primary:active{background:transparent;text-shadow:none}
 .faq-link{font-weight:600;margin:1rem auto 0;color:var(--color16);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content;text-underline-offset:.2em}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}
@@ -94,9 +94,5 @@ body{background:#223242;color:#f1f1f1}
 @media (min-width:992px){
 .workshops__info{margin-right:1.5rem}
 }
-@media (hover:hover){
-.workshops__gallery:active{cursor:grabbing}
-}
-@media (prefers-reduced-motion:reduce){
-.workshops__viewer-video,.workshops__gallery-btn,.workshops__link,.workshops__viewer-flip.is-flipping .workshops__viewer-img--front,.workshops__viewer-flip.is-flipping .workshops__viewer-img--back{transition:none;animation:none;transform:none;opacity:1;}
-}
+@media (hover:hover){.workshops__gallery:active{cursor:grabbing}}
+@media (prefers-reduced-motion:reduce){.workshops__viewer-video,.workshops__gallery-btn,.workshops__link,.workshops__viewer-flip.is-flipping .workshops__viewer-img--front,.workshops__viewer-flip.is-flipping .workshops__viewer-img--back{transition:none;animation:none;transform:none;opacity:1}}
