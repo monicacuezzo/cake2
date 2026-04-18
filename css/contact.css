@@ -39,7 +39,16 @@ body{background:#223242;color:#f1f1f1}
 .contact__submit{background:var(--color16);border:.125rem solid var(--color16);color:#fff;}
 .contact__submit:hover,.contact__submit:focus,.contact__submit:active{background:#fafafa;border-color:var(--color16);color:var(--color16)}
 .contact__submit:focus{outline:none}
-.contact__submit:focus-visible{outline:.0625rem solid rgba(255,255,255,.72);outline-offset:.25rem;}
+.contact__submit:focus-visible{outline:.0625rem solid rgba(255,255,255,.72);outline-offset:.25rem}
+.contact__status{min-height:1.25rem;margin-top:.75rem;font-size:.8125rem;line-height:1.35;color:var(--color-brand)}
+.contact__status--ok{color:#d8f0d8}
+.contact__status--err{color:#ffd6d6}
+.contact__spinner{width:1.875rem;height:1.875rem;border-radius:50%;border:.187rem solid rgba(255,255,255,.55);border-top-color:rgba(255,255,255,0);display:none;animation:contactSpin 1s linear infinite}
+.contact__submit.is-loading{width:13.87rem;height:3.562rem;background-color:var(--color16);opacity:.9;cursor:progress}
+.contact__submit.is-loading .contact__spinner{display:inline-block}
+.contact__submit.is-loading .contact__btn-text{display:none}
+.contact__submit:disabled{opacity:.6;cursor:not-allowed}
+@keyframes contactSpin{to{transform:rotate(360deg)}}
 .contact__policy{margin-top:1rem;font-size:clamp(14px,2vw,1rem);line-height:1.6}
 .contact__policy-link{text-decoration-line:underline;text-decoration-thickness:.04em;text-underline-offset:.16em;text-decoration-color:rgba(255,255,255,.85)}
 .contact__policy-link:hover,.contact__policy-link:focus-visible{opacity:.8}
