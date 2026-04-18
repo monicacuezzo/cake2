@@ -152,8 +152,12 @@
           </div>
           <p class="contact__spam-note">Please check your SPAM folder for responses!</p>
           <div class="contact__cta-wrap">
-            <button class="contact__submit btn" type="submit">Send message</button>
+            <button class="contact__submit btn" type="submit">
+              <span class="contact__btn-text">Send message</span>
+              <span class="contact__spinner" aria-hidden="true"></span>
+            </button>
           </div>
+          <p class="contact__status" aria-live="polite"></p>
           <p class="contact__policy">
             By sending this form, you agree to our
             <a class="contact__policy-link" href="privacy-policy.html">Privacy policy</a>.
@@ -261,7 +265,6 @@
           </li>
         </ul>
       </div>
-
       <nav class="footer__col" aria-label="Footer policies">
         <h3 class="footer__h3">Policies</h3>
         <ul class="footer__list--policies">
@@ -277,130 +280,248 @@
   </footer>
 
   <script src="js/header-menu.js" defer></script>
-  <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    var form=document.querySelector('.contact__form');
-    if(!form)return;
-    var nameInput=document.getElementById('contact-name');
-    var emailInput=document.getElementById('contact-email');
-    var phoneInput=document.getElementById('contact-phone');
-    var messageInput=document.getElementById('contact-message');
-    var messageWasAutofilled=false;
-    var topicControls=form.querySelectorAll('.contact__topic-control');
-    var fields=[
-      {
-        el:nameInput,
-        getMessage:function(input){
-          var value=input.value.trim();
-          if(!value)return 'Please complete this field.';
-          if(value.length<2)return 'Please enter at least 2 characters.';
-          return '';
-        }
-      },
-      {
-        el:emailInput,
-        getMessage:function(input){
-          var value=input.value.trim();
-          if(!value)return 'Please complete this field.';
-          if(input.validity.typeMismatch)return 'Please enter a valid email address.';
-          return '';
-        }
-      },
-      {
-        el:phoneInput,
-        getMessage:function(input){
-          var value=input.value.trim();
-          if(!value)return '';
-          var normalized=value.replace(/[\s()+-]/g,'');
-          if(!/^\d{6,15}$/.test(normalized))return 'Please enter a valid phone number or leave this field empty.';
-          return '';
-        }
-      },
-      {
-        el:messageInput,
-        getMessage:function(input){
-          var value=input.value.trim();
-          if(!value)return 'Please complete this field.';
-          if(value.length<10)return 'Please enter at least 10 characters.';
-          return '';
-        }
-      }
-    ];
+  
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var form=document.querySelector('.contact__form');
+  if(!form)return;
+  var hp=form.querySelector('input[name="company"]');
+  if(!hp){
+    hp=document.createElement('input');
+    hp.type='text';
+    hp.name='company';
+    hp.autocomplete='off';
+    hp.tabIndex=-1;
+    hp.className='hp';
+    hp.setAttribute('aria-hidden','true');
+    form.appendChild(hp);
+  }
+  var bornAt=Date.now();
+  var nameInput=document.getElementById('contact-name');
+  var emailInput=document.getElementById('contact-email');
+  var phoneInput=document.getElementById('contact-phone');
+  var messageInput=document.getElementById('contact-message');
+  var topicControls=form.querySelectorAll('.contact__topic-control');
+  var btn=form.querySelector('.contact__submit');
+  var statusEl=form.querySelector('.contact__status');
+  var locked=false;
+  var messageWasAutofilled=false;
+  var controls=form.querySelectorAll('.contact__input,.contact__topic-control,.contact__submit');
 
-    function getFeedbackEl(input){
-      var describedBy=input.getAttribute('aria-describedby');
-      return describedBy?document.getElementById(describedBy):null;
-    }
+  function normalizeField(input){
+    if(!input)return'';
+    input.value=input.value.trim();
+    return input.value;
+  }
 
-    function setFieldState(input,message){
-      var feedback=getFeedbackEl(input);
-      var hasError=!!message;
-      input.classList.toggle('is-error',hasError);
-      input.setAttribute('aria-invalid',hasError?'true':'false');
-      if(feedback){
-        feedback.textContent=message;
-        feedback.classList.toggle('is-error',hasError);
-      }
-    }
+  function normalizeNameField(input){
+    if(!input)return'';
+    input.value=input.value.replace(/\s+/g,' ').replace(/[\u0000-\u001F\u007F]/g,'').trim();
+    return input.value;
+  }
 
-    function validateField(input,getMessage){
-      var message=getMessage(input);
-      setFieldState(input,message);
-      return !message;
-    }
+  function normalizeMessageField(input){
+    if(!input)return'';
+    input.value=input.value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'').trim();
+    return input.value;
+  }
 
-    messageInput.addEventListener('input',function(){
-      messageWasAutofilled=false;
-    });
-    
+  function resetFormState(){
+    form.reset();
+    messageWasAutofilled=false;
     for(var i=0;i<fields.length;i++){
-      (function(field){
-        if(!field.el)return;
-        field.el.addEventListener('input',function(){
-          validateField(field.el,field.getMessage);
-        });
-        field.el.addEventListener('blur',function(){
-          validateField(field.el,field.getMessage);
-        });
-      })(fields[i]);
+      if(!fields[i].el)continue;
+      setFieldState(fields[i].el,'');
     }
+    setStatus('');
+  }
 
-    for(var j=0;j<topicControls.length;j++){
-      topicControls[j].addEventListener('change',function(){
-        var topicText=this.value;
-        var currentValue=messageInput.value.trim();
-        if(currentValue==='' || messageWasAutofilled){
-          messageInput.value=topicText;
-          messageWasAutofilled=true;
-          validateField(messageInput,function(input){
-            var value=input.value.trim();
-            if(!value)return 'Please complete this field.';
-            if(value.length<10)return 'Please enter at least 10 characters.';
-            return '';
-          });
-          messageInput.focus();
-        }
-      });
+  function isProbablyBot(){
+    if(hp&&hp.value.trim()!=='')return true;
+    if(Date.now()-bornAt<2500)return true;
+    return false;
+  }
+
+  function setStatus(msg,type){
+    if(!statusEl)return;
+    statusEl.textContent=msg||'';
+    statusEl.classList.remove('contact__status--ok','contact__status--err');
+    if(type==='ok')statusEl.classList.add('contact__status--ok');
+    if(type==='err')statusEl.classList.add('contact__status--err');
+  }
+
+  function setLoading(on){
+    for(var i=0;i<controls.length;i++){
+      controls[i].disabled=!!on;
     }
+    if(btn){
+      btn.classList.toggle('is-loading',!!on);
+    }
+    if(on){
+      setStatus('Sending your message...');
+    }else{
+      setStatus('');
+    }
+  }
 
-    form.addEventListener('submit',function(e){
-      var firstInvalid=null;
-      var isValid=true;
-      for(var i=0;i<fields.length;i++){
-        var field=fields[i];
-        if(!field.el)continue;
-        var fieldValid=validateField(field.el,field.getMessage);
-        if(!fieldValid){
-          isValid=false;
-          if(!firstInvalid)firstInvalid=field.el;
-        }
+  function getFeedbackEl(input){
+    var describedBy=input.getAttribute('aria-describedby');
+    return describedBy?document.getElementById(describedBy):null;
+  }
+
+  function setFieldState(input,message){
+    var feedback=getFeedbackEl(input);
+    var hasError=!!message;
+    input.classList.toggle('is-error',hasError);
+    input.setAttribute('aria-invalid',hasError?'true':'false');
+    if(feedback){
+      feedback.textContent=message;
+      feedback.classList.toggle('is-error',hasError);
+    }
+  }
+
+  var fields=[
+    {
+      el:nameInput,
+      getMessage:function(input){
+        var value=input.value.trim().replace(/\s+/g,' ').replace(/[\u0000-\u001F\u007F]/g,'');
+        if(!value)return'Please complete this field.';
+        if(value.length<2)return'Please enter at least 2 characters.';
+        return'';
       }
-      if(!isValid){
-        e.preventDefault();
-        if(firstInvalid)firstInvalid.focus();
+    },
+    {
+      el:emailInput,
+      getMessage:function(input){
+        var value=input.value.trim();
+        if(!value)return'Please complete this field.';
+        if(input.validity.typeMismatch)return'Please enter a valid email address.';
+        return'';
       }
-    });
+    },
+    {
+      el:phoneInput,
+      getMessage:function(input){
+        var value=input.value.trim();
+        if(!value)return'';
+        if(value.charAt(0)!=='+')return'Please use international format, e.g. +45 91 70 26 50.';
+        if(/[^0-9+\s()-]/.test(value))return'Please use only numbers, spaces, parentheses or hyphens.';
+        var normalized=value.replace(/[\s()-]/g,'').replace(/^\+/,'');
+        if(!/^\d{8,15}$/.test(normalized))return'Please enter a valid phone number or leave this field empty.';
+        return'';
+      }
+    },
+    {
+      el:messageInput,
+      getMessage:function(input){
+        var value=input.value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'').trim();
+        if(!value)return'Please complete this field.';
+        if(value.length<10)return'Please enter at least 10 characters.';
+        return'';
+      }
+    }
+  ];
+
+  function validateField(input,getMessage){
+    var message=getMessage(input);
+    setFieldState(input,message);
+    return !message;
+  }
+
+  function clearStatusIfIdle(){
+    if(!locked)setStatus('');
+  }
+
+  messageInput.addEventListener('input',function(){
+    messageWasAutofilled=false;
+    clearStatusIfIdle();
   });
+
+  for(var i=0;i<fields.length;i++){
+    (function(field){
+      if(!field.el)return;
+      field.el.addEventListener('input',function(){
+        validateField(field.el,field.getMessage);
+        clearStatusIfIdle();
+      });
+    })(fields[i]);
+  }
+
+  for(var j=0;j<topicControls.length;j++){
+    topicControls[j].addEventListener('change',function(){
+      var topicText=this.value;
+      var currentValue=messageInput.value.trim();
+      if(currentValue===''||messageWasAutofilled){
+        messageInput.value=topicText;
+        messageWasAutofilled=true;
+        validateField(messageInput,function(input){
+          var value=input.value.replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'').trim();
+          if(!value)return'Please complete this field.';
+          if(value.length<10)return'Please enter at least 10 characters.';
+          return'';
+        });
+        messageInput.focus();
+      }
+      clearStatusIfIdle();
+    });
+  }
+
+  form.addEventListener('submit',function(e){
+    if(locked){
+      e.preventDefault();
+      return;
+    }
+    if(isProbablyBot()){
+      e.preventDefault();
+      return;
+    }
+
+    normalizeNameField(nameInput);
+    normalizeField(emailInput);
+    normalizeField(phoneInput);
+    normalizeMessageField(messageInput);
+
+    var firstInvalid=null;
+    var isValid=true;
+
+    for(var i=0;i<fields.length;i++){
+      var field=fields[i];
+      if(!field.el)continue;
+      var fieldValid=validateField(field.el,field.getMessage);
+      if(!fieldValid){
+        isValid=false;
+        if(!firstInvalid)firstInvalid=field.el;
+      }
+    }
+
+    if(!isValid){
+      e.preventDefault();
+      setStatus('');
+      if(firstInvalid)firstInvalid.focus();
+      return;
+    }
+
+    setLoading(true);
+    locked=true;
+    e.preventDefault();
+    return; //sacar cuando este el backend
+
+    /* TODO backend:
+    fetch(...)
+      .then(function(){
+        setLoading(false);
+        locked=false;
+        resetFormState();
+        setStatus('Your message has been sent.','ok');
+      })
+      .catch(function(){
+        setLoading(false);
+        locked=false;
+        setStatus('Something went wrong. Please try again.','err');
+      });
+    */
+  },{passive:false});
+});
 </script>
 </body>
 </html>
