@@ -158,7 +158,7 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 .how__subtitle{font-weight:500;font-size:1.05rem;opacity:.95}
 .how__subtitle--accent{color:var(--color16)}
 .how__steps{margin:3rem auto  ;position:relative;display:grid;gap:2.187rem;width:max-content}
-.how__steps:before{content:"";position:absolute;left:1.0625rem;top:1.0625rem;bottom:1.0625rem;width:.156rem;background:var(--color-pink);opacity:.85}
+.how__steps:before{content:"";position:absolute;left:1.0625rem;top:1.0625rem;bottom:1.0625rem;width:.156rem;opacity:.85}/*REPETIDO??*/
 .how__step{display:flex;gap:.9375rem;align-items:center;text-align:left}
 .how__icon{width:2.187rem;height:2.187rem;display:block;color:rgba(250,250,250,.95);color:var(--color14)}
 .how__number{width:2.187rem;height:2.187rem;border-radius:50%;font-weight:600;font-size:1.25rem  ;display:grid;place-items:center;z-index:2}
