@@ -11,7 +11,8 @@
     <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
 
     <style>
-      body{background-color: #223242;}.d_flex{display:flex}.p_absolute{position: absolute!important;}ul,ol{margin:0;padding:0;list-style:none}
+      body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button{display:none}
+      .d_flex{display:flex}.p_absolute{position: absolute!important;}ul,ol{margin:0;padding:0;list-style:none}
       .header.p_absolute .header__contenedor-img{display: none;}
       .header__link{color: #fafafa;}
       .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index: 114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa; }
@@ -55,7 +56,7 @@
     <script src="js/newsletter-validator.js" defer></script>
 
   </head>
-<body>
+<body class="isLoading">
   <header class="header d_flex p_absolute" >  <!-- header--compact-light / style="opacity: 0;" -->
     <div class="header__top">
       <div class="header__top-inner">
@@ -588,6 +589,7 @@
 <script>
       
 document.addEventListener('DOMContentLoaded',function(){
+  document.body.classList.remove('isLoading');
 //  var mainEl=document.querySelector('body');
 // if(mainEl){
 //   window.addEventListener('load',function(){
@@ -729,16 +731,8 @@ document.addEventListener('DOMContentLoaded',function(){
     // buttonWapp.classList.toggle('floating--hidden', activeId==='hero');
   }
 
-  if(buttonTop){
-    // oculto únicamente cuando hero está visible
-    buttonTop.classList.toggle('floating--hidden',activeId==='hero');
-    //buttonTop.classList.toggle('floating--dark',activeId==='howToOrder');
-    // if(activeId==='howToOrder'){
-    //   buttonTop.classList.add('floating--dark');
-    // }else{
-    //   buttonTop.classList.remove('floating--dark');
-    // }
-  }
+  // oculto únicamente cuando hero está visible
+  if(buttonTop)buttonTop.classList.toggle('floating--hidden',activeId==='hero');
 
   if(heroDots)heroDots.classList.toggle('dots--fixed',activeId==='hero');
 }
