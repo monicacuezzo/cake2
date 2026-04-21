@@ -90,7 +90,7 @@
 /* cards opcion 2 fuera del panel */
 .gift-card{display:block;padding:var(--padding-top) var(--padding-horizontal) 5rem}
 .gift-card__card{width:95%;max-width:46rem;margin:0 auto}
-.gift-card__options-title{margin:1.75rem auto 0;text-align:center;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.4;font-weight:700;color:var(--color-brand)}
+.gift-card__options-title{margin:1.75rem auto 0;text-align:center;font-size:clamp(1.2rem,2.6vw,2rem);line-height:1.4;font-weight:700;color:var(--color-brand)}
 .gift-card__options{display:grid;grid-template-columns:1fr;gap:.75rem;width:95%;max-width:46rem;margin:1rem auto 0}
 .gift-card__option{display:flex;flex-direction:column;min-height:100%;padding:1.15rem 1rem 1.25rem;background:var(--color7);color:#223242;border-radius:.125rem}
 .gift-card__option-title{font-size:.95rem;font-weight:700;line-height:1.35;color:var(--color16)}
