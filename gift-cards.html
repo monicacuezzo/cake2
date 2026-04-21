@@ -113,15 +113,53 @@
           </ul>
         </section>
         <p class="gift-card__note">Because the best gifts are the ones you get to experience.</p>
-        <div class="gift-card__cta-wrap">
+        <!-- <div class="gift-card__cta-wrap">
           <a class="btn btn--primary" href="https://TU-PLATAFORMA-DE-PAGO" target="_blank" rel="noopener noreferrer"><svg class="svg__icon" aria-hidden="true"><use href="#icon-gift"></use></svg>Give a Gift Card</a>
-        </div>
-        <p class="gift-card__legal">
-          Terms and conditions apply. Please review our
-          <a class="gift-card__legal-link" href="terms.html">Terms and conditions</a>
-          and
-          <a class="gift-card__legal-link" href="privacy-policy.html">Privacy policy</a>.
-        </p>
+        </div> -->
+        <h2 class="gift-card__options-title">Choose your gift card</h2>
+        <section class="gift-card__options" aria-label="Gift card options">
+          <article class="gift-card__option fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.05s">
+            <h3 class="gift-card__option-title">Buttercream Basics - Beginners</h3>
+            <i class="gift-card__option-subtitle">A gentle introduction to cake decorating</i>
+            <p class="gift-card__option-text">Learn how to frost, smooth, and pipe your first cake using Swiss meringue buttercream.</p>
+            <a class="gift-card__option-link" href="workshops.html#buttercream-basics">View workshop details</a>
+            <p class="gift-card__option-price">From 850 DKK</p>
+            <a class="gift-card__option-cta btn" href="https://TU-PLATAFORMA-DE-PAGO-1" target="_blank" rel="noopener noreferrer"><svg class="svg__icon" aria-hidden="true"><use href="#icon-gift"></use></svg>Buy Gift Card</a>
+          </article>
+
+          <article class="gift-card__option fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.1s">
+            <h3 class="gift-card__option-title">Cake Atelier Club - Intermediate</h3>
+            <i class="gift-card__option-subtitle">A space to practice and explore</i>
+            <p class="gift-card__option-text">For those who want to keep creating — refine your skills, experiment, and build confidence.</p>
+            <a class="gift-card__option-link" href="workshops.html#cake-atelier-club">View workshop details</a>
+            <p class="gift-card__option-price">From 670 DKK</p>
+            <a class="gift-card__option-cta btn" href="https://TU-PLATAFORMA-DE-PAGO-2" target="_blank" rel="noopener noreferrer"><svg class="svg__icon" aria-hidden="true"><use href="#icon-gift"></use></svg>Buy Gift Card</a>
+          </article>
+
+          <article class="gift-card__option fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.15s">
+            <h3 class="gift-card__option-title">Creative Buttercream - Intermediate/Advanced</h3>
+            <i class="gift-card__option-subtitle">Artistic techniques and expressive design</i>
+            <p class="gift-card__option-text">Work with textures, colors, and composition to create a more elevated, artistic cake.</p>
+            <a class="gift-card__option-link" href="workshops.html#creative-buttercream">View workshop details</a>
+            <p class="gift-card__option-price">From 990 DKK</p>
+            <a class="gift-card__option-cta btn" href="https://TU-PLATAFORMA-DE-PAGO-3" target="_blank" rel="noopener noreferrer"><svg class="svg__icon" aria-hidden="true"><use href="#icon-gift"></use></svg>Buy Gift Card</a>
+          </article>
+
+          <article class="gift-card__option fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:24px;--fx-delay:.2s">
+            <h3 class="gift-card__option-title">Open value Gift Card</h3>
+            <i class="gift-card__option-subtitle">Let them choose</i>
+            <p class="gift-card__option-text">A flexible option for any workshop</p>
+            <p class="gift-card__option-text">Select an amount and let the recipient decide how they’d like to experience Cake Atelier CPH, paying the difference when needed</p>
+            <a class="gift-card__option-link" href="workshops.html">Browse all workshops</a>
+            <p class="gift-card__option-price">From 500 DKK</p>
+            <a class="gift-card__option-cta btn" href="https://TU-PLATAFORMA-DE-PAGO-4" target="_blank" rel="noopener noreferrer"><svg class="svg__icon" aria-hidden="true"><use href="#icon-gift"></use></svg>Buy Gift Card</a>
+          </article>
+        </section>
+        
+       <label class="gift-card__consent">
+        <input id="giftCardConsent" class="gift-card__consent-control" type="checkbox">
+        <span class="gift-card__consent-text">I accept the <a class="gift-card__consent-link" href="terms.html">Terms and Conditions</a> and <a class="gift-card__consent-link" href="privacy-policy.html">Privacy Policy</a>.</span>
+      </label>
       </article>
     </section>
   </main>
@@ -256,6 +294,8 @@
     var heroEl=document.getElementById('hero');
     var buttonTop=document.getElementById('buttonTop');
     var giftCardSection=document.getElementById('gift-card-card');
+    var consentEl=document.getElementById('giftCardConsent');
+    var ctaEls=document.querySelectorAll('.gift-card__option-cta');
 
     function applyHeaderBySection(isGiftCardVisible){
       if(!headerEl)return;
@@ -264,6 +304,13 @@
         headerEl.classList.add('header--compact-dark');
       }else{
         headerEl.classList.add('header--compact-light');
+      }
+    }
+
+    function setGiftCardCtasState(isEnabled){
+      for(var i=0;i<ctaEls.length;i++){
+        ctaEls[i].setAttribute('aria-disabled',isEnabled?'false':'true');
+        ctaEls[i].classList.toggle('is-disabled',!isEnabled);
       }
     }
 
@@ -280,6 +327,22 @@
         buttonTop.classList.toggle('floating--hidden',entries[0].isIntersecting);
       },{threshold:0});
       heroIO.observe(heroEl);
+    }
+
+    if(consentEl&&ctaEls.length){
+      setGiftCardCtasState(false);
+
+      consentEl.addEventListener('change',function(){
+        setGiftCardCtasState(consentEl.checked);
+      });
+
+      for(var i=0;i<ctaEls.length;i++){
+        ctaEls[i].addEventListener('click',function(e){
+          if(consentEl.checked)return;
+          e.preventDefault();
+          consentEl.focus();
+        });
+      }
     }
 
     applyHeaderBySection(false);
