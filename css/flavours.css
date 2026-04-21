@@ -60,5 +60,5 @@
 .flavours__name{font-size:1.7rem;font-weight:400}
 .flavours__text{font-weight:400}
 }
-@media (hover:hover){.flavours__label:hover{border-color:rgba(62,44,38,.32)}}
+@media (hover:hover){.flavours__label:hover{background:rgba(247,237,186,.6);opacity:.5}}
 @media (prefers-reduced-motion:reduce){.flavours__label,.flavours__caption{transition:none}}
