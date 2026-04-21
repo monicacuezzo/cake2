@@ -87,9 +87,9 @@ a,button{-webkit-appearance:none;appearance:none;cursor:pointer}input,textarea{m
 
 /******botones CTA*************/
 .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:.25rem;padding:.75rem 1.375rem;font-weight:600;font-size:1.25rem;letter-spacing:.03rem;transition:background .2s,color .2s;cursor:pointer;width:max-content}
-.btn--primary{border:2px solid var(--color-accent);margin-top:1rem;box-shadow:0 4px 6px rgba(0, 0, 0, 0.1)}
+.btn--primary{border:2px solid var(--color-accent);margin-top:1rem;box-shadow:0 4px 6px rgba(0, 0, 0, 0.1);text-shadow:rgb(51, 51, 51) 0px 0px 5px}
 .btn--primary:link,.btn--primary:visited{background:var(--color-accent);color:#fff}
-.btn--primary:not(:hover){text-shadow:rgb(51, 51, 51) 0px 0px 5px}
+.btn--primary:hover,.btn--primary:active{text-shadow:none}
 .btn--primary:hover{background:#fafafa;color:var(--color-accent)}
 .btn:focus-visible{outline:2px solid var(--color16);outline-offset:3px;/*color:var(--color16);background: transparent;text-shadow: none;*/}  
 .btn.focus-light:focus-visible{outline:2px solid #fff;/*outline-offset:3px;color:currentColor;background: currentColor;text-shadow: inherit;*/}
