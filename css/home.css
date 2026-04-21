@@ -83,7 +83,7 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 .about__p{margin-bottom:3rem}
 .about__me-title{margin-top:1.875rem;font-size:1.375rem;margin-bottom:1.5rem}
 
-/*cmb para sticky*/
+/*cambios para sticky*/
 .about__layout{display:grid;grid-template-columns:minmax(0,1fr) clamp(18.75rem,18vw,26.25rem);gap:calc(clamp(2rem,calc(21.17vw - 8.56rem),11.19rem) / 2);align-items:start}
 .about__flow{min-width:0}
 .about__media{min-width:0;height:100%}
@@ -114,7 +114,7 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 
 @media (max-width:679.98px){
 .about__media-mobile .about__media--video{margin-top:0}
-.about__photo-sticky{position:-webkit-sticky;position:static;top:auto}
+.about__photo-sticky{position:static}
 /*********agregado para game****/
 .about__me-text .about__me-title{grid-row:4}
 .about__me-text .about__p{grid-row:5}

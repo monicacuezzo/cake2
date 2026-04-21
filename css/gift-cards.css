@@ -25,16 +25,6 @@
 .btn--primary:hover,.btn--primary:active{background:transparent;text-shadow:none}
 
 /*cards opcion 1 color16*/
-/* .gift-card__options-title{margin-top:1.75rem;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.4;font-weight:700}
-.gift-card__options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.75rem;margin-top:1rem}
-.gift-card__option{display:flex;flex-direction:column;min-height:100%;padding:1rem .9rem;background:var(--color16);border-radius:.125rem}
-.gift-card__option-title{font-size:.95rem;font-weight:700;line-height:1.35;color:var(--color-brand)}
-.gift-card__option-subtitle{margin-top:.45rem;font-size:.875rem;font-weight:600;line-height:1.45;color:#fff}
-.gift-card__option-text{margin-top:.6rem;font-size:.8125rem;line-height:1.55;color:#fff}
-.gift-card__option-link{margin-top:.75rem;font-size:.8125rem;font-weight:600;line-height:1.4;color:var(--color-brand);text-decoration:underline;text-underline-offset:.16em}
-.gift-card__option-price{margin-top:auto;padding-top:1rem;font-size:.95rem;font-weight:700;line-height:1.4;color:#fff}
-.gift-card__option-cta{margin-top:.65rem;width:100%} */
-
 .gift-card__options-title{margin-top:1.75rem;text-align:center;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.4;font-weight:700;color:var(--color12)}
 .gift-card__options{display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:1rem}
 .gift-card__option{display:flex;flex-direction:column;min-height:100%;padding:1.15rem 1rem 1.25rem;background:var(--color16);border-radius:.125rem}
@@ -49,7 +39,7 @@
 .gift-card__option-cta .svg__icon{display:block;flex:0 0 auto;color:#fff;margin-right:.5rem;width:1.75rem;height:1.75rem;transition:color .22s ease;transform-origin:center}
 .gift-card__option-cta:hover,.gift-card__option-cta:active{background:var(--color-brand);border-color:var(--color-brand);color:#223242;text-shadow:none}
 .gift-card__option-cta:hover .svg__icon,.gift-card__option-cta:active .svg__icon{color:#223242;animation:giftIconWiggle .5s ease 1}
-/********/
+
 .gift-card__consent{display:flex;align-items:flex-start;gap:.625rem;margin-top:1.5rem}
 .gift-card__consent-control{flex:0 0 auto;margin-top:.15rem}
 .gift-card__consent-text{font-size:clamp(.75rem,2vw,.875rem);line-height:1.5;color:#223242}
@@ -58,7 +48,6 @@
 .gift-card__consent.is-error .gift-card__consent-control{outline:.0625rem solid #8b1e1e;outline-offset:.0625rem}
 
 .gift-card__option-cta{position:relative}
-
 .gift-card__option-cta.is-disabled{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.38);color:rgba(255,255,255,.78);cursor:not-allowed;text-shadow:none}
 .gift-card__option-cta.is-disabled .svg__icon{color:rgba(255,255,255,.78)}
 .gift-card__option-cta.is-disabled::after{content:"Accept the Terms and Conditions and Privacy Policy to continue";position:absolute;left:50%;bottom:calc(100% + .5rem);transform:translateX(-50%);width:12rem;max-width:calc(100vw - 2rem);padding:.45rem .55rem;background:#223242;color:#fff;font-size:.75rem;line-height:1.35;text-align:center;border-radius:.125rem;opacity:0;pointer-events:none;transition:opacity .18s ease}
@@ -92,9 +81,61 @@
 .gift-card__copy p{line-height:1.72}
 .gift-card__item{line-height:1.58}
 /*cards1*/
+/* .gift-card__options{grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem} */
 .gift-card__options{gap:1rem}
 .gift-card__option{padding:1.25rem 1.15rem 1.35rem}
 }
+
+/*****card diseño 2*****/
+/* cards opcion 2 fuera del panel */
+.gift-card{display:block;padding:var(--padding-top) var(--padding-horizontal) 5rem}
+.gift-card__card{width:95%;max-width:46rem;margin:0 auto}
+.gift-card__options-title{margin:1.75rem auto 0;text-align:center;font-size:clamp(1.2rem,2.6vw,2rem);line-height:1.4;font-weight:700;color:var(--color-brand)}
+.gift-card__options{display:grid;grid-template-columns:1fr;gap:.75rem;width:95%;max-width:46rem;margin:1rem auto 0}
+.gift-card__option{display:flex;flex-direction:column;min-height:100%;padding:1.15rem 1rem 1.25rem;background:var(--color7);color:#223242;border-radius:.125rem}
+.gift-card__option-title{font-size:.95rem;font-weight:700;line-height:1.35;color:var(--color16)}
+.gift-card__option-subtitle{display:block;margin-top:.45rem;font-size:.875rem;font-weight:600;line-height:1.45;color:#223242}
+.gift-card__option-text{margin-top:.6rem;font-size:clamp(12px,2vw,.8125rem);line-height:1.55;color:#223242}
+.gift-card__option-link{margin-top:.75rem;width:fit-content;max-width:100%;font-size:.8125rem;font-weight:600;line-height:1.4;color:var(--color16);text-decoration:underline;text-underline-offset:.16em}
+.gift-card__option-link:hover,.gift-card__option-link:focus-visible{opacity:.8}
+.gift-card__option-price{margin-top:auto;padding-top:1rem;font-size:.95rem;font-weight:700;line-height:1.4;color:#223242}
+.gift-card__option-cta{position:relative;margin:.65rem auto 0;width:fit-content;max-width:100%;font-size:clamp(13px,2vw,.875rem);}
+.gift-card__option-cta:focus-visible{outline:.0625rem solid #fff;outline-offset:.25rem}
+.gift-card__option-cta .svg__icon{display:block;flex:0 0 auto;margin-right:.5rem;width:1.5rem;height:1.5rem;transform-origin:center;transition:color .22s ease}
+.gift-card__option-cta.is-disabled{background:rgba(255,255,255,.14);border-color:rgba(255,255,255,.38);color:rgba(255,255,255,.78);cursor:not-allowed;text-shadow:none}
+.gift-card__option-cta.is-disabled .svg__icon{color:rgba(255,255,255,.78)}
+.gift-card__option-cta.is-disabled::after{content:"Accept the Terms and Conditions and Privacy Policy to continue";position:absolute;left:50%;bottom:calc(100% + .5rem);transform:translateX(-50%);width:12rem;max-width:calc(100vw - 2rem);padding:.45rem .55rem;background:#223242;color:#fff;font-size:.75rem;line-height:1.35;text-align:center;border-radius:.125rem;opacity:0;pointer-events:none;transition:opacity .18s ease}
+.gift-card__option-cta.is-disabled:hover::after,.gift-card__option-cta.is-disabled:focus-visible::after{opacity:1}
+.gift-card__option-cta:hover .svg__icon,.gift-card__option-cta:active .svg__icon{animation:giftIconWiggle .5s ease 1}
+
+.gift-card__option-cta{position:relative;margin:.65rem auto 0;width:fit-content;max-width:100%;background:var(--color16);border-color:var(--color16);color:#fff}
+/* .gift-card__option-cta.is-disabled{background:var(--color16);border-color:var(--color16);color:#fff;cursor:not-allowed;text-shadow:none}
+.gift-card__option-cta.is-disabled .svg__icon{color:#fff}
+.gift-card__option-cta.is-disabled{background:var(--color16);border-color:var(--color16);color:#fff;cursor:not-allowed;text-shadow:none;filter:saturate(.2) brightness(.9)} */
+
+.gift-card__option-cta.is-disabled{background:#8e8d8d;border-color:#8e8d8d;color:#fff;cursor:not-allowed;text-shadow:none}
+.gift-card__option-cta.is-disabled .svg__icon{color:#fff}
+
+
+@media (min-width:520px){
+.gift-card__options{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (min-width:768px){
+.gift-card{padding:8rem 0 12rem}
+.gift-card__card,.gift-card__options{width:40rem;max-width:none}
+.gift-card__card{padding:2.7rem 2.4rem 2.9rem}
+.gift-card__options{gap:1rem;margin-top:1.25rem}
+.gift-card__option{padding:1.25rem 1.15rem 1.35rem}
+}
+
+@media (min-width:992px){
+.gift-card__card,.gift-card__options{width:min(60vw,47rem)}
+}
+
+/**/
+
+
 
 @media (min-width:992px){
 .gift-card__card{width:min(60vw,47rem)}
