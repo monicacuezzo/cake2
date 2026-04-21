@@ -28,7 +28,7 @@
 .gift-card__options-title{margin-top:1.75rem;text-align:center;font-size:clamp(1.05rem,2.6vw,1.4rem);line-height:1.4;font-weight:700;color:var(--color12)}
 .gift-card__options{display:grid;grid-template-columns:1fr;gap:.75rem;margin-top:1rem}
 .gift-card__option{display:flex;flex-direction:column;min-height:100%;padding:1.15rem 1rem 1.25rem;background:var(--color16);border-radius:.125rem}
-.gift-card__option-title{font-size:.95rem;font-weight:700;line-height:1.35;color:var(--color-brand)}
+.gift-card__option-title{font-size:1.2rem;font-weight:700;line-height:1.35;color:var(--color-brand)}
 .gift-card__option-subtitle{display:block;margin-top:.45rem;font-size:.875rem;font-weight:600;line-height:1.45;color:#fff}
 .gift-card__option-text{margin-top:.6rem;font-size:clamp(12px,2vw,.8125rem);line-height:1.55;color:#fff}
 .gift-card__option-link{margin-top:.75rem;width:fit-content;max-width:100%;font-size:.8125rem;font-weight:600;line-height:1.4;color:var(--color-brand);text-decoration:underline;text-underline-offset:.16em}
