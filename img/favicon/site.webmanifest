@@ -1,21 +1,23 @@
 {
   "name": "Cake Atelier Copenhagen",
-  "short_name": "Cake Atelier CPH",
+  "short_name": "Cake Atelier",
   "icons": [
     {
       "src": "/img/favicon/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "any"
     },
     {
       "src": "/img/favicon/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any maskable"
+      "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#223242",
+  "background_color": "#223242",
+  "display": "standalone",
+  "start_url": "/home.html",
+  "orientation": "portrait"
 }
