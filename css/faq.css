@@ -1,10 +1,11 @@
-:root{--padding-horizontal:4.7vw;--padding-top:7rem}@media (min-width:992px){:root{--padding-top:9.375rem}}
 body{background:#223242;color:#f1f1f1}
 .header.header--compact{box-shadow:none}
+
+:root{--padding-horizontal:4.7vw;--padding-top:7rem}@media (min-width:992px){:root{--padding-top:9.375rem}}
 .hero{padding-top:var(--padding-top)}
 .faq{position:relative;padding:0 var(--padding-horizontal) 0;width:100%;max-width:90rem;margin:0 auto;overflow:hidden}
 .faq__inner{position:relative;z-index:2;background:#223242;padding-bottom:4rem;max-width:100ch}
-.faq__title{color:var(--color-brand);font-size:clamp(2.125rem,3.73vw,3.5rem);font-weight:700;line-height:1.05;text-shadow:rgb(51 51 51) 0 0 .3125rem}
+.faq__title{color:var(--color-brand);font-size:clamp(2.125rem,3.73vw,3.5rem);font-weight:700;line-height:1.05}
 .faq__index{margin:2rem 0 3rem 0;position:relative;z-index:2}
 .faq__index-list{display:flex;flex-wrap:wrap;gap:.75rem;list-style:none}
 .faq__index-link{display:inline-flex;align-items:center;min-height:2.75rem;padding:.7rem 1rem;color:#fff;text-decoration:none;border:.0625rem solid rgba(255,255,255,.35);background:#223242;transition:border-color .25s ease,background-color .25s ease,color .25s ease}
