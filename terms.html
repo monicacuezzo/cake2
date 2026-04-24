@@ -423,13 +423,11 @@
       if(!heroEl||!buttonTop)return;
       buttonTop.classList.add('floating--hidden');
 
-      if(heroEl){
-        var heroIO=new IntersectionObserver(function(entries){
-          var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
-          buttonTop.classList.toggle('floating--hidden',heroVisible);
-        },{threshold:0,rootMargin:'0px 0px -15% 0px'});
-        heroIO.observe(heroEl);
-      }
+      var heroIO=new IntersectionObserver(function(entries){
+        var heroVisible=!!(entries[0]&&entries[0].isIntersecting);
+        buttonTop.classList.toggle('floating--hidden',heroVisible);
+      },{threshold:0,rootMargin:'0px 0px -15% 0px'});
+      heroIO.observe(heroEl);
     });
   </script>
 </body>
