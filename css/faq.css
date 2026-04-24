@@ -1,7 +1,5 @@
-body{background:#223242;color:#f1f1f1}
 .header.header--compact{box-shadow:none}
-
-:root{--padding-horizontal:4.7vw;--padding-top:7rem}@media (min-width:992px){:root{--padding-top:9.375rem}}
+:root{--padding-horizontal:4.7vw}@media (max-width:991.98px){:root{--padding-top:7rem}}@media (min-width:992px){:root{--padding-top:9.375rem}}
 .hero{padding-top:var(--padding-top)}
 .faq{position:relative;padding:0 var(--padding-horizontal) 0;width:100%;max-width:90rem;margin:0 auto;overflow:hidden}
 .faq__inner{position:relative;z-index:2;background:#223242;padding-bottom:4rem;max-width:100ch}

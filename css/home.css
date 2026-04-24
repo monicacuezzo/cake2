@@ -287,7 +287,7 @@ display:flex;flex-wrap:nowrap}
 .newsletter__input::-ms-input-placeholder{color:rgba(15,20,25,.55)}
 .newsletter__req{color:var(--color-accent);font-weight:800}
 .newsletter__fineprint{font-size:.8rem;line-height:.8rem;color:rgba(255,255,255,.8)}
-.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
 .p-faq-link{font-weight:500;margin:-15px auto;padding:.25rem;font-size:12px;color:rgba(255,255,255,.8)}
 .faq-link{font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:.2em;color:rgba(255,255,255,.8);white-space:nowrap}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}

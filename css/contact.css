@@ -1,5 +1,4 @@
 :root{--padding-horizontal:4.7vw}@media (max-width:991.98px){:root{--padding-top:7rem}}@media (min-width:992px){:root{--padding-top:8rem}}
-body{background:#223242;color:#f1f1f1}
 .header.header--compact{box-shadow:none}
 .contact__title{padding:var(--padding-top) var(--padding-horizontal) 0;text-align:center;font-size:clamp(32px,6vw,50px);font-weight:700;color:var(--color-brand)}
 .contact{display:grid;gap:3rem;padding:2.5rem var(--padding-horizontal) 3rem;width:100%}
@@ -17,6 +16,7 @@ body{background:#223242;color:#f1f1f1}
 .contact__links-list{display:grid;gap:.85rem;margin-top:1rem}
 .contact__aux-link{font-size:clamp(14px,2vw,1rem);text-decoration-line:underline;text-decoration-thickness:.04em;text-underline-offset:.16em;text-decoration-color:rgba(255,255,255,.85)}
 .contact__aux-link:hover,.contact__aux-link:focus-visible{opacity:.8}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
 .contact__form{display:grid;gap:0}
 .contact__field{margin-top:.75rem}
 .contact__label{display:block;font-size:clamp(14px,2vw,1rem);font-weight:600;color:#fff;line-height:1rem}
