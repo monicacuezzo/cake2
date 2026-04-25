@@ -27,7 +27,7 @@
     <title>Gift Cards | Cake Atelier Copenhagen</title>
     <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="img/workshops/cakeatelier-cph-gift-card-mobile.webp" as="image" media="(max-width:514.98px)" fetchpriority="high">
-    <link rel="preload" href="img/workshops/cakeatelier-cph-gift-card-tablet.webp" as="image" media="(min-width:515px)" fetchpriority="high">
+    <link rel="preload" href="img/workshops/cakeatelier-cph-gift-card-tablet.webp" as="image" media="(min-width:515px) and (max-width:767.98px)" fetchpriority="high">
     <link rel="preload" href="img/workshops/cakeatelier-cph-gift-card.webp" as="image" media="(min-width:768px)" fetchpriority="high">
 
     <style>
@@ -96,7 +96,7 @@
   <main class="main">
     <section id="hero" class="hero" aria-labelledby="card-title">
        <picture class="hero__picture">
-        <source srcset="img/workshops/cakeatelier-cph-gift-card-tablet.webp" media="(min-width: 515px)" width="520" height="284" >
+        <source srcset="img/workshops/cakeatelier-cph-gift-card-tablet.webp" media="(min-width: 515px) and (max-width:767.98px)" width="520" height="284" >
         <img class="hero__img" src="img/workshops/cakeatelier-cph-gift-card-mobile.webp" alt="Decorated cake workshop setup at Cake Atelier Copenhagen" width="360" height="197" fetchpriority="high">
       </picture>
       <h1 id="card-title" class="hero__title fx-fade-up-var" style="--fx-dur:1.5s;--fx-y:30px;--fx-delay:.05s">Gift Cards</h1>
@@ -319,7 +319,7 @@
         ctaEls[i].setAttribute('aria-disabled',isEnabled?'false':'true');
         ctaEls[i].classList.toggle('is-disabled',!isEnabled);
       }
-      if(consentEl)consentEl.setAttribute('aria-invalid',isEnabled?'false':'true');
+      // if(consentEl)consentEl.setAttribute('aria-invalid',isEnabled?'false':'true');
     }
 
     if(headerEl&&giftCardSection){
