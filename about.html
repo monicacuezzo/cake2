@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="Learn more about Cake Atelier Copenhagen, a creative studio for artistic buttercream cakes and workshops, where craftsmanship, detail and contemporary design come together.">
+    <meta name="description" content="Learn more about Cake Atelier Copenhagen, a creative studio for artistic buttercream cakes and workshops, where craftsmanship, detail and contemporary design come together.">
 
      <meta name="robots" content="noindex, nofollow">
      <!-- <meta name="robots" content="index, follow, max-image-preview:large"> -->
@@ -13,12 +12,44 @@
     <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
 
     <style>
-      body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button{display:none}
-      .d_flex{display:flex}
-      ul,ol{margin:0;padding:0;list-style:none}
-      .header__link{color: #fafafa;}
-      .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index: 114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa; }
-.body,#closingSection,#footer{content-visibility:auto;contain-intrinsic-size:800px}
+      body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{display:none}.d_flex{display:flex}ul,ol{margin:0;padding:0;list-style:none}.header__link{color:#fafafa}.header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa}
+    :root{--padding-horizontal:4.7vw;--padding-top:3rem;--accent:var(--color-brand)}
+.intro__inner{max-width:100%;margin:0 auto 0 0}
+.intro__title{font-size:clamp(34px,3.73vw,56px);color:var(--color-brand);font-weight:700}
+.intro__subtitle{margin:1.6rem auto 0;font-size:clamp(22px,3vw,32px);font-weight:500}
+.intro__lead{max-width:72rem;margin:2.4rem auto 0;font-size:clamp(16px,1.74vw,20px);line-height:1.7;max-width:65ch}
+.body__row{padding:var(--padding-top) var(--padding-horizontal);display:flex;gap:2rem;align-items:center;width:100%;flex-direction:column}
+.intro.body__row{padding-top:7rem}
+.body__media{display:flex;align-items:stretch; height:100%;max-width:100%}
+.body__picture{display:block;height:100%;overflow:hidden;width:max-content;border-radius:.25rem}
+.body__img{display:block;width:auto;height:100%;max-height:28rem}
+.body__content{display:flex;flex-direction:column;justify-content:center;max-width:100%;padding:2rem 0}
+.body__eyebrow{margin:0 0 1.1rem;font-size:1.1rem;text-transform:uppercase}
+.body__title{font-size:2rem;font-weight:700;width:max-content;max-width:100%}
+.body__text{margin-top:1.7rem}
+@media (min-width:750px){.body__row{flex-direction:row}
+.body__row--reverse .body__media{order:1}
+.body__row--reverse .body__content{order:2}}
+
+@media (min-width:992px){
+.body__title{font-size:2.25rem}
+.body__eyebrow{margin:0 0 1.4rem;font-size:1.3rem}
+.body__text{margin-top:2.4rem}
+}
+@media (min-width:1100px){
+.body__row{gap:6vw}
+.body__content{padding:5.2rem 5.6vw}
+}
+@media (min-width:1600px){
+.body__row{width: 80%;}
+.intro.body__row{padding-top:8rem}
+.intro__title{font-size:3rem}
+.intro__subtitle{font-size:2rem}
+.intro__lead{font-size:1.3rem}
+}  
+
+    #footer{content-visibility:auto;contain-intrinsic-size:1150px}@media (min-width:992px){#footer{contain-intrinsic-size:552px}}
+/* .body,#closingSection,#footer{content-visibility:auto;contain-intrinsic-size:800px} */
     </style>
 
  <!-- <link rel="stylesheet" href="css/home-critical.css">   -->
