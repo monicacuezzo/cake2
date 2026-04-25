@@ -6,16 +6,29 @@
     <meta name="description" content="Explore the flavour collection of Cake Atelier Copenhagen. Discover signature cake flavours crafted with refined fillings, fruits, creams, and chocolate.">
     <meta name="robots" content="noindex, nofollow">
     <!-- <meta name="robots" content="index, follow, max-image-preview:large"> -->
+
+    <!-- Social meta - production
+<meta property="og:type" content="website">
+<meta property="og:title" content="Have You Found Your Cake Flavour Yet?">
+<meta property="og:description" content="Come explore Cake Atelier Copenhagen’s flavour collection — bright lemon, berries, rich chocolate, pistachio, mascarpone, mango and passion fruit are waiting.">
+<meta property="og:url" content="https://www.cakeateliercph.dk/flavours.html">
+<meta property="og:site_name" content="Cake Atelier Copenhagen">
+<meta property="og:image" content="https://www.cakeateliercph.dk/img/social/cakeatelier-cph-cake.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cake Atelier Copenhagen custom cakes and workshops">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Have You Found Your Cake Flavour Yet?">
+<meta name="twitter:description" content="Come discover Cake Atelier Copenhagen’s signature flavours — from lemon and berries to chocolate, pistachio, mango and passion fruit.">
+<meta name="twitter:image" content="https://www.cakeateliercph.dk/img/social/cakeatelier-cph-cake.jpg">
+-->
     
     <title>The Flavour Collection | Cake Atelier Copenhagen</title>
     <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
 
     <style>
-      /* ?????body{background-color: #fff;} */
-body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{display:none}.d_flex{display:flex}ul,ol{margin:0;padding:0;list-style:none}.header__link{color:#fafafa}.header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa}:root{--padding-horizontal:4.7vw;--padding-top:3rem}
-    
-:root{--padding-horizontal:4.7vw}@media (max-width:991.98px){:root{--padding-top:7rem}}@media (min-width:992px){:root{--padding-top:9.375rem}}.section{padding:var(--padding-top) var(--padding-horizontal);width:100%}.hero{width:90%;padding-bottom:6rem}.hero__title{font-size:clamp(32px,3.2vw,50px);font-weight:700;color:var(--color-brand)}.hero__subtitle{margin:1.6rem auto 0;font-size:clamp(20px,2vw,30px);font-weight:500;color:#fff}.hero__lead{max-width:72rem;margin:2rem 0 0;font-size:clamp(14px,1.33vw,20px);line-height:1.7;color:#fff}.flavours{width:90%;max-width:465px;padding:6vw 0;margin:auto;background:var(--color7);position:relative}.hint{font-size:clamp(20px,2vw,32px);font-weight:700;color:var(--color16);text-align:center;padding:0 .5rem}@media (min-width:450px){.hero{width:70%}}
-@media (min-width:768px){.flavours{width:60vw;min-width:47rem;max-width:none}}
+    body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{display:none}.d_flex{display:flex}ul,ol{margin:0;padding:0;list-style:none}.header__link{color:#fafafa}.header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa}
+    :root{--padding-horizontal:4.7vw}@media (max-width:991.98px){:root{--padding-top:7rem}}@media (min-width:992px){:root{--padding-top:9.375rem}}.section{padding:var(--padding-top) var(--padding-horizontal);width:100%}.hero{width:90%;padding-bottom:6rem}.hero__title{font-size:clamp(32px,3.2vw,50px);font-weight:700;color:var(--color-brand)}.hero__subtitle{margin:1.6rem auto 0;font-size:clamp(20px,2vw,30px);font-weight:500;color:#fff}.hero__lead{max-width:72rem;margin:2rem 0 0;font-size:clamp(14px,1.33vw,20px);line-height:1.7;color:#fff}.flavours{width:90%;max-width:465px;padding:6vw 0;margin:auto;background:var(--color7)}.hint{font-size:clamp(20px,2vw,32px);font-weight:700;color:var(--color16);text-align:center;padding:0 .5rem}@media (min-width:450px){.hero{width:70%}}@media (min-width:768px){.flavours{width:60vw;min-width:47rem;max-width:none}}
     #footer{content-visibility:auto;contain-intrinsic-size:1150px}@media (min-width:992px){#footer{contain-intrinsic-size:552px}}
     </style>
     <link rel="stylesheet" href="css/basic.css">
@@ -25,9 +38,7 @@ body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{disp
     <link rel="alternate icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
     <link rel="manifest" href="site.webmanifest">
-
-    <!-- <link rel="canonical"> -->
-
+    <link rel="canonical" href="https://www.cakeateliercph.dk/flavours.html">
   </head>
 <body class="isLoading">
 
@@ -88,7 +99,12 @@ body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{disp
       <p class="hint" id="flavours-hint">Choose a flavour <span>to reveal its filling</span></p>
       <div class="flavours__inner">
         <div class="flavours__media fx-fade-up-var" style="--fx-dur:.9s;--fx-y:30px;--fx-delay:.2s">
-            <img class="flavours__img" src="img/flavours/flavours-bkg.webp" alt="Cake slice from Cake Atelier Copenhagen" width="900" height="1200" loading="lazy">
+          <picture class="flavours__picture">
+            <source srcset="img/flavours/cakeatelier-cph-flavour-collection-cake-slice.webp" media="(min-width:1500px)" width="552" height="776">
+            <source srcset="img/flavours/cakeatelier-cph-flavour-collection-cake-slice-2.webp" media="(min-width:768px)" width="324" height="455">
+            <img class="flavours__img" src="img/flavours/cakeatelier-cph-flavour-collection-cake-slice-1.webp" alt="Cake slice from Cake Atelier Copenhagen" width="324" height="455" loading="lazy">
+          </picture>
+            <!-- <img class="flavours__img" src="img/flavours/cakeatelier-cph-flavour-collection-cake-slice.webp" alt="Cake slice from Cake Atelier Copenhagen" width="324" height="455" loading="lazy"> -->
         </div>
         <fieldset class="flavours__box fx-fade-up-var" style="--fx-dur:1.2s;--fx-y:70px;--fx-delay:.2s" aria-describedby="flavours-hint">
           <legend class="sr-only">Choose a flavour</legend>
@@ -275,7 +291,8 @@ body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{disp
     var flavoursTopSentinel=document.querySelector('.flavours__top-sentinel');
     var heroVisible=false;
     var flavoursTopVisible=false;
-    var isMobileFlavoursRule=window.matchMedia('(max-width: 579.98px)').matches;
+    var mobileFlavoursMQ=window.matchMedia('(max-width:579.98px)');
+    var isMobileFlavoursRule=mobileFlavoursMQ.matches;
 
     function applyHeaderBySection(isFlavoursVisible){
       if(!headerEl)return;
@@ -321,7 +338,7 @@ body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{disp
 
     window.addEventListener('resize',function(){
       var wasMobileFlavoursRule=isMobileFlavoursRule;
-      isMobileFlavoursRule=window.matchMedia('(max-width: 579.98px)').matches;
+      isMobileFlavoursRule=mobileFlavoursMQ.matches;
       if(wasMobileFlavoursRule!==isMobileFlavoursRule){
         updateButtonTop();
       }
