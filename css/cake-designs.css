@@ -18,7 +18,7 @@ body{color:#f1f1f1}
 .designs__tab{position:relative;display:flex;align-items:flex-end;justify-content:center;background-repeat:no-repeat;background-position:center;background-size:cover;border-radius:5px;overflow:hidden;text-align:center;min-height:12.5rem;padding:.625rem}
 .designs__tab:nth-child(1){background-image:url("../img/cakes/cake-classic-2.webp")}
 .designs__tab:nth-child(2){background-image:url("../img/cakes/cakeatelier-cph-petal-crown-cake-4.webp")}
-.designs__tab:nth-child(3){background-image:url("../img/workshops/cake-floral-ws2.webp")}
+.designs__tab:nth-child(3){background-image:url("../img/workshops/cakeatelier-cph-creative-floral-blue-cake.webp")}
 .designs__tab:nth-child(4){background-image:url("../img/cakes/cakeatelier-cph-classic-heart-cake-6.webp")}
 .designs__tab::before{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(34,50,66,.65) 0%,rgba(34,50,66,.3) 38%,rgba(34,50,66,.24) 62%,rgba(34,50,66,.22) 100%)}
 .designs__tab:hover,.designs__tab:focus-visible{transform:translateY(-.25rem)}
