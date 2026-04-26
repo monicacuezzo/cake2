@@ -32,12 +32,12 @@
     body{background-color:#223242;color:#223242}.isLoading .floating-button{display:none}.d_flex{display:flex}ul,ol{margin:0;padding:0;list-style:none}.header__link{color:#fafafa}.header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa}
     @media (max-width:991.98px){:root{--padding-horizontal:4.7vw;--padding-top:7rem}}@media (min-width:992px){:root{--padding-top:7.375rem;--padding-horizontal:4.25vw}}
 .section{padding:var(--padding-top) var(--padding-horizontal) 1rem;width:100%}
-.hero{position:relative;width:100%;min-height:100dvh;height:110vh;overflow:hidden;z-index:0}
+.hero{position:relative;width:100%;min-height:100dvh;height:100vh/**/;overflow:hidden;z-index:0}
 .hero__inner{position:absolute;top:0;left:0;width:100%;height:100%}
 .hero__slides{position:absolute;inset:0;min-height:100dvh;height:100dvh}
 .hero__slide{position:absolute;inset:0;opacity:0}
 .hero__slide--1{opacity:1}
-.hero__picture{position:absolute;inset:0;height:110vh;display:block}
+.hero__picture{position:absolute;inset:0;height:100vh/**/;display:block}
 .hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero__copy{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;min-height:100dvh;height:100dvh;padding:8rem var(--padding-horizontal) 7rem;margin:0 auto}
 .hero__headline{font-size:clamp(1.8rem, 3.13vw, 3rem);line-height:1.05;color:#fff;font-weight:700;text-shadow:rgb(51, 51, 51) 0px 0px 5px;margin-bottom:1rem}
@@ -479,9 +479,7 @@ document.addEventListener('DOMContentLoaded',function(){
     if(buttonWapp)buttonWapp.classList.toggle('floating--hidden',heroVisible);
   }
 
-  if(prefersReduced&&heroEl){
-    setHeroActive(1);
-  }
+  if(prefersReduced&&heroEl)setHeroActive(1);
 
   if(heroEl){
     heroEl.addEventListener('click',function(e){
@@ -541,7 +539,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
       function stopAutoplay(){
         isManual=true;
-        gallery.classList.remove('autoplay');
+        // gallery.classList.remove('autoplay');
         if(timer){
           clearInterval(timer);
           timer=null;
@@ -550,7 +548,7 @@ document.addEventListener('DOMContentLoaded',function(){
 
       function startAutoplay(){
         if(reduceMotion||isManual||images.length<2)return;
-        gallery.classList.add('autoplay');
+        // gallery.classList.add('autoplay');
         timer=setInterval(function(){
           goTo(current+1);
         },autoplayMs);
