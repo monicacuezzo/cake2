@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded',function(){
     function fxRestart(el){
       el.classList.remove('fx-run');
       el.style.animation='none';
-      void el.offsetWidth; // reflow
+      void el.offsetWidth; // reflow //forzar al navegador a recalcular el layout
       el.style.animation='';
       el.classList.add('fx-run');
     }
