@@ -41,7 +41,7 @@
 .hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .hero__copy{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;min-height:100dvh;height:100dvh;padding:8rem var(--padding-horizontal) 7rem;margin:0 auto}
 .hero__headline{font-size:clamp(1.8rem, 3.13vw, 3rem);line-height:1.05;color:#fff;font-weight:700;text-shadow:rgb(51, 51, 51) 0px 0px 5px;margin-bottom:1rem}
-.hero__text{font-size:1.15rem;font-size:clamp(18px,1.92vw,1.5rem);line-height:1.2;color:#fff}
+.hero__text{font-size:clamp(18px,1.92vw,1.5rem);color:#fff}
 @media (min-width:768px){.hero__copy{padding:6rem var(--padding-horizontal) 4rem}}@media (min-width:1600px){.hero__headline{font-size:2.5rem}}
     #footer{content-visibility:auto;contain-intrinsic-size:1150px}@media (min-width:992px){#footer{contain-intrinsic-size:552px}}
 
@@ -58,7 +58,7 @@
   <link rel="manifest" href="site.webmanifest">
   <link rel="canonical" href="https://www.cakeateliercph.dk/workshops.html">
   <script src="js/header-menu.js" defer></script>
-  <script src="js/animations.js" defer></script>
+  <script src="js/animations-simple.js" defer></script>
 </head>
 <body class="isLoading">
   <header class="header d_flex p_absolute header--compact">
@@ -157,7 +157,7 @@
           <img class="workshops__img" src="img/workshops/ws_basic5.webp" alt="Beginner buttercream cake decorating workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
           <div class="workshops__dots" aria-label="Intro to Buttercream gallery">
             <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1" aria-current="true"></button>
-            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="true"></button>
+            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5" aria-current="false"></button>
@@ -206,7 +206,7 @@
           <img class="workshops__img" src="img/workshops/ws_level2-5.webp" alt="Cake Atelier Club workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
           <div class="workshops__dots" aria-label="Workshop gallery">
             <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1" aria-current="true"></button>
-            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="true"></button>
+            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5" aria-current="false"></button>
@@ -256,7 +256,7 @@
           <img class="workshops__img" src="img/workshops/cake-floral2-ws2.webp" alt="Creative Buttercream workshop at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
           <div class="workshops__dots" aria-label="Creative Buttercream Workshop gallery">
             <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1" aria-current="true"></button>
-            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="true"></button>
+            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5" aria-current="false"></button>
@@ -316,7 +316,7 @@
           <img class="workshops__img" src="img/workshops/ws_level4-5.webp" alt="Cake Painting and Coffee event at Cake Atelier Copenhagen" width="320" height="493" loading="lazy" decoding="async">
           <div class="workshops__dots" aria-label="Cake Painting & Coffee gallery">
             <button class="workshops__dot is-active" type="button" data-go="0" aria-label="Show photo 1" aria-current="true"></button>
-            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="true"></button>
+            <button class="workshops__dot" type="button" data-go="1" aria-label="Show photo 2" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="2" aria-label="Show photo 3" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="3" aria-label="Show photo 4" aria-current="false"></button>
             <button class="workshops__dot" type="button" data-go="4" aria-label="Show photo 5" aria-current="false"></button>
