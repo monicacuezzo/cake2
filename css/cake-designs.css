@@ -7,16 +7,16 @@ body{color:#f1f1f1}
 .intro,.designs{position:relative;z-index:1}
 .intro{padding:var(--padding-top) var(--padding-horizontal) 3.5rem}
 .intro__inner{margin:0;background:rgba(34,50,66,.5);max-width:90ch}
-.intro__title{font-size:2.5rem;font-size:clamp(34px,3.73vw,3.5rem);color:var(--color-brand);font-weight:700;margin-bottom:1rem}
-.intro__subtitle{font-size:1.25rem;font-size:clamp(18px,2vw,24px);font-weight:600;margin-bottom:1rem}
-.intro__lead{font-size:1rem;font-size:clamp(14px,1.33vw,1rem)}
+.intro__title{font-size:clamp(34px,3.73vw,3.5rem);color:var(--color-brand);font-weight:700;margin-bottom:1rem}
+.intro__subtitle{font-size:clamp(18px,2vw,1.5rem);font-weight:600;margin-bottom:1rem}
+.intro__lead{font-size:clamp(14px,1.33vw,1rem)}
 .designs{width:90%;max-width:60rem;padding:4vw 0;margin:auto;background:var(--color7)}
 .designs__inner{padding:1rem;text-align:center}
-.hint{font-size:1.125rem;font-size:clamp(18px,1.86vw,26px);font-weight:700;color:var(--color16);text-align:center;padding:0 .5rem}
+.hint{font-size:clamp(18px,1.86vw,1.625rem);font-weight:700;color:var(--color16);text-align:center;padding:0 .5rem}
 .designs__box{display:grid;grid-template-columns:minmax(0,1fr)}
 .designs__tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.65rem;background:#FDFEE0;padding-bottom:2rem}
 .designs__tab{position:relative;display:flex;align-items:flex-end;justify-content:center;background-repeat:no-repeat;background-position:center;background-size:cover;border-radius:5px;overflow:hidden;text-align:center;min-height:12.5rem;padding:.625rem}
-.designs__tab:nth-child(1){background-image:url("../img/cakes/cake-classic-2.webp")}
+.designs__tab:nth-child(1){background-image:url("../img/cakes/cakeatelier-cph-cake-classic-2.webp")}
 .designs__tab:nth-child(2){background-image:url("../img/cakes/cakeatelier-cph-petal-crown-cake-4.webp")}
 .designs__tab:nth-child(3){background-image:url("../img/workshops/cakeatelier-cph-creative-floral-blue-cake.webp")}
 .designs__tab:nth-child(4){background-image:url("../img/cakes/cakeatelier-cph-classic-heart-cake-6.webp")}
@@ -43,8 +43,8 @@ use{width:100%;height:100%}
 .designs__panel-item.fx-gallery{opacity:0;transform:translate3d(0,1.875rem,0)}
 .designs__panel-item.fx-gallery.fx-gallery-run{animation:fxFadeUp .7s ease forwards;animation-delay:calc(var(--gallery-i,0)*.08s)}
 .closing{width:100%;font-weight:500;padding:2rem 1rem;border-top:1px solid var(--color16);position:relative;z-index:10}
-.closing__text{font-size:1.5rem;font-size:clamp(20px,2.35vw,24px);color:var(--color16);font-weight:700}
-.closing__note{margin:1rem 0;font-size:1.2rem;font-size:clamp(14px,1.7vw,1rem);line-height:1.7;color:var(--color12);width:100%}
+.closing__text{font-size:clamp(20px,2.35vw,1.5rem);color:var(--color16);font-weight:700}
+.closing__note{margin:1rem 0;font-size:clamp(14px,1.7vw,1rem);line-height:1.7;color:var(--color12);width:100%}
 .closing__cta{text-align:center}
 .faq-wrap{width:max-content;max-width:100%;display:flex;flex-wrap:wrap;margin:auto;font-size:14px}
 .closing__faq-link{margin:0 auto;color:var(--color16);text-decoration:underline;display:block;padding:.5rem 1rem;width:max-content;text-underline-offset:.2em}
