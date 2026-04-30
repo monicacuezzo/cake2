@@ -8,31 +8,36 @@
     <!-- <meta name="robots" content="index, follow, max-image-preview:large"> -->
     <title>Cake Designs | Cake Atelier Copenhagen</title>
     <link rel="preload" href="fonts/Montserrat-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="img/cakes/cakeatelier-cph-cake-classic-2.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="img/cakes/cakeatelier-cph-petal-crown-cake-4.webp" as="image" fetchpriority="high">
 
     <style>
-      body{background-color:#223242}.isLoading .floating-button{display:none}
+    body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{display:none}.d_flex{display:flex}ul,ol{margin:0;padding:0;list-style:none}.header__link{color:#fafafa}.header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa}
+    :root{--padding-horizontal:4.7vw}@media (max-width:991.98px){:root{--padding-top:7rem;}}@media (min-width:992px){:root{--padding-top:9.375rem}}
 
-      .d_flex{display:flex}
-      /* .p_absolute{position: absolute!important;} */
-      ul,ol{margin:0;padding:0;list-style:none}
-      .header__link{color: #fafafa;}
-      .header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index: 114;}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa; }
+    .intro{padding:var(--padding-top) var(--padding-horizontal) 3.5rem}
+.intro__inner{margin:0;background:rgba(34,50,66,.5);max-width:90ch}
+.intro__title{font-size:clamp(34px,3.73vw,3.5rem);color:var(--color-brand);font-weight:700;margin-bottom:1rem}
+.intro__subtitle{font-size:clamp(18px,2vw,1.5rem);font-weight:600;margin-bottom:1rem}
+.intro__lead{font-size:clamp(14px,1.33vw,1rem)}
+.designs{width:90%;max-width:60rem;padding:4vw 0;margin:auto;background:var(--color7)}
+.designs__inner{padding:1rem;text-align:center}
+.hint{font-size:clamp(18px,1.86vw,1.625rem);font-weight:700;color:var(--color16);text-align:center;padding:0 .5rem}
 
- #footer{content-visibility:auto;contain-intrinsic-size:800px}
+@media (min-width:450px){
+.designs__inner{padding:2rem}}
+@media (min-width:768px){.hero__hint{margin:4rem}}
+ @media (min-width:992px){
+.intro{padding-bottom:6rem}
+.designs{width:65vw;min-width:60rem;max-width:none} }
 
+@media (min-width:1600px){.intro__title{font-size:3rem}}
 
+    #footer{content-visibility:auto;contain-intrinsic-size:1150px}@media (min-width:992px){#footer{contain-intrinsic-size:552px}}
     </style>
-
- <!-- <link rel="stylesheet" href="css/home-critical.css">   -->
-
- <!-- <link rel="preload" href="css/home-critical.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/home-critical.css"></noscript> -->
-
- <link rel="stylesheet" href="css/basic.css">
-    <!-- <link rel="preload" href="css/basic.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/basic.css"></noscript> -->
-    
+    <link rel="stylesheet" href="css/basic.css">
     <link rel="preload" href="css/cake-designs.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/cake-designs.css"></noscript>
     <link rel="preload" href="css/footer.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/footer.css"></noscript>
-
     <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml">
     <link rel="alternate icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
@@ -342,7 +347,7 @@
 
   <a id="buttonTop" data-target="hero" href="#hero" class="floating-button floating-button--up flex_aj_center" aria-label="Back to top" title="Go top"></a>
 
-  <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"><img src="img/shared/icon-wapp.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50" loading="lazy"></a>
+  <a id="buttonWapp" href="https://wa.me/4591702650" class="floating-button floating-button--wapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with us on WhatsApp"><img src="img/shared/icon-wapp.webp" alt="WhatsApp" class="floating-button--wapp__img" width="50" height="50" loading="eager" fetchpriority="high"></a>
 
     <script src="js/header-menu.js" defer></script>
     <script src="js/animations.js" defer></script>
