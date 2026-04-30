@@ -41,13 +41,13 @@ body{background:#223242;color:#f1f1f1}
 .workshops__viewer-flip.is-flipping .workshops__viewer-img--front{transform:rotateY(180deg);transition:transform .95s cubic-bezier(.45,.05,.55,.95)}
 .workshops__viewer-flip.is-flipping .workshops__viewer-img--back{transform:rotateY(0deg);transition:transform .95s cubic-bezier(.45,.05,.55,.95)}
 .workshops__viewer-video{opacity:1}
-.workshops__viewer-video.is-fading-in{opacity:0}/**/
+.workshops__viewer-video.is-fading-in{opacity:0}
 .workshops__media-col{display:grid;gap:.45rem;width:calc(100% - 2rem);margin:-7px auto auto}
 .workshops__media-title{font-size:.82rem;line-height:.82rem;letter-spacing:.06rem;text-transform:uppercase;color:var(--color12);text-align:left}
 .workshops__gallery{overflow-x:auto;overflow-y:hidden;scrollbar-width:none;-ms-overflow-style:none;touch-action:pan-x;-webkit-overflow-scrolling:touch;cursor:grab;width:100%}
 .workshops__gallery::-webkit-scrollbar{display:none}
-.workshops__gallery-track{display:grid;grid-auto-flow:column;grid-auto-columns:/*5.25*/ 4rem;gap:.5rem;width:max-content}
-.workshops__gallery-btn{display:block;width:4rem/*5.25rem*/;height:4rem;overflow:hidden;border-radius:.25rem;cursor:pointer;opacity:.78;transition:opacity .25s ease,border-color .25s ease,transform .25s ease;position:relative}
+.workshops__gallery-track{display:grid;grid-auto-flow:column;grid-auto-columns:4rem;gap:.5rem;width:max-content}
+.workshops__gallery-btn{display:block;width:4rem;height:4rem;overflow:hidden;border-radius:.25rem;cursor:pointer;opacity:.78;transition:opacity .25s ease,border-color .25s ease,transform .25s ease;position:relative}
 .workshops__gallery-btn:hover,.workshops__gallery-btn:focus,.workshops__gallery-btn:focus-visible,.workshops__gallery-btn.is-active{opacity:1;outline:.3125rem solid var(--color16);outline-offset:-.3125rem}
 .workshops__gallery-img,.workshops__video-thumb{display:block;width:100%;height:100%;object-fit:cover}
 .workshops__videos .workshops__gallery-btn::after{content:"";position:absolute;inset:0;margin:auto;width:1.55rem;height:1.55rem;border-radius:50%;background:rgba(34,50,66,.52);backdrop-filter:blur(.08rem);-webkit-backdrop-filter:blur(.08rem);box-shadow:0 .08rem .35rem rgba(0,0,0,.16);pointer-events:none}
