@@ -30,7 +30,7 @@
 .about__media--video{flex:0 0 clamp(15.25rem,11vw,18.75rem);overflow:hidden;border-radius:.25rem;margin-top:5rem;height:max-content;position:relative}
 .about__media--photo{overflow:hidden;border-radius:.25rem;height:max-content;position:relative;z-index:2}
 .about-game{position:absolute;bottom:0;left:0;overflow:visible;width:100%}
-.about-game__title{position:absolute;bottom:0;left:0;z-index:4;width:100%;min-height:4.5rem;text-align:center;overflow:hidden;font-size:1.17rem;line-height:1.17rem;padding:1.75rem .75rem .85rem;box-sizing:border-box;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,.18) 15%,rgba(0,0,0,.62) 100%)}
+.about-game__title{position:absolute;bottom:0;left:0;z-index:4;width:100%;min-height:4.5rem;text-align:center;overflow:hidden;color: transparent;padding:1.75rem .75rem .85rem;box-sizing:border-box;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,.18) 15%,rgba(0,0,0,.62) 100%)}
 .about-game__title::before,.about-game__title::after{position:absolute;left:0;width:100%;content:"";height:1.17rem ;font-size:1.17rem;line-height:1.17rem;padding:0;animation:aboutGameTitle 8s ease-in-out infinite;text-shadow:rgb(51,51,51) 0 0 5px }
 .about-game__title::before{content:"Which cake are you?";color:#f3e924}
 .about-game__title::after{content:"Tap to dress the cake!";color:#fff;opacity:0;animation-delay:4s}
@@ -188,7 +188,25 @@
 .cakes__head{position:absolute;top:0;left:0;right:0;z-index:2;padding:2rem 1.125rem 1.125rem;padding:2rem 1.125rem 1.125rem;background:linear-gradient(180deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%)}
 .cakes__h2-span{color:var(--color-brand);font-weight:600;font-size:inherit;text-shadow:rgb(51,51,51) 0 0 5px}
 .cakes__subtitle{display:none}
-.cakes__wrap{height:600vh;position:relative}
+.cakes__wrap{height:600vh;position:relative;
+/*correccion salto footer mob*/overflow: hidden;
+    contain: paint;
+}
+
+@media (max-width: 991.98px) {
+  /* Evita que el scroll se pierda por transformaciones 3D en móvil */
+  .cakes__col {
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+  
+  /* Asegura que la sección cakes no tenga comportamientos extraños 
+     de altura al final del scroll */
+  .cakes {
+    min-height: auto !important; 
+  }
+}
+/*FIN correccion salto footer mob*/
 .cakes__stage{position:-webkit-sticky;position:sticky;top:0;height:100vh;width:100%;overflow:hidden}
 .cakes__grid{position:absolute;inset:0;gap:.625rem;padding:.875rem;height:100vh;/*height:100svh;*/overflow:hidden;z-index:0;
 display:flex;flex-wrap:nowrap}
