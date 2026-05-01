@@ -117,7 +117,7 @@
                 <div class="hero__media ">
                   <picture class="hero__picture" data-parallax>
                     <source srcset="img/home/hero/group115-2200x1338-q100.webp" media="(min-width: 1600px)" type="image/webp">
-                    <source srcset="img/home/hero/group92-1536px-90q.webp" media="(min-width: 768px) and (max-width: 1599.98px)" type="image/webp">
+                    <source srcset="img/home/hero/cakeatelier-cph-custom-flower-cakes.webp" media="(min-width: 768px) and (max-width: 1599.98px)" type="image/webp">
                     <source srcset="img/home/hero/group114-q75.avif" media="(max-width: 767.98px)" type="image/avif">
                     <img class="hero__img hero__img1" src="img/home/hero/group114.webp" alt="Tall artistic buttercream cake on a stand" width="768" height="1277" loading="eager" decoding="async" fetchpriority="high">
                   </picture>
@@ -465,7 +465,7 @@ document.addEventListener('DOMContentLoaded',function(){
       lerp:0.12, //.08
       wheelMultiplier:0.9,//1
       touchMultiplier:1,
-      overscroll:true
+      overscroll: false //anterior overscroll:true
     });
     lenisInstance.on('scroll',function(){
       tick();
@@ -750,6 +750,8 @@ document.addEventListener('DOMContentLoaded',function(){
           updateScrollSpy();
         }
       }
+
+      if (footerVisible) return;
       
       if(state.cakesOn){
         var cakesRect=cakesWrap.getBoundingClientRect();
