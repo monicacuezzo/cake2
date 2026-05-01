@@ -189,7 +189,8 @@
 .cakes__h2-span{color:var(--color-brand);font-weight:600;font-size:inherit;text-shadow:rgb(51,51,51) 0 0 5px}
 .cakes__subtitle{display:none}
 .cakes__wrap{height:600vh;position:relative;
-/*correccion salto footer mob*/overflow: hidden;
+/*correccion salto footer mob*/
+/* overflow: hidden; */
     contain: paint;
 }
 
