@@ -1,64 +1,40 @@
-:root{
-    --padding-horizontal:4.25vw;
-    --padding-top:7rem /*=150px /*76px*/ ;
-}
- @media (min-width:992px){
-:root{
-    /* --padding-horizontal:4.25vw;*/
-    --padding-top:9.375rem /*=150px /*92px;*/
-}
-}
-#about,#workshop,#howToOrder{content-visibility:auto;contain-intrinsic-size:800px}
-/* .btn--primary:hover,.btn--primary:focus,.btn--primary:focus-visible,.btn--primary:active{background:transparent;color:var(--color16);text-shadow:none} 
-IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
-*/
+:root{--padding-horizontal:4.25vw;--padding-top:7rem;}@media (min-width:992px){:root{--padding-top:9.375rem}}
+.btn--primary:hover{background:#fafafa;color:var(--color-accent)}.btn:focus-visible{outline:2px solid currentColor} 
+
+/* IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO */
 
 /* html{scroll-behavior:smooth} */
 /* @media (prefers-reduced-motion:reduce){*/
   html{scroll-behavior:auto}
 /*} */
 
-/*generales ¿PASAR A basic.css?*/
 .section{padding-top:var(--padding-top);width:100%;min-height:100vh;position:relative;padding-bottom:6.25rem}
-.section__title{font-size:2.3rem;margin-bottom:2rem;/*text-transform:uppercase;*/ font-weight:700}
+.section__title{font-size:2.3rem;margin-bottom:2rem;font-weight:700}
 .section__subtitle{font-size:1.5rem;margin-bottom:2rem;color:var(--color-accent);font-weight:500}
 .section__text{font-weight:500;font-size:1rem;margin-bottom:1rem}
 @media (max-width:991.98px){
-.section__title{font-size:1.375rem;margin-bottom:1rem;/*font-weight:600*/}
+.section__title{font-size:1.375rem;margin-bottom:1rem}
 .section__subtitle{font-size:1.2rem;margin-bottom:1.2rem;font-weight:600}
 .section__text{font-size:0.875rem}
 }
 
-/*hace falta?*/
-.about{
-  --about-bkg:linear-gradient(180deg,#223242 0%,#223242 42%,#1d2b37 78%,#1a2430 100%);
-  --about-font:#f1f1f1;
-  --about-accent:var(--color-brand);
-  --about-h2:#f1f1f1;
-}
-/*generales*/
-.about{background:var(--about-bkg);color:var(--about-font);padding:var(--padding-top) var(--padding-horizontal)}
-.h1{color:var(--about-accent);font-weight:500;font-size:1.375rem;text-align:center;margin:auto;margin-bottom:8vw}
+.about{background:linear-gradient(180deg,#223242 0%,#223242 42%,#1d2b37 78%,#1a2430 100%);color:#f1f1f1;padding:var(--padding-top) var(--padding-horizontal)}
+.h1{color:var(--color-brand);font-weight:500;font-size:1.375rem;text-align:center;margin:auto;margin-bottom:8vw}
 .h1-strong{display:block;font-weight:700}
-.about__title{font-size:1.25rem;font-weight:700;position:relative;width:max-content;max-width:100%;color:var(--about-h2)}
-.about__title::before{content:'';position:absolute;left:0;bottom:0;width:50%;height:.125rem;background-color:var(--about-accent)}
+.about__title{font-size:1.25rem;font-weight:700;position:relative;width:max-content;max-width:100%;color:#f1f1f1}
+.about__title::before{content:'';position:absolute;left:0;bottom:0;width:50%;height:.125rem;background-color:var(--color-brand)}
 .about__text{font-size:.9375rem;width:30%}
 .about__text p{margin:1.5rem 0}
 .about__me-media>img,.about__media--video>img,.about__media--photo>img{display:block;width:100%;height:auto}/*hace falta???*/
 .about__media{display:inline-flex;flex:1}
 .about__media--video{flex:0 0 clamp(15.25rem,11vw,18.75rem);overflow:hidden;border-radius:.25rem;margin-top:5rem;height:max-content;position:relative}
 .about__media--photo{overflow:hidden;border-radius:.25rem;height:max-content;position:relative;z-index:2}
-/*GAME*/
 .about-game{position:absolute;bottom:0;left:0;overflow:visible;width:100%}
 .about-game__title{position:absolute;bottom:0;left:0;z-index:4;width:100%;min-height:4.5rem;text-align:center;overflow:hidden;font-size:1.17rem;line-height:1.17rem;padding:1.75rem .75rem .85rem;box-sizing:border-box;background:linear-gradient(to bottom,rgba(0,0,0,0) 0%,rgba(0,0,0,.18) 15%,rgba(0,0,0,.62) 100%)}
 .about-game__title::before,.about-game__title::after{position:absolute;left:0;width:100%;content:"";height:1.17rem ;font-size:1.17rem;line-height:1.17rem;padding:0;animation:aboutGameTitle 8s ease-in-out infinite;text-shadow:rgb(51,51,51) 0 0 5px }
 .about-game__title::before{content:"Which cake are you?";color:#f3e924}
 .about-game__title::after{content:"Tap to dress the cake!";color:#fff;opacity:0;animation-delay:4s}
-@keyframes aboutGameTitle{
-  0%,10%{opacity:0;transform:translateX(100%)}
-  30%,55%{opacity:1;transform:translateX(0)}
-  85%,100%{opacity:0;transform:translateX(-100%)}
-}
+@keyframes aboutGameTitle{0%,10%{opacity:0;transform:translateX(100%)}30%,55%{opacity:1;transform:translateX(0)}85%,100%{opacity:0;transform:translateX(-100%)}}
 .about-game__list{position:relative;display:flex;justify-content:space-around;padding:1rem;flex-wrap:wrap;z-index:5}
 .about-game__radio{position:absolute;opacity:0;pointer-events:none}
 .about-game__option{position:relative;z-index:5;display:block;cursor:pointer;border:.125rem solid transparent;border-radius:50%;overflow:visible;transform:translate3d(var(--x),var(--y),0);flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center}
@@ -75,10 +51,8 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 
 .about__we-do{gap:clamp(2rem,calc(21.17vw - 8.56rem),11.19rem);padding-right:calc(clamp(2rem,calc(21.17vw - 8.56rem),11.19rem) / 2);padding-bottom:2.25rem}
 .about__me{gap:3rem}
-.about__me-media{display:inline-flex;flex:0 0 clamp(17.75rem,12vw,18.75rem);/*width:clamp(300px,15vw,400px);*/ overflow:hidden;border-radius:.25rem;height:max-content}
-
+.about__me-media{display:inline-flex;flex:0 0 clamp(17.75rem,12vw,18.75rem);overflow:hidden;border-radius:.25rem;height:max-content}
 .about__media--video::after,.about__me-media::after,.about__media--photo::after{content:"";position:absolute;inset:0;border-radius:.25rem;background:rgba(34,50,66,.22);pointer-events:none}
-
 .about__me-text{display:inline-flex;font-size:1rem;width:calc(100% - clamp(18.75rem,12vw,20rem) + calc(clamp(2rem,calc(21.17vw - 8.56rem),11.19rem) / 2));min-width:0;flex-direction:column}
 .about__p{margin-bottom:3rem}
 .about__me-title{margin-top:1.875rem;font-size:1.375rem;margin-bottom:1.5rem}
@@ -99,9 +73,6 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 .about__me-media{grid-column:1/-1;grid-row:5;justify-self:center;width:100%;max-width:18.75rem}
 .about__me-media img{display:block;width:100%;max-width:18.75rem;height:auto}
 .about__me-text .btn{grid-column:1/-1;grid-row:6;justify-self:center}
-
-.btn{font-size:1rem}
-
 .about__layout{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem;align-items:start}
 .about__flow{display:contents}
 .about__we-do{display:contents}
@@ -115,7 +86,7 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 @media (max-width:679.98px){
 .about__media-mobile .about__media--video{margin-top:0}
 .about__photo-sticky{position:static}
-/*********agregado para game****/
+/*game*/
 .about__me-text .about__me-title{grid-row:4}
 .about__me-text .about__p{grid-row:5}
 .about__me-media{grid-row:6}
@@ -123,9 +94,7 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 .about__media{grid-row:8;grid-column:1 / -1;justify-self:center;width:100%;max-width:18.75rem;margin-top:1.5rem}
 }
 
-@media (min-width:400px){
-.h1{font-size:1.5rem}
-}
+@media (min-width:400px){.h1{font-size:1.5rem}}
 @media (min-width:768px){
 .h1{font-size:2.15rem }
 .h1 span{font-weight:500;display:block}
@@ -147,9 +116,7 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 .about__me-text .btn{grid-column:1;grid-row:6;justify-self:start;margin-top:.75rem}
 }
 @media (min-width:680px){.about__media-mobile{display:none}}
-@media (min-width:1600px){
-  .about__media--photo,.about__media--photo .about__photo,.about-game__cake-picture{height:33rem;width:auto}
-}
+@media (min-width:1600px){.about__media--photo,.about__media--photo .about__photo,.about-game__cake-picture{height:33rem;width:auto}}
 
 
 /*HOW TO ORDER*/
@@ -196,24 +163,17 @@ IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO
 @keyframes howLine{to{transform:scale(1)}}
 
 @media (min-width:992px){
-  .section--how{--how-ease:cubic-bezier(.2,.9,.2,1);--how-dur:2.3s ;--how-stagger:.13s;--how-line-dur:3.3s} /*1.9  1.6*/
-  .how__subtitle{font-size:1.25rem }
-  .how__subtitle--accent{color:inherit}
-  .how__steps{display:flex;gap:1.25rem  ;width:100%;max-width:75rem;margin:3rem auto 4rem auto}
-  .how__steps:before{left:4.875rem;top:1.563rem;width:calc(100% - 9.812rem);height:.156rem}
-  .section--how.is-in .how__steps:before{background:linear-gradient(90deg,var(--color14) 0%,var(--color15) 45%,var(--color13) 100%)}
-  .how__step{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;max-width:9.812rem}
+.section--how{--how-ease:cubic-bezier(.2,.9,.2,1);--how-dur:2.3s ;--how-stagger:.13s;--how-line-dur:3.3s} /*1.9  1.6*/
+.how__subtitle{font-size:1.25rem }
+.how__subtitle--accent{color:inherit}
+.how__steps{display:flex;gap:1.25rem  ;width:100%;max-width:75rem;margin:3rem auto 4rem auto}
+.how__steps:before{left:4.875rem;top:1.563rem;width:calc(100% - 9.812rem);height:.156rem}
+.section--how.is-in .how__steps:before{background:linear-gradient(90deg,var(--color14) 0%,var(--color15) 45%,var(--color13) 100%)}
+.how__step{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;max-width:9.812rem}
 .how__number{width:3.125rem;height:3.125rem;font-weight:700;font-size:1.375rem}
 .how__text{height:auto;min-height:2.813rem;font-size:1rem}
 .how__icon{width:3.125rem;height:3.125rem;margin-top:.375rem}
 .section--how .how__steps:before{transform:scaleX(0);transform-origin:left}
-}
-
-@media (prefers-reduced-motion:reduce){
-  .section--how .how__title,.section--how .how__subtitle,.section--how .how__step,.section--how .how__icon{opacity:1;transform:none}
-  /* .section--how .how__number{transform:none} */
-  .section--how .how__steps:before{transform:none}
-  .section--how.is-in *{animation:none!important}
 }
 
 
@@ -255,7 +215,7 @@ display:flex;flex-wrap:nowrap}
 /* velo claro */
   /* background:radial-gradient(1100px 520px at 18% 40%,rgba(255,255,255,.22),rgba(255,255,255,0) 58%),linear-gradient(180deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,.08) 45%,rgba(255,255,255,.22) 100%);mix-blend-mode:screen;opacity:.75} */
 }
-/* cakes__newsletter */
+/*cakes__newsletter */
 .cakes__newsletter{height:100vh;position:absolute;bottom:0;left:50%;transform:translateX(-50%)}
 .cakes__newsletter-stage{height:100vh;display:flex;align-items:center;justify-content:center;padding:1.125rem;z-index:30}
 .newsletter{width:min(30rem,86vw);padding:1.375rem 1.125rem;border:1px solid rgba(255,255,255,.75);border-radius:1.125rem;background:rgba(255,255,255,.22);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 12px 40px rgba(0,0,0,.18);text-align:center;display:grid;gap:.875rem}
@@ -295,28 +255,24 @@ display:flex;flex-wrap:nowrap}
 
 
 @media (min-width:600px){
-  .newsletter{padding:1.625rem 1.375rem;gap:1.2rem}
-  .cakes__head{padding:2.5rem 1.5rem 1.125rem}
-  .cakes__grid{gap:.75rem}
-  .cakes__slot{flex-basis:calc((100% - (.75rem * 2))/3)}
-  .cakes__img{border-radius:.75rem}
-  .cakes__col{gap:.75rem}
+.newsletter{padding:1.625rem 1.375rem;gap:1.2rem}
+.cakes__head{padding:2.5rem 1.5rem 1.125rem}
+.cakes__grid{gap:.75rem}
+.cakes__slot{flex-basis:calc((100% - (.75rem * 2))/3)}
+.cakes__img{border-radius:.75rem}
+.cakes__col{gap:.75rem}
 }
 @media (min-width:992px){
-  .cakes__subtitle{display:block;font-size:1.2rem;font-weight:500}
-  .cakes__slot{flex:0 0 calc((100% - (.75rem  * 3))/4)}
+.cakes__subtitle{display:block;font-size:1.2rem;font-weight:500}
+.cakes__slot{flex:0 0 calc((100% - (.75rem  * 3))/4)}
 }
 @media (min-width:1024px){
-  .cakes{padding:3.5rem 0 .625rem 0}
-  .cakes__grid{gap:.875rem}
-    .cakes__slot{flex-basis:calc((100% - (.875rem * 5))/6)}
-  .cakes__col{gap:.875rem}
-  .cakes__img{aspect-ratio:2/3;border-radius:.875rem}
+.cakes{padding:3.5rem 0 .625rem 0}
+.cakes__grid{gap:.875rem}
+.cakes__slot{flex-basis:calc((100% - (.875rem * 5))/6)}
+.cakes__col{gap:.875rem}
+.cakes__img{aspect-ratio:2/3;border-radius:.875rem}
 .cakes__ph{aspect-ratio:2/3;border-radius:.875rem}
-}
-@media (prefers-reduced-motion:reduce){
-  .cakes__col{transform:none!important;transition:none!important}
-  .newsletter{backdrop-filter:none;-webkit-backdrop-filter:none}
 }
   
 
@@ -332,3 +288,12 @@ display:flex;flex-wrap:nowrap}
 .cakes__stage{background:#f6f3ee}
 .cakes__veil{background:linear-gradient(180deg,rgba(255,255,255,.85),rgba(255,255,255,.35));mix-blend-mode:normal;opacity:1} */
 /* ***************** */
+
+@media (prefers-reduced-motion:reduce){
+.section--how .how__title,.section--how .how__subtitle,.section--how .how__step,.section--how .how__icon{opacity:1;transform:none}
+.section--how .how__steps:before{transform:none}
+.section--how.is-in *{animation:none!important}
+.cakes__col{transform:none!important;transition:none!important}
+.newsletter{backdrop-filter:none;-webkit-backdrop-filter:none}
+}
+
