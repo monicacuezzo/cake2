@@ -1,4 +1,12 @@
-document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('DOMContentLoaded', function() {
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => initNewsletter());
+  } else {
+    setTimeout(initNewsletter, 200); // Fallback para navegadores viejos
+  }
+});
+
+function initNewsletter() {
   var form=document.querySelector('.newsletter');
   if(!form)return;
 
@@ -56,12 +64,18 @@ document.addEventListener('DOMContentLoaded',function(){
     emailEl.value=emailEl.value.trim();
   }
 
-  if(nameEl){
-    nameEl.addEventListener('blur',function(){normalizeName();});
-  }
-  if(emailEl){
-    emailEl.addEventListener('blur',function(){normalizeEmail();});
-  }
+  // if(nameEl){
+  //   nameEl.addEventListener('blur',function(){normalizeName();});
+  // }
+  // if(emailEl){
+  //   emailEl.addEventListener('blur',function(){normalizeEmail();});
+  // }
+
+  // En lugar de múltiples event listeners individuales:
+  form.addEventListener('focusout', function(e) {
+    if (e.target.id === 'nl-name') normalizeName();
+    if (e.target.id === 'nl-email') normalizeEmail();
+  }, true);
 
   function isProbablyBot(){
     if(hp&&hp.value)return true;
@@ -93,4 +107,6 @@ return;
 
     
   },{passive:false});
-});
+}
+
+
