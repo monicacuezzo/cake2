@@ -28,7 +28,8 @@
     <link rel="preload" href="img/home/hero/cakeatelier-cph-cake-workshop-group-mob.webp" as="image" media="(max-width:767.98px)" fetchpriority="high">
     <link rel="preload" href="img/home/hero/cakeatelier-cph-cake-workshop-group.webp" as="image" media="(min-width:768px) and (max-width:1599.98px)" fetchpriority="high">
     <link rel="preload" href="img/home/hero/cakeatelier-cph-cake-workshop-group-tv.webp" as="image" media="(min-width:1600px)" fetchpriority="high">
-    <style>body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{display:none}.d_flex{display:flex}ul,ol{margin:0;padding:0;list-style:none}.header__link{color:#fafafa}.header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa}.header__bottom{transform:translateX(100%)}@media (min-width:992px){.header__bottom{transform:none}}
+    <style>body{background-color:#223242;color:#f1f1f1}.isLoading .floating-button--up{display:none}.d_flex{display:flex}ul,ol{margin:0;padding:0;list-style:none}.header__link{color:#fafafa}.header__toggle{display:inline-flex;width:44px;height:44px;align-items:center;justify-content:center;flex-direction:column;gap:4px;z-index:114}.header__toggle-bar{display:block;width:25px;height:3px;background:#fafafa}.header__bottom{transform:translateX(100%)}@media (min-width:992px){.header__bottom{transform:none}}.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none}
+
     </style>
     <link rel="stylesheet" href="css/home-critical.css">
     <link rel="preload" href="css/basic.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="css/basic.css"></noscript>
@@ -750,7 +751,7 @@ document.addEventListener('DOMContentLoaded',function(){
         }
       }
 
-      // if (footerVisible) return;
+      if (footerVisible) return;
       
       if(state.cakesOn){
         var cakesRect=cakesWrap.getBoundingClientRect();
