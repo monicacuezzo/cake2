@@ -499,25 +499,31 @@ document.addEventListener('DOMContentLoaded',function(){
   }
   syncLenisMode();
 
-  function measureHeaderHeights(){
-  // if(viewportWidth<992){return};
+//   function measureHeaderHeights(){
+//   // if(viewportWidth<992){return};
+//   if(!headerEl)return;
+
+//   // Guardar clases actuales  
+//   var prevClass=headerEl.className;
+
+//   // Medir HERO (normal)
+//   headerEl.classList.remove('header--hidden','header--compact','header--compact-light','header--compact-dark');
+//   headerEl.classList.add('p_absolute');
+//   headerH_hero=headerEl.offsetHeight||0;
+
+//   // Medir COMPACT (about/how) - el "light/dark" no debería cambiar altura
+//   headerEl.classList.remove('p_absolute');
+//   headerEl.classList.add('header--compact','header--compact-light');
+//   headerH_compact=headerEl.offsetHeight||0;
+
+//   // Restaurar
+//   headerEl.className=prevClass;
+// }
+
+function measureHeaderHeights(){
   if(!headerEl)return;
-
-  // Guardar clases actuales  
-  var prevClass=headerEl.className;
-
-  // Medir HERO (normal)
-  headerEl.classList.remove('header--hidden','header--compact','header--compact-light','header--compact-dark');
-  headerEl.classList.add('p_absolute');
   headerH_hero=headerEl.offsetHeight||0;
-
-  // Medir COMPACT (about/how) - el "light/dark" no debería cambiar altura
-  headerEl.classList.remove('p_absolute');
-  headerEl.classList.add('header--compact','header--compact-light');
-  headerH_compact=headerEl.offsetHeight||0;
-
-  // Restaurar
-  headerEl.className=prevClass;
+  headerH_compact=viewportWidth>=992?48:headerH_hero;
 }
  
   if(heroEl){
