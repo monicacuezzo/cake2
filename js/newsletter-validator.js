@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if ('requestIdleCallback' in window) {
     requestIdleCallback(() => initNewsletter());
   } else {
-    setTimeout(initNewsletter, 200); // Fallback para navegadores viejos
+    setTimeout(initNewsletter, 500); // Fallback para navegadores viejos
   }
 });
 
