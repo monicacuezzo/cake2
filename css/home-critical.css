@@ -28,7 +28,7 @@
 .hero__picture{position:absolute;display:block;left:0;right:0;top:-10vh;bottom:-10vh;height:120vh}
 /*parallax*/ .hero__picture[data-parallax],.hero__text-container{transition:transform 60ms ease-out /*ease-out*/}
 .hero__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero__img1{object-position:right bottom}
+.hero__img1{object-position:center bottom}/*UNIFICAR??*/
 .hero__img2{object-position:center bottom}
 .hero.is-manual .hero__slide{animation:none}
 .hero.is-manual .hero__slide{opacity:0;pointer-events:none}
@@ -75,6 +75,4 @@
 .hero,.hero__media,.hero__picture{height:150vh}
 .hero__picture{top:-10vh;bottom:-10vh}
 .hero__dots{top:92vh}}
-@media (min-width:992px){
-.hero__img1,.hero__img2{object-position:center}
-}
+@media (min-width:1024px){.hero__img1,.hero__img2{object-position:center}}
