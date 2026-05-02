@@ -64,13 +64,6 @@ function initNewsletter() {
     emailEl.value=emailEl.value.trim();
   }
 
-  // if(nameEl){
-  //   nameEl.addEventListener('blur',function(){normalizeName();});
-  // }
-  // if(emailEl){
-  //   emailEl.addEventListener('blur',function(){normalizeEmail();});
-  // }
-
   // En lugar de múltiples event listeners individuales:
   form.addEventListener('focusout', function(e) {
     if (e.target.id === 'nl-name') normalizeName();
@@ -91,21 +84,36 @@ function initNewsletter() {
     normalizeName();
     normalizeEmail();
 
+    var nameValue=nameEl?nameEl.value:'';
+    var emailValue=emailEl?emailEl.value:'';
+
+    if(nameValue.length<2){
+      e.preventDefault();
+      setStatus('Please enter at least 2 characters for your name.','err');
+      if(nameEl)nameEl.focus();
+      return;
+    }
+
+    if(!emailEl||!emailEl.checkValidity()){
+      e.preventDefault();
+      setStatus('Please enter a valid email address.','err');
+      if(emailEl)emailEl.focus();
+      return;
+    }
+
     if(isProbablyBot()){
       e.preventDefault();
       return;
     }
 
     setStatus('Sending your subscription…');
-setLoading(true);
-locked=true;
+    setLoading(true);
+    locked=true;
 
-// TODO backend: acá va el fetch()
-// Cuando esté el backend: en .then/.catch vas a hacer setLoading(false), locked=false y setStatus(...) según respuesta.
-e.preventDefault();
-return;
-
-    
+    // TODO backend: acá va el fetch()
+    // Cuando esté el backend: en .then/.catch vas a hacer setLoading(false), locked=false y setStatus(...) según respuesta.
+    e.preventDefault();
+    return;
   },{passive:false});
 }
 
