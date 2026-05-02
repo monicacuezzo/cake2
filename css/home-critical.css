@@ -75,3 +75,6 @@
 .hero,.hero__media,.hero__picture{height:150vh}
 .hero__picture{top:-10vh;bottom:-10vh}
 .hero__dots{top:92vh}}
+@media (min-width:992px){
+.hero__img1,.hero__img2{object-position:center}
+}
