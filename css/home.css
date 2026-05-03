@@ -24,16 +24,13 @@ html{scroll-behavior:auto}
 .about-game__radio{position:absolute;opacity:0;pointer-events:none}
 .about-game__option{position:relative;z-index:5;display:block;cursor:pointer;border:.125rem solid transparent;border-radius:50%;overflow:visible;transform:translate3d(var(--x),var(--y),0);flex:0 0 33.333%;max-width:33.333%;display:flex;justify-content:center}
 .about-game__option img{display:block;width:3.5rem;height:3.5rem;object-fit:cover;transform:scale(1.06);z-index:5;position:relative}
-/*efecto pulsacion*/
-.about-game__option::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:4;background:rgba(255,255,255,.55);animation:aboutGamePulse 2s ease-in-out infinite}
+/*efecto pulsacion*/.about-game__option::before{content:"";position:absolute;inset:0;border-radius:50%;z-index:4;background:rgba(255,255,255,.55);animation:aboutGamePulse 2s ease-in-out infinite}
 @keyframes aboutGamePulse{0%{opacity:0.2}  50%{transform:scale(1.5);opacity:.6}  100%{opacity:.2}}
 .about-game__cake-picture{position:absolute;bottom:0;left:0;width:100%;height:auto;opacity:0;z-index:1;pointer-events:none;transition:opacity 1s ease}
 .about-game__cake-img{width:100%;height:auto}
 .about-game__radio:checked + .about-game__option + .about-game__cake-picture,.about-game__radio:checked + .sr-only + .about-game__cake-picture{opacity:1;z-index:3}
 .about-game__radio:checked + .about-game__option{box-shadow:0 0 0 .1875rem rgba(255,255,255,.34)}
-.about-game__radio:checked + .about-game__option::before
-/* ,.about-game__radio:checked + .about-game__option::after */
-{border-color:rgba(255,255,255,.95);opacity:.95}
+.about-game__radio:checked + .about-game__option::before{border-color:rgba(255,255,255,.95);opacity:.95}
 .about__media--photo:focus-within::before{content:"";position:absolute;inset:0;z-index:10;border:.125rem solid #fff;border-radius:.25rem;pointer-events:none}.about-game__radio:focus-visible + .about-game__option{box-shadow:0 0 0 5px #fff}
 .about__we-do{gap:clamp(2rem,calc(21.17vw - 8.56rem),11.19rem);padding-right:calc(clamp(2rem,calc(21.17vw - 8.56rem),11.19rem) / 2);padding-bottom:2.25rem}
 .about__me{gap:3rem}
@@ -147,11 +144,8 @@ html{scroll-behavior:auto}
 .cakes__head{position:absolute;top:0;left:0;right:0;z-index:2;padding:2rem 1.125rem 1.125rem;background:linear-gradient(180deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 100%)}
 .cakes__h2-span{color:var(--color-brand);font-weight:600;font-size:inherit;text-shadow:rgb(51,51,51) 0 0 5px}
 .cakes__subtitle{display:none}
-.cakes__wrap{height:600vh;position:relative;/*correccion salto footer mob:*/contain:paint}
-@media (max-width:991.98px){
-/*Evita que el scroll se pierda por transformaciones 3D en móvil*/.cakes__col{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}
-/*Asegura que la sección cakes no tenga comportamientos extraños de altura al final del scroll*/.cakes{min-height:auto}
-}/*FIN correccion salto footer mob*/
+.cakes__wrap{height:600vh;position:relative;contain:paint}
+@media (max-width:991.98px){.cakes__col{will-change:transform;backface-visibility:hidden;-webkit-backface-visibility:hidden}.cakes{min-height:auto}}
 .cakes__stage{position:-webkit-sticky;position:sticky;top:0;height:100vh;width:100%;overflow:hidden;backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:translateZ(0);background:#354e65}
 .cakes__grid{position:absolute;inset:0;gap:.625rem;padding:.875rem;height:100vh;overflow:hidden;z-index:0;display:flex;flex-wrap:nowrap;background:#354e65}
 .cakes__slot{height:100%;display:flex;flex:0 0 calc((100% - .625rem)/2)}
@@ -215,9 +209,6 @@ html{scroll-behavior:auto}
 .cakes__slot{flex-basis:calc((100% - (.875rem * 5))/6)}
 .cakes__ph,.cakes__img{aspect-ratio:2/3;border-radius:.875rem}
 }
-  
-
-
 @media (prefers-reduced-motion:reduce){
 .hero{--hero-p:0}
 .hero__picture,.hero__text-container,.hero__copy,.hero__logo{transform:none!important;transition:none!important}
@@ -234,5 +225,4 @@ html{scroll-behavior:auto}
 .section--how .how__steps:before{transform:none}
 .section--how.is-in *{animation:none!important}
 .cakes__stage,.cakes__col{transform:none!important;transition:none!important}
-.newsletter{backdrop-filter:none;-webkit-backdrop-filter:none}
-}
+.newsletter{backdrop-filter:none;-webkit-backdrop-filter:none}}
