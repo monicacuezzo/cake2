@@ -92,7 +92,7 @@
 
   <main class="main">
     <section id="hero" class="hero" aria-roledescription="carousel" aria-label="Highlights from Cake Atelier Copenhagen">
-      <div id="heroDots" class="hero__dots" aria-label="Select hero slide">
+      <div id="heroDots" class="hero__dots" role="group" aria-label="Select hero slide">
         <button class="hero__dot" type="button" data-hero-go="1" aria-label="Show slide 1" aria-current="false"></button>
         <button class="hero__dot" type="button" data-hero-go="2" aria-label="Show slide 2" aria-current="false"></button>
       </div>
@@ -199,13 +199,15 @@
           <section class="about-game" aria-labelledby="about-game-title">
             <div class="about-game__list" role="radiogroup" aria-label="Choose cake color">
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-0" checked>
-              <label class="sr-only" for="cake-color-0" aria-label="Base cake" style="--x:0;--y:-0">Base cake</label>
+              <label class="sr-only" for="cake-color-0" style="--x:0;--y:-0">Base cake</label>
+              <!-- aria-label="Base cake"  -->
               <picture  class="about-game__cake-picture">
                 <source srcset="img/home/about/cake-base500px.webp" media="(min-width: 1600px)" type="image/webp">
                 <img class="about-game__cake-img" src="img/home/about/cake-base320px.webp" alt="Undecorated buttercream cake base" width="320" height="568" loading="lazy" decoding="async">
               </picture>
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-1">
-              <label class="about-game__option" for="cake-color-1" aria-label="Choose pink decoration palette" style="--x:0;--y:-1.875rem">
+              <label class="about-game__option" for="cake-color-1" style="--x:0;--y:-1.875rem">
+                <!-- aria-label="Choose pink decoration palette"  -->
                 <img src="img/home/about/color-pink.webp" alt="" width="56" height="56" loading="lazy" decoding="async">
               </label>
               <picture class="about-game__cake-picture">
@@ -213,7 +215,8 @@
                 <img class="about-game__cake-img" src="img/home/about/cake-pink320px.webp" alt="Pink decorated buttercream cake" width="320" height="568" loading="lazy" decoding="async">
               </picture>
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-2">
-              <label class="about-game__option" for="cake-color-2" aria-label="Choose light blue decoration palette" style="--x:0;--y:-4.06rem">
+              <label class="about-game__option" for="cake-color-2" style="--x:0;--y:-4.06rem">
+                <!-- aria-label="Choose light blue decoration palette"  -->
                 <img src="img/home/about/color-light-blue.webp" alt="" width="56" height="56" loading="lazy" decoding="async">
               </label>
               <picture  class="about-game__cake-picture">
@@ -221,7 +224,8 @@
                 <img class="about-game__cake-img" src="img/home/about/cake-light-blue320px.webp" alt="Light blue decorated buttercream cake" width="320" height="568" loading="lazy" decoding="async">
               </picture>
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-3">
-              <label class="about-game__option" for="cake-color-3" aria-label="Choose lilac decoration palette" style="--x:0;--y:-5.625rem">
+              <label class="about-game__option" for="cake-color-3" style="--x:0;--y:-5.625rem">
+                <!-- aria-label="Choose lilac decoration palette"  -->
                 <img src="img/home/about/color-lilac.webp" alt="" width="56" height="56" loading="lazy" decoding="async">
               </label>
               <picture  class="about-game__cake-picture">
@@ -229,7 +233,8 @@
                 <img class="about-game__cake-img" src="img/home/about/cake-lilac320px.webp" alt="Lilac decorated buttercream cake" width="320" height="568" loading="lazy" decoding="async">
               </picture>
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-4">
-              <label class="about-game__option" for="cake-color-4" aria-label="Choose green decoration palette" style="--x:3.125rem;--y:-3.75rem">
+              <label class="about-game__option" for="cake-color-4" style="--x:3.125rem;--y:-3.75rem">
+                <!-- aria-label="Choose green decoration palette"  -->
                 <img src="img/home/about/color-green.webp" alt="" width="56" height="56" loading="lazy" decoding="async">
               </label>
               <picture  class="about-game__cake-picture">
@@ -237,7 +242,8 @@
                 <img class="about-game__cake-img" src="img/home/about/cake-green320px.webp" alt="Green decorated buttercream cake" width="320" height="568" loading="lazy" decoding="async">
               </picture>
               <input class="about-game__radio" type="radio" name="cake-color" id="cake-color-5">
-              <label class="about-game__option" for="cake-color-5" aria-label="Choose orange decoration palette" style="--x:0px;--y:-5.625rem">
+              <label class="about-game__option" for="cake-color-5" style="--x:0px;--y:-5.625rem">
+                <!-- aria-label="Choose orange decoration palette"  -->
                 <img src="img/home/about/color-orange.webp" alt="" width="56" height="56" loading="lazy" decoding="async">
               </label>
               <picture  class="about-game__cake-picture">
@@ -265,7 +271,7 @@
     </section>
     <section id="cakes" class="cakes section">
       <div class="cakes__wrap"><!-- Wrapper que define el “tramo” de scroll -->
-        <div class="cakes__stage" aria-label="Cake gallery"><!--Área sticky-->
+        <div class="cakes__stage" role="region" aria-label="Cake gallery"><!--Área sticky-->
             <div class="cakes__head text-center">
                 <h2 class="section__title w_100 text-center">What’s Your <span class="cakes__h2-span nowrap">Cake Mood?</span></h2>
                 <p class="cakes__subtitle">Feeling classic or curious? Swipe to get inspired by our latest creations — and pick your favourite.</p>
@@ -329,18 +335,18 @@
           <div class="cakes__veil" aria-hidden="true"></div>
           <div class="w_100 text-center cakes__cta"><a href="our-cakes.html" class="btn btn--primary focus-light">Explore Cake Types</a></div>
         </div>
-        <div class="cakes__newsletter" aria-label="Newsletter signup">
+        <div class="cakes__newsletter">
           <div class="cakes__newsletter-stage">
             <form class="newsletter" action="#" method="post" autocomplete="on">
               <h3 class="newsletter__title">Be the first to know</h3>
               <p class="newsletter__lead">New workshops, special promos, and meaningful updates from Cake Atelier — delivered occasionally, never spammy.</p>
                 <div class="newsletter__field">
                   <label class="newsletter__label" for="nl-name">Full name <span class="newsletter__req" aria-hidden="true">*</span></label>
-                  <input class="newsletter__input" id="nl-name" name="name" type="text" autocomplete="name" required aria-required="true" minlength="2" maxlength="60" placeholder="Please enter your full name.">
+                  <input class="newsletter__input" id="nl-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60" placeholder="Please enter your full name.">
                 </div>
                 <div class="newsletter__field"> 
                   <label class="newsletter__label" for="nl-email">Email <span class="newsletter__req" aria-hidden="true">*</span></label>
-                  <input class="newsletter__input" id="nl-email" name="email" type="email" inputmode="email" autocomplete="email" required aria-required="true" maxlength="254" placeholder="you@example.com">
+                  <input class="newsletter__input" id="nl-email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="254" placeholder="you@example.com">
                 </div>
                 <button class="btn btn--primary newsletter__submit focus-light" type="submit">
                   <span class="newsletter__btn-text">Keep me posted</span>
