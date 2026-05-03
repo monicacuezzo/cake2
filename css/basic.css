@@ -3,7 +3,7 @@ a,button{-webkit-appearance:none;appearance:none;cursor:pointer}input,textarea{m
 :root{--color-brand:#ebf094;--color-dark:#223242;--color-light:#e8e2d6;--color-accent:#A74C79;--color-bg-menu:#223242;--color-font-menu:#fafafa;--color6:#FAFDC0;--color7:#FDFEE0;--color12:#724086;--color13:#542068;--color14:#DFA9C4;--color15:#C97CA2;--color16:#A74C79;--color2:#ecf494}
 /*HEADER*/
 .header--hidden{transform:translate3d(0,-110%,0);opacity:0;pointer-events:none}
-.header{position:fixed;top:0;left:0;z-index:100;width:100%;transition:transform .5s ease,opacity .5s ease /*,background .6s ease,backdrop-filter .6s ease,-webkit-backdrop-filter .6s ease*/}
+.header{position:fixed;top:0;left:0;z-index:100;width:100%;transition:transform .5s ease,opacity .5s ease,background .6s ease /*,backdrop-filter .6s ease,-webkit-backdrop-filter .6s ease*/}
 .header__top{width:100%;padding:.625rem 1.25rem}
 .header__top-inner{width:100%;display:flex;align-items:center;justify-content:space-between}
 .header__contenedor-img{height:2.25rem;overflow:hidden;display:flex}
@@ -40,12 +40,7 @@ a,button{-webkit-appearance:none;appearance:none;cursor:pointer}input,textarea{m
 .header__item--has-submenu>.header__link--button::after{content:"";position:absolute;right:.875rem;top:48%;width:.5rem;height:.5rem;border-right:.125rem solid currentColor;border-bottom:.125rem solid currentColor;transform:translateY(-60%) rotate(45deg);transition:transform .18s ease;opacity:.9}
 .header__item--has-submenu.header__item--open>.header__link--button::after{transform:translateY(-40%) rotate(-135deg)}
 .no-scroll{overflow:hidden;touch-action:none}
-
-
-@media (max-width:991.98px){
-.header__logo-img:nth-child(1){width:3.75rem}
-.header__logo-img:nth-child(2){width:8.125rem;margin-left:1.25rem}
-}
+@media (max-width:991.98px){.header__logo-img:nth-child(1){width:3.75rem}.header__logo-img:nth-child(2){width:8.125rem;margin-left:1.25rem}}
 @media (min-width:992px){
 .header{text-align:center;padding-left:var(--padding-horizontal);padding-right:1.25rem;justify-content:space-between}
 .header__logo{position:relative;height:auto}
