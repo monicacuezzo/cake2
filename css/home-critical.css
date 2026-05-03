@@ -60,5 +60,5 @@
 .hero__picture{top:-10vh;bottom:-10vh}
 .hero__dots{top:92vh}}
 @media (min-width:1024px){.hero__img1,.hero__img2{object-position:center}}
-@media (max-height:580px) and (max-width:767.98px){.hero__dots{top:50%;left:auto;right:1rem;transform:translateY(-50%);flex-direction:column}.hero__img2{object-position:center 30%}}
+@media (max-height:580px) and (max-width:767.98px){.hero__dots{top:50%;left:auto;right:1rem;transform:translateY(-50%);flex-direction:column}.hero__img2{object-position:center 80%}}
  
