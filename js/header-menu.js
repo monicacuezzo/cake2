@@ -22,12 +22,26 @@ document.addEventListener('DOMContentLoaded',function(){
         if(toggle)toggle.setAttribute('aria-expanded','false');
         document.documentElement.classList.remove('no-scroll');
         if(overlay)overlay.classList.remove('is-visible');
-        var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
-        for(var i=0;i<openItems.length;i++){
+
+
+        // var openItems=headerEl.querySelectorAll('.header__item--has-submenu.header__item--open');
+        // for(var i=0;i<openItems.length;i++){
+        //   openItems[i].classList.remove('header__item--open');
+        //   var b=openItems[i].querySelector('.header__link--button');
+        //   if(b)b.setAttribute('aria-expanded','false');
+        // }
+
+        var openItems=headerEl.getElementsByClassName('header__item--open');
+        for(var i=openItems.length-1;i>=0;i--){
           openItems[i].classList.remove('header__item--open');
-          var b=openItems[i].querySelector('.header__link--button');
+          var b=openItems[i].getElementsByClassName('header__link--button')[0];
           if(b)b.setAttribute('aria-expanded','false');
         }
+
+
+
+
+
         if(document.activeElement&&document.activeElement!==document.body)document.activeElement.blur();
       }
       function toggleMenu(){
@@ -48,7 +62,8 @@ document.addEventListener('DOMContentLoaded',function(){
         });
       }
       document.addEventListener('keydown',function(e){
-        if(e.key==='Escape')closeMenu();
+        // if(e.key==='Escape')closeMenu();
+        if(e.key==='Escape'&&headerEl.classList.contains('header--menu-open'))closeMenu();
       });
     }// Fin menu mobile
 
