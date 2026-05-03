@@ -2,20 +2,12 @@
 .btn--primary:hover{background:#fafafa;color:var(--color-accent)}.btn:focus-visible{outline:2px solid currentColor} 
 
 /* IMPORTANTE AGREGAR LOS FOCUS VISIBLE A TODO */
-
-/* html{scroll-behavior:smooth} */
-/* @media (prefers-reduced-motion:reduce){*/
   html{scroll-behavior:auto}
-/*} */
 
 .section{padding-top:var(--padding-top);width:100%;min-height:100vh;position:relative;padding-bottom:6.25rem}
-.section__title{font-size:2.3rem;margin-bottom:2rem;font-weight:700}
-.section__subtitle{font-size:1.5rem;margin-bottom:2rem;color:var(--color-accent);font-weight:500}
-.section__text{font-weight:500;font-size:1rem;margin-bottom:1rem}
-@media (max-width:991.98px){
-.section__title{font-size:1.375rem;margin-bottom:1rem}
-.section__subtitle{font-size:1.2rem;margin-bottom:1.2rem;font-weight:600}
-.section__text{font-size:0.875rem}
+.section__title{font-size:1.375rem;margin-bottom:1rem;font-weight:700}
+@media (min-width:992px){
+.section__title{font-size:2.3rem;margin-bottom:2rem;}
 }
 
 .about{background:linear-gradient(180deg,#223242 0%,#223242 42%,#1d2b37 78%,#1a2430 100%);color:#f1f1f1;padding:var(--padding-top) var(--padding-horizontal)}
@@ -23,10 +15,10 @@
 .h1-strong{display:block;font-weight:700}
 .about__title{font-size:1.25rem;font-weight:700;position:relative;width:max-content;max-width:100%;color:#f1f1f1}
 .about__title::before{content:'';position:absolute;left:0;bottom:0;width:50%;height:.125rem;background-color:var(--color-brand)}
-.about__text{font-size:.9375rem;width:30%}
+.about__text{font-size:.9375rem;width:auto}
 .about__text p{margin:1.5rem 0}
-.about__me-media>img,.about__media--video>img,.about__media--photo>img{display:block;width:100%;height:auto}/*hace falta???*/
-.about__media{display:inline-flex;flex:1}
+.about__media{display:inline-flex;flex:1;min-width:0;height:100%}
+
 .about__media--video{flex:0 0 clamp(15.25rem,11vw,18.75rem);overflow:hidden;border-radius:.25rem;margin-top:5rem;height:max-content;position:relative}
 .about__media--photo{overflow:hidden;border-radius:.25rem;height:max-content;position:relative;z-index:2}
 .about-game{position:absolute;bottom:0;left:0;overflow:visible;width:100%}
@@ -60,8 +52,6 @@
 /*cambios para sticky*/
 .about__layout{display:grid;grid-template-columns:minmax(0,1fr) clamp(18.75rem,18vw,26.25rem);gap:calc(clamp(2rem,calc(21.17vw - 8.56rem),11.19rem) / 2);align-items:start}
 .about__flow{min-width:0}
-.about__media{min-width:0;height:100%}
-.about__text{width:auto}
 .about__photo-sticky{position:-webkit-sticky;position:sticky;top:6.25rem;align-self:flex-start;height:max-content}
 
 @media (max-width:1099.98px){
@@ -78,8 +68,7 @@
 .about__we-do{display:contents}
 .about__text{grid-column:1/-1;grid-row:1}
 .about__media{grid-column:2;grid-row:2;justify-self:center;width:100%}
-.about__media--video{grid-column:1;grid-row:2;justify-self:center;width:100%}
-.about__media--video{aspect-ratio:4/5;overflow:hidden}
+.about__media--video{grid-column:1;grid-row:2;justify-self:center;width:100%;aspect-ratio:4/5;overflow:hidden}
 .about__video,.about__photo{display:block;width:100%;height:100%;object-fit:cover}
 }
 
@@ -120,7 +109,8 @@
 
 
 /*HOW TO ORDER*/
-.section--how{color:#223242;padding-inline:var(--padding-horizontal)}
+.section--how{color:#223242;padding-inline:var(--padding-horizontal);--how-bg:var(--color7);background:var(--how-bg)}  
+
 .how__title{margin-bottom:1.2rem}
 .how__subtitle{font-weight:500;font-size:1.05rem;opacity:.95}
 .how__subtitle--accent{color:var(--color16)}
@@ -128,7 +118,8 @@
 .how__steps:before{content:"";position:absolute;left:1.0625rem;top:1.0625rem;bottom:1.0625rem;width:.156rem;opacity:.85}/*REPETIDO??*/
 .how__step{display:flex;gap:.9375rem;align-items:center;text-align:left}
 .how__icon{width:2.187rem;height:2.187rem;display:block;color:rgba(250,250,250,.95);color:var(--color14)}
-.how__number{width:2.187rem;height:2.187rem;border-radius:50%;font-weight:600;font-size:1.25rem  ;display:grid;place-items:center;z-index:2}
+.how__number{width:2.187rem;height:2.187rem;border-radius:50%;font-weight:600;font-size:1.25rem  ;display:grid;place-items:center;z-index:2;position:relative; background:var(--how-bg);color:#223242;    border:solid 3.5px #223242}
+
 .how__text{display:block;line-height:1.25;font-size:.875rem}
 .btn--primary-how:hover{background:var(--how-bg) }
 /* ANIMACIONES */
@@ -153,10 +144,6 @@
 .section--how.is-in .how__step:nth-child(4){animation-delay:calc(.18s + (3 * var(--how-stagger)))}
 .section--how.is-in .how__step:nth-child(5){animation-delay:calc(.18s + (4 * var(--how-stagger)))}
 .section--how.is-in .how__step .how__icon{animation:howIcon .6s var(--how-ease) forwards;animation-delay:calc(inherit + .06s)}
-
-/**********STEPS CIRCULARES NEON*********/
-.section--how{--how-bg:var(--color7);background:var(--how-bg)}  
-.how__number{position:relative;border-radius:50%;background:var(--how-bg);color:#223242;font-weight:600;font-size:1.25rem  ;display:grid;place-items:center;z-index:2;border:solid 3.5px #223242}
 
 @keyframes howFadeUp{to{opacity:1;transform:translate3d(0,0,0)}}
 @keyframes howIcon{to{opacity:1;transform:translate3d(0,0,0)}}
@@ -225,11 +212,8 @@ display:flex;flex-wrap:nowrap}
 .cakes__cta{position:absolute; z-index:5; bottom:1.25rem;bottom:1.25rem /* var(--size20px)*/}
 .cakes__cta .btn{box-shadow:0 0px 60px 10px rgba(0,0,0,0.5)}
 .cakes--wow-in .cakes__col{opacity:1;will-change:transform }
-.cakes__ph{position:relative;display:block;width:100%;aspect-ratio:3/4;border-radius:.625rem;overflow:hidden;background:linear-gradient(120deg,rgba(255,255,255,.6),rgba(255,255,255,.2),rgba(255,255,255,.6))}
-.cakes__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;filter:saturate(.88) contrast(.98);background:transparent}
-.cakes__img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:.625rem;filter:saturate(.88) contrast(.98);animation:cakesImgFade .35s ease both}
-@keyframes cakesImgFade{from{opacity:0}to{opacity:1}}
-.cakes__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transition:opacity .25s ease;filter:saturate(.7) contrast(.7)}
+.cakes__ph{position:relative;display:block;width:100%;aspect-ratio:3/4;border-radius:.625rem;overflow:hidden;background: #b8b5b5}
+.cakes__img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;border-radius:.625rem;opacity: .65;}
 .cakes__veil{position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(1200px 600px at 20% 40%,rgba(0,0,0,.5),rgba(0,0,0,0) 55%),linear-gradient(180deg,rgba(0,0,0,.65) 0%,rgba(0,0,0,.25) 40%,rgba(0,0,0,.55) 100%);mix-blend-mode:multiply;opacity:.85;
 /* velo claro */
   /* background:radial-gradient(1100px 520px at 18% 40%,rgba(255,255,255,.22),rgba(255,255,255,0) 58%),linear-gradient(180deg,rgba(255,255,255,.28) 0%,rgba(255,255,255,.08) 45%,rgba(255,255,255,.22) 100%);mix-blend-mode:screen;opacity:.75} */
