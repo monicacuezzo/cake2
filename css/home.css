@@ -192,6 +192,7 @@ html{scroll-behavior:auto}
 .faq-link{font-size:13px;font-weight:600;text-decoration:underline;text-underline-offset:.2em;color:rgba(255,255,255,.8);white-space:nowrap}
 .faq-link:hover,.faq-link:focus,.faq-link:focus-visible,.faq-link:active{opacity:.7}
 .faq-link:focus-visible{outline:.125rem solid rgba(255,255,255,.8);outline-offset:.125rem}
+@media (max-width:599.98px){.cakes__grid .cakes__slot:nth-child(n+3){display:none}}
 @media (min-width:600px){
 .newsletter{padding:1.625rem 1.375rem;gap:1.2rem}
 .cakes__head{padding:2.5rem 1.5rem 1.125rem}
@@ -199,10 +200,12 @@ html{scroll-behavior:auto}
 .cakes__slot{flex-basis:calc((100% - (.75rem * 2))/3)}
 .cakes__ph,.cakes__img{border-radius:.75rem}
 }
+@media (min-width:600px) and (max-width:991.98px){.cakes__grid .cakes__slot:nth-child(n+4){display:none}}
 @media (min-width:992px){
 .cakes__subtitle{display:block;font-size:1.2rem;font-weight:500}
 .cakes__slot{flex:0 0 calc((100% - (.75rem  * 3))/4)}
 }
+@media (min-width:992px) and (max-width:1023.98px){.cakes__grid .cakes__slot:nth-child(n+5){display:none}}
 @media (min-width:1024px){
 .cakes{padding:3.5rem 0 .625rem 0}
 .cakes__grid,.cakes__col{gap:.875rem}
